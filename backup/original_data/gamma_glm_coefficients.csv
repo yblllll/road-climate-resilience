@@ -1,0 +1,461 @@
+feature,coefficient
+Intercept,4.008704
+totalvolume,2.8357214e-05
+schoolterm_t,-0.0054021347
+universityterm_t,-0.004981865
+bankholiday_t,0.0
+event_t,-0.028411517
+roadworks_t,-0.013244724
+accident_t,-0.0090763075
+temperature_t,0.0006218306
+precipitation_t,-0.008724074
+month_2,-0.0024468268
+month_3,0.004098417
+month_4,0.006898352
+month_5,0.008293383
+month_6,0.0069806664
+month_7,0.00030014847
+month_8,-0.0024537062
+month_9,0.0005204001
+month_10,0.0055822995
+month_11,0.0021870418
+month_12,0.007311555
+year_2023,0.00397236
+year_2024,-0.002838999
+hour_0,0.0039029429
+hour_1,-0.016745828
+hour_2,-0.029841756
+hour_3,-0.031543855
+hour_4,-0.022164892
+hour_5,-0.004624571
+hour_6,0.0012724169
+hour_7,-0.010460339
+hour_8,-0.0053833453
+hour_9,0.0011624192
+hour_10,-0.0010729374
+hour_11,-0.004415751
+hour_12,-0.004070206
+hour_14,-0.000711151
+hour_15,0.0007488109
+hour_16,-0.0024787975
+hour_17,0.0067246673
+hour_18,0.029364819
+hour_19,0.042675138
+hour_20,0.04319238
+hour_21,0.035863522
+hour_22,0.029030085
+hour_23,0.020105453
+dow_Fri,-0.030809997
+dow_Mon,-0.024994157
+dow_Thu,-0.038329985
+dow_Tue,-0.03699076
+link_106020902,0.1029041
+link_106021002,0.13150047
+link_106021201,-0.06126424
+link_106025301,0.13267158
+link_106025302,0.09428097
+link_106025401,0.09238761
+link_106026501,0.08683284
+link_106026502,0.10593195
+link_106026701,0.057880107
+link_106026901,0.1183859
+link_106027201,0.05568023
+link_106031101,0.093832076
+link_106063401,-0.13750099
+link_106063402,-0.064953975
+link_106063501,0.118749276
+link_124000101,0.14866605
+link_124000202,-0.17721842
+link_124000205,0.10955645
+link_124000301,-0.09689627
+link_126017201,0.12892577
+link_126046001,0.12860318
+link_126046101,0.08125866
+link_199033002,0.12445133
+link_199034401,0.044580612
+link_199034501,0.008323903
+link_199034803,0.0836116
+link_199041401,-0.33283016
+link_199041501,-0.070248224
+link_199041701,-0.12073644
+link_199042001,-0.40387505
+link_199042501,-0.036140155
+link_199045301,-0.05971052
+link_199046401,-0.3802778
+link_199046501,-0.13363771
+link_199046603,0.14287226
+link_199046801,0.11033028
+link_199047001,-0.22313996
+link_199047002,0.10369509
+link_199047101,-0.39044672
+link_199047102,0.119668774
+link_199047201,0.12504564
+link_199047401,-0.039988305
+link_199047402,0.09872285
+link_199047501,-0.04083703
+link_199047502,0.11291703
+link_199047601,0.10804527
+link_199047701,0.09996547
+link_199047801,0.0020433208
+link_199047902,-0.11438683
+link_199047903,0.118570104
+link_199048001,0.100131564
+link_199049001,-0.08399348
+link_199049002,0.11750402
+link_199049101,0.09786189
+link_199049201,-0.10575415
+link_199049202,0.1114956
+link_199049401,-0.2802848
+link_199049402,0.039490774
+link_199049601,-0.08314812
+link_199049602,0.060201675
+link_199049701,-0.13507763
+link_199049702,0.075893596
+link_199050001,-0.050233804
+link_199050002,0.08416214
+link_199050202,0.08448481
+link_199050301,0.1021156
+link_199050901,0.062171705
+link_199051201,0.045917355
+link_199136901,0.21306264
+link_199136902,-0.13580285
+link_199137001,0.17720431
+link_199137002,-0.225116
+link_199137201,0.17675361
+link_199137301,-0.05930341
+link_199137501,-0.05528422
+link_200129666,0.13716695
+link_200129667,0.12105176
+link_200129668,0.14492433
+link_200129669,0.10865874
+link_200129681,0.109595396
+link_200129688,0.11281834
+link_200129689,-0.0060992725
+link_200129692,0.14025298
+link_200129693,-0.16699189
+link_200129695,-0.09932906
+link_200129696,0.011780846
+link_200129697,0.17196618
+link_200129698,0.032031097
+link_200129699,0.14751346
+link_200129700,-0.03570719
+link_200129704,0.18869545
+link_200129705,-0.006436945
+link_200129707,-0.14281888
+link_200129708,-0.07031358
+link_200129709,0.13848957
+link_200129714,0.13807587
+link_200129715,0.03550315
+link_200129716,0.11194134
+link_200129718,0.14612326
+link_200129719,0.15723029
+link_200129720,-0.019203978
+link_200129722,0.16576302
+link_200129723,0.16187735
+link_200129724,0.15154561
+link_200129725,0.0824277
+link_200129726,0.15078072
+link_200129728,-0.10475577
+link_200129730,0.081584975
+link_200129745,0.105669565
+link_200129746,-0.22524422
+link_200129747,-0.3929608
+link_200129826,0.15060282
+link_200129827,-0.053640004
+link_200129835,-0.579751
+link_200129836,0.11707501
+link_200129956,0.09984746
+link_200130046,0.14280996
+link_200130047,-0.0176529
+link_200130048,0.12144489
+link_200130049,-0.005115988
+link_200130073,0.14906803
+link_200130074,0.16883677
+link_200130081,0.113729924
+link_200130082,0.17076427
+link_200130084,-0.16775331
+link_200130111,-0.027425176
+link_200130120,-0.000302258
+link_200130182,0.01727944
+link_200130188,-0.14781818
+link_200130223,0.2146758
+link_200130224,0.16770282
+link_200130235,0.07910655
+link_200130238,0.09035954
+link_200130239,0.15589754
+link_200130251,0.028014325
+link_200130252,0.0930466
+link_200130256,0.14053124
+link_200130259,0.13050841
+link_200130379,-0.2031145
+link_200130924,-0.030526055
+link_A1 northbound between A47 and B1081 near Stamford (south),0.06254999
+link_A1 northbound between B1041 and B661,-0.0036351844
+link_A1 northbound between B1081 near Stamford (south) and A43,0.03701864
+link_A1 northbound between B645/B1048 and B1041,0.1189233
+link_A1 northbound exit for A47,-0.5752844
+link_A1 northbound exit for A605,-0.42582706
+link_A1 northbound exit for A6118,-0.5218434
+link_A1 northbound within the A47 junction,-0.016716566
+link_A1 northbound within the A605 junction,0.066527575
+link_A1 northbound within the A6118 junction,0.027090121
+link_A1 southbound between A43 and B1081 near Stamford (south),0.03119721
+link_A1 southbound between B1041 and B645/B1048,0.0689016
+link_A1 southbound between B661 and B1041,0.015530762
+link_A1 southbound exit for A1(M)/A605/A1139,-0.13357772
+link_A1 southbound exit for A43,-0.19855602
+link_A1 southbound exit for A47,-0.33816907
+link_A1 southbound exit for A605,-0.84549826
+link_A1 southbound within the A47 junction,0.010031779
+link_A1 southbound within the A605 junction,0.047110908
+link_A11 northbound access from A505,0.043447822
+link_A11 northbound between A1301 and A505,0.114805065
+link_A11 northbound between A1307 and A1304,0.03622186
+link_A11 northbound between A14/A1304 and B1085 near Red Lodge (south),0.08872502
+link_A11 northbound between B1085 near Red Lodge (south) and B1085 near Red Lodge (north),0.13425958
+link_A11 southbound between A1304 and A1307,0.121641845
+link_A11 southbound between A14 and A1304,0.0021135854
+link_A11 southbound between A505 and A1301,0.022061862
+link_A11 southbound between B1085 near Red Lodge (south) and A14/A1304,0.08882364
+link_A11 southbound exit for A505,-0.0037908503
+link_A14 J35 eastbound exit,-0.17862846
+link_A14 J35 westbound exit,-0.038551092
+link_A14 eastbound between J33 and J34,0.014747839
+link_A14 eastbound within J20,0.077003516
+link_A14 eastbound within J35,0.05440815
+link_A14 westbound between J34 and J33,0.039119907
+link_A14 westbound between J39 and J38,0.041819837
+link_A14 westbound within J20,0.072778255
+link_A14 westbound within J35,0.07809559
+link_A14 westbound within J36,-0.0030944718
+link_A428 eastbound at a minor junction between A1198 and A1303,0.14861609
+link_A428 eastbound between A1198 and A1303,0.12319692
+link_A428 eastbound between A1303 and M11/A14,0.16651616
+link_A428 eastbound between B1043 and B1428,-0.06493935
+link_A428 eastbound between B1428 and A1198,-0.18930328
+link_A428 eastbound exit at a minor junction between A1198 and A1303,-0.057828765
+link_A428 eastbound exit for A1303,0.017015697
+link_A428 westbound access from A1303,-0.061628
+link_A428 westbound at a minor junction between A1303 and A1198,0.16215461
+link_A428 westbound between A1198 and B1428,-0.15974726
+link_A428 westbound between A1303 and A1198,-0.28679004
+link_A428 westbound between M11/A14 and A1303,0.15618847
+link_A428 westbound exit at a minor junction between A1303 and A1198,-0.0148939965
+link_A47 eastbound between A1139 and B1167 near Thorney (west),-0.2971166
+link_A47 eastbound between A1260 and A15 near Peterborough (west),-0.14395753
+link_A47 eastbound between B1040 and B1167 near Thorney (east),0.10251739
+link_A47 eastbound between B1167 near Thorney (east) and A141,-0.0903149
+link_A47 eastbound between B1167 near Thorney (west) and B1040,0.010316195
+link_A47 westbound between A1260 and A1,-0.045233853
+link_A47 westbound between A15 near Peterborough (west) and A1260,-0.076992914
+link_A47 westbound between B1040 and B1167 near Thorney (west),0.04376652
+link_A47 westbound between B1167 near Thorney (east) and B1040,0.14378276
+link_A47 westbound between B198 near Wisbech (west) and A141,-0.06490413
+link_Cambourne Road northbound between A1198 and A428,-0.44424394
+link_Cambourne Road southbound between A428 and A1198,-0.40258527
+link_road from A11 southbound to A14 westbound,0.060561657
+link_106020902_precip,0.006915205
+link_106021002_precip,0.0011158547
+link_106021201_precip,-0.004494557
+link_106025301_precip,0.0057611354
+link_106025302_precip,0.005416103
+link_106025401_precip,0.0024472312
+link_106026501_precip,0.003915763
+link_106026502_precip,0.0040609203
+link_106026701_precip,0.004421329
+link_106026901_precip,0.0053883083
+link_106027201_precip,0.0034374737
+link_106031101_precip,0.0076914015
+link_106063401_precip,-0.0067610387
+link_106063402_precip,-0.0023448162
+link_106063501_precip,0.0053518917
+link_124000101_precip,0.008905827
+link_124000202_precip,-0.006116732
+link_124000205_precip,0.009068681
+link_124000301_precip,-0.004930825
+link_126017201_precip,0.00953903
+link_126046001_precip,0.0057089906
+link_126046101_precip,0.004364792
+link_199033002_precip,0.005714836
+link_199034401_precip,0.0023005435
+link_199034501_precip,-0.001262372
+link_199034803_precip,0.0067517925
+link_199041401_precip,-0.012714557
+link_199041501_precip,-0.0049258354
+link_199041701_precip,-0.008034236
+link_199042001_precip,-0.016899768
+link_199042501_precip,-0.0013330451
+link_199045301_precip,-0.0037506816
+link_199046401_precip,-0.013592794
+link_199046501_precip,-0.0047493633
+link_199046603_precip,0.0036268302
+link_199046801_precip,0.0057890746
+link_199047001_precip,-0.0062044817
+link_199047002_precip,0.0058790934
+link_199047101_precip,-0.013091717
+link_199047102_precip,0.0067368317
+link_199047201_precip,0.006035026
+link_199047401_precip,-0.0012492051
+link_199047402_precip,0.0051697725
+link_199047501_precip,0.00036672477
+link_199047502_precip,0.0065658577
+link_199047601_precip,0.005630478
+link_199047701_precip,0.004170386
+link_199047801_precip,-0.00048922497
+link_199047902_precip,-0.004218836
+link_199047903_precip,0.0052933805
+link_199048001_precip,0.004287445
+link_199049001_precip,-0.0020526457
+link_199049002_precip,0.004849336
+link_199049101_precip,0.004828042
+link_199049201_precip,-0.0014848827
+link_199049202_precip,0.006399294
+link_199049401_precip,-0.010206068
+link_199049402_precip,-0.0067961183
+link_199049601_precip,-0.0050837593
+link_199049602_precip,-0.00247637
+link_199049701_precip,-0.0065054805
+link_199049702_precip,0.0024656947
+link_199050001_precip,-0.0026189177
+link_199050002_precip,-0.0009257148
+link_199050202_precip,0.004333413
+link_199050301_precip,0.003416718
+link_199050901_precip,0.0038056332
+link_199051201_precip,0.0019215432
+link_199136901_precip,0.00987014
+link_199136902_precip,-0.0041659125
+link_199137001_precip,0.010032159
+link_199137002_precip,-0.007667371
+link_199137201_precip,0.0074316612
+link_199137301_precip,-0.0043926747
+link_199137501_precip,-0.0048439833
+link_200129666_precip,0.009759943
+link_200129667_precip,0.0077342605
+link_200129668_precip,0.01260401
+link_200129669_precip,0.0040031387
+link_200129681_precip,0.005259998
+link_200129688_precip,0.0024025629
+link_200129689_precip,-8.472894e-05
+link_200129692_precip,0.010687761
+link_200129693_precip,-0.005651263
+link_200129695_precip,-0.006687747
+link_200129696_precip,-0.0010992731
+link_200129697_precip,0.012006823
+link_200129698_precip,0.00021050581
+link_200129699_precip,0.0067382758
+link_200129700_precip,-0.0030042387
+link_200129704_precip,0.017584192
+link_200129705_precip,0.00072876463
+link_200129707_precip,-0.004169501
+link_200129708_precip,-0.003541363
+link_200129709_precip,0.007766029
+link_200129714_precip,0.005608731
+link_200129715_precip,0.0018523554
+link_200129716_precip,0.0021653764
+link_200129718_precip,0.0085555725
+link_200129719_precip,0.0077045965
+link_200129720_precip,-0.003539401
+link_200129722_precip,0.0059652273
+link_200129723_precip,0.007744542
+link_200129724_precip,0.007505059
+link_200129725_precip,0.0011048386
+link_200129726_precip,0.01044119
+link_200129728_precip,-0.0028037154
+link_200129730_precip,0.01007498
+link_200129745_precip,0.0031326078
+link_200129746_precip,-0.008435702
+link_200129747_precip,-0.01510249
+link_200129826_precip,0.008282704
+link_200129827_precip,-0.0041659405
+link_200129835_precip,-0.023294296
+link_200129836_precip,0.0051369527
+link_200129956_precip,0.004066583
+link_200130046_precip,0.0026414772
+link_200130047_precip,-0.003648089
+link_200130048_precip,0.0045733443
+link_200130049_precip,-0.0016547078
+link_200130073_precip,-0.0039109974
+link_200130074_precip,0.009139215
+link_200130081_precip,0.0064168987
+link_200130082_precip,0.008280196
+link_200130084_precip,-0.004508296
+link_200130111_precip,-0.0026793266
+link_200130120_precip,1.7611543e-05
+link_200130182_precip,-0.00052926986
+link_200130188_precip,-0.0046358733
+link_200130223_precip,0.00590217
+link_200130224_precip,0.008418748
+link_200130235_precip,0.0037644817
+link_200130238_precip,-0.00022233384
+link_200130239_precip,0.00607721
+link_200130251_precip,-0.0016595098
+link_200130252_precip,0.01281388
+link_200130256_precip,0.009212859
+link_200130259_precip,0.0033567974
+link_200130379_precip,-0.0045163487
+link_200130924_precip,-0.002875525
+link_A1 northbound between A47 and B1081 near Stamford (south)_precip,0.0021093932
+link_A1 northbound between B1041 and B661_precip,-0.00024338195
+link_A1 northbound between B1081 near Stamford (south) and A43_precip,0.0007717862
+link_A1 northbound between B645/B1048 and B1041_precip,0.0064983764
+link_A1 northbound exit for A47_precip,-0.025788255
+link_A1 northbound exit for A605_precip,-0.024282102
+link_A1 northbound exit for A6118_precip,-0.022849064
+link_A1 northbound within the A47 junction_precip,-0.00016493496
+link_A1 northbound within the A605 junction_precip,0.0043809908
+link_A1 northbound within the A6118 junction_precip,0.0007454162
+link_A1 southbound between A43 and B1081 near Stamford (south)_precip,-0.0014836695
+link_A1 southbound between B1041 and B645/B1048_precip,0.0030268987
+link_A1 southbound between B661 and B1041_precip,0.0018240932
+link_A1 southbound exit for A1(M)/A605/A1139_precip,-0.00572243
+link_A1 southbound exit for A43_precip,-0.007908472
+link_A1 southbound exit for A47_precip,-0.022290016
+link_A1 southbound exit for A605_precip,-0.041294422
+link_A1 southbound within the A47 junction_precip,0.001180611
+link_A1 southbound within the A605 junction_precip,0.0008057791
+link_A11 northbound access from A505_precip,-0.0001621616
+link_A11 northbound between A1301 and A505_precip,0.0042735017
+link_A11 northbound between A1307 and A1304_precip,0.0011352805
+link_A11 northbound between A14/A1304 and B1085 near Red Lodge (south)_precip,0.005247097
+link_A11 northbound between B1085 near Red Lodge (south) and B1085 near Red Lodge (north)_precip,0.0064595765
+link_A11 southbound between A1304 and A1307_precip,0.0041240943
+link_A11 southbound between A14 and A1304_precip,0.00016388582
+link_A11 southbound between A505 and A1301_precip,0.00037007272
+link_A11 southbound between B1085 near Red Lodge (south) and A14/A1304_precip,0.0052045756
+link_A11 southbound exit for A505_precip,-0.00069328275
+link_A14 J35 eastbound exit_precip,-0.010239504
+link_A14 J35 westbound exit_precip,-0.0018188189
+link_A14 eastbound between J33 and J34_precip,0.0016984852
+link_A14 eastbound within J20_precip,0.0027664078
+link_A14 eastbound within J35_precip,0.0028589205
+link_A14 westbound between J34 and J33_precip,0.0027964797
+link_A14 westbound between J39 and J38_precip,0.0027132875
+link_A14 westbound within J20_precip,0.0039580534
+link_A14 westbound within J35_precip,0.0038065547
+link_A14 westbound within J36_precip,-0.00022503434
+link_A428 eastbound at a minor junction between A1198 and A1303_precip,0.0045967847
+link_A428 eastbound between A1198 and A1303_precip,0.0047708293
+link_A428 eastbound between A1303 and M11/A14_precip,0.0070851594
+link_A428 eastbound between B1043 and B1428_precip,-0.0032649045
+link_A428 eastbound between B1428 and A1198_precip,-0.008869219
+link_A428 eastbound exit at a minor junction between A1198 and A1303_precip,-0.0047323275
+link_A428 eastbound exit for A1303_precip,-0.0016700547
+link_A428 westbound access from A1303_precip,-0.0030386774
+link_A428 westbound at a minor junction between A1303 and A1198_precip,0.0051569254
+link_A428 westbound between A1198 and B1428_precip,-0.006761706
+link_A428 westbound between A1303 and A1198_precip,-0.009247456
+link_A428 westbound between M11/A14 and A1303_precip,0.0064516
+link_A428 westbound exit at a minor junction between A1303 and A1198_precip,-0.0055500534
+link_A47 eastbound between A1139 and B1167 near Thorney (west)_precip,-0.016474564
+link_A47 eastbound between A1260 and A15 near Peterborough (west)_precip,-0.005682192
+link_A47 eastbound between B1040 and B1167 near Thorney (east)_precip,0.0064909696
+link_A47 eastbound between B1167 near Thorney (east) and A141_precip,-0.0026454118
+link_A47 eastbound between B1167 near Thorney (west) and B1040_precip,0.00093605893
+link_A47 westbound between A1260 and A1_precip,-0.0042194035
+link_A47 westbound between A15 near Peterborough (west) and A1260_precip,0.0019768972
+link_A47 westbound between B1040 and B1167 near Thorney (west)_precip,0.0037018869
+link_A47 westbound between B1167 near Thorney (east) and B1040_precip,0.008117524
+link_A47 westbound between B198 near Wisbech (west) and A141_precip,-0.0041138153
+link_Cambourne Road northbound between A1198 and A428_precip,-0.028395562
+link_Cambourne Road southbound between A428 and A1198_precip,-0.027824445
+link_road from A11 southbound to A14 westbound_precip,0.0033544346

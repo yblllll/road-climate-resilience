@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+venv/
+env/
+.venv/
+
+# Data (too large for GitHub)
+data/raw/
+data/uploads/
+*.dta
+*.csv.gz
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# LaTeX build files
+docs/paper/*.aux
+docs/paper/*.bbl
+docs/paper/*.blg
+docs/paper/*.log
+docs/paper/*.out
+docs/paper/*.fls
+docs/paper/*.fdb_latexmk
+docs/paper/*.synctex.gz
+
+# Literature PDFs (copyright - don't upload)
+docs/paper/Literature_Review/*.pdf
+
+# Large example data kept locally
+# data/example/ is OK (small files for demo)
+
+# Temp
+*.tmp
+.claude/

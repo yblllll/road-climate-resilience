@@ -1,0 +1,18 @@
+{
+    "family": "Gamma",
+    "link": "Log",
+    "standard_errors": "Clustered (linkname_num)",
+    "sample_restriction": "Weekdays only (Mon-Fri)",
+    "n_obs": null,
+    "n_clusters": null,
+    "deviance": null,
+    "pearson_chi2": null,
+    "aic": null,
+    "bic": null,
+    "log_likelihood": null,
+    "df_model": null,
+    "df_residual": null,
+    "deviance_per_df": null,
+    "pearson_per_df": null,
+    "_note": "Run scripts/export_stata_results.do in Stata to populate these values"
+}
