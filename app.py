@@ -58,90 +58,65 @@ def _img_to_b64(path):
             return _b64.b64encode(f.read()).decode()
     return None
 
-_logo_b64 = _img_to_b64(_logo_small_path)
+_logo_header_path = os.path.join(ASSETS_DIR, "dare_logo_header.png")
+_sunburst_path = os.path.join(ASSETS_DIR, "dare_sunburst.png")
+# Header center logo
+_logo_b64 = _img_to_b64(_logo_header_path) or _img_to_b64(_logo_small_path)
+# Sunburst background watermark
+_sunburst_b64 = _img_to_b64(_sunburst_path)
 _watermark_b64 = _img_to_b64(_watermark_path)
 
 # CSS for watermark background (sunburst SVG fallback if no image)
 _watermark_css = ""
-if _watermark_b64:
+if _sunburst_b64:
     _watermark_css = f"""
-    /* Watermark from image */
+    /* Sunburst watermark — centered background behind content */
     [data-testid="stAppViewContainer"]::before {{
         content: "";
         position: fixed;
-        bottom: -10%;
-        left: -5%;
-        width: 60%;
-        height: 80%;
-        background-image: url("data:image/png;base64,{_watermark_b64}");
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+        width: 50%;
+        height: 60%;
+        background-image: url("data:image/png;base64,{_sunburst_b64}");
         background-size: contain;
         background-repeat: no-repeat;
-        opacity: 0.04;
+        background-position: center;
+        opacity: 0.15;
         pointer-events: none;
         z-index: 0;
     }}
     """
 else:
-    # CSS-only sunburst watermark (approximation of the DARe starburst)
-    _watermark_css = f"""
-    [data-testid="stAppViewContainer"]::before {{
-        content: "";
-        position: fixed;
-        bottom: -15%;
-        left: -10%;
-        width: 500px;
-        height: 500px;
-        background: conic-gradient(
-            from 0deg,
-            transparent 0deg, {DARE_GREEN}08 5deg, transparent 10deg,
-            transparent 30deg, {DARE_GREEN}08 35deg, transparent 40deg,
-            transparent 60deg, {DARE_GREEN}08 65deg, transparent 70deg,
-            transparent 90deg, {DARE_GREEN}08 95deg, transparent 100deg,
-            transparent 120deg, {DARE_GREEN}08 125deg, transparent 130deg,
-            transparent 150deg, {DARE_GREEN}08 155deg, transparent 160deg,
-            transparent 180deg, {DARE_GREEN}08 185deg, transparent 190deg,
-            transparent 210deg, {DARE_GREEN}08 215deg, transparent 220deg,
-            transparent 240deg, {DARE_GREEN}08 245deg, transparent 250deg,
-            transparent 270deg, {DARE_GREEN}08 275deg, transparent 280deg,
-            transparent 300deg, {DARE_GREEN}08 305deg, transparent 310deg,
-            transparent 330deg, {DARE_GREEN}08 335deg, transparent 340deg,
-            transparent 360deg
-        );
-        border-radius: 50%;
-        opacity: 0.6;
-        pointer-events: none;
-        z-index: 0;
-    }}
-    """
+    _watermark_css = ""
 
-# Top-right logo CSS
+# Top header CSS with DARe logo centered
 _topright_logo_css = ""
 if _logo_b64:
     _topright_logo_css = f"""
-    /* Fixed white header bar — covers content when scrolling */
+    /* Fixed white header bar */
     [data-testid="stHeader"] {{
         background-color: #FFFFFF !important;
-        height: 70px !important;
+        height: 60px !important;
         border-bottom: 1px solid #e0e4e8;
         z-index: 998;
     }}
-    /* DARe logo inside the header bar */
+    /* DARe logo centered in header */
     [data-testid="stAppViewContainer"]::after {{
         content: "";
         position: fixed;
-        top: 8px;
-        left: 250px;
-        width: 200px;
-        height: 55px;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: 50px;
         background-image: url("data:image/png;base64,{_logo_b64}");
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
         pointer-events: none;
         z-index: 1000;
-    }}
-    /* Push main content below the 70px header */
-    .stMainBlockContainer {{
-        padding-top: 30px !important;
     }}
     """
 
@@ -1194,6 +1169,30 @@ elif page == "Run Your Own Analysis":
                         for fk, col_name in col_mapping.items():
                             st.write(f"  {field_defs[fk]['label']}  →  `{col_name}`")
 
+                    # ---- Custom additional columns ----
+                    with st.expander("Add extra variables (optional)"):
+                        st.markdown("""
+                        Add additional columns from your data as extra control variables in the regression.
+
+                        **Notes:**
+                        - Each added column will be included as an **additional regressor** in the GLM.
+                        - The column should be **numeric** (continuous or binary 0/1).
+                        - If your variable has a **non-linear** relationship with speed, please transform
+                          it before uploading (e.g., log, squared, binned) — the GLM assumes a linear
+                          relationship on the log-link scale.
+                        - Categorical variables should be converted to dummies before uploading.
+                        """)
+
+                        available_extra = [c for c in preview_df.columns if c not in col_mapping.values()]
+                        extra_cols = st.multiselect(
+                            "Select additional columns to include as regressors:",
+                            available_extra,
+                            help="These will be added as control variables alongside the default ones.",
+                            key="extra_cols",
+                        )
+                        if extra_cols:
+                            st.caption(f"Selected {len(extra_cols)} extra variable(s): {', '.join(extra_cols)}")
+
                     st.divider()
                     st.subheader("Analysis Configuration")
 
@@ -1657,6 +1656,10 @@ elif page == "About":
     | Road features | DfT Road Statistics | Open |
     | Transport disruptions | National Highways | Open |
     | Calendar controls | UK Gov / university websites | Open |
+
+    ### Citation
+
+    *To be added upon publication.*
 
     ### Author
 
