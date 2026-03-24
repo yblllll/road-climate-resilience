@@ -4,50 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Literature Analysis — Road Climate Resilience</title>
+<script src="d3.v7.min.js"></script>
 <style>
-:root { --navy: #00295e; --green: #4CAF50; --light: #f5f7fa; --border: #e0e4e8; --red: #e74c3c; --orange: #f39c12; --blue: #3498db; }
+:root { --navy: #00295e; --green: #4CAF50; --light: #f5f7fa; --border: #e0e4e8; --red: #e74c3c; --orange: #f39c12; --blue: #3498db; --purple: #7b1fa2; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--light); color: #333; }
 header { background: var(--navy); color: white; padding: 20px 40px; display: flex; align-items: center; gap: 20px; }
 header h1 { font-size: 1.5em; font-weight: 600; }
 header .subtitle { opacity: 0.8; font-size: 0.9em; }
 .tabs { display: flex; background: white; border-bottom: 2px solid var(--border); padding: 0 40px; position: sticky; top: 0; z-index: 100; }
-.tab { padding: 14px 24px; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 500; color: #666; transition: all 0.2s; }
+.tab { padding: 14px 20px; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 500; color: #666; transition: all 0.2s; font-size: 0.9em; }
 .tab:hover { color: var(--navy); }
 .tab.active { color: var(--navy); border-bottom-color: var(--navy); }
 .content { padding: 30px 40px; max-width: 1400px; margin: 0 auto; }
 .panel { display: none; }
 .panel.active { display: block; }
-
-/* Stats cards */
 .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 30px; }
 .stat-card { background: white; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
 .stat-card .value { font-size: 2em; font-weight: 700; color: var(--navy); }
 .stat-card .label { font-size: 0.85em; color: #888; margin-top: 4px; }
-
-/* Theme bars */
 .theme-bar-container { margin-bottom: 30px; }
 .theme-bar { display: flex; align-items: center; margin: 8px 0; }
 .theme-bar .theme-label { width: 280px; font-size: 0.9em; font-weight: 500; }
-.theme-bar .bar-bg { flex: 1; height: 28px; background: #eee; border-radius: 14px; overflow: hidden; position: relative; }
-.theme-bar .bar-fill { height: 100%; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em; font-weight: 600; transition: width 0.5s; }
-
-/* Matrix table */
+.theme-bar .bar-bg { flex: 1; height: 28px; background: #eee; border-radius: 14px; overflow: hidden; }
+.theme-bar .bar-fill { height: 100%; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8em; font-weight: 600; }
 .matrix-controls { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
 .matrix-controls input { padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9em; width: 250px; }
 .matrix-controls select { padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9em; }
-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-size: 0.85em; }
-th { background: var(--navy); color: white; padding: 12px 10px; text-align: left; cursor: pointer; white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-size: 0.82em; }
+th { background: var(--navy); color: white; padding: 10px 8px; text-align: left; cursor: pointer; white-space: nowrap; }
 th:hover { background: #003a80; }
-td { padding: 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+td { padding: 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
 tr:hover { background: #f0f4ff; }
 .check { color: var(--green); font-weight: bold; }
 .cross { color: var(--red); font-weight: bold; }
 .dash { color: #ccc; }
 .cite-count { font-weight: 600; color: var(--navy); }
 .if-badge { background: var(--navy); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
-
-/* Citation chain */
 .chain-container { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
 .chain-layer { margin: 20px 0; padding: 20px; border-left: 4px solid var(--navy); background: #f8fafc; border-radius: 0 8px 8px 0; }
 .chain-layer h3 { color: var(--navy); margin-bottom: 12px; }
@@ -55,342 +48,195 @@ tr:hover { background: #f0f4ff; }
 .chain-node:hover { background: var(--navy); color: white; transform: translateY(-2px); }
 .chain-node.policy { border-color: var(--orange); }
 .chain-node.policy:hover { background: var(--orange); }
-.chain-arrow { color: var(--navy); font-size: 1.2em; margin: 0 4px; }
-
-/* Paper cards */
-.paper-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 16px; }
+.paper-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 16px; }
 .paper-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 4px solid var(--navy); transition: transform 0.2s; }
 .paper-card:hover { transform: translateY(-3px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-.paper-card .pc-title { font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-.paper-card .pc-meta { font-size: 0.8em; color: #888; margin-bottom: 10px; }
-.paper-card .pc-method { background: #e8f0fe; color: var(--navy); padding: 3px 8px; border-radius: 4px; font-size: 0.8em; display: inline-block; margin-bottom: 8px; }
-.paper-card .pc-finding { font-size: 0.88em; line-height: 1.5; margin-bottom: 8px; }
-.paper-card .pc-innovation { font-size: 0.85em; color: #555; font-style: italic; }
+.paper-card .pc-title { font-weight: 600; color: var(--navy); margin-bottom: 6px; font-size: 0.95em; }
+.paper-card .pc-meta { font-size: 0.78em; color: #888; margin-bottom: 10px; }
 .paper-card .pc-themes { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
 .theme-tag { padding: 2px 8px; border-radius: 10px; font-size: 0.75em; font-weight: 600; }
 .theme-tag.a { background: #fdecea; color: var(--red); }
 .theme-tag.b { background: #e8f5e9; color: #2e7d32; }
 .theme-tag.c { background: #e3f2fd; color: #1565c0; }
 .theme-tag.d { background: #fff3e0; color: #e65100; }
-.theme-tag.e { background: #f3e5f5; color: #7b1fa2; }
-
-/* Gaps */
+.theme-tag.e { background: #f3e5f5; color: var(--purple); }
+.aspect-row { margin: 6px 0; }
+.aspect-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; color: white; cursor: pointer; }
+.aspect-badge.method { background: var(--blue); }
+.aspect-badge.conclusion { background: var(--green); }
+.aspect-badge.innovation { background: var(--orange); }
+.aspect-badge.limitation { background: var(--red); }
+.aspect-detail { font-size: 0.83em; line-height: 1.5; padding: 6px 0 6px 12px; border-left: 3px solid #ddd; margin: 4px 0 8px 0; color: #555; display: none; }
+.aspect-detail.show { display: block; }
+.pc-actions { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; }
+.pc-actions a { padding: 4px 12px; border-radius: 6px; font-size: 0.78em; text-decoration: none; border: 1px solid var(--border); background: white; color: var(--navy); cursor: pointer; transition: all 0.2s; }
+.pc-actions a:hover { background: var(--navy); color: white; }
+.pc-actions .pdf-btn { border-color: var(--green); color: var(--green); }
+.pc-actions .pdf-btn:hover { background: var(--green); color: white; }
+.relevance-section { margin-top: 10px; padding: 10px; border-radius: 8px; background: #f8fafc; font-size: 0.83em; display: none; }
+.relevance-section.show { display: block; }
+.relevance-indicator { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+.relevance-indicator.foundational { background: var(--green); }
+.relevance-indicator.complementary { background: var(--blue); }
+.relevance-indicator.contrasting { background: var(--orange); }
+.relevance-toggle { font-size: 0.78em; color: var(--navy); cursor: pointer; text-decoration: underline; margin-top: 6px; display: inline-block; }
 .gap-list { list-style: none; }
 .gap-list li { background: white; border-radius: 10px; padding: 16px 20px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 4px solid var(--orange); }
 .gap-list li strong { color: var(--navy); }
-
+.graph-container { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; position: relative; }
+.graph-tooltip { position: absolute; background: white; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); font-size: 0.85em; max-width: 320px; pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 10; }
+.graph-tooltip .gt-title { font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.graph-tooltip .gt-meta { font-size: 0.85em; color: #888; }
+.graph-tooltip .gt-finding { font-size: 0.88em; margin-top: 6px; }
+.graph-legend { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 12px; font-size: 0.8em; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.graph-legend-item { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.graph-legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+.graph-controls { display: flex; gap: 12px; margin-bottom: 12px; align-items: center; }
+.graph-controls label { font-size: 0.85em; color: #666; }
+.graph-controls select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85em; }
 @media (max-width: 768px) {
   .content { padding: 16px; }
-  .tabs { padding: 0 16px; overflow-x: auto; }
-  .tab { padding: 12px 16px; font-size: 0.85em; white-space: nowrap; }
+  .tabs { padding: 0 12px; overflow-x: auto; }
+  .tab { padding: 12px 14px; font-size: 0.8em; white-space: nowrap; }
   .paper-cards { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-
 <header>
   <div>
-    <h1>📚 Literature Analysis Dashboard</h1>
-    <div class="subtitle">Road Climate Resilience — 27 References Analyzed</div>
+    <h1>Literature Analysis Dashboard</h1>
+    <div class="subtitle">Road Climate Resilience — 27 References | 21 Full-Text PDFs | 5 Themes</div>
   </div>
 </header>
-
 <div class="tabs">
-  <div class="tab active" onclick="showPanel('overview')">Overview</div>
-  <div class="tab" onclick="showPanel('matrix')">Matrix Table</div>
-  <div class="tab" onclick="showPanel('chain')">Citation Chain</div>
-  <div class="tab" onclick="showPanel('cards')">Paper Cards</div>
-  <div class="tab" onclick="showPanel('gaps')">Knowledge Gaps</div>
+  <div class="tab active" onclick="showPanel('overview',this)">Overview</div>
+  <div class="tab" onclick="showPanel('matrix',this)">Matrix Table</div>
+  <div class="tab" onclick="showPanel('graph',this)">Citation Graph</div>
+  <div class="tab" onclick="showPanel('chain',this)">Citation Chain</div>
+  <div class="tab" onclick="showPanel('cards',this)">Paper Cards</div>
+  <div class="tab" onclick="showPanel('gaps',this)">Knowledge Gaps</div>
 </div>
-
 <div class="content">
-  <!-- OVERVIEW -->
   <div class="panel active" id="overview">
-    <h2 style="margin-bottom:20px; color:var(--navy);">Summary Statistics</h2>
+    <h2 style="margin-bottom:20px;color:var(--navy);">Summary Statistics</h2>
     <div class="stats-row">
       <div class="stat-card"><div class="value">27</div><div class="label">Total References</div></div>
-      <div class="stat-card"><div class="value">1972–2026</div><div class="label">Year Range</div></div>
-      <div class="stat-card"><div class="value">21</div><div class="label">Journal Articles</div></div>
+      <div class="stat-card"><div class="value">1972-2026</div><div class="label">Year Range</div></div>
+      <div class="stat-card"><div class="value">21</div><div class="label">Full-Text PDFs</div></div>
       <div class="stat-card"><div class="value">2024</div><div class="label">Median Year</div></div>
       <div class="stat-card"><div class="value">8</div><div class="label">UK-Based Studies</div></div>
     </div>
-
-    <h2 style="margin:30px 0 16px; color:var(--navy);">Theme Coverage</h2>
+    <h2 style="margin:30px 0 16px;color:var(--navy);">Theme Coverage</h2>
     <div class="theme-bar-container">
-      <div class="theme-bar">
-        <div class="theme-label">(A) Climate-Transport Policy</div>
-        <div class="bar-bg"><div class="bar-fill" style="width:56%;background:var(--red)">15 papers</div></div>
-      </div>
-      <div class="theme-bar">
-        <div class="theme-label">(B) Precipitation-Speed</div>
-        <div class="bar-bg"><div class="bar-fill" style="width:44%;background:var(--green)">12 papers</div></div>
-      </div>
-      <div class="theme-bar">
-        <div class="theme-label">(C) Network Resilience</div>
-        <div class="bar-bg"><div class="bar-fill" style="width:41%;background:var(--blue)">11 papers</div></div>
-      </div>
-      <div class="theme-bar">
-        <div class="theme-label">(D) Simulation vs Empirical</div>
-        <div class="bar-bg"><div class="bar-fill" style="width:63%;background:var(--orange)">17 papers</div></div>
-      </div>
-      <div class="theme-bar">
-        <div class="theme-label">(E) Open Data / Platforms</div>
-        <div class="bar-bg"><div class="bar-fill" style="width:7%;background:#7b1fa2">2 papers</div></div>
-      </div>
+      <div class="theme-bar"><div class="theme-label">(A) Climate-Transport Policy</div><div class="bar-bg"><div class="bar-fill" style="width:56%;background:var(--red)">15 papers</div></div></div>
+      <div class="theme-bar"><div class="theme-label">(B) Precipitation-Speed</div><div class="bar-bg"><div class="bar-fill" style="width:44%;background:var(--green)">12 papers</div></div></div>
+      <div class="theme-bar"><div class="theme-label">(C) Network Resilience</div><div class="bar-bg"><div class="bar-fill" style="width:41%;background:var(--blue)">11 papers</div></div></div>
+      <div class="theme-bar"><div class="theme-label">(D) Simulation vs Empirical</div><div class="bar-bg"><div class="bar-fill" style="width:63%;background:var(--orange)">17 papers</div></div></div>
+      <div class="theme-bar"><div class="theme-label">(E) Open Data / Platforms</div><div class="bar-bg"><div class="bar-fill" style="width:7%;background:var(--purple)">2 papers</div></div></div>
     </div>
-    <p style="background:#fff3e0;padding:14px 20px;border-radius:8px;border-left:4px solid var(--orange);margin-top:10px;">
-      ⚠️ <strong>Theme E (Open Data/Platforms)</strong> is critically under-represented — <strong>your paper fills this gap!</strong>
-    </p>
-
-    <h2 style="margin:30px 0 16px; color:var(--navy);">Method Distribution</h2>
+    <p style="background:#fff3e0;padding:14px 20px;border-radius:8px;border-left:4px solid var(--orange);margin-top:10px;"><strong>Theme E (Open Data/Platforms)</strong> is critically under-represented — <strong>your paper fills this gap!</strong></p>
+    <h2 style="margin:30px 0 16px;color:var(--navy);">Method Distribution</h2>
     <div class="stats-row">
       <div class="stat-card"><div class="value">7</div><div class="label">Statistical / Regression</div></div>
       <div class="stat-card"><div class="value">5</div><div class="label">Network Topology</div></div>
-      <div class="stat-card"><div class="value">3</div><div class="label">Agent-Based Simulation</div></div>
+      <div class="stat-card"><div class="value">3</div><div class="label">Agent-Based / Simulation</div></div>
       <div class="stat-card"><div class="value">4</div><div class="label">Literature Review</div></div>
       <div class="stat-card"><div class="value">4</div><div class="label">Policy / Evidence</div></div>
     </div>
   </div>
 
-  <!-- MATRIX TABLE -->
   <div class="panel" id="matrix">
-    <h2 style="margin-bottom:16px; color:var(--navy);">Literature Matrix</h2>
     <div class="matrix-controls">
-      <input type="text" id="searchInput" placeholder="🔍 Search by author, title, method..." oninput="filterTable()">
-      <select id="themeFilter" onchange="filterTable()">
-        <option value="">All Themes</option>
-        <option value="A">Theme A: Climate-Transport</option>
-        <option value="B">Theme B: Precipitation-Speed</option>
-        <option value="C">Theme C: Network Resilience</option>
-        <option value="D">Theme D: Simulation vs Empirical</option>
-        <option value="E">Theme E: Open Data/Platforms</option>
-      </select>
-      <select id="yearFilter" onchange="filterTable()">
-        <option value="">All Years</option>
-        <option value="2024">2024+</option>
-        <option value="2020">2020+</option>
-        <option value="2010">2010+</option>
-        <option value="0">Classic (pre-2010)</option>
-      </select>
+      <input type="text" id="searchInput" placeholder="Search author, title, method..." oninput="filterTable()">
+      <select id="themeFilter" onchange="filterTable()"><option value="">All themes</option><option value="A">A: Climate</option><option value="B">B: Precip-Speed</option><option value="C">C: Network</option><option value="D">D: Methods</option><option value="E">E: Open Data</option></select>
+      <select id="yearFilter" onchange="filterTable()"><option value="">All years</option><option value="2024">2024+</option><option value="2020">2020+</option><option value="2010">2010+</option><option value="0">Pre-2010</option></select>
+      <span id="tableCount" style="font-size:0.85em;color:#888;padding:8px;"></span>
     </div>
     <div style="overflow-x:auto;">
-      <table id="matrixTable">
-        <thead>
-          <tr>
-            <th onclick="sortTable(0)">Authors ↕</th>
-            <th onclick="sortTable(1)">Year ↕</th>
-            <th onclick="sortTable(2)">Title</th>
-            <th onclick="sortTable(3)">Journal</th>
-            <th onclick="sortTable(4)">Method</th>
-            <th onclick="sortTable(5)">Citations ↕</th>
-            <th onclick="sortTable(6)">IF ↕</th>
-            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
-          </tr>
-        </thead>
-        <tbody id="matrixBody"></tbody>
-      </table>
+    <table><thead><tr><th onclick="sortTable(0)">Authors</th><th onclick="sortTable(1)">Year</th><th onclick="sortTable(2)">Title</th><th onclick="sortTable(3)">Journal</th><th onclick="sortTable(4)">Method</th><th onclick="sortTable(5)">Cites</th><th onclick="sortTable(6)">IF</th><th>DOI</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr></thead><tbody id="matrixBody"></tbody></table>
     </div>
-    <div id="tableCount" style="margin-top:10px;color:#888;font-size:0.85em;"></div>
   </div>
 
-  <!-- CITATION CHAIN -->
+  <div class="panel" id="graph">
+    <h2 style="margin-bottom:16px;color:var(--navy);">Citation Relationship Graph</h2>
+    <p style="font-size:0.85em;color:#888;margin-bottom:12px;">Click a node to highlight connections. Double-click background to reset. Drag nodes to rearrange. Scroll to zoom.</p>
+    <div class="graph-controls">
+      <label>Highlight theme:</label>
+      <select id="graphThemeFilter" onchange="highlightGraphTheme(this.value)"><option value="">All</option><option value="a">A: Climate</option><option value="b">B: Precip-Speed</option><option value="c">C: Network</option><option value="d">D: Methods</option><option value="e">E: Open Data</option></select>
+    </div>
+    <div class="graph-container" id="graphContainer" style="position:relative;">
+      <svg id="citationSvg"></svg>
+      <div class="graph-tooltip" id="graphTooltip"></div>
+      <div class="graph-legend">
+        <div style="font-weight:600;margin-bottom:6px;color:var(--navy);">Themes</div>
+        <div class="graph-legend-item"><div class="graph-legend-dot" style="background:var(--red)"></div>A: Climate Policy</div>
+        <div class="graph-legend-item"><div class="graph-legend-dot" style="background:var(--green)"></div>B: Precip-Speed</div>
+        <div class="graph-legend-item"><div class="graph-legend-dot" style="background:var(--blue)"></div>C: Network</div>
+        <div class="graph-legend-item"><div class="graph-legend-dot" style="background:var(--orange)"></div>D: Methods</div>
+        <div class="graph-legend-item"><div class="graph-legend-dot" style="background:var(--purple)"></div>E: Open Data</div>
+        <hr style="margin:8px 0;border:none;border-top:1px solid #eee;">
+        <div style="font-size:0.85em;color:#888;">Node size = log(citations)<br>Arrows = thematic citation links</div>
+      </div>
+    </div>
+  </div>
+
   <div class="panel" id="chain">
-    <h2 style="margin-bottom:20px; color:var(--navy);">Citation Chain</h2>
     <div class="chain-container">
-      <div class="chain-layer">
-        <h3>🏛️ Foundational Layer (1972–1989)</h3>
-        <div class="chain-node">Nelder & Wedderburn 1972 — GLM framework</div>
-        <span class="chain-arrow">→</span>
-        <div class="chain-node">McCullagh & Nelder 1989 — GLM theory (2nd ed.)</div>
-        <br><br>
-        <div class="chain-node">Freeman 1977 — Betweenness centrality</div>
-      </div>
-      <div class="chain-layer">
-        <h3>📊 Empirical Foundations (2006–2017)</h3>
-        <div class="chain-node">Hranac et al. 2006 — Weather-speed relationships (FHWA)</div>
-        <span class="chain-arrow">→</span>
-        <div class="chain-node">Cai et al. 2016 — Heteroscedastic speed dispersion</div>
-        <br><br>
-        <div class="chain-node">Pregnolato et al. 2017 — Depth-disruption function</div>
-        <br><br>
-        <div class="chain-node">Ganin et al. 2017 — Resilience-efficiency paradox</div>
-        <span class="chain-arrow">→</span>
-        <div class="chain-node">Calvert & Snelder 2018 — LPIR resistance+recovery</div>
-      </div>
-      <div class="chain-layer">
-        <h3>🔬 Modern Integration (2021–2024)</h3>
-        <div class="chain-node">Bi et al. 2022 — City-level weather-traffic</div>
-        <span class="chain-arrow">→</span>
-        <div class="chain-node">Gao et al. 2024 — Road environment resilience</div>
-        <br><br>
-        <div class="chain-node">Bergantino et al. 2024 — Systematic empirical review</div>
-        <br>
-        <div class="chain-node">Stamos 2023 — Centrality for climate adaptation</div>
-        <span class="chain-arrow">→</span>
-        <div class="chain-node">Wassmer et al. 2024 — Gravity-model network</div>
-        <br>
-        <div class="chain-node">Li et al. 2024 — Percolation theory rainfall</div>
-        <br>
-        <div class="chain-node">Farahmand et al. 2024 — Climate projections + network</div>
-        <br>
-        <div class="chain-node">Raccagni et al. 2024 — Road characteristics → speed</div>
-      </div>
-      <div class="chain-layer">
-        <h3>🚀 Cutting Edge (2025–2026)</h3>
-        <div class="chain-node">He et al. 2026 — ABM flood-traffic Bristol</div>
-        <span class="chain-arrow">→</span>
-        <div class="chain-node">Liu et al. 2026 — Multi-factor rainfall impact</div>
-        <br><br>
-        <div class="chain-node">Becker et al. 2026 — Radar-FCD speed analysis</div>
-        <br>
-        <div class="chain-node">Zhou et al. 2026 — 30-year bibliometric synthesis</div>
-        <br>
-        <div class="chain-node">Wan et al. 2024/2025 — Post-pandemic travel + emissions</div>
-      </div>
-      <div class="chain-layer" style="border-left-color:var(--orange);">
-        <h3>📋 Policy Track</h3>
-        <div class="chain-node policy">DfT 2024 — UK evidence assessment</div>
-        <div class="chain-node policy">NH 2024 — SRN climate adaptation</div>
-        <div class="chain-node policy">NCE 2026 — Infrastructure deficit</div>
-        <div class="chain-node policy">UNECE 2024 — Stress test framework</div>
-      </div>
-      <div class="chain-layer" style="border-left-color:var(--green); background:#f0faf0;">
-        <h3>🎯 YOUR PAPER</h3>
-        <div class="chain-node" style="border-color:var(--green); background:#e8f5e9; font-weight:bold;">
-          Li & Wan 2026 — Gamma GLM + WLS + Open Streamlit Platform
-        </div>
-        <p style="margin-top:10px;font-size:0.9em;">Fills Theme E gap · UK SRN empirical evidence · Rapid alternative to simulation</p>
-      </div>
+      <h2 style="margin-bottom:20px;color:var(--navy);">Citation Chain: How Papers Build on Each Other</h2>
+      <div class="chain-layer"><h3>Foundational Layer (1972-1989)</h3><span class="chain-node">Nelder & Wedderburn 1972 — GLM framework</span><span style="margin:0 6px;">&rarr;</span><span class="chain-node">McCullagh & Nelder 1989 — GLM textbook</span><br><br><span class="chain-node">Freeman 1977 — Betweenness centrality</span></div>
+      <div class="chain-layer"><h3>Empirical Foundations (2006-2017)</h3><span class="chain-node">Hranac 2006 — Weather speed factors</span><span style="margin:0 6px;">&rarr;</span><span class="chain-node">Cai 2016 — Rainfall speed dispersion</span><br><br><span class="chain-node">Pregnolato 2017 — Depth-disruption function</span><br><br><span class="chain-node">Ganin 2017 — Resilience-efficiency paradox</span><span style="margin:0 6px;">&rarr;</span><span class="chain-node">Calvert 2018 — LPIR indicator</span></div>
+      <div class="chain-layer"><h3>Modern Integration (2021-2024)</h3><span class="chain-node">Bi 2022 — City-level weather-traffic</span> <span class="chain-node">Gao 2024 — Rainfall resilience</span> <span class="chain-node">Bergantino 2024 — Systematic review</span><br><br><span class="chain-node">Stamos 2023 — Centrality reformulation</span> <span class="chain-node">Wassmer 2024 — Gravity-model analysis</span> <span class="chain-node">Li 2024 — Percolation theory</span><br><br><span class="chain-node">Farahmand 2024 — Climate projections</span> <span class="chain-node">Raccagni 2024 — Road geometry V85</span> <span class="chain-node">Pulugurtha 2021 — AADT estimation</span></div>
+      <div class="chain-layer"><h3>Cutting Edge (2025-2026)</h3><span class="chain-node">He 2026 — Flood-ABM Bristol</span> <span class="chain-node">Liu 2026 — Multi-factor rainfall</span> <span class="chain-node">Becker 2026 — Radar+FCD speed</span> <span class="chain-node">Zhou 2026 — 30-year bibliometric</span><br><br><span class="chain-node">Wan 2024 — Post-pandemic (Gamma GLM)</span> <span class="chain-node">Wan 2025 — Emissions variability</span></div>
+      <div class="chain-layer" style="border-left-color:var(--orange);"><h3>Policy Parallel Track</h3><span class="chain-node policy">DfT 2024 — UK Evidence Assessment</span> <span class="chain-node policy">NH 2024 — SRN Adaptation</span> <span class="chain-node policy">NCE 2026 — Infrastructure Deficit</span> <span class="chain-node policy">UNECE 2024 — Stress Test Framework</span></div>
+      <div class="chain-layer" style="border-left-color:var(--green);background:#f0fff0;"><h3>Your Paper</h3><span class="chain-node" style="background:var(--green);color:white;border-color:var(--green);font-weight:600;">Li & Wan 2026 — Gamma GLM + WLS + Open Streamlit Platform</span></div>
     </div>
   </div>
 
-  <!-- PAPER CARDS -->
   <div class="panel" id="cards">
-    <h2 style="margin-bottom:16px; color:var(--navy);">Paper Details</h2>
-    <div class="matrix-controls">
-      <input type="text" id="cardSearch" placeholder="🔍 Search papers..." oninput="filterCards()">
-    </div>
+    <div style="margin-bottom:16px;"><input type="text" id="cardSearch" placeholder="Search papers..." oninput="filterCards()" style="padding:8px 14px;border:1px solid var(--border);border-radius:6px;font-size:0.9em;width:300px;"></div>
     <div class="paper-cards" id="paperCards"></div>
   </div>
 
-  <!-- KNOWLEDGE GAPS -->
   <div class="panel" id="gaps">
-    <h2 style="margin-bottom:20px; color:var(--navy);">Knowledge Gaps Identified</h2>
+    <h2 style="margin-bottom:20px;color:var(--navy);">Knowledge Gaps Identified</h2>
     <ul class="gap-list">
-      <li><strong>1. Open Platform Gap (Theme E)</strong><br>No study provides a reproducible, open-source platform integrating weather, traffic, and network data for road climate resilience analysis. <em>→ Your paper fills this gap.</em></li>
-      <li><strong>2. UK-Specific Empirical Gap</strong><br>Despite strong UK policy interest, most precipitation-speed studies use non-UK data (US, China, Germany). <em>→ Your paper provides UK SRN evidence.</em></li>
-      <li><strong>3. Functional Form Consensus</strong><br>No consensus on speed-rainfall relationship form (linear, exponential, threshold). <em>→ Gamma GLM offers a principled alternative.</em></li>
-      <li><strong>4. Multi-Factor Integration</strong><br>Only Liu et al. (2026) integrates multiple rainfall impact pathways. Most studies isolate a single mechanism.</li>
-      <li><strong>5. Temporal Resolution</strong><br>Most studies aggregate to hourly/daily. Sub-hourly linking rainfall bursts to real-time speed changes is rare.</li>
-      <li><strong>6. Recovery Dynamics</strong><br>Calvert & Snelder (2018) highlight recovery as essential, but few studies measure post-rainfall speed recovery.</li>
-      <li><strong>7. Local Road Gap</strong><br>Most resilience studies focus on highways. Local road network resilience under rainfall is largely unstudied.</li>
-      <li><strong>8. Validation Gap</strong><br>Cross-validation between simulation predictions and empirical observations under same conditions is almost absent.</li>
+      <li><strong>1. Open Platform Gap (Theme E):</strong> No study provides a reproducible, open-source platform integrating weather, traffic, and network data. <em style="color:var(--green);">Your paper fills this gap!</em></li>
+      <li><strong>2. UK-Specific Empirical Gap:</strong> Most precipitation-speed studies use non-UK data. <em style="color:var(--green);">Your paper provides UK SRN evidence!</em></li>
+      <li><strong>3. Functional Form Consensus:</strong> Linear vs exponential vs threshold — no consensus. <em style="color:var(--green);">Gamma GLM offers a principled alternative!</em></li>
+      <li><strong>4. Multi-Factor Integration:</strong> Only Liu et al. (2026) integrates multiple rainfall impact pathways.</li>
+      <li><strong>5. Temporal Resolution:</strong> Most studies aggregate to hourly/daily. Sub-hourly analysis is rare.</li>
+      <li><strong>6. Recovery Dynamics:</strong> Few studies measure how quickly speeds return after rainfall cessation.</li>
+      <li><strong>7. Local Road Gap:</strong> Most resilience studies focus on highways and strategic roads.</li>
+      <li><strong>8. Validation Gap:</strong> Cross-validation between simulation and empirical under same conditions is almost absent.</li>
     </ul>
   </div>
 </div>
 
 <script>
-const papers = [
-  {key:"wan2024paradox",authors:"Wan, Huang",year:2024,title:"⭐ Paradox of Post-Pandemic Travel",journal:"Travel Behaviour and Society",method:"Gamma GLM with log-link + NB regression",finding:"Post-pandemic car travel fell 11.6% but journey times rose 12%; uses Gamma GLM (same as our approach); precipitation increases car use",innovation:"Gamma GLM precedent for our method — same DARe project, same city (Cambridge)",citations:"~5",if_val:"N/A",a:"✓",b:"✓",c:"-",d:"✓",e:"-"},
-  {key:"wan2025variability",authors:"Wan, Zhang",year:2025,title:"Variability of Transport Emissions",journal:"Int. J. Urban Sciences",method:"Latent Profile Models + NTS data",finding:"Intra-week variability substantial; speed-emissions relationship documented; SEC effect dissolves when compositional factors controlled",innovation:"Latent profile approach for unobserved traveller groups; compositional confounding warning for rainfall-speed studies",citations:"~2",if_val:"3.0",a:"✓",b:"-",c:"-",d:"✓",e:"-"},
-  {key:"hranac2006",authors:"Hranac et al.",year:2006,title:"Empirical Studies on Traffic Flow in Inclement Weather",journal:"FHWA Report",method:"Empirical loop detector analysis",finding:"Rain reduces free-flow speed by 2-6.5% and capacity by 4-11%",innovation:"Weather adjustment factors for speed-at-capacity",citations:"~350",if_val:"N/A",a:"✗",b:"✓",c:"-",d:"✓",e:"-"},
-  {key:"gao2024",authors:"Gao, Hu, Wang",year:2024,title:"Resilience Analysis Road Traffic to Rainfall",journal:"TRD",method:"Probabilistic modelling + hierarchical clustering",finding:"Resilience decreases 6.7% per 10mm rainfall below 50mm",innovation:"Links road environment to resilience patterns",citations:"~15",if_val:"8.6",a:"✗",b:"✓",c:"✓",d:"✓",e:"-"},
-  {key:"bergantino2024",authors:"Bergantino, Gardelli, Rotaris",year:2024,title:"Assessing Transport Network Resilience",journal:"Transport Reviews",method:"Systematic review (53 papers)",finding:"Spatial resilience patterns influenced by topology and land use",innovation:"First systematic review of empirical resilience studies",citations:"~20",if_val:"9.9",a:"✓",b:"-",c:"✓",d:"✓",e:"-"},
-  {key:"ganin2017",authors:"Ganin et al.",year:2017,title:"Resilience and Efficiency in Networks",journal:"Science Advances",method:"Network topology + percolation theory",finding:"Efficient networks are often fragile — resilience-efficiency paradox",innovation:"First large-scale demo of resilience-efficiency trade-off",citations:"~360",if_val:"12.5",a:"-",b:"-",c:"✓",d:"-",e:"-"},
-  {key:"calvert2018",authors:"Calvert, Snelder",year:2018,title:"Methodology for Road Traffic Resilience",journal:"Transportmetrica A",method:"LPIR indicator",finding:"Resilience depends on both resistance and recovery",innovation:"LPIR covering resistance + recovery phases",citations:"~130",if_val:"3.1",a:"✗",b:"-",c:"✓",d:"✓",e:"-"},
-  {key:"pregnolato2017",authors:"Pregnolato et al.",year:2017,title:"Flood Impact: Depth-Disruption Function",journal:"TRD",method:"Curve fitting (depth-disruption)",finding:"Nonlinear depth-speed relationship (R²=0.95)",innovation:"Continuous depth-disruption function replacing binary assumption",citations:"~280",if_val:"8.6",a:"✗",b:"✓",c:"-",d:"✓",e:"-"},
-  {key:"farahmand2024",authors:"Farahmand et al.",year:2024,title:"Climate Projections + Network Analysis",journal:"TRD",method:"Climate downscaling + probabilistic network",finding:"Climate projections can identify future critical links",innovation:"Bridges climate science with transport resilience planning",citations:"~10",if_val:"8.6",a:"✓",b:"-",c:"✓",d:"-",e:"-"},
-  {key:"he2026",authors:"He et al.",year:2026,title:"Flood-Traffic ABM Simulation (Bristol)",journal:"IJDRR",method:"Agent-based (MATSim)",finding:"Flood congestion propagates far beyond flooded areas",innovation:"Couples flood hazard with dynamic traffic assignment",citations:"~0",if_val:"5.4",a:"✓",b:"✓",c:"✓",d:"✓",e:"-"},
-  {key:"huang2022",authors:"Huang et al.",year:2022,title:"Overview of ABMs for Transport",journal:"J. Adv. Transportation",method:"Systematic review of ABM tools (micro/meso/macro)",finding:"ABMs excel at emergent behaviour but computationally expensive; weather as 'disruptor agent'; supports empirical approaches as faster alternative",innovation:"ABM toolkit taxonomy; weather-as-disruptor-agent pattern; calibration gap identified",citations:"~45",if_val:"2.5",a:"-",b:"-",c:"-",d:"✓",e:"-"},
-  {key:"becker2026",authors:"Becker, Ulbrich, Rust",year:2026,title:"Rainfall Impact on Speed: Radar+FCD",journal:"Future Transportation",method:"Linear regression (radar+FCD)",finding:"Heavy rain reduces highway speeds >30% at 130km/h zones",innovation:"High-resolution weather radar + 1.5M road-section FCD",citations:"~0",if_val:"1.7",a:"-",b:"✓",c:"-",d:"✓",e:"✓"},
-  {key:"cai2016",authors:"Cai, Xu, Yin",year:2016,title:"Rainfall Effects on Speed Dispersion",journal:"J. Transportation Eng.",method:"Exponential regression",finding:"Speed dispersion increases with rainfall intensity",innovation:"Models heteroscedastic speed variance under rain",citations:"~80",if_val:"N/A",a:"-",b:"✓",c:"-",d:"✓",e:"-"},
-  {key:"bi2022",authors:"Bi, Ye, Zhu",year:2022,title:"Weather Impacts on Urban Traffic",journal:"Urban Climate",method:"Regression + Decision Trees",finding:"Precipitation causes congestion, varies by city",innovation:"City-level data-driven weather-traffic framework",citations:"~35",if_val:"7.8",a:"✗",b:"✓",c:"-",d:"✓",e:"-"},
-  {key:"li2024",authors:"Li et al.",year:2024,title:"Highway Resilience: Percolation Theory",journal:"Physica A",method:"Data-driven percolation theory",finding:"Speed decline rate as percolation indicator; critical rainfall thresholds",innovation:"Percolation theory for functional degradation (not link removal)",citations:"~10",if_val:"3.5",a:"-",b:"✓",c:"✓",d:"✓",e:"✓"},
-  {key:"liu2026",authors:"Liu, Xu, Wan, MacAskill",year:2026,title:"Road Resilience Under Extreme Rainfall",journal:"IJDRR",method:"Dynamic traffic assignment (LTM)",finding:"Multi-factor integration reveals much larger delays than single-factor",innovation:"First framework integrating 3 rainfall pathways + delay propagation",citations:"~0",if_val:"5.4",a:"✓",b:"✓",c:"✓",d:"✓",e:"-"},
-  {key:"wassmer2024",authors:"Wassmer, Merz, Marwan",year:2024,title:"Network Resilience to Road Failures",journal:"Chaos",method:"Gravity-model traffic centrality + OSM/GHSL",finding:"Ahr Valley 2021 flood: cascading delays far from epicenter; car usage increases with rainfall (German Mobility Panel)",innovation:"Novel gravity-model with Delta-T metric; open-data approach; binary failure — gap for continuous speed degradation",citations:"~10",if_val:"3.1",a:"✓",b:"-",c:"✓",d:"-",e:"-"},
-  {key:"stamos2023",authors:"Stamos",year:2023,title:"Centrality Measures for Climate Adaptation",journal:"Future Transportation",method:"Review of 17 centrality measures (4 categories)",finding:"Betweenness/closeness should use transit time not distance; information centrality best for disruption; weather gap in traffic models",innovation:"Systematic centrality assessment; explicitly identifies weather-gap in traffic flow models",citations:"~10",if_val:"1.7",a:"✓",b:"-",c:"✓",d:"-",e:"-"},
-  {key:"raccagni2024",authors:"Raccagni et al.",year:2024,title:"Road Characteristics → Vehicle Speed",journal:"Heliyon",method:"MLR on V85 (48K+ spot speeds, Brescia)",finding:"R²_adj=85.8%; road geometry dominates; traffic calming NOT significant; assumes normality (contrast with Gamma GLM)",innovation:"Largest urban V85 sample; novel predictors; demonstrates road geometry over traffic calming",citations:"~5",if_val:"4.0",a:"-",b:"✓",c:"-",d:"✓",e:"-"},
-  {key:"zhou2026",authors:"Zhou et al.",year:2026,title:"30-Year Bibliometric Analysis",journal:"Progress in Disaster Science",method:"Bibliometric + keyword co-occurrence (2000+ publications)",finding:"Rainfall-transport at intersection of climate impact + risk assessment clusters; calls for integrated simulation platforms",innovation:"Validates rainfall-transport as active research frontier; identifies gap in real-time weather-to-performance linkage",citations:"~0",if_val:"4.9",a:"✓",b:"-",c:"✓",d:"-",e:"-"},
-  {key:"pulugurtha2021",authors:"Pulugurtha, Mathew",year:2021,title:"Modelling AADT on Local Roads",journal:"J. Transport Geography",method:"OLS + GWR regression (North Carolina)",finding:"GWR significantly outperforms OLS; spatial non-stationarity key; road density/land use predict local road traffic",innovation:"GWR superiority for spatially-varying estimation; supports spatially-varying coefficients in road performance models",citations:"~25",if_val:"5.9",a:"-",b:"-",c:"-",d:"✓",e:"-"},
-  {key:"mccullagh1989",authors:"McCullagh, Nelder",year:1989,title:"Generalized Linear Models (2nd ed.)",journal:"Chapman & Hall",method:"GLM theoretical framework",finding:"GLMs unify regression under exponential family",innovation:"Foundational GLM theory and practice",citations:"~30000",if_val:"N/A",a:"-",b:"-",c:"-",d:"✓",e:"-"},
-  {key:"nelder1972",authors:"Nelder, Wedderburn",year:1972,title:"Generalized Linear Models",journal:"JRSS Series A",method:"IWLS for exponential family",finding:"MLE via iterative weighted least squares",innovation:"Seminal paper introducing the GLM framework",citations:"~8000",if_val:"N/A",a:"-",b:"-",c:"-",d:"✓",e:"-"},
-  {key:"freeman1977",authors:"Freeman",year:1977,title:"Centrality Based on Betweenness",journal:"Sociometry",method:"Graph-theoretic betweenness",finding:"Betweenness captures node control potential",innovation:"Introduced betweenness centrality as formal measure",citations:"~15000",if_val:"N/A",a:"-",b:"-",c:"✓",d:"-",e:"-"}
-];
+const papers=[{key:"wan2024paradox",authors:"Wan, Huang",year:2024,title:"Paradox of Post-Pandemic Travel (Gamma GLM)",journal:"SSRN / Travel Behav. Soc.",method:"Gamma GLM with log-link + NB regression",finding:"Post-pandemic car travel fell 11.6% but journey times rose 12%",innovation:"Gamma GLM precedent for Cambridge journey time",citations:"~5",if_val:"N/A",doi:"10.2139/ssrn.4970168",pdfFile:"Wan_2024_Paradox_Post_Pandemic_Travel.pdf",methodDetail:"Gamma GLM with log-link for journey time; NB regression for counts. Breusch-Pagan test confirms heteroscedasticity. Controls: hour, day, month, school/university term, bank holidays, events, roadworks, accidents, weather.",conclusionDetail:"Post-pandemic car travel fell 11.6% yet journey times rose 12%, driven by road space reallocation. Precipitation increases car use while reducing cycling.",innovationDetail:"First DARe-funded study using Gamma GLM for Cambridge journey time. Cites Arezoumandi (2011), Guessous et al. (2014), Polus (1979) as statistical justification.",limitationDetail:"Cambridge-specific; preprint (not peer-reviewed); separate camera sets for counts vs times; Gamma GLM applied to journey time not speed-rainfall.",relevanceType:"foundational",relevanceNote:"Direct methodological precedent \u2014 same GLM family, same project, same city. Our work extends to rainfall-speed and adds the Streamlit platform.",a:"\u2713",b:"\u2713",c:"-",d:"\u2713",e:"-"},{key:"wan2025variability",authors:"Wan, Zhang",year:2025,title:"Variability of Transport Emissions",journal:"Int. J. Urban Sciences",method:"Latent Profile Models + OLS + NTS data",finding:"SEC insignificant once compositional effects controlled",innovation:"Latent profile approach; compositional confounding warning",citations:"~2",if_val:"3.0",doi:"10.1080/12265934.2025.2452512",pdfFile:"Wan_2025_Transport_Emissions_Policy.pdf",methodDetail:"OLS regression on log(emissions); latent profile model (5-class) using weekday/weekend emissions + CoV. Applied to 2019 English NTS (14,712 individuals).",conclusionDetail:"SEC becomes insignificant after controlling for trip day, mode, purpose. Super-emitters (7%) produce ~30% of emissions. Speed-emissions R\u00b2=0.47.",innovationDetail:"First latent profile models for unobserved traveller emission groups. Warns that aggregate correlations dissolve under compositional controls.",limitationDetail:"Descriptive only; one-week diary; no spatial controls; England 2019 specific.",relevanceType:"complementary",relevanceNote:"Same DARe project. Warns about compositional confounding \u2014 relevant for interpreting rainfall-speed correlations.",a:"\u2713",b:"-",c:"-",d:"\u2713",e:"-"},{key:"hranac2006",authors:"Hranac et al.",year:2006,title:"Traffic Flow in Inclement Weather",journal:"FHWA Report",method:"Empirical loop detector analysis (US freeways)",finding:"Rain reduces free-flow speed 2-6.5%, capacity 4-11%",innovation:"Established weather adjustment factors for speed-at-capacity",citations:"~350",if_val:"N/A",url:"https://ops.fhwa.dot.gov/publications/weatherempirical/",pdfFile:"Hranac_2006_Traffic_Inclement_Weather.pdf",methodDetail:"Empirical analysis of loop detector data from multiple US freeway sites under various weather conditions. Regression-based weather adjustment factors.",conclusionDetail:"Rain reduces free-flow speed by 2-6.5% and capacity by 4-11%. Snow larger effects (5-17%). Factors vary by intensity and location.",innovationDetail:"First comprehensive empirical quantification of weather effects on speed-flow relationships. Benchmark factors still referenced 20 years later.",limitationDetail:"US freeway only; pre-2006 detector technology; limited weather resolution; fixed-point detection only.",relevanceType:"foundational",relevanceNote:"Seminal reference. Our Gamma GLM provides a more principled statistical framework for these effects.",a:"\u2717",b:"\u2713",c:"-",d:"\u2713",e:"-"},{key:"gao2024",authors:"Gao, Hu, Wang",year:2024,title:"Resilience of Road Traffic to Rainfall",journal:"TRD",method:"Probabilistic modelling + hierarchical clustering",finding:"Resilience decreases 6.7% per 10mm rainfall below 50mm",innovation:"Links road environment to resilience patterns",citations:"~15",if_val:"8.6",doi:"10.1016/j.trd.2023.104000",pdfFile:"Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",methodDetail:"Probabilistic resilience modelling with hierarchical clustering of road environments. Segments classified by land use, geometry, connectivity. Harbin, China.",conclusionDetail:"Resilience decreases ~6.7% per 10mm rainfall below 50mm. Road environment (land use, connectivity) significantly mediates the relationship.",innovationDetail:"Goes beyond rainfall intensity alone to incorporate road environment context. Identical rainfall produces different outcomes by infrastructure type.",limitationDetail:"Single city (Harbin); winter-dominated climate; may not generalize to UK maritime climate.",relevanceType:"complementary",relevanceNote:"Road context matters for rainfall impact. Our model could incorporate environmental covariates in the Gamma GLM.",a:"\u2717",b:"\u2713",c:"\u2713",d:"\u2713",e:"-"},{key:"bergantino2024",authors:"Bergantino, Gardelli, Rotaris",year:2024,title:"Assessing Transport Network Resilience",journal:"Transport Reviews",method:"Systematic review (53 empirical papers)",finding:"Spatial resilience influenced by topology and land use",innovation:"First systematic review of empirical resilience studies",citations:"~20",if_val:"9.9",doi:"10.1080/01441647.2024.2322434",pdfFile:"Bergantino_2024_Transport_Network_Resilience.pdf",methodDetail:"PRISMA-guided systematic review of 53 empirical transport resilience papers. Classification by method, scale, and hazard type.",conclusionDetail:"Transport resilience is spatially heterogeneous. Topology and land use are key determinants. Methods remain fragmented across disciplines.",innovationDetail:"First systematic review focused specifically on empirical (not theoretical) resilience studies. Maps the methodological landscape.",limitationDetail:"English-language only; publication bias; review cannot assess causality.",relevanceType:"complementary",relevanceNote:"Validates our empirical approach. The field needs standardized methods \u2014 our Gamma GLM + platform contributes.",a:"\u2713",b:"-",c:"\u2713",d:"\u2713",e:"-"},{key:"ganin2017",authors:"Ganin et al.",year:2017,title:"Resilience and Efficiency in Networks",journal:"Science Advances",method:"Percolation theory + topology (40 US cities)",finding:"Efficient networks are often fragile \u2014 resilience-efficiency paradox",innovation:"First large-scale demo of resilience-efficiency trade-off",citations:"~360",if_val:"12.5",doi:"10.1126/sciadv.1701079",pdfFile:"Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf",methodDetail:"Percolation theory and network topology applied to 40 US urban road networks. Measures efficiency (avg travel time) and resilience (performance under node removal).",conclusionDetail:"Networks optimized for efficiency tend to be less resilient. This paradox has profound implications for infrastructure design.",innovationDetail:"First large-scale empirical demonstration of resilience-efficiency trade-off. Highest-impact paper in this corpus (Science Advances).",limitationDetail:"Purely topological (ignores traffic flows/speeds); US only; random/targeted removal may not reflect real failures.",relevanceType:"complementary",relevanceNote:"Network-level context. Speed degradation from rainfall could be modelled as partial capacity reduction in this framework.",a:"-",b:"-",c:"\u2713",d:"-",e:"-"},{key:"calvert2018",authors:"Calvert, Snelder",year:2018,title:"Road Traffic Resilience Methodology",journal:"Transportmetrica A",method:"LPIR indicator (resistance + recovery)",finding:"Resilience needs both resistance and recovery phases",innovation:"LPIR covering both phases in single metric",citations:"~130",if_val:"3.1",doi:"10.1080/23249935.2017.1363315",pdfFile:"Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",methodDetail:"Develops LPIR combining resistance (performance drop) and recovery (return speed). Applied to motorway corridor case study.",conclusionDetail:"Resistance alone is insufficient. Networks with similar resistance can differ greatly in resilience due to recovery speed differences.",innovationDetail:"First metric formally integrating resistance and recovery into single resilience indicator for road traffic.",limitationDetail:"Single corridor test; limited empirical validation at scale; does not address degradation causes.",relevanceType:"complementary",relevanceNote:"Our model captures resistance (speed reduction). Future work could measure recovery (speed return after rain) using LPIR.",a:"\u2717",b:"-",c:"\u2713",d:"\u2713",e:"-"},{key:"pregnolato2017",authors:"Pregnolato et al.",year:2017,title:"Flood Impact: Depth-Disruption Function",journal:"TRD",method:"Curve fitting (depth-disruption, video analysis)",finding:"Nonlinear depth-speed relationship (R\u00b2=0.95)",innovation:"Continuous function replacing binary open/closed assumption",citations:"~280",if_val:"8.6",doi:"10.1016/j.trd.2017.06.020",pdfFile:"Pregnolato_2017_Flood_Impact_Road_Transport.pdf",methodDetail:"Curve fitting to observed flood depth vs vehicle speed. Video analysis of vehicles in Newcastle floods. Develops continuous depth-disruption function.",conclusionDetail:"Vehicle speed decreases nonlinearly with flood depth (R\u00b2=0.95). At 300mm, most vehicles stop. Replaces binary open/closed.",innovationDetail:"First continuous function relating flood depth to speed reduction. Enables graduated impact assessment.",limitationDetail:"Limited Newcastle events; historical depth measurements may lack precision; no driver/vehicle type distinctions.",relevanceType:"complementary",relevanceNote:"Pioneered continuous disruption modelling for flooding. Our Gamma GLM does the same for rainfall intensity (not depth).",a:"\u2717",b:"\u2713",c:"-",d:"\u2713",e:"-"},{key:"farahmand2024",authors:"Farahmand et al.",year:2024,title:"Climate Projections + Network Analysis",journal:"TRD",method:"Climate downscaling + probabilistic network",finding:"Climate projections identify future critical links",innovation:"Bridges climate science with transport planning",citations:"~10",if_val:"8.6",doi:"10.1016/j.trd.2024.104234",pdfFile:null,methodDetail:"Downscaled climate projections combined with probabilistic network vulnerability analysis to identify road links most at risk under future scenarios.",conclusionDetail:"Climate model outputs can be integrated with transport vulnerability. Identifies links increasingly vulnerable under projected climate change.",innovationDetail:"Operationalizes the climate-transport connection through probabilistic methods rather than deterministic scenarios.",limitationDetail:"Climate projection uncertainty propagates; simplified demand; US case study.",relevanceType:"complementary",relevanceNote:"Complementary: our empirical model could feed into future climate-transport projections.",a:"\u2713",b:"-",c:"\u2713",d:"-",e:"-"},{key:"he2026",authors:"He et al.",year:2026,title:"Flood-Traffic ABM Simulation (Bristol)",journal:"IJDRR",method:"Agent-based simulation (MATSim + flood model)",finding:"Flood congestion propagates far beyond flooded areas",innovation:"Couples flood hazard with dynamic traffic assignment",citations:"~0",if_val:"5.4",doi:"10.1016/j.ijdrr.2026.106053",pdfFile:"He_2026_Flood_ABM_Bristol.pdf",methodDetail:"MATSim agent-based simulation coupled with flood hazard model. Individual vehicle routing under flood-induced closures across Bristol.",conclusionDetail:"Flood congestion propagates far beyond flooded areas through rerouting cascades. Disruption extent greatly exceeds flood footprint.",innovationDetail:"First coupling of detailed flood model with full ABM microsimulation for a UK city (Bristol).",limitationDetail:"Bristol-specific; high computational cost; binary flood status (not graduated).",relevanceType:"contrasting",relevanceNote:"Simulation (ABM) vs our empirical approach. Their binary flood vs our continuous Gamma GLM highlights complementary strengths.",a:"\u2713",b:"\u2713",c:"\u2713",d:"\u2713",e:"-"},{key:"huang2022",authors:"Huang et al.",year:2022,title:"Overview of ABMs for Transport",journal:"J. Adv. Transportation",method:"Systematic review of ABM tools",finding:"ABMs excel at emergent behaviour but computationally expensive",innovation:"ABM toolkit taxonomy; weather-as-disruptor-agent pattern",citations:"~45",if_val:"2.5",doi:"10.1155/2022/1252534",pdfFile:"Huang_2022_Agent_Based_Models_Transport_Simulation.pdf",methodDetail:"Systematic review of ABM tools (MATSim, SUMO, TRANSIMS, AnyLogic, NetLogo) categorized by temporal scale.",conclusionDetail:"ABMs capture emergent behaviour but need heavy calibration and computational resources. No standard calibration guidelines exist.",innovationDetail:"Most comprehensive ABM taxonomy. Weather as 'disruptor agent' pattern. Supports empirical alternatives as faster option.",limitationDetail:"Review paper; no empirical validation; most ABMs lack calibration standards; computational cost limits city-scale use.",relevanceType:"contrasting",relevanceNote:"ABMs are expensive and hard to calibrate. Our Gamma GLM + Streamlit is faster and more accessible for practitioners.",a:"-",b:"-",c:"-",d:"\u2713",e:"-"},{key:"becker2026",authors:"Becker, Ulbrich, Rust",year:2026,title:"Rainfall Impact on Speed: Radar+FCD",journal:"Future Transportation",method:"Linear regression (radar + 1.5M FCD records)",finding:"Heavy rain reduces highway speeds >30% at 130km/h zones",innovation:"High-resolution weather radar + massive FCD dataset",citations:"~0",if_val:"1.7",doi:"10.3390/futuretransp6010038",pdfFile:"Becker_2026_Impact_Rainfall_Driving_Speed.pdf",methodDetail:"Linear regression combining high-resolution weather radar with 1.5M road-section FCD records on German highways.",conclusionDetail:"Heavy rainfall reduces speeds >30% in 130 km/h zones. Higher-speed roads have proportionally larger absolute reductions.",innovationDetail:"First study combining high-res radar with massive FCD at road-section level. Unprecedented spatial/temporal granularity.",limitationDetail:"Linear regression only (may miss thresholds); German autobahn only; no capacity/congestion modelling.",relevanceType:"complementary",relevanceNote:"Closest comparison. Our Gamma GLM is more flexible than their linear regression. UK SRN vs German autobahn.",a:"-",b:"\u2713",c:"-",d:"\u2713",e:"\u2713"},{key:"cai2016",authors:"Cai, Xu, Yin",year:2016,title:"Rainfall Effects on Speed Dispersion",journal:"J. Transportation Eng.",method:"Exponential regression (loop detector, HK)",finding:"Speed dispersion increases exponentially with rainfall",innovation:"Models heteroscedastic speed variance under rain",citations:"~80",if_val:"N/A",doi:"10.1061/(ASCE)TE.1943-5436.0000833",pdfFile:"Cai_2016_Rainfall_Speed_Dispersion.pdf",methodDetail:"Exponential regression for speed-rainfall relationship plus speed dispersion model. Loop detector data from Hong Kong urban arterials.",conclusionDetail:"Speed dispersion increases exponentially with rainfall intensity. Variance widens significantly \u2014 safety implications beyond congestion.",innovationDetail:"First to model heteroscedastic speed variance under rainfall. Shows rainfall increases variability, not just reduces mean.",limitationDetail:"Loop detector only; Hong Kong specific; limited intensity range; no rainfall type distinction.",relevanceType:"foundational",relevanceNote:"Documents heteroscedasticity supporting our Gamma GLM choice (handles non-constant variance) over OLS.",a:"-",b:"\u2713",c:"-",d:"\u2713",e:"-"},{key:"bi2022",authors:"Bi, Ye, Zhu",year:2022,title:"Weather Impacts on Urban Traffic",journal:"Urban Climate",method:"Regression + decision trees (multi-city China)",finding:"Precipitation causes congestion; varies by city",innovation:"City-level data-driven weather-traffic framework",citations:"~35",if_val:"7.8",doi:"10.1016/j.uclim.2021.101065",pdfFile:"Bi_2022_Weather_Urban_Traffic.pdf",methodDetail:"Regression + decision tree models at city level across multiple Chinese cities. Aggregated traffic index data.",conclusionDetail:"Precipitation consistently increases congestion across all cities, but magnitude varies with city characteristics.",innovationDetail:"First multi-city comparison of weather-traffic relationships. One-size-fits-all adjustment factors are inappropriate.",limitationDetail:"City-level aggregation (not link-level); Chinese cities only; limited weather granularity.",relevanceType:"complementary",relevanceNote:"Supports context-dependency. Our UK-specific Gamma GLM fills the gap for UK context.",a:"\u2717",b:"\u2713",c:"-",d:"\u2713",e:"-"},{key:"li2024",authors:"Li et al.",year:2024,title:"Highway Resilience: Percolation Theory",journal:"Physica A",method:"Data-driven percolation theory (East Midlands UK)",finding:"Critical rainfall thresholds where network degrades sharply",innovation:"Percolation for functional degradation (speed), not link removal",citations:"~10",if_val:"3.5",doi:"10.1016/j.physa.2024.129639",pdfFile:"Li_2024_Percolation_Highway_Rainfall.pdf",methodDetail:"Percolation theory using speed decline rate as indicator. Open traffic data from East Midlands, UK. Phase transition identification under increasing rainfall.",conclusionDetail:"Critical rainfall thresholds exist: below threshold, gradual degradation; above, connectivity collapses rapidly (phase transition).",innovationDetail:"First percolation theory application to functional degradation (speed) not physical link removal. Rare UK empirical study.",limitationDetail:"East Midlands only; threshold sensitivity to parameters; static (no rerouting dynamics).",relevanceType:"complementary",relevanceNote:"Network-level complement to our link-level Gamma GLM. Phase transitions could inform threshold identification.",a:"-",b:"\u2713",c:"\u2713",d:"\u2713",e:"\u2713"},{key:"liu2026",authors:"Liu, Xu, Wan, MacAskill",year:2026,title:"Road Resilience Under Extreme Rainfall",journal:"IJDRR",method:"Dynamic traffic assignment (Link Transmission Model)",finding:"Multi-factor integration reveals much larger delays",innovation:"First framework: 3 rainfall pathways + delay propagation",citations:"~0",if_val:"5.4",doi:"10.1016/j.ijdrr.2026.106024",pdfFile:"Liu_2026_Extreme_Rainfall_Resilience.pdf",methodDetail:"LTM-based dynamic traffic assignment integrating three pathways: flooding, visibility-induced speed reduction, signal failure. Models delay propagation.",conclusionDetail:"Multi-factor delays substantially exceed single-factor estimates. Compound flooding + speed + signal effects create cascading delays.",innovationDetail:"First to integrate three rainfall pathways + delay propagation. Shows single-factor studies significantly underestimate impact.",limitationDetail:"Hypothetical scenarios; simplified demand response; network-specific calibration needed.",relevanceType:"foundational",relevanceNote:"Same DARe project (co-authored by Wan). Our Gamma GLM addresses the speed reduction pathway; their framework shows integration.",a:"\u2713",b:"\u2713",c:"\u2713",d:"\u2713",e:"-"},{key:"wassmer2024",authors:"Wassmer, Merz, Marwan",year:2024,title:"Network Resilience to Road Failures",journal:"Chaos",method:"Gravity-model traffic centrality + OSM/GHSL",finding:"Cascading delays 50km from Ahr Valley flood epicenter",innovation:"Novel gravity-model with Delta-T metric; open-data",citations:"~10",if_val:"3.1",doi:"10.1063/5.0165839",pdfFile:"Wassmer_2024_Resilience_Transportation_Infrastructure_Road_Failures.pdf",methodDetail:"Gravity-model SIBC using OSM + GHSL population. Analyses 2021 Ahr Valley flood. Car usage vs rainfall from German Mobility Panel.",conclusionDetail:"Bridge destruction causes disruptions extending ~50km. Single critical bridge accounts for most delay. Car usage increases with rainfall.",innovationDetail:"Gravity-model reveals cascading patterns. Delta-T translates failure to social impact. Open-data methodology (OSM + GHSL).",limitationDetail:"Binary closure (open/closed); static occupancy; no behavioral response; OSM quality varies.",relevanceType:"contrasting",relevanceNote:"Binary closure vs our continuous Gamma GLM. Rainfall causes graduated speed loss \u2014 exactly what our approach captures.",a:"\u2713",b:"-",c:"\u2713",d:"-",e:"-"},{key:"stamos2023",authors:"Stamos",year:2023,title:"Centrality Measures for Climate Adaptation",journal:"Future Transportation",method:"Review + reformulation of 17 centrality measures",finding:"Betweenness/closeness should use transit time not distance",innovation:"Systematic centrality assessment for transport climate",citations:"~10",if_val:"1.7",doi:"10.3390/futuretransp3030049",pdfFile:"Stamos_2023_Transportation_Networks_Climate_Change_Centrality.pdf",methodDetail:"Review of 17 centrality measures assessing usability for transport climate adaptation. Proposes reformulations with traffic volume, speed, travel time.",conclusionDetail:"Standard centrality needs traffic-parameter reformulation. Information centrality (efficiency change on node removal) most relevant for disruption.",innovationDetail:"First systematic assessment of centrality usefulness for transport climate. Notes traffic models assume ideal weather \u2014 the gap we fill.",limitationDetail:"Purely theoretical; no empirical validation; node-focused but rainfall affects links.",relevanceType:"complementary",relevanceNote:"Our rainfall-speed model provides link-level input to make centrality measures weather-aware.",a:"\u2713",b:"-",c:"\u2713",d:"-",e:"-"},{key:"raccagni2024",authors:"Raccagni et al.",year:2024,title:"Road Characteristics and Vehicle Speed",journal:"Heliyon",method:"MLR on V85 (48K+ spot speeds, Brescia)",finding:"R\u00b2_adj=85.8%; traffic calming NOT significant",innovation:"Largest urban V85 sample; traffic calming finding",citations:"~5",if_val:"4.0",doi:"10.1016/j.heliyon.2024.e39459",pdfFile:"Raccagni_2024_Urban_Road_Vehicle_Speed.pdf",methodDetail:"Multiple linear regression on V85 using 48,000+ spot speeds, 40+ road characteristics in Brescia. Assumes normality, uses OLS.",conclusionDetail:"Road geometry dominates speed. Traffic calming (chicanes, bumps, islands) has NO significant effect on V85.",innovationDetail:"Largest urban V85 dataset. Novel finding that traffic calming doesn't significantly affect 85th percentile speeds.",limitationDetail:"Assumes normality (OLS) vs our Gamma GLM; single city; cross-sectional; no weather control.",relevanceType:"contrasting",relevanceNote:"OLS with normality vs our Gamma GLM. No weather control \u2014 our approach fills this gap.",a:"-",b:"\u2713",c:"-",d:"\u2713",e:"-"},{key:"zhou2026",authors:"Zhou et al.",year:2026,title:"30-Year Bibliometric Analysis",journal:"Multimodal Transportation",method:"VOSviewer + CiteSpace (2000+ publications)",finding:"Rainfall-transport at intersection of two largest clusters",innovation:"First 30-year bibliometric mapping of field",citations:"~0",if_val:"4.9",doi:"10.1016/j.pdisas.2026.100408",pdfFile:"Zhou_2026_Bibliometric_Transport_Climate.pdf",methodDetail:"Bibliometric analysis of 2,133 publications (1995-2025). Keyword co-occurrence, burst detection, four thematic clusters.",conclusionDetail:"Rainfall-transport at intersection of Cluster 1 (climate impacts) and Cluster 2 (risk assessment). Calls for integrated simulation platforms.",innovationDetail:"Validates rainfall-transport as active frontier. Strongest burst: 'sustainability and resilience' (10.69, 2021-present).",limitationDetail:"WoS only (misses non-English); bibliometric can't assess quality; retrospective bias.",relevanceType:"complementary",relevanceNote:"Validates our positioning. Their call for integrated platforms aligns with our Streamlit approach.",a:"\u2713",b:"-",c:"\u2713",d:"-",e:"-"},{key:"pulugurtha2021",authors:"Pulugurtha, Mathew",year:2021,title:"Modelling AADT on Local Roads",journal:"J. Transport Geography",method:"OLS + GWR regression (North Carolina)",finding:"GWR outperforms OLS; spatial non-stationarity key",innovation:"GWR superiority for spatially-varying estimation",citations:"~25",if_val:"5.9",doi:"10.1016/j.jtrangeo.2021.103071",pdfFile:"Pulugurtha_2021_AADT_Local_Roads.pdf",methodDetail:"OLS and GWR for AADT on local roads using road density, land use, nearest nonlocal road. 10 North Carolina counties.",conclusionDetail:"GWR significantly outperforms OLS. Road density and nearest road AADT consistently significant. Moran's I eliminated in GWR.",limitationDetail:"Low R\u00b2 (0.20-0.33); county-specific; 27% parcels lack land-use data; outdated census.",innovationDetail:"Demonstrates GWR superiority. Supports spatially-aware regression in road performance models.",relevanceType:"complementary",relevanceNote:"If our study area is geographically diverse, GWR-style approaches could improve the Gamma GLM.",a:"-",b:"-",c:"-",d:"\u2713",e:"-"},{key:"mccullagh1989",authors:"McCullagh, Nelder",year:1989,title:"Generalized Linear Models (2nd ed.)",journal:"Chapman & Hall",method:"GLM theoretical framework",finding:"GLMs unify regression under exponential family",innovation:"Foundational GLM theory and practice",citations:"~30000",if_val:"N/A",pdfFile:null,methodDetail:"Definitive GLM textbook. Exponential family, link functions, IRLS, deviance, diagnostics.",conclusionDetail:"GLMs provide unified framework for non-normal responses. Gamma with log-link appropriate for positive, right-skewed data.",innovationDetail:"Extended and formalized GLM framework. The standard reference for GLM theory.",limitationDetail:"Textbook, not empirical study. Does not address transport applications.",relevanceType:"foundational",relevanceNote:"Theoretical foundation for our Gamma GLM methodology.",a:"-",b:"-",c:"-",d:"\u2713",e:"-"},{key:"nelder1972",authors:"Nelder, Wedderburn",year:1972,title:"Generalized Linear Models",journal:"JRSS Series A",method:"IWLS for exponential family",finding:"MLE via iterative weighted least squares",innovation:"Seminal paper introducing GLM framework",citations:"~8000",if_val:"N/A",pdfFile:null,methodDetail:"Introduces GLM: exponential family response, linear predictor, link function. MLE via IWLS.",conclusionDetail:"Unified regression methods (linear, logistic, Poisson, Gamma) under single framework.",innovationDetail:"Created the entire GLM field. Every Gamma GLM traces to this 1972 paper.",limitationDetail:"Theoretical; computational implementation came later.",relevanceType:"foundational",relevanceNote:"Genesis of our statistical methodology.",a:"-",b:"-",c:"-",d:"\u2713",e:"-"},{key:"freeman1977",authors:"Freeman",year:1977,title:"Centrality Based on Betweenness",journal:"Sociometry",method:"Graph-theoretic betweenness",finding:"Betweenness captures node control potential",innovation:"Introduced betweenness centrality",citations:"~15000",if_val:"N/A",pdfFile:null,methodDetail:"Formal definition of betweenness centrality: fraction of shortest paths through a given node.",conclusionDetail:"Betweenness captures control over network flow. High-betweenness nodes are critical bottlenecks.",innovationDetail:"Introduced betweenness centrality \u2014 now one of most widely used network metrics.",limitationDetail:"Social networks origin; doesn't account for traffic volumes, capacity, or weather.",relevanceType:"foundational",relevanceNote:"Foundation for network centrality in transport resilience. Our speed data could feed reformulated measures.",a:"-",b:"-",c:"\u2713",d:"-",e:"-"},{key:"dft2024rea",authors:"DfT / NatCen",year:2024,title:"Climate Change and Transport: REA",journal:"UK Government Report",method:"Rapid evidence assessment (158\u219234)",finding:"6,600km UK roads vulnerable; adaptation benefits outweigh costs",innovation:"Comprehensive UK evidence synthesis",citations:"N/A",if_val:"N/A",url:"https://assets.publishing.service.gov.uk/media/6569b274cd4dda000d082fa3/climate-change-and-transport-infrastructure-rapid-evidence-assessment.pdf",pdfFile:"DfT_2024_Climate_Transport_REA.pdf",methodDetail:"PRISMA-compliant REA screening 1,583 papers to 34. Thematic synthesis via Covidence. Covers road, rail, aviation, maritime.",conclusionDetail:"6,600km UK roads vulnerable to flooding (rising 53-160% by 2080s). Wider costs 2.2x direct repair. Emergency repairs 2-10x planned. Adaptation benefits outweigh costs.",innovationDetail:"Most comprehensive UK government synthesis. Identifies speed degradation (not just closure) as recognised pathway. QUADRO model for delay costing.",limitationDetail:"English only; post-2012; skewed toward roads/rail; no weather-transport event database.",relevanceType:"foundational",relevanceNote:"Key UK policy context. Validates speed degradation as recognised pathway and documents the evidence gap we fill.",a:"\u2713",b:"\u2713",c:"-",d:"-",e:"-"},{key:"unece2024",authors:"UNECE",year:2024,title:"Stress Test Framework for Transport",journal:"UN Publication",method:"Standardised stress testing framework",finding:"International methodology for transport resilience",innovation:"First international standardised framework",citations:"N/A",if_val:"N/A",url:"https://unece.org/transport/publications/stress-test-framework-evaluating-resilience-transport-systems",pdfFile:null,methodDetail:"International framework for transport resilience: hazard identification, exposure, vulnerability, resilience scoring.",conclusionDetail:"Standardised methodology for cross-country transport resilience assessment. Supports evidence-based adaptation.",innovationDetail:"First internationally standardised transport resilience framework under UN auspices.",limitationDetail:"Framework-level; not widely adopted yet; may be too generic for national contexts.",relevanceType:"complementary",relevanceNote:"Our Streamlit platform could operationalise parts of this for UK road stress testing.",a:"\u2713",b:"-",c:"-",d:"-",e:"-"},{key:"nce2026",authors:"New Civil Engineer",year:2026,title:"Only 7% of UK SRN Meets Standards",journal:"NCE News",method:"Investigative reporting",finding:"Only 7% meets 20-year-old drainage standards",innovation:"Stark policy-relevant infrastructure deficit statistic",citations:"N/A",if_val:"N/A",url:"https://www.newcivilengineer.com/latest/only-7-of-uks-strategic-road-network-meets-climate-standards-set-20-years-ago-05-02-2026/",pdfFile:null,methodDetail:"Investigative journalism citing National Highways data on drainage standards compliance.",conclusionDetail:"Only 7% of UK strategic road network meets drainage standards set 20+ years ago.",innovationDetail:"Brings stark infrastructure deficit statistic to public attention.",limitationDetail:"News article; limited methodological detail on derivation of 7% figure.",relevanceType:"complementary",relevanceNote:"If 93% of SRN fails drainage standards, understanding rainfall-speed impacts is critical.",a:"\u2713",b:"-",c:"-",d:"-",e:"-"},{key:"nh2024",authors:"National Highways",year:2024,title:"Climate Change and the SRN",journal:"National Highways",method:"Policy assessment + climate projections",finding:"Flood risk rising from 38% to 46% by 2050",innovation:"Official SRN climate adaptation assessment",citations:"N/A",if_val:"N/A",url:"https://nationalhighways.co.uk/our-work/environment/climate-change-and-the-strategic-road-network/",pdfFile:null,methodDetail:"National Highways assessment using UK Climate Projections for future flood risk on SRN.",conclusionDetail:"Flood risk to English roads projected to rise from 38% to 46% by 2050. Adaptation investment needed.",innovationDetail:"Official acknowledgment from UK road operator that climate change requires systematic SRN adaptation.",limitationDetail:"Policy document; limited technical detail; focused on flooding rather than wider weather.",relevanceType:"complementary",relevanceNote:"Direct stakeholder. National Highways could be end-user of our Streamlit platform.",a:"\u2713",b:"-",c:"-",d:"-",e:"-"}];
 
-// Populate matrix table
-function populateTable(data) {
-  const tbody = document.getElementById('matrixBody');
-  tbody.innerHTML = '';
-  data.forEach(p => {
-    const tr = document.createElement('tr');
-    const fmt = v => v==='✓'?'<span class="check">✓</span>':v==='✗'?'<span class="cross">✗</span>':'<span class="dash">—</span>';
-    tr.innerHTML = `<td><strong>${p.authors}</strong></td><td>${p.year}</td><td>${p.title}</td><td>${p.journal}</td><td><span class="pc-method">${p.method}</span></td><td class="cite-count">${p.citations}</td><td>${p.if_val!=='N/A'?'<span class="if-badge">'+p.if_val+'</span>':'-'}</td><td>${fmt(p.a)}</td><td>${fmt(p.b)}</td><td>${fmt(p.c)}</td><td>${fmt(p.d)}</td><td>${fmt(p.e)}</td>`;
-    tbody.appendChild(tr);
-  });
-  document.getElementById('tableCount').textContent = `Showing ${data.length} of ${papers.length} papers`;
-}
+const citationLinks=[{source:"nelder1972",target:"mccullagh1989"},{source:"nelder1972",target:"wan2024paradox"},{source:"mccullagh1989",target:"wan2024paradox"},{source:"freeman1977",target:"ganin2017"},{source:"freeman1977",target:"stamos2023"},{source:"hranac2006",target:"cai2016"},{source:"hranac2006",target:"bi2022"},{source:"hranac2006",target:"becker2026"},{source:"hranac2006",target:"liu2026"},{source:"cai2016",target:"bi2022"},{source:"cai2016",target:"gao2024"},{source:"pregnolato2017",target:"gao2024"},{source:"pregnolato2017",target:"he2026"},{source:"pregnolato2017",target:"liu2026"},{source:"ganin2017",target:"calvert2018"},{source:"ganin2017",target:"bergantino2024"},{source:"ganin2017",target:"li2024"},{source:"ganin2017",target:"wassmer2024"},{source:"calvert2018",target:"bergantino2024"},{source:"stamos2023",target:"wassmer2024"},{source:"bi2022",target:"gao2024"},{source:"huang2022",target:"he2026"},{source:"raccagni2024",target:"becker2026"},{source:"pulugurtha2021",target:"gao2024"},{source:"wan2024paradox",target:"liu2026"},{source:"wan2024paradox",target:"wan2025variability"},{source:"li2024",target:"liu2026"},{source:"zhou2026",target:"bergantino2024"},{source:"dft2024rea",target:"farahmand2024"},{source:"ganin2017",target:"liu2026"}];
 
-// Populate paper cards
-function populateCards(data) {
-  const container = document.getElementById('paperCards');
-  container.innerHTML = '';
-  data.forEach(p => {
-    const themes = [];
-    if(p.a==='✓') themes.push('<span class="theme-tag a">A: Climate</span>');
-    if(p.b==='✓') themes.push('<span class="theme-tag b">B: Precip-Speed</span>');
-    if(p.c==='✓') themes.push('<span class="theme-tag c">C: Network</span>');
-    if(p.d==='✓') themes.push('<span class="theme-tag d">D: Method</span>');
-    if(p.e==='✓') themes.push('<span class="theme-tag e">E: Open Data</span>');
-    container.innerHTML += `<div class="paper-card"><div class="pc-title">${p.title}</div><div class="pc-meta">${p.authors} (${p.year}) · ${p.journal} ${p.if_val!=='N/A'?'· IF: '+p.if_val:''} · Citations: ${p.citations}</div><div class="pc-method">${p.method}</div><div class="pc-finding"><strong>Finding:</strong> ${p.finding}</div><div class="pc-innovation">💡 ${p.innovation}</div><div class="pc-themes">${themes.join('')}</div></div>`;
-  });
-}
+function showPanel(id,el){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');if(el)el.classList.add('active');if(id==='graph'&&!window._graphRendered){renderGraph();window._graphRendered=true;}}
 
-function filterTable() {
-  const search = document.getElementById('searchInput').value.toLowerCase();
-  const theme = document.getElementById('themeFilter').value;
-  const yearVal = document.getElementById('yearFilter').value;
-  let filtered = papers.filter(p => {
-    const matchSearch = !search || (p.authors+p.title+p.method+p.journal).toLowerCase().includes(search);
-    const matchTheme = !theme || p[theme.toLowerCase()] === '✓';
-    let matchYear = true;
-    if(yearVal === '0') matchYear = p.year < 2010;
-    else if(yearVal) matchYear = p.year >= parseInt(yearVal);
-    return matchSearch && matchTheme && matchYear;
-  });
-  populateTable(filtered);
-}
+function populateTable(data){const tbody=document.getElementById('matrixBody');tbody.innerHTML='';data.forEach(p=>{const tr=document.createElement('tr');const fmt=v=>v==='\u2713'?'<span class="check">\u2713</span>':v==='\u2717'?'<span class="cross">\u2717</span>':'<span class="dash">\u2014</span>';const doiLink=p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" style="font-size:0.78em;color:var(--blue);text-decoration:none;">DOI</a>`:(p.url?`<a href="${p.url}" target="_blank" style="font-size:0.78em;color:var(--blue);text-decoration:none;">Link</a>`:'-');tr.innerHTML=`<td><strong>${p.authors}</strong></td><td>${p.year}</td><td>${p.title}</td><td>${p.journal}</td><td><span style="background:#e8f0fe;color:var(--navy);padding:2px 6px;border-radius:4px;font-size:0.78em;">${p.method}</span></td><td class="cite-count">${p.citations}</td><td>${p.if_val&&p.if_val!=='N/A'?'<span class="if-badge">'+p.if_val+'</span>':'-'}</td><td>${doiLink}</td><td>${fmt(p.a)}</td><td>${fmt(p.b)}</td><td>${fmt(p.c)}</td><td>${fmt(p.d)}</td><td>${fmt(p.e)}</td>`;tbody.appendChild(tr);});document.getElementById('tableCount').textContent=`Showing ${data.length} of ${papers.length} papers`;}
 
-function filterCards() {
-  const search = document.getElementById('cardSearch').value.toLowerCase();
-  let filtered = papers.filter(p => !search || (p.authors+p.title+p.method+p.finding).toLowerCase().includes(search));
-  populateCards(filtered);
-}
+function filterTable(){const search=document.getElementById('searchInput').value.toLowerCase();const theme=document.getElementById('themeFilter').value;const yearVal=document.getElementById('yearFilter').value;let filtered=papers.filter(p=>{const matchSearch=!search||(p.authors+p.title+p.method+p.journal).toLowerCase().includes(search);const matchTheme=!theme||p[theme.toLowerCase()]==='\u2713';let matchYear=true;if(yearVal==='0')matchYear=p.year<2010;else if(yearVal)matchYear=p.year>=parseInt(yearVal);return matchSearch&&matchTheme&&matchYear;});populateTable(filtered);}
 
-let sortDir = {};
-function sortTable(col) {
-  sortDir[col] = !sortDir[col];
-  const tbody = document.getElementById('matrixBody');
-  const rows = Array.from(tbody.querySelectorAll('tr'));
-  rows.sort((a,b) => {
-    let va = a.cells[col].textContent.trim();
-    let vb = b.cells[col].textContent.trim();
-    if(col===1||col===5||col===6) { va=parseFloat(va.replace(/[~,N\/A]/g,''))||0; vb=parseFloat(vb.replace(/[~,N\/A]/g,''))||0; }
-    if(sortDir[col]) return va>vb?1:-1;
-    return va<vb?1:-1;
-  });
-  rows.forEach(r => tbody.appendChild(r));
-}
+let sortDir={};function sortTable(col){sortDir[col]=!sortDir[col];const tbody=document.getElementById('matrixBody');const rows=Array.from(tbody.querySelectorAll('tr'));rows.sort((a,b)=>{let va=a.cells[col].textContent.trim();let vb=b.cells[col].textContent.trim();if(col===1||col===5||col===6){va=parseFloat(va.replace(/[~,N\/A]/g,''))||0;vb=parseFloat(vb.replace(/[~,N\/A]/g,''))||0;}if(sortDir[col])return va>vb?1:-1;return va<vb?1:-1;});rows.forEach(r=>tbody.appendChild(r));}
 
-function showPanel(id) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
-}
+function populateCards(data){const container=document.getElementById('paperCards');container.innerHTML='';data.forEach((p,i)=>{const themes=[];if(p.a==='\u2713')themes.push('<span class="theme-tag a">A: Climate</span>');if(p.b==='\u2713')themes.push('<span class="theme-tag b">B: Precip-Speed</span>');if(p.c==='\u2713')themes.push('<span class="theme-tag c">C: Network</span>');if(p.d==='\u2713')themes.push('<span class="theme-tag d">D: Method</span>');if(p.e==='\u2713')themes.push('<span class="theme-tag e">E: Open Data</span>');let actions='';if(p.doi)actions+=`<a href="https://doi.org/${p.doi}" target="_blank">DOI</a>`;else if(p.url)actions+=`<a href="${p.url}" target="_blank">Link</a>`;const sq=encodeURIComponent(p.authors.split(',')[0]+' '+p.year+' '+p.title.split(' ').slice(0,4).join(' '));actions+=`<a href="https://scholar.google.com/scholar?q=${sq}" target="_blank">Scholar</a>`;if(p.pdfFile){actions+=`<a href="Literature_Review/${p.pdfFile.replace('.pdf','')}_annotated.pdf" class="pdf-btn" target="_blank">PDF (annotated)</a>`;actions+=`<a href="Literature_Review/${p.pdfFile}" class="pdf-btn" target="_blank">PDF (original)</a>`;}let aspects='';if(p.methodDetail){aspects+=`<div class="aspect-row"><span class="aspect-badge method" onclick="toggleAspect('m${i}')">Method</span><div class="aspect-detail" id="m${i}">${p.methodDetail}</div></div>`;aspects+=`<div class="aspect-row"><span class="aspect-badge conclusion" onclick="toggleAspect('c${i}')">Conclusion</span><div class="aspect-detail" id="c${i}">${p.conclusionDetail}</div></div>`;aspects+=`<div class="aspect-row"><span class="aspect-badge innovation" onclick="toggleAspect('n${i}')">Innovation</span><div class="aspect-detail" id="n${i}">${p.innovationDetail}</div></div>`;aspects+=`<div class="aspect-row"><span class="aspect-badge limitation" onclick="toggleAspect('l${i}')">Limitations</span><div class="aspect-detail" id="l${i}">${p.limitationDetail}</div></div>`;}let relevance='';if(p.relevanceType){relevance=`<span class="relevance-toggle" onclick="toggleRelevance('r${i}')">Relevance to Our Research \u2193</span><div class="relevance-section" id="r${i}"><span class="relevance-indicator ${p.relevanceType}"></span><strong style="text-transform:capitalize;">${p.relevanceType}</strong>: ${p.relevanceNote}</div>`;}container.innerHTML+=`<div class="paper-card"><div class="pc-title">${p.title}</div><div class="pc-meta">${p.authors} (${p.year}) | ${p.journal} ${p.if_val&&p.if_val!=='N/A'?'| IF: '+p.if_val:''} | Citations: ${p.citations}</div><div class="pc-actions">${actions}</div>${aspects}<div class="pc-themes">${themes.join('')}</div>${relevance}</div>`;});}
 
-populateTable(papers);
-populateCards(papers);
+function toggleAspect(id){const el=document.getElementById(id);if(el)el.classList.toggle('show');}
+function toggleRelevance(id){const el=document.getElementById(id);if(el)el.classList.toggle('show');}
+function filterCards(){const search=document.getElementById('cardSearch').value.toLowerCase();let filtered=papers.filter(p=>!search||(p.authors+p.title+p.method+p.finding+(p.methodDetail||'')+(p.conclusionDetail||'')).toLowerCase().includes(search));populateCards(filtered);}
+
+function renderGraph(){const container=document.getElementById('graphContainer');const width=container.clientWidth||1200;const height=700;const svg=d3.select('#citationSvg').attr('width',width).attr('height',height);const themeColors={a:'#e74c3c',b:'#4CAF50',c:'#3498db',d:'#f39c12',e:'#7b1fa2'};function getColor(p){if(p.a==='\u2713')return themeColors.a;if(p.b==='\u2713')return themeColors.b;if(p.c==='\u2713')return themeColors.c;if(p.d==='\u2713')return themeColors.d;if(p.e==='\u2713')return themeColors.e;return '#999';}const yearScale=d3.scaleLinear().domain([1970,2027]).range([80,width-80]);const nodes=papers.map(p=>({id:p.key,label:p.authors.split(',')[0]+' '+p.year,title:p.title,year:p.year,citations:parseInt(String(p.citations).replace(/[~,]/g,''))||0,r:Math.max(6,Math.min(30,4+Math.log(1+(parseInt(String(p.citations).replace(/[~,]/g,''))||0))*3)),color:getColor(p),finding:p.finding,x:yearScale(p.year),y:height/2}));const nodeMap={};nodes.forEach(n=>nodeMap[n.id]=n);const edges=citationLinks.filter(l=>nodeMap[l.source]&&nodeMap[l.target]).map(l=>({source:l.source,target:l.target}));svg.append('defs').append('marker').attr('id','arrowhead').attr('viewBox','0 -5 10 10').attr('refX',15).attr('refY',0).attr('markerWidth',6).attr('markerHeight',6).attr('orient','auto').append('path').attr('d','M0,-5L10,0L0,5').attr('fill','#bbb');const g=svg.append('g');svg.call(d3.zoom().scaleExtent([0.3,4]).on('zoom',(event)=>{g.attr('transform',event.transform);}));const link=g.selectAll('.link').data(edges).enter().append('line').attr('class','link').attr('stroke','#ccc').attr('stroke-width',1.5).attr('stroke-opacity',0.5).attr('marker-end','url(#arrowhead)');const node=g.selectAll('.node').data(nodes).enter().append('circle').attr('class','node').attr('r',d=>d.r).attr('fill',d=>d.color).attr('stroke','white').attr('stroke-width',2).style('cursor','pointer').call(d3.drag().on('start',dragStart).on('drag',dragging).on('end',dragEnd));const label=g.selectAll('.label').data(nodes).enter().append('text').attr('class','label').attr('text-anchor','middle').attr('dy',d=>d.r+14).attr('font-size','9px').attr('fill','#666').text(d=>d.label);const tooltip=document.getElementById('graphTooltip');node.on('mouseover',(event,d)=>{tooltip.innerHTML=`<div class="gt-title">${d.title}</div><div class="gt-meta">${d.label} | Citations: ${d.citations}</div><div class="gt-finding">${d.finding||''}</div>`;tooltip.style.opacity=1;tooltip.style.left=(event.offsetX+15)+'px';tooltip.style.top=(event.offsetY-10)+'px';}).on('mousemove',(event)=>{tooltip.style.left=(event.offsetX+15)+'px';tooltip.style.top=(event.offsetY-10)+'px';}).on('mouseout',()=>{tooltip.style.opacity=0;}).on('click',(event,d)=>{const connected=new Set();connected.add(d.id);edges.forEach(e=>{const sid=typeof e.source==='object'?e.source.id:e.source;const tid=typeof e.target==='object'?e.target.id:e.target;if(sid===d.id)connected.add(tid);if(tid===d.id)connected.add(sid);});node.attr('opacity',n=>connected.has(n.id)?1:0.15);link.attr('stroke-opacity',l=>{const sid=typeof l.source==='object'?l.source.id:l.source;const tid=typeof l.target==='object'?l.target.id:l.target;return(sid===d.id||tid===d.id)?0.8:0.05;});label.attr('opacity',n=>connected.has(n.id)?1:0.15);});svg.on('dblclick',()=>{node.attr('opacity',1);link.attr('stroke-opacity',0.5);label.attr('opacity',1);});const simulation=d3.forceSimulation(nodes).force('x',d3.forceX(d=>yearScale(d.year)).strength(0.8)).force('y',d3.forceY(height/2).strength(0.08)).force('collide',d3.forceCollide(d=>d.r+6)).force('link',d3.forceLink(edges).id(d=>d.id).distance(80).strength(0.2)).force('charge',d3.forceManyBody().strength(-80)).on('tick',()=>{link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);node.attr('cx',d=>d.x).attr('cy',d=>d.y);label.attr('x',d=>d.x).attr('y',d=>d.y);});function dragStart(event,d){if(!event.active)simulation.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;}function dragging(event,d){d.fx=event.x;d.fy=event.y;}function dragEnd(event,d){if(!event.active)simulation.alphaTarget(0);d.fx=null;d.fy=null;}const years=[1972,1980,1990,2000,2006,2010,2016,2018,2020,2022,2024,2026];g.selectAll('.year-label').data(years).enter().append('text').attr('x',d=>yearScale(d)).attr('y',height-10).attr('text-anchor','middle').attr('font-size','10px').attr('fill','#bbb').text(d=>d);g.selectAll('.year-line').data(years).enter().append('line').attr('x1',d=>yearScale(d)).attr('x2',d=>yearScale(d)).attr('y1',20).attr('y2',height-25).attr('stroke','#eee').attr('stroke-width',1).attr('stroke-dasharray','4,4');}
+
+function highlightGraphTheme(theme){if(!window._graphRendered)return;const svg=d3.select('#citationSvg');if(!theme){svg.selectAll('.node').attr('opacity',1);svg.selectAll('.label').attr('opacity',1);svg.selectAll('.link').attr('stroke-opacity',0.5);return;}const themeMap={};papers.forEach(p=>{themeMap[p.key]=p[theme]==='\u2713';});svg.selectAll('.node').attr('opacity',d=>themeMap[d.id]?1:0.12);svg.selectAll('.label').attr('opacity',d=>themeMap[d.id]?1:0.12);}
+
+populateTable(papers);populateCards(papers);
 </script>
 </body>
 </html>

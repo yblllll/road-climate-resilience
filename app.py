@@ -17,6 +17,11 @@ import plotly.graph_objects as go
 import json
 import os
 import sys
+import streamlit
+
+# Streamlit version compatibility
+_ST_VERSION = tuple(int(x) for x in streamlit.__version__.split(".")[:2])
+_USE_WIDTH = {"width": "stretch"} if _ST_VERSION >= (1, 45) else {"use_container_width": True}
 
 # Page config
 st.set_page_config(
@@ -594,15 +599,15 @@ elif page == "Summary Dashboard":
                 labels={"Mean Coef.": "Mean Precipitation Coefficient", "highway": "Highway"},
             )
             fig.update_layout(height=400)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, **_USE_WIDTH)
 
-            st.dataframe(highway_stats.round(6), use_container_width=True)
+            st.dataframe(highway_stats.round(6), **_USE_WIDTH)
 
         with tab2:
             st.subheader("Road Features vs Climate Sensitivity")
             if "features" in data:
                 feat_df = data["features"]
-                st.dataframe(feat_df.round(4), use_container_width=True)
+                st.dataframe(feat_df.round(4), **_USE_WIDTH)
 
             # Show feature regression if coefficient data has features
             feature_cols = ["Number of lanes", "Speed limit (mph)", "Average daily flow", "Length (m)"]
@@ -618,7 +623,7 @@ elif page == "Summary Dashboard":
                     labels={coef_col: "Precipitation Coefficient"},
                 )
                 fig2.update_layout(height=400)
-                st.plotly_chart(fig2, use_container_width=True)
+                st.plotly_chart(fig2, **_USE_WIDTH)
 
         with tab3:
             if "glm_results" in data:
@@ -738,7 +743,10 @@ elif page == "Summary Dashboard":
                         show_cols += ["conf_int_lower", "conf_int_upper"]
                     show_cols.append("sig")
                     show_cols = [c for c in show_cols if c in display_df.columns]
-                    styled = display_df[show_cols].round(6).fillna("-")
+                    styled = display_df[show_cols].round(6)
+                    # Convert all columns to string to avoid Arrow mixed-type error
+                    for col in styled.columns:
+                        styled[col] = styled[col].astype(str).replace("nan", "-")
                     rename_map = {
                         "feature": "Variable", "coefficient": "Coef.",
                         "std_err": "Std. Err.", "z_value": "z",
@@ -753,7 +761,7 @@ elif page == "Summary Dashboard":
                     })
                     styled["Coef."] = styled["Coef."].round(6)
 
-                st.dataframe(styled, use_container_width=True, height=400, hide_index=True)
+                st.dataframe(styled, **_USE_WIDTH, height=400, hide_index=True)
 
                 # Footer stats
                 n_features = len(display_df)
@@ -849,7 +857,7 @@ elif page == "Run Your Own Analysis":
             try:
                 preview_df = pd.read_csv(upload_path, nrows=100)
                 st.subheader("Data Preview")
-                st.dataframe(preview_df.head(20), use_container_width=True)
+                st.dataframe(preview_df.head(20), **_USE_WIDTH)
 
                 st.subheader("Data Summary")
                 col1, col2, col3 = st.columns(3)
@@ -1003,7 +1011,7 @@ elif page == "Run Your Own Analysis":
                         if os.path.exists(results_file):
                             result_df = pd.read_csv(results_file)
                             st.subheader("Precipitation Interaction Results")
-                            st.dataframe(result_df.round(6), use_container_width=True)
+                            st.dataframe(result_df.round(6), **_USE_WIDTH)
 
                             # Download buttons
                             st.divider()
@@ -1102,7 +1110,7 @@ elif page == "Run Your Own Analysis":
 
                     # Preview data
                     st.subheader("Data Preview")
-                    st.dataframe(result_df.head(10).round(6), use_container_width=True)
+                    st.dataframe(result_df.head(10).round(6), **_USE_WIDTH)
 
                     # Build map
                     st.subheader("Resilience Map")
@@ -1177,7 +1185,7 @@ elif page == "Run Your Own Analysis":
                         st.subheader("By Highway")
                         hw_stats = valid.groupby("highway")[coef_col].agg(["mean", "count", "min", "max"]).round(6)
                         hw_stats.columns = ["Mean", "N Links", "Min", "Max"]
-                        st.dataframe(hw_stats, use_container_width=True)
+                        st.dataframe(hw_stats, **_USE_WIDTH)
 
             except Exception as e:
                 st.error(f"Error processing file: {e}")
