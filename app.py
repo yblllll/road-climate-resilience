@@ -1661,12 +1661,22 @@ elif page == "About":
     ### Citation
 
     If you use this framework in your research, please cite:
-    > [Paper reference to be added upon publication]
+    > Li, Y. (2026). A Rapid Empirical Framework for Quantifying Road-Level Climate
+    > Sensitivity on the UK Strategic Road Network. *Transportation Research Part D:
+    > Transport and Environment*. [Manuscript in preparation]
+
+    ### Author
+
+    **Yibin Li**
+    Postdoctoral Research Associate
+    Department of Engineering, University of Cambridge
+    [yl680@cantab.ac.uk](mailto:yl680@cantab.ac.uk)
 
     ### Contact
 
-    For questions or collaboration, please open an issue on
-    [GitHub](https://github.com/YOUR_USERNAME/road-climate-resilience).
+    For questions or collaboration:
+    - Email: [yl680@cantab.ac.uk](mailto:yl680@cantab.ac.uk)
+    - GitHub: [github.com/yblllll/road-climate-resilience](https://github.com/yblllll/road-climate-resilience)
     """)
 
     st.divider()
