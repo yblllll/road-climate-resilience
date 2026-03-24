@@ -1658,13 +1658,6 @@ elif page == "About":
     | Transport disruptions | National Highways | Open |
     | Calendar controls | UK Gov / university websites | Open |
 
-    ### Citation
-
-    If you use this framework in your research, please cite:
-    > Li, Y. (2026). A Rapid Empirical Framework for Quantifying Road-Level Climate
-    > Sensitivity on the UK Strategic Road Network. *Transportation Research Part D:
-    > Transport and Environment*. [Manuscript in preparation]
-
     ### Author
 
     **Yibin Li**
