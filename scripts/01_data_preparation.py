@@ -42,7 +42,8 @@ def is_uni_term(dt_series):
 
 
 def prepare_data(input_path, output_path, speed_col="Avg mph", link_col="link name",
-                 sample_frac=None):
+                 time_col="time", temp_col="air_temperature", precip_col="prcp_amt",
+                 volume_col="Total Volume", sample_frac=None):
     """
     Clean and prepare data for GLM estimation.
 
@@ -63,39 +64,57 @@ def prepare_data(input_path, output_path, speed_col="Avg mph", link_col="link na
     file_size_gb = os.path.getsize(input_path) / (1024**3)
     print(f"Reading data from {input_path} ({file_size_gb:.2f} GB)...")
 
-    dtype_map = {speed_col: "float32", "Total Volume": "float32",
-                 "air_temperature": "float32", "prcp_amt": "float32"}
+    # Build dtype map using user-specified column names
+    dtype_map = {}
+    for col in [speed_col, volume_col, temp_col, precip_col]:
+        if col:
+            dtype_map[col] = "float32"
 
     if file_size_gb > 1.0:
         # Chunked reading for large files (>1GB) to limit peak memory
         print(f"  Using chunked reading (file > 1GB)...")
+        print(f"PROGRESS:2:Reading large file ({file_size_gb:.1f} GB) in chunks — this may take several minutes...", flush=True)
         chunks = []
         chunk_size = 500_000
         total_rows = 0
+        # Estimate total rows from file size (rough: ~100 bytes per row for traffic data)
+        est_total = int(file_size_gb * 1e9 / 100)
         for i, chunk in enumerate(pd.read_csv(input_path, low_memory=False,
                                                dtype=dtype_map, chunksize=chunk_size)):
             total_rows += len(chunk)
             chunks.append(chunk)
-            if (i + 1) % 10 == 0:
-                print(f"    Read {total_rows:,} rows...")
+            # Report progress during reading
+            read_pct = min(40, int(total_rows / max(est_total, 1) * 40))
+            if (i + 1) % 5 == 0:
+                print(f"PROGRESS:{2 + read_pct}:Reading... {total_rows:,} rows loaded", flush=True)
+        print(f"PROGRESS:42:Concatenating {len(chunks)} chunks...", flush=True)
         data = pd.concat(chunks, ignore_index=True)
         del chunks
         import gc; gc.collect()
     else:
         data = pd.read_csv(input_path, low_memory=False, dtype=dtype_map)
 
-    print(f"  Raw data: {len(data):,} rows")
+    print(f"PROGRESS:45:Raw data loaded: {len(data):,} rows", flush=True)
+    print(f"  Columns: {list(data.columns[:15])}{'...' if len(data.columns) > 15 else ''}")
 
-    # Parse datetime
-    time_col = "time" if "time" in data.columns else "Report Date"
-    data["datetime"] = pd.to_datetime(data[time_col])
+    # Parse datetime — use user-specified column, with fallbacks
+    actual_time_col = time_col
+    if time_col not in data.columns:
+        for fallback in ["time", "Report Date", "datetime", "timestamp", "date"]:
+            if fallback in data.columns:
+                actual_time_col = fallback
+                break
+    data["datetime"] = pd.to_datetime(data[actual_time_col])
+    print(f"  Using datetime column: '{actual_time_col}'")
 
     # Filter: need valid speed, temperature, precipitation
+    actual_temp = temp_col if temp_col in data.columns else "air_temperature"
+    actual_precip = precip_col if precip_col in data.columns else "prcp_amt"
     mask = (
         data[speed_col].notna()
         & (data[speed_col] > 0)
-        & data["prcp_amt"].notna()
-        & data["air_temperature"].notna()
+        & data[actual_precip].notna()
+        & data[actual_temp].notna()
     )
     data = data[mask].reset_index(drop=True)
     print(f"  After cleaning: {len(data):,} rows")
@@ -113,7 +132,15 @@ def prepare_data(input_path, output_path, speed_col="Avg mph", link_col="link na
     print("Building features...")
     result = pd.DataFrame()
     result["speed"] = data[speed_col].astype("float32")
-    result["totalvolume"] = data.get("Total Volume", pd.Series(dtype="float32")).astype("float32")
+
+    # Volume: use user-specified column, fall back to zero if not available
+    actual_vol = volume_col if volume_col in data.columns else None
+    if actual_vol:
+        result["totalvolume"] = data[actual_vol].fillna(0).astype("float32")
+    else:
+        result["totalvolume"] = pd.Series(0, index=data.index, dtype="float32")
+        print("  Note: No volume column found, using 0 (will not affect precipitation estimates)")
+
     result["link_name"] = data[link_col]
     result["datetime"] = data["datetime"]
 
@@ -122,23 +149,38 @@ def prepare_data(input_path, output_path, speed_col="Avg mph", link_col="link na
     result["universityterm_t"] = is_uni_term(data["datetime"])
     result["bankholiday_t"] = data["datetime"].dt.date.isin(holiday_set).astype("float32")
 
-    # Disruption controls
-    result["event_t"] = (
-        (data.get("AnimalPresenceObstruction", pd.Series(0)).fillna(0) > 0)
-        | (data.get("AbnormalTraffic", pd.Series(0)).fillna(0) > 0)
-        | (data.get("GeneralObstruction", pd.Series(0)).fillna(0) > 0)
-        | (data.get("EnvironmentalObstruction", pd.Series(0)).fillna(0) > 0)
-        | (data.get("VehicleObstruction", pd.Series(0)).fillna(0) > 0)
-    ).astype("float32")
-    result["roadworks_t"] = (
-        (data.get("MaintenanceWorks", pd.Series(0)).fillna(0) > 0)
-        | (data.get("RoadOrCarriagewayOrLaneManagement", pd.Series(0)).fillna(0) > 0)
-    ).astype("float32")
-    result["accident_t"] = data.get("Accident", pd.Series(0)).fillna(0).astype("float32")
+    # Disruption controls — use whatever columns are available
+    event_cols = ["AnimalPresenceObstruction", "AbnormalTraffic", "GeneralObstruction",
+                  "EnvironmentalObstruction", "VehicleObstruction"]
+    event_found = [c for c in event_cols if c in data.columns]
+    if event_found:
+        result["event_t"] = data[event_found].fillna(0).max(axis=1).clip(upper=1).astype("float32")
+    else:
+        result["event_t"] = pd.Series(0, index=data.index, dtype="float32")
+
+    maint_cols = ["MaintenanceWorks", "RoadOrCarriagewayOrLaneManagement"]
+    maint_found = [c for c in maint_cols if c in data.columns]
+    if maint_found:
+        result["roadworks_t"] = data[maint_found].fillna(0).max(axis=1).clip(upper=1).astype("float32")
+    else:
+        result["roadworks_t"] = pd.Series(0, index=data.index, dtype="float32")
+
+    accident_col_name = "Accident" if "Accident" in data.columns else None
+    if accident_col_name:
+        result["accident_t"] = data[accident_col_name].fillna(0).astype("float32")
+    else:
+        result["accident_t"] = pd.Series(0, index=data.index, dtype="float32")
+
+    n_disrupt = sum(1 for x in [event_found, maint_found, [accident_col_name]] if x and x[0])
+    if n_disrupt == 0:
+        print("  Note: No disruption columns found. Model will estimate without disruption controls.")
+    else:
+        print(f"  Disruption columns found: events={len(event_found)}, maintenance={len(maint_found)}, accident={'yes' if accident_col_name else 'no'}")
 
     # Weather
-    result["temperature_t"] = data["air_temperature"].astype("float32")
-    result["precipitation_t"] = data["prcp_amt"].astype("float32")
+    result["temperature_t"] = data[actual_temp].astype("float32")
+    result["precipitation_t"] = data[actual_precip].astype("float32")
+    print(f"  Using temperature: '{actual_temp}', precipitation: '{actual_precip}'")
 
     # Time features
     result["hour"] = data["datetime"].dt.hour
@@ -173,7 +215,15 @@ if __name__ == "__main__":
     parser.add_argument("--output", required=True, help="Path to save cleaned CSV")
     parser.add_argument("--speed-col", default="Avg mph", help="Speed column name")
     parser.add_argument("--link-col", default="link name", help="Link identifier column name")
+    parser.add_argument("--time-col", default="time", help="Datetime column name")
+    parser.add_argument("--temp-col", default="air_temperature", help="Temperature column name")
+    parser.add_argument("--precip-col", default="prcp_amt", help="Precipitation column name")
+    parser.add_argument("--volume-col", default="Total Volume", help="Volume column name")
     parser.add_argument("--sample", type=float, default=None, help="Sample fraction (e.g., 0.2)")
     args = parser.parse_args()
 
-    prepare_data(args.input, args.output, args.speed_col, args.link_col, args.sample)
+    prepare_data(args.input, args.output,
+                 speed_col=args.speed_col, link_col=args.link_col,
+                 time_col=args.time_col, temp_col=args.temp_col,
+                 precip_col=args.precip_col, volume_col=args.volume_col,
+                 sample_frac=args.sample)

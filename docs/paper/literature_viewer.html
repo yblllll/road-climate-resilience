@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Literature Analysis — Road Climate Resilience</title>
 <script src="d3.v7.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <style>
 :root { --navy: #00295e; --green: #4CAF50; --light: #f5f7fa; --border: #e0e4e8; --red: #e74c3c; --orange: #f39c12; --blue: #3498db; --purple: #7b1fa2; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -94,6 +95,44 @@ tr:hover { background: #f0f4ff; }
 .graph-controls { display: flex; gap: 12px; margin-bottom: 12px; align-items: center; }
 .graph-controls label { font-size: 0.85em; color: #666; }
 .graph-controls select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85em; }
+/* ===== PDF READER (embedded) ===== */
+.reader-layout { display:flex; height:calc(100vh - 120px); min-height:600px; }
+.reader-filelist { width:220px; background:white; border-right:1px solid var(--border); overflow-y:auto; flex-shrink:0; }
+.reader-filelist .rf-item { padding:8px 12px; border-bottom:1px solid #f0f0f0; cursor:pointer; font-size:0.78em; transition:background 0.15s; }
+.reader-filelist .rf-item:hover { background:#e8f0fe; }
+.reader-filelist .rf-item.active { background:#d4e4ff; border-left:3px solid var(--navy); }
+.reader-filelist .rf-year { color:#999; font-size:0.85em; }
+.reader-filelist .rf-title { font-weight:500; color:var(--navy); line-height:1.3; }
+.reader-filelist .rf-tags { margin-top:3px; display:flex; gap:2px; flex-wrap:wrap; }
+.reader-filelist .rf-tag { padding:1px 4px; border-radius:3px; font-size:0.65em; font-weight:600; color:white; }
+.reader-pdf-area { flex:1; display:flex; flex-direction:column; background:#d0d0d0; min-width:0; }
+.reader-pdf-controls { padding:6px 14px; background:#555; color:white; display:flex; align-items:center; gap:10px; font-size:0.82em; }
+.reader-pdf-controls button { padding:3px 10px; border:1px solid #888; border-radius:4px; background:#666; color:white; cursor:pointer; font-size:0.82em; }
+.reader-pdf-controls button:hover { background:#777; }
+.reader-canvas-wrap { flex:1; overflow-y:auto; overflow-x:auto; padding:12px; background:#d0d0d0; }
+.reader-canvas-wrap .page-container { margin:0 auto 12px; box-shadow:0 4px 20px rgba(0,0,0,0.3); position:relative; }
+.reader-canvas-wrap .page-container canvas { display:block; }
+.reader-canvas-wrap .page-num-label { position:absolute; bottom:4px; right:8px; background:rgba(0,0,0,0.5); color:white; padding:2px 8px; border-radius:4px; font-size:0.7em; }
+.reader-empty { display:flex; align-items:center; justify-content:center; flex:1; color:#888; font-size:1.1em; min-height:300px; }
+.reader-anno-sidebar { width:320px; background:white; border-left:1px solid var(--border); overflow-y:auto; flex-shrink:0; }
+.reader-anno-header { padding:12px 14px; background:var(--navy); color:white; font-weight:600; font-size:0.85em; position:sticky; top:0; z-index:10; }
+.ra-category { border-bottom:1px solid var(--border); }
+.ra-cat-header { padding:8px 14px; font-weight:600; font-size:0.82em; cursor:pointer; display:flex; align-items:center; gap:6px; }
+.ra-cat-header:hover { background:#f8f9fa; }
+.ra-cat-dot { width:10px; height:10px; border-radius:3px; flex-shrink:0; }
+.ra-cat-arrow { margin-left:auto; transition:transform 0.2s; font-size:0.7em; }
+.ra-cat-header.collapsed .ra-cat-arrow { transform:rotate(-90deg); }
+.ra-items { padding:0 10px 6px; }
+.ra-item { padding:7px 9px; margin:3px 0; border-radius:5px; cursor:pointer; font-size:0.78em; transition:all 0.15s; border-left:3px solid transparent; }
+.ra-item:hover { background:#f0f4ff; transform:translateX(2px); }
+.ra-item.method { border-left-color:var(--blue); }
+.ra-item.conclusion { border-left-color:var(--green); }
+.ra-item.innovation { border-left-color:var(--orange); }
+.ra-item.limitation { border-left-color:var(--red); }
+.ra-note { font-weight:500; color:#333; line-height:1.4; margin-bottom:3px; }
+.ra-phrase { font-size:0.88em; color:#999; font-style:italic; }
+.ra-page { font-size:0.78em; color:#bbb; margin-top:2px; }
+.ra-page span { background:#eee; padding:1px 5px; border-radius:3px; font-style:normal; }
 @media (max-width: 768px) {
   .content { padding: 16px; }
   .tabs { padding: 0 12px; overflow-x: auto; }
@@ -116,6 +155,7 @@ tr:hover { background: #f0f4ff; }
   <div class="tab" onclick="showPanel('chain',this)">Citation Chain</div>
   <div class="tab" onclick="showPanel('cards',this)">Paper Cards</div>
   <div class="tab" onclick="showPanel('gaps',this)">Knowledge Gaps</div>
+  <div class="tab" onclick="showPanel('reader',this)" style="background:#e8f5e9;font-weight:600;">PDF Reader</div>
 </div>
 <div class="content">
   <div class="panel active" id="overview">
@@ -211,6 +251,28 @@ tr:hover { background: #f0f4ff; }
       <li><strong>8. Validation Gap:</strong> Cross-validation between simulation and empirical under same conditions is almost absent.</li>
     </ul>
   </div>
+
+  <!-- PDF READER PANEL -->
+  <div class="panel" id="reader" style="padding:0;max-width:100%;">
+    <div class="reader-layout">
+      <div class="reader-filelist" id="readerFileList"></div>
+      <div class="reader-pdf-area">
+        <div class="reader-pdf-controls" id="readerControls" style="display:none">
+          <span id="rPageInfo" style="min-width:100px;text-align:center;">Scroll to read</span>
+          <button onclick="rZoomOut()">&#8722; Zoom</button>
+          <span id="rZoomInfo">100%</span>
+          <button onclick="rZoomIn()">Zoom +</button>
+        </div>
+        <div class="reader-canvas-wrap" id="readerCanvasWrap">
+          <div class="reader-empty" id="readerEmpty">Select a paper from the left to begin reading</div>
+        </div>
+      </div>
+      <div class="reader-anno-sidebar" id="readerAnnoSidebar">
+        <div class="reader-anno-header" id="readerAnnoHeader">Annotations</div>
+        <div id="readerAnnoContent"><div style="padding:40px 20px;text-align:center;color:#aaa;font-size:0.9em;">Select a paper to see annotations</div></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -218,7 +280,7 @@ const papers=[{key:"wan2024paradox",authors:"Wan, Huang",year:2024,title:"Parado
 
 const citationLinks=[{source:"nelder1972",target:"mccullagh1989"},{source:"nelder1972",target:"wan2024paradox"},{source:"mccullagh1989",target:"wan2024paradox"},{source:"freeman1977",target:"ganin2017"},{source:"freeman1977",target:"stamos2023"},{source:"hranac2006",target:"cai2016"},{source:"hranac2006",target:"bi2022"},{source:"hranac2006",target:"becker2026"},{source:"hranac2006",target:"liu2026"},{source:"cai2016",target:"bi2022"},{source:"cai2016",target:"gao2024"},{source:"pregnolato2017",target:"gao2024"},{source:"pregnolato2017",target:"he2026"},{source:"pregnolato2017",target:"liu2026"},{source:"ganin2017",target:"calvert2018"},{source:"ganin2017",target:"bergantino2024"},{source:"ganin2017",target:"li2024"},{source:"ganin2017",target:"wassmer2024"},{source:"calvert2018",target:"bergantino2024"},{source:"stamos2023",target:"wassmer2024"},{source:"bi2022",target:"gao2024"},{source:"huang2022",target:"he2026"},{source:"raccagni2024",target:"becker2026"},{source:"pulugurtha2021",target:"gao2024"},{source:"wan2024paradox",target:"liu2026"},{source:"wan2024paradox",target:"wan2025variability"},{source:"li2024",target:"liu2026"},{source:"zhou2026",target:"bergantino2024"},{source:"dft2024rea",target:"farahmand2024"},{source:"ganin2017",target:"liu2026"}];
 
-function showPanel(id,el){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');if(el)el.classList.add('active');if(id==='graph'&&!window._graphRendered){renderGraph();window._graphRendered=true;}}
+function showPanel(id,el){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');if(el)el.classList.add('active');if(id==='graph'&&!window._graphRendered){renderGraph();window._graphRendered=true;}const ct=document.querySelector('.content');if(id==='reader'){ct.style.padding='0';ct.style.maxWidth='100%';}else{ct.style.padding='30px 40px';ct.style.maxWidth='1400px';}}
 
 function populateTable(data){const tbody=document.getElementById('matrixBody');tbody.innerHTML='';data.forEach(p=>{const tr=document.createElement('tr');const fmt=v=>v==='\u2713'?'<span class="check">\u2713</span>':v==='\u2717'?'<span class="cross">\u2717</span>':'<span class="dash">\u2014</span>';const doiLink=p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" style="font-size:0.78em;color:var(--blue);text-decoration:none;">DOI</a>`:(p.url?`<a href="${p.url}" target="_blank" style="font-size:0.78em;color:var(--blue);text-decoration:none;">Link</a>`:'-');tr.innerHTML=`<td><strong>${p.authors}</strong></td><td>${p.year}</td><td>${p.title}</td><td>${p.journal}</td><td><span style="background:#e8f0fe;color:var(--navy);padding:2px 6px;border-radius:4px;font-size:0.78em;">${p.method}</span></td><td class="cite-count">${p.citations}</td><td>${p.if_val&&p.if_val!=='N/A'?'<span class="if-badge">'+p.if_val+'</span>':'-'}</td><td>${doiLink}</td><td>${fmt(p.a)}</td><td>${fmt(p.b)}</td><td>${fmt(p.c)}</td><td>${fmt(p.d)}</td><td>${fmt(p.e)}</td>`;tbody.appendChild(tr);});document.getElementById('tableCount').textContent=`Showing ${data.length} of ${papers.length} papers`;}
 
@@ -237,6 +299,178 @@ function renderGraph(){const container=document.getElementById('graphContainer')
 function highlightGraphTheme(theme){if(!window._graphRendered)return;const svg=d3.select('#citationSvg');if(!theme){svg.selectAll('.node').attr('opacity',1);svg.selectAll('.label').attr('opacity',1);svg.selectAll('.link').attr('stroke-opacity',0.5);return;}const themeMap={};papers.forEach(p=>{themeMap[p.key]=p[theme]==='\u2713';});svg.selectAll('.node').attr('opacity',d=>themeMap[d.id]?1:0.12);svg.selectAll('.label').attr('opacity',d=>themeMap[d.id]?1:0.12);}
 
 populateTable(papers);populateCards(papers);
+
+// ============================================================
+// PDF READER (embedded in "reader" tab)
+// ============================================================
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+const ANNO_DATA={"Wan_2024_Paradox_Post_Pandemic_Travel.pdf": {"method": [{"phrase": "Gamma distribution with a log-link", "note": "KEY: Gamma GLM with log-link — same model family we use for rainfall-speed.", "page": 13}, {"phrase": "negative binomial", "note": "NB regression for overdispersed count data (traffic volumes).", "page": 13}], "conclusion": [{"phrase": "journey time on key transport corridors has increased by 12", "note": "Despite lower demand, journey times rose 12% due to road space reallocation.", "page": 25}, {"phrase": "11.6%", "note": "Car demand fell 11.6%, cycle 15.8% below pre-pandemic — the 'paradox'.", "page": 2}], "innovation": [{"phrase": "paradox of post-pandemic", "note": "First empirical study of the demand-congestion paradox post-pandemic.", "page": 1}], "limitation": [{"phrase": "generalisability", "note": "Cambridge-specific. Our UK SRN work provides broader coverage.", "page": 26}]}, "Wan_2025_Transport_Emissions_Policy.pdf": {"method": [{"phrase": "latent profile model", "note": "Latent Profile Model identifies unobserved traveller emission groups from NTS data.", "page": 2}], "conclusion": [{"phrase": "SEC variable is no longer significant", "note": "KEY: Socio-economic status dissolves when compositional factors controlled.", "page": 10}], "innovation": [{"phrase": "latent travel emissions groups", "note": "Novel LPM approach. Behaviour-based segmentation outperforms SEC categories.", "page": 13}], "limitation": [{"phrase": "descriptive in nature", "note": "Descriptive only, no causation. Same limitation for our cross-sectional analysis.", "page": 16}]}, "Becker_2026_Impact_Rainfall_Driving_Speed.pdf": {"method": [{"phrase": "radar-based", "note": "FCD + weather radar fusion. Similar data integration approach to ours.", "page": 1}], "conclusion": [{"phrase": "130 km/h", "note": "Heavy rain cuts speeds 8-31% depending on speed limit zone.", "page": 1}], "innovation": [{"phrase": "combination of floating car data with high-resolution radar", "note": "First study at this radar+FCD resolution. Our innovation: Gamma GLM framework.", "page": 12}], "limitation": [{"phrase": "limited number of rainfall events", "note": "Only 3 summer days. Our multi-year dataset is much larger.", "page": 15}]}, "Gao_2024_Resilience_Road_Traffic_Rainfall.pdf": {"method": [{"phrase": "probabilistic model", "note": "Probabilistic resilience modelling framework for road traffic under rainfall.", "page": 1}], "conclusion": [{"phrase": "6.7%", "note": "Resilience decreases ~6.7% per 10mm rainfall below 50mm threshold.", "page": 1}], "innovation": [{"phrase": "resilience patterns", "note": "Links road context (land use, geometry) to rainfall resilience patterns.", "page": 1}], "limitation": [{"phrase": "single city", "note": "Harbin only. Winter climate differs from UK maritime climate.", "page": 1}]}, "Pregnolato_2017_Flood_Impact_Road_Transport.pdf": {"method": [{"phrase": "depth-disruption", "note": "Depth-disruption function: relates flood depth to speed reduction.", "page": 1}], "conclusion": [{"phrase": "non-linear", "note": "Nonlinear: speed drops gradually then rapidly. At 300mm most vehicles stop.", "page": 1}], "innovation": [{"phrase": "continuous", "note": "Replaces binary open/closed with continuous degradation function.", "page": 4}], "limitation": [{"phrase": "Newcastle upon Tyne", "note": "Newcastle only. Small dataset from historical floods.", "page": 1}]}, "Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf": {"method": [{"phrase": "percolation", "note": "Percolation theory on 40 US urban road networks.", "page": 2}], "conclusion": [{"phrase": "not necessarily more resilient", "note": "KEY: Efficient networks are not necessarily resilient — a paradox.", "page": 1}], "innovation": [{"phrase": "resilience and efficiency", "note": "First large-scale demo of resilience-efficiency trade-off (Science Advances).", "page": 1}], "limitation": [{"phrase": "purely topological", "note": "Ignores traffic flows, speeds, weather. Our GLM addresses link-level performance.", "page": 1}]}, "Calvert_2018_Road_Traffic_Resilience_Methodology.pdf": {"method": [{"phrase": "LPIR", "note": "LPIR indicator combining resistance (performance drop) and recovery.", "page": 2}], "conclusion": [{"phrase": "dependent on both the resistance and recovery", "note": "Recovery speed matters as much as resistance magnitude.", "page": 1}], "innovation": [{"phrase": "integrated approach", "note": "First metric integrating resistance + recovery in single indicator.", "page": 1}], "limitation": [{"phrase": "case study", "note": "Single corridor test. Our model covers the full UK SRN.", "page": 24}]}, "He_2026_Flood_ABM_Bristol.pdf": {"method": [{"phrase": "agent-based", "note": "MATSim ABM coupled with flood hazard model for Bristol.", "page": 1}], "conclusion": [{"phrase": "rerouting", "note": "Congestion cascades far beyond flooded area through rerouting.", "page": 2}], "innovation": [{"phrase": "flood hazard", "note": "First flood+ABM coupling for a UK city (Bristol).", "page": 1}], "limitation": [{"phrase": "agent-based simulation", "note": "ABM is expensive. Our Gamma GLM + Streamlit is much faster.", "page": 1}]}, "Huang_2022_Agent_Based_Models_Transport_Simulation.pdf": {"method": [{"phrase": "overview of agent-based models", "note": "Systematic review of ABM platforms by temporal scale.", "page": 1}], "conclusion": [{"phrase": "agent-based", "note": "No standard ABM calibration guidelines exist. Supports our empirical GLM choice.", "page": 1}], "innovation": [{"phrase": "agent-based model", "note": "ABM toolkit taxonomy. Weather as 'disruptor agent' pattern noted.", "page": 1}], "limitation": [{"phrase": "large-scale", "note": "ABMs need heavy computing. Our statistical approach is much faster.", "page": 3}]}, "Zhou_2026_Bibliometric_Transport_Climate.pdf": {"method": [{"phrase": "bibliometric", "note": "VOSviewer + CiteSpace on 2,133 publications.", "page": 1}], "conclusion": [{"phrase": "sustainability and resilience", "note": "Strongest keyword burst (10.69, 2021-present). Resilience is the hottest topic.", "page": 10}], "innovation": [{"phrase": "bibliometric", "note": "First 30-year bibliometric survey of the transport infrastructure resilience field.", "page": 1}], "limitation": [{"phrase": "Web of Science", "note": "WoS only. Misses non-English literature.", "page": 2}]}, "Wassmer_2024_Resilience_Transportation_Infrastructure_Road_Failures.pdf": {"method": [{"phrase": "gravity model", "note": "Gravity-model SIBC using OSM + GHSL population.", "page": 2}], "conclusion": [{"phrase": "50 km", "note": "Disruption cascades 50km from Ahr Valley flood epicenter.", "page": 8}], "innovation": [{"phrase": "betweenness centrality", "note": "Novel gravity-model centrality. Delta-T translates failure to commuter time.", "page": 3}], "limitation": [{"phrase": "fully closed", "note": "Binary open/closed. Our Gamma GLM captures continuous speed degradation.", "page": 1}]}, "Stamos_2023_Transportation_Networks_Climate_Change_Centrality.pdf": {"method": [{"phrase": "centrality measures", "note": "Reviews 17 centrality measures for transport climate adaptation.", "page": 1}], "conclusion": [{"phrase": "transit time of a link", "note": "Betweenness/closeness should use transit time, not distance.", "page": 8}], "innovation": [{"phrase": "ideal weather and climate conditions", "note": "Explicitly identifies weather-gap in traffic flow models — the gap we fill.", "page": 1}], "limitation": [{"phrase": "not been empirically validated", "note": "Purely theoretical. Our data could provide empirical validation.", "page": 1}]}, "Raccagni_2024_Urban_Road_Vehicle_Speed.pdf": {"method": [{"phrase": "85th percentile", "note": "Models V85 using 48,000+ spot speeds and 40+ road characteristics.", "page": 1}], "conclusion": [{"phrase": "traffic calming", "note": "SURPRISING: Traffic calming has NO significant effect on V85.", "page": 1}], "innovation": [{"phrase": "speed measurement", "note": "Largest urban V85 dataset. R²_adj=85.8%.", "page": 2}], "limitation": [{"phrase": "speed distributions", "note": "Assumes normality + OLS. Our Gamma GLM is better for right-skewed data.", "page": 2}]}, "Cai_2016_Rainfall_Speed_Dispersion.pdf": {"method": [{"phrase": "speed dispersion", "note": "Models mean speed AND speed variance as functions of rainfall.", "page": 1}], "conclusion": [{"phrase": "exponentially", "note": "Speed variance widens exponentially under rain. Safety implications.", "page": 4}], "innovation": [{"phrase": "heteroscedastic", "note": "First to model heteroscedastic speed variance under rainfall.", "page": 1}], "limitation": [{"phrase": "Hong Kong", "note": "Hong Kong only. Our FCD provides network-wide UK coverage.", "page": 1}]}, "Bi_2022_Weather_Urban_Traffic.pdf": {"method": [{"phrase": "weather-traffic", "note": "Regression + decision tree hybrid for city-level weather-traffic analysis.", "page": 1}], "conclusion": [{"phrase": "weather on traffic", "note": "Rainfall-congestion varies by city. One-size-fits-all factors inappropriate.", "page": 1}], "innovation": [{"phrase": "weather impacts", "note": "First multi-city weather-traffic comparison.", "page": 1}], "limitation": [{"phrase": "city-level aggregation", "note": "City-level aggregation loses detail. Our GLM works at road segment level.", "page": 1}]}, "Li_2024_Percolation_Highway_Rainfall.pdf": {"method": [{"phrase": "highway", "note": "Speed decline rate as percolation indicator. East Midlands UK.", "page": 1}], "conclusion": [{"phrase": "phase transition", "note": "Phase transition: gradual below threshold, rapid collapse above.", "page": 1}], "innovation": [{"phrase": "percolation theory", "note": "First percolation for functional (speed) degradation, not link removal.", "page": 1}], "limitation": [{"phrase": "East Midlands", "note": "East Midlands only. Static (no rerouting). Our GLM feeds dynamic analysis.", "page": 1}]}, "Liu_2026_Extreme_Rainfall_Resilience.pdf": {"method": [{"phrase": "Link Transmission Model", "note": "DTA using LTM integrating flooding + speed reduction + signal failure.", "page": 1}], "conclusion": [{"phrase": "single-factor", "note": "Multi-factor compound delays far exceed single-factor estimates.", "page": 13}], "innovation": [{"phrase": "signal failure", "note": "First to integrate 3 pathways. Our Gamma GLM provides the speed component.", "page": 1}], "limitation": [{"phrase": "hypothetical scenarios", "note": "Hypothetical scenarios. We use actual observed data.", "page": 1}]}, "Pulugurtha_2021_AADT_Local_Roads.pdf": {"method": [{"phrase": "geographically weighted regression", "note": "GWR vs OLS for AADT. Coefficients vary spatially.", "page": 1}], "conclusion": [{"phrase": "GWR", "note": "GWR significantly outperforms OLS. Spatial non-stationarity is key.", "page": 1}], "innovation": [{"phrase": "spatially varying", "note": "Demonstrates traffic-environment relationships vary spatially.", "page": 2}], "limitation": [{"phrase": "low R-squared", "note": "Low R² (0.20-0.33). High inherent variability on local roads.", "page": 1}]}, "Hranac_2006_Traffic_Inclement_Weather.pdf": {"method": [{"phrase": "weather adjustment factors", "note": "Empirical weather adjustment factors for US freeway speed-flow curves.", "page": 9}], "conclusion": [{"phrase": "free-flow speed", "note": "Rain reduces FFS 2-6.5%, capacity 4-11%. Benchmark figures for 20 years.", "page": 3}], "innovation": [{"phrase": "comprehensive quantification", "note": "First systematic quantification of weather effects on speed-flow.", "page": 1}], "limitation": [{"phrase": "freeway data", "note": "US freeway only. Pre-2006 detectors. Our GLM uses modern FCD.", "page": 9}]}, "DfT_2024_Climate_Transport_REA.pdf": {"method": [{"phrase": "rapid evidence assessment", "note": "UK government REA: 1,583 sources screened to 34. PRISMA-compliant.", "page": 1}], "conclusion": [{"phrase": "benefits of adaptation outweigh the costs", "note": "KEY POLICY: Adaptation benefits outweigh costs. Wider costs 2.2x direct repair.", "page": 4}], "innovation": [{"phrase": "forcing vehicles to travel at reduced speed", "note": "Recognises speed degradation (not just closure) as impact pathway.", "page": 22}], "limitation": [{"phrase": "extreme weather", "note": "No systematic UK weather-transport database. Our Streamlit addresses this.", "page": 4}]}, "Bergantino_2024_Transport_Network_Resilience.pdf": {"method": [{"phrase": "transport network resilience", "note": "PRISMA-guided review of 53 empirical transport resilience papers.", "page": 1}], "conclusion": [{"phrase": "growing but methods remain fragmented", "note": "Methods fragmented across disciplines. Standardisation needed.", "page": 1}], "innovation": [{"phrase": "first systematic review", "note": "First review focused on EMPIRICAL (not theoretical) resilience studies.", "page": 1}], "limitation": [{"phrase": "English-language", "note": "English-language bias. May miss non-English studies.", "page": 1}]}};
+
+const CAT_COLORS_R={method:'var(--blue)',conclusion:'var(--green)',innovation:'var(--orange)',limitation:'var(--red)'};
+const CAT_LABELS_R={method:'Method',conclusion:'Conclusion',innovation:'Innovation',limitation:'Limitation'};
+
+let rDoc=null,rScale=1.0,rFile=null;
+const rWrap=document.getElementById('readerCanvasWrap');
+const rPageContainers=[];  // {div, canvas, rendered}
+
+function buildReaderList(){
+  const c=document.getElementById('readerFileList');
+  const pdfPapers=papers.filter(p=>p.pdfFile).sort((a,b)=>b.year-a.year||a.title.localeCompare(b.title));
+  pdfPapers.forEach(p=>{
+    const d=document.createElement('div');d.className='rf-item';d.dataset.file=p.pdfFile;
+    const anno=ANNO_DATA[p.pdfFile]||{};
+    const cats=Object.keys(anno).filter(c=>anno[c]&&anno[c].length);
+    const tags=cats.map(c=>`<span class="rf-tag" style="background:${CAT_COLORS_R[c]}">${c[0].toUpperCase()}</span>`).join('');
+    d.innerHTML=`<div class="rf-year">${p.year} · ${p.authors}</div><div class="rf-title">${p.key==='wan2024paradox'?'&#11088; ':''}${p.title}</div><div class="rf-tags">${tags}</div>`;
+    d.onclick=()=>loadReaderPDF(p.pdfFile);
+    c.appendChild(d);
+  });
+}
+
+async function loadReaderPDF(filename){
+  rFile=filename;
+  document.querySelectorAll('.rf-item').forEach(el=>el.classList.toggle('active',el.dataset.file===filename));
+  // Clear old pages
+  rWrap.innerHTML='';
+  rPageContainers.length=0;
+  try{
+    const annoFile='Literature_Review/'+filename.replace('.pdf','_annotated.pdf');
+    rDoc=await pdfjsLib.getDocument(annoFile).promise;
+    document.getElementById('readerControls').style.display='flex';
+    document.getElementById('rPageInfo').textContent=rDoc.numPages+' pages | Scroll to read';
+    document.getElementById('rZoomInfo').textContent=Math.round(rScale*100)+'%';
+    // Create placeholder divs for all pages
+    for(let i=1;i<=rDoc.numPages;i++){
+      const page=await rDoc.getPage(i);
+      const vp=page.getViewport({scale:rScale});
+      const div=document.createElement('div');
+      div.className='page-container';
+      div.style.width=vp.width+'px';
+      div.style.height=vp.height+'px';
+      div.style.background='white';
+      div.id='rpage-'+i;
+      const label=document.createElement('div');
+      label.className='page-num-label';
+      label.textContent='Page '+i;
+      div.appendChild(label);
+      rWrap.appendChild(div);
+      rPageContainers.push({div:div,rendered:false,num:i});
+    }
+    // Render visible pages
+    renderVisiblePages();
+    renderReaderAnnos(filename);
+  }catch(e){
+    rWrap.innerHTML=`<div class="reader-empty">Error: ${e.message}. Trying original PDF...</div>`;
+    // Fallback to original PDF
+    try{
+      rDoc=await pdfjsLib.getDocument('Literature_Review/'+filename).promise;
+      document.getElementById('readerControls').style.display='flex';
+      for(let i=1;i<=rDoc.numPages;i++){
+        const page=await rDoc.getPage(i);
+        const vp=page.getViewport({scale:rScale});
+        const div=document.createElement('div');
+        div.className='page-container';
+        div.style.width=vp.width+'px';
+        div.style.height=vp.height+'px';
+        div.style.background='white';
+        div.id='rpage-'+i;
+        const label=document.createElement('div');
+        label.className='page-num-label';
+        label.textContent='Page '+i;
+        div.appendChild(label);
+        rWrap.appendChild(div);
+        rPageContainers.push({div:div,rendered:false,num:i});
+      }
+      renderVisiblePages();
+      renderReaderAnnos(filename);
+    }catch(e2){
+      rWrap.innerHTML=`<div class="reader-empty">Cannot load PDF: ${e2.message}</div>`;
+    }
+  }
+}
+
+async function renderPage(idx){
+  const pc=rPageContainers[idx];
+  if(pc.rendered)return;
+  pc.rendered=true;
+  const page=await rDoc.getPage(pc.num);
+  const vp=page.getViewport({scale:rScale});
+  const canvas=document.createElement('canvas');
+  canvas.width=vp.width;canvas.height=vp.height;
+  const ctx=canvas.getContext('2d');
+  await page.render({canvasContext:ctx,viewport:vp,annotationMode:2}).promise;
+  // Insert canvas before label
+  pc.div.insertBefore(canvas,pc.div.firstChild);
+}
+
+function renderVisiblePages(){
+  const wrapRect=rWrap.getBoundingClientRect();
+  const buffer=300; // render 300px above/below viewport
+  rPageContainers.forEach((pc,idx)=>{
+    const r=pc.div.getBoundingClientRect();
+    if(r.bottom>wrapRect.top-buffer && r.top<wrapRect.bottom+buffer){
+      renderPage(idx);
+    }
+  });
+}
+
+// Listen for scroll to lazy-render pages
+rWrap.addEventListener('scroll',()=>{renderVisiblePages();});
+
+function rGoToPage(n){
+  const el=document.getElementById('rpage-'+n);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+
+async function rReloadAllPages(){
+  // Re-render all at new scale
+  if(!rDoc)return;
+  rPageContainers.forEach(pc=>{
+    pc.rendered=false;
+    // Remove old canvas
+    const oldCanvas=pc.div.querySelector('canvas');
+    if(oldCanvas)oldCanvas.remove();
+  });
+  // Resize divs
+  for(let i=0;i<rPageContainers.length;i++){
+    const page=await rDoc.getPage(i+1);
+    const vp=page.getViewport({scale:rScale});
+    rPageContainers[i].div.style.width=vp.width+'px';
+    rPageContainers[i].div.style.height=vp.height+'px';
+  }
+  renderVisiblePages();
+  document.getElementById('rZoomInfo').textContent=Math.round(rScale*100)+'%';
+}
+
+function rZoomIn(){rScale=Math.min(rScale+0.15,2.5);rReloadAllPages();}
+function rZoomOut(){rScale=Math.max(rScale-0.15,0.5);rReloadAllPages();}
+
+function renderReaderAnnos(filename){
+  const c=document.getElementById('readerAnnoContent');
+  const anno=ANNO_DATA[filename];
+  const p=papers.find(x=>x.pdfFile===filename);
+  if(!anno){c.innerHTML='<div style="padding:40px 20px;text-align:center;color:#aaa;">No annotations</div>';return;}
+  document.getElementById('readerAnnoHeader').textContent=p?p.title:filename;
+  let h='';
+  ['method','conclusion','innovation','limitation'].forEach(cat=>{
+    const items=anno[cat];if(!items||!items.length)return;
+    h+=`<div class="ra-category"><div class="ra-cat-header" onclick="this.classList.toggle('collapsed');this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="color:${CAT_COLORS_R[cat]}"><div class="ra-cat-dot" style="background:${CAT_COLORS_R[cat]}"></div>${CAT_LABELS_R[cat]} (${items.length})<span class="ra-cat-arrow">&#9660;</span></div><div class="ra-items">`;
+    items.forEach(it=>{
+      h+=`<div class="ra-item ${cat}" onclick="rGoToPage(${it.page})" title="Click to jump to page ${it.page}"><div class="ra-note">${it.note}</div><div class="ra-phrase">"${it.phrase.length>55?it.phrase.substring(0,55)+'...':it.phrase}"</div><div class="ra-page">Page <span>${it.page}</span></div></div>`;
+    });
+    h+='</div></div>';
+  });
+  c.innerHTML=h;
+}
+
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('reader').classList.contains('active')){
+    if(e.key==='='||e.key==='+')rZoomIn();if(e.key==='-')rZoomOut();
+  }
+});
+
+buildReaderList();
 </script>
 </body>
 </html>

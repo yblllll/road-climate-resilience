@@ -46,3 +46,4 @@ docs/paper/Literature_Review/*.pdf
 # Temp
 *.tmp
 .claude/
+uploads/

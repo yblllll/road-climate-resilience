@@ -34,6 +34,7 @@ st.set_page_config(
 # Paths
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data", "example")
 UPLOAD_DIR = os.path.join(os.path.dirname(__file__), "uploads")
+USER_RESULTS_DIR = os.path.join(UPLOAD_DIR, "results")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # DARe brand colours
@@ -241,37 +242,67 @@ page = st.sidebar.radio(
 
 # ---- Helper functions ----
 @st.cache_data
+def _pick(filename, *dirs):
+    """Return the first existing path for filename across directories (user results first)."""
+    for d in dirs:
+        p = os.path.join(d, filename)
+        if os.path.exists(p):
+            return p
+    return None
+
+
 def load_example_data():
-    """Load the Cambridgeshire example dataset."""
-    geojson_path = os.path.join(DATA_DIR, "linkgis.geojson")
-    coef_path = os.path.join(DATA_DIR, "link_coefficients_with_features.csv")
-    feature_path = os.path.join(DATA_DIR, "road_features_with_infrastructure.csv")
-    glm_path = os.path.join(DATA_DIR, "gamma_glm_full_results.csv")
+    """Load data — prioritises user GLM results from uploads/results/, falls back to data/example/."""
+    # Priority order: user results > example data
+    dirs = [USER_RESULTS_DIR, DATA_DIR]
 
     data = {}
-    if os.path.exists(geojson_path):
+    data["source"] = "example"  # will be overridden if user data found
+
+    # GeoJSON (always from example unless user uploaded)
+    geojson_path = _pick("linkgis.geojson", *dirs)
+    if geojson_path:
         with open(geojson_path) as f:
             data["geojson"] = json.load(f)
-    links_path = os.path.join(DATA_DIR, "srn_links_resilience.geojson")
-    if os.path.exists(links_path):
+
+    links_path = _pick("srn_links_resilience.geojson", *dirs)
+    if links_path:
         with open(links_path) as f:
             data["links_geojson"] = json.load(f)
-    if os.path.exists(coef_path):
+
+    coef_path = _pick("link_coefficients_with_features.csv", *dirs)
+    if coef_path:
         data["coefficients"] = pd.read_csv(coef_path)
-    if os.path.exists(feature_path):
+
+    feature_path = _pick("road_features_with_infrastructure.csv", *dirs)
+    if feature_path:
         data["features"] = pd.read_csv(feature_path)
-    if os.path.exists(glm_path):
+
+    # GLM results — this is the key one that changes after user runs analysis
+    glm_path = _pick("gamma_glm_full_results.csv", *dirs)
+    if glm_path:
         data["glm_results"] = pd.read_csv(glm_path)
-    # Load model summary statistics (JSON)
-    summary_json_path = os.path.join(DATA_DIR, "model_summary.json")
-    if os.path.exists(summary_json_path):
+        if USER_RESULTS_DIR in glm_path:
+            data["source"] = "user"
+
+    # Model summary statistics
+    summary_json_path = _pick("model_summary.json", *dirs)
+    if summary_json_path:
         with open(summary_json_path) as f:
             data["model_summary"] = json.load(f)
-    # Also check for summary text
-    summary_txt_path = os.path.join(DATA_DIR, "gamma_glm_summary.txt")
-    if os.path.exists(summary_txt_path):
+        if USER_RESULTS_DIR in summary_json_path:
+            data["source"] = "user"
+
+    summary_txt_path = _pick("gamma_glm_summary.txt", *dirs)
+    if summary_txt_path:
         with open(summary_txt_path) as f:
             data["model_summary_text"] = f.read()
+
+    # Precipitation interaction results
+    interaction_path = _pick("precipitation_interaction_results.csv", *dirs)
+    if interaction_path:
+        data["interactions"] = pd.read_csv(interaction_path)
+
     return data
 
 
@@ -514,6 +545,109 @@ def build_link_map(links_geojson, n_levels=5, center_lat=52.25, center_lon=0.1):
     return m
 
 
+def _render_results_map(df, lat_col, lon_col, coef_col, gis_gdf=None):
+    """Render a resilience map from a dataframe with coordinates and coefficients."""
+    valid = df.dropna(subset=[lat_col, lon_col, coef_col]).copy()
+    if len(valid) == 0:
+        st.error("No valid rows with coordinates and coefficients.")
+        return
+
+    center_lat = valid[lat_col].mean()
+    center_lon = valid[lon_col].mean()
+    vmin = valid[coef_col].min()
+    vmax = valid[coef_col].max()
+
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=10, tiles="CartoDB positron")
+
+    # If we have GIS geometry (lines/polygons), render those instead of points
+    if gis_gdf is not None:
+        try:
+            for _, row in gis_gdf.iterrows():
+                coef_val = row[coef_col]
+                if pd.isna(coef_val):
+                    continue
+                color, _ = get_discrete_color(coef_val, vmin, vmax)
+                geom_type = row.geometry.geom_type
+                if geom_type in ("LineString", "MultiLineString"):
+                    coords = list(row.geometry.coords) if geom_type == "LineString" else \
+                             [c for ls in row.geometry.geoms for c in ls.coords]
+                    folium.PolyLine(
+                        locations=[(c[1], c[0]) for c in coords],
+                        color=color, weight=5, opacity=0.8,
+                        tooltip=f"{coef_val:.4f}",
+                    ).add_to(m)
+                elif geom_type in ("Polygon", "MultiPolygon"):
+                    folium.GeoJson(
+                        row.geometry.__geo_interface__,
+                        style_function=lambda x, c=color: {"fillColor": c, "color": c, "weight": 2, "fillOpacity": 0.6},
+                        tooltip=f"{coef_val:.4f}",
+                    ).add_to(m)
+        except Exception:
+            pass  # Fall through to point rendering
+
+    # Point rendering (always works, even if line rendering fails)
+    for _, row in valid.iterrows():
+        coef_val = row[coef_col]
+        color, _ = get_discrete_color(coef_val, vmin, vmax)
+
+        popup_parts = []
+        for dc in valid.columns:
+            if dc not in [lat_col, lon_col, coef_col, "_lat", "_lon", "_centroid", "geometry"]:
+                val = row.get(dc)
+                if pd.notna(val):
+                    popup_parts.append(f"<b>{dc}:</b> {val}")
+                if len(popup_parts) >= 6:
+                    break
+
+        popup_html = f"""
+        <div style="font-family: Arial; font-size: 12px;">
+            <b>Coefficient:</b> {coef_val:.6f}<br>
+            {'<br>'.join(popup_parts)}
+        </div>
+        """
+
+        folium.CircleMarker(
+            location=[row[lat_col], row[lon_col]],
+            radius=7, color=color, fill=True, fill_color=color, fill_opacity=0.8,
+            popup=folium.Popup(popup_html, max_width=300),
+            tooltip=f"{coef_val:.4f}",
+        ).add_to(m)
+
+    # Legend
+    legend_html = """
+    <div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+                background: white; padding: 10px; border: 1px solid grey;
+                border-radius: 5px; font-size: 12px;">
+        <b>Precipitation Sensitivity</b><br>
+        <span style="color: #00ff00;">&#9679;</span> More resilient<br>
+        <span style="color: #ffff00;">&#9679;</span> Moderate<br>
+        <span style="color: #ff0000;">&#9679;</span> Less resilient
+    </div>
+    """
+    m.get_root().html.add_child(folium.Element(legend_html))
+    st_folium(m, width=900, height=600)
+
+    # Summary stats
+    st.subheader("Summary Statistics")
+    sc1, sc2, sc3, sc4 = st.columns(4)
+    with sc1:
+        st.metric("Total Links", len(valid))
+    with sc2:
+        st.metric("Mean Coefficient", f"{valid[coef_col].mean():.6f}")
+    with sc3:
+        st.metric("Most Vulnerable", f"{valid[coef_col].min():.6f}")
+    with sc4:
+        st.metric("Most Resilient", f"{valid[coef_col].max():.6f}")
+
+    # Group stats if highway column exists
+    hw_col = _auto_match(valid.columns, ["highway", "road_class", "road_type", "corridor"])
+    if hw_col:
+        st.subheader(f"By {hw_col}")
+        hw_stats = valid.groupby(hw_col)[coef_col].agg(["mean", "count", "min", "max"]).round(6)
+        hw_stats.columns = ["Mean", "N Links", "Min", "Max"]
+        st.dataframe(hw_stats, **_USE_WIDTH)
+
+
 # ---- Page: Interactive Resilience Map ----
 if page == "Interactive Resilience Map":
     st.title("Interactive Road Climate Resilience Map")
@@ -530,6 +664,11 @@ if page == "Interactive Resilience Map":
     """)
 
     data = load_example_data()
+
+    if data.get("source") == "user":
+        st.success("Showing results from your latest GLM analysis. Run a new analysis in **Run Your Own Analysis** to update.")
+    else:
+        st.info("Showing Cambridgeshire example data. Run your own analysis in **Run Your Own Analysis** to see your results here.")
 
     if "geojson" in data:
         # Controls row
@@ -576,6 +715,11 @@ elif page == "Summary Dashboard":
     st.title("Summary Dashboard")
 
     data = load_example_data()
+
+    if data.get("source") == "user":
+        st.success("Showing results from your latest GLM analysis.")
+    else:
+        st.info("Showing Cambridgeshire example data. Run your own analysis to see your results here.")
 
     if "coefficients" in data:
         df = data["coefficients"]
@@ -793,27 +937,30 @@ elif page == "Run Your Own Analysis":
     # ---- Tab 1: Upload raw data for analysis ----
     with upload_tab1:
         st.markdown("""
-        Upload your merged traffic + weather CSV to run the full resilience analysis pipeline.
+        Upload your merged traffic + weather data to run the full resilience analysis pipeline.
+        Supports **CSV**, **Excel (.xlsx)**, and **Parquet** formats.
 
         **Important**: The model estimates on **weekday data only** (Monday–Friday).
-        Weekend observations will be automatically excluded during analysis, as weekend
-        traffic patterns differ substantially and would confound climate sensitivity estimates.
+        Weekend observations will be automatically excluded during analysis.
 
-        ### Required Columns
+        ### Required Data Fields
 
-        | Column | Description | Source |
-        |--------|-------------|--------|
-        | `time` | Datetime (e.g., 2024-01-15T08:00:00) | National Highways WebTRIS |
-        | `Avg mph` | Average speed in mph | National Highways WebTRIS |
-        | `Total Volume` | Vehicle count | National Highways WebTRIS |
-        | `link name` | Road link identifier | National Highways WebTRIS |
-        | `air_temperature` | Temperature (°C) | Met Office |
-        | `prcp_amt` | Precipitation (mm) | Met Office |
-        | `Accident` | Binary (0/1) | Alchera |
-        | `MaintenanceWorks` | Binary (0/1) | Alchera |
+        Your data needs these **6 types of information** — column names are flexible
+        (you can map them after upload):
 
-        Optional: `AbnormalTraffic`, `GeneralObstruction`, `EnvironmentalObstruction`,
-        `VehicleObstruction`, `AnimalPresenceObstruction`, `RoadOrCarriagewayOrLaneManagement`
+        | Field | What it is | Example column names |
+        |-------|-----------|---------------------|
+        | **Datetime** | When was this observation? | `time`, `datetime`, `Report Date`, `timestamp` |
+        | **Speed** | Average travel speed | `Avg mph`, `speed`, `avg_speed`, `mean_speed` |
+        | **Volume** | Vehicle count | `Total Volume`, `volume`, `flow`, `traffic_count` |
+        | **Link ID** | Road link identifier | `link name`, `link_id`, `road_id`, `sensor_id` |
+        | **Temperature** | Air temperature (°C) | `air_temperature`, `temperature`, `temp` |
+        | **Precipitation** | Rainfall amount (mm) | `prcp_amt`, `precipitation`, `rainfall` |
+
+        **Optional** (improves model accuracy if available):
+        - Accident/incident indicator (binary 0/1)
+        - Maintenance/roadworks indicator (binary 0/1)
+        - Other disruption variables (any binary columns)
         """)
 
         st.divider()
@@ -826,23 +973,67 @@ elif page == "Run Your Own Analysis":
 
         upload_path = None
 
+        # ---- File path history (remember last 10 files) ----
+        _HISTORY_FILE = os.path.join(UPLOAD_DIR, "file_history.json")
+
+        def _load_history():
+            if os.path.exists(_HISTORY_FILE):
+                try:
+                    with open(_HISTORY_FILE) as f:
+                        return json.load(f)
+                except Exception:
+                    pass
+            return []
+
+        def _save_history(path):
+            history = _load_history()
+            # Remove if already exists (will re-add at top)
+            history = [h for h in history if h != path]
+            history.insert(0, path)
+            history = history[:10]  # Keep last 10
+            os.makedirs(os.path.dirname(_HISTORY_FILE), exist_ok=True)
+            with open(_HISTORY_FILE, "w") as f:
+                json.dump(history, f)
+
         if input_method == "Enter file path (recommended for large files)":
-            raw_file_path = st.text_input(
-                "Full path to your merged traffic + weather CSV",
-                placeholder="/Users/you/data/merged_traffic_weather.csv",
-                help="Enter the full path to the CSV file on your computer. "
-                     "This avoids the slow upload process for large files (>1GB).",
-            )
+            file_history = _load_history()
+
+            if file_history:
+                # Show history as selectbox + option to enter new path
+                history_options = ["Enter a new path..."] + file_history
+                selected = st.selectbox(
+                    "Select a previously used file or enter a new path:",
+                    history_options,
+                    help="Your last 10 data files are remembered here.",
+                    key="file_history_select",
+                )
+                if selected == "Enter a new path...":
+                    raw_file_path = st.text_input(
+                        "Full path to your data file (CSV, Excel, or Parquet)",
+                        placeholder="/Users/you/data/merged_traffic_weather.csv",
+                        key="new_path_input",
+                    )
+                else:
+                    raw_file_path = selected
+            else:
+                raw_file_path = st.text_input(
+                    "Full path to your data file (CSV, Excel, or Parquet)",
+                    placeholder="/Users/you/data/merged_traffic_weather.csv",
+                    help="Supports .csv, .xlsx, .parquet formats. "
+                         "This avoids the slow upload process for large files (>1GB).",
+                )
+
             if raw_file_path and os.path.exists(raw_file_path):
                 file_size_mb = os.path.getsize(raw_file_path) / (1024**2)
                 st.success(f"File found: `{os.path.basename(raw_file_path)}` ({file_size_mb:.1f} MB)")
                 upload_path = raw_file_path
+                _save_history(raw_file_path)  # Remember this path
             elif raw_file_path:
                 st.error(f"File not found: `{raw_file_path}`")
         else:
             raw_file = st.file_uploader(
-                "Upload your merged traffic + weather CSV",
-                type=["csv"],
+                "Upload your merged traffic + weather data",
+                type=["csv", "xlsx", "parquet"],
                 help="For files under 200MB. For larger files, use the file path option.",
                 key="raw_upload",
             )
@@ -852,56 +1043,156 @@ elif page == "Run Your Own Analysis":
                     f.write(raw_file.getbuffer())
                 st.success(f"File saved: `uploads/{raw_file.name}`")
 
+        # Helper: read file based on extension
+        def _read_preview(path, nrows=100):
+            ext = os.path.splitext(path)[1].lower()
+            if ext == ".parquet":
+                return pd.read_parquet(path).head(nrows)
+            elif ext in (".xlsx", ".xls"):
+                return pd.read_excel(path, nrows=nrows)
+            else:
+                return pd.read_csv(path, nrows=nrows, low_memory=False)
+
+        # Helper: auto-detect best matching column
+        def _auto_match(columns, keywords, exclude=None):
+            """Find the best matching column name from a list of keywords."""
+            cols_lower = {c.lower().replace(" ", "_").replace("-", "_"): c for c in columns}
+            for kw in keywords:
+                kw_norm = kw.lower().replace(" ", "_").replace("-", "_")
+                # Exact match (case-insensitive)
+                if kw_norm in cols_lower:
+                    match = cols_lower[kw_norm]
+                    if exclude and match in exclude:
+                        continue
+                    return match
+                # Substring match
+                for cn, orig in cols_lower.items():
+                    if kw_norm in cn and (not exclude or orig not in exclude):
+                        return orig
+            return None
+
         if upload_path is not None:
 
             try:
-                preview_df = pd.read_csv(upload_path, nrows=100)
+                preview_df = _read_preview(upload_path)
                 st.subheader("Data Preview")
                 st.dataframe(preview_df.head(20), **_USE_WIDTH)
 
                 st.subheader("Data Summary")
                 col1, col2, col3 = st.columns(3)
-                total_rows_estimate = sum(1 for _ in open(upload_path)) - 1
+                ext = os.path.splitext(upload_path)[1].lower()
+                if ext == ".csv":
+                    total_rows_estimate = sum(1 for _ in open(upload_path)) - 1
+                else:
+                    total_rows_estimate = len(preview_df)  # approximate for non-CSV
                 with col1:
                     st.metric("Columns", len(preview_df.columns))
                 with col2:
                     st.metric("Estimated Rows", f"{total_rows_estimate:,}")
                 with col3:
-                    links = preview_df.get("link name", preview_df.get("link_name", pd.Series())).nunique()
+                    link_guess = _auto_match(preview_df.columns,
+                        ["link name", "link_name", "linkname", "link_id", "road_id", "sensor_id", "site_id", "Road Name", "Name"])
+                    links = preview_df[link_guess].nunique() if link_guess else "?"
                     st.metric("Unique Links (sample)", links)
 
-                # Check required columns
-                required = ["time", "Avg mph", "link name", "air_temperature", "prcp_amt"]
-                alt_names = {
-                    "time": ["Report Date", "datetime", "timestamp"],
-                    "Avg mph": ["avg_mph", "speed", "avgmph"],
-                    "link name": ["link_name", "linkname", "Road_Name"],
-                    "air_temperature": ["temperature", "temp"],
-                    "prcp_amt": ["precipitation", "rainfall", "precip"],
+                # ---- Column Mapping UI ----
+                st.divider()
+                st.subheader("Column Mapping")
+                st.markdown("Map your data columns to the required fields. "
+                            "Auto-detection is attempted — **verify and correct** if needed.")
+
+                all_cols = ["(not available)"] + list(preview_df.columns)
+
+                # Define required fields with auto-detect keywords
+                field_defs = {
+                    "datetime": {
+                        "label": "Datetime",
+                        "keywords": ["time", "datetime", "Report Date", "timestamp", "date_time", "date"],
+                        "required": True,
+                        "help": "Column with date/time of each observation",
+                    },
+                    "speed": {
+                        "label": "Speed (mph or km/h)",
+                        "keywords": ["Avg mph", "avg_mph", "speed", "avgmph", "mean_speed", "avg_speed"],
+                        "required": True,
+                        "help": "Average travel speed for the road link",
+                    },
+                    "volume": {
+                        "label": "Traffic volume",
+                        "keywords": ["Total Volume", "total_volume", "volume", "flow", "traffic_count", "count", "AADT"],
+                        "required": False,
+                        "help": "Vehicle count (optional but recommended)",
+                    },
+                    "link_id": {
+                        "label": "Road link identifier",
+                        "keywords": ["link name", "link_name", "linkname", "link_id", "road_id", "sensor_id", "site_id", "Site Name"],
+                        "required": True,
+                        "help": "Unique identifier for each road segment/sensor",
+                    },
+                    "temperature": {
+                        "label": "Temperature (°C)",
+                        "keywords": ["air_temperature", "temperature", "temp", "Temperature_t"],
+                        "required": True,
+                        "help": "Air temperature in Celsius",
+                    },
+                    "precipitation": {
+                        "label": "Precipitation (mm)",
+                        "keywords": ["prcp_amt", "precipitation", "rainfall", "precip", "rain", "Precipitation_t"],
+                        "required": True,
+                        "help": "Rainfall amount in mm",
+                    },
+                    "accident": {
+                        "label": "Accident indicator (0/1)",
+                        "keywords": ["Accident", "accident", "Accident_t", "incident"],
+                        "required": False,
+                        "help": "Binary: 1 = accident occurred, 0 = no accident",
+                    },
+                    "maintenance": {
+                        "label": "Maintenance/roadworks (0/1)",
+                        "keywords": ["MaintenanceWorks", "maintenance", "Roadworks_t", "roadworks"],
+                        "required": False,
+                        "help": "Binary: 1 = roadworks, 0 = none",
+                    },
                 }
 
-                missing = []
-                found_mapping = {}
-                for req in required:
-                    if req in preview_df.columns:
-                        found_mapping[req] = req
-                    else:
-                        found_alt = False
-                        for alt in alt_names.get(req, []):
-                            if alt in preview_df.columns:
-                                found_mapping[req] = alt
-                                found_alt = True
-                                break
-                        if not found_alt:
-                            missing.append(req)
+                # Auto-detect and let user override
+                used_cols = set()
+                col_mapping = {}
+                map_cols = st.columns(2)
 
-                if missing:
-                    st.error(f"Missing required columns: {missing}")
-                    st.info(f"Available columns: {list(preview_df.columns)}")
+                for i, (field_key, fdef) in enumerate(field_defs.items()):
+                    auto = _auto_match(preview_df.columns, fdef["keywords"], exclude=used_cols)
+                    default_idx = all_cols.index(auto) if auto and auto in all_cols else 0
+                    req_mark = " *" if fdef["required"] else ""
+
+                    with map_cols[i % 2]:
+                        chosen = st.selectbox(
+                            f"{fdef['label']}{req_mark}",
+                            all_cols,
+                            index=default_idx,
+                            help=fdef["help"],
+                            key=f"map_{field_key}",
+                        )
+
+                    if chosen != "(not available)":
+                        col_mapping[field_key] = chosen
+                        used_cols.add(chosen)
+
+                # Validate required fields
+                missing_required = [
+                    fdef["label"] for fk, fdef in field_defs.items()
+                    if fdef["required"] and fk not in col_mapping
+                ]
+
+                if missing_required:
+                    st.error(f"Please map these required fields: **{', '.join(missing_required)}**")
                 else:
-                    st.success("All required columns found!")
-                    if found_mapping:
-                        st.write("Column mapping:", found_mapping)
+                    st.success("All required fields mapped!")
+
+                    # Show final mapping summary
+                    with st.expander("Column mapping summary"):
+                        for fk, col_name in col_mapping.items():
+                            st.write(f"  {field_defs[fk]['label']}  →  `{col_name}`")
 
                     st.divider()
                     st.subheader("Analysis Configuration")
@@ -911,17 +1202,8 @@ elif page == "Run Your Own Analysis":
                         min_value=5, max_value=100, value=20, step=5,
                     )
 
-                    speed_col = st.selectbox(
-                        "Speed column:",
-                        [found_mapping.get("Avg mph", "Avg mph")]
-                        + [c for c in preview_df.columns if "mph" in c.lower() or "speed" in c.lower()],
-                    )
-
-                    link_col = st.selectbox(
-                        "Link identifier column:",
-                        [found_mapping.get("link name", "link name")]
-                        + [c for c in preview_df.columns if "link" in c.lower() or "road" in c.lower()],
-                    )
+                    speed_col = col_mapping.get("speed", "Avg mph")
+                    link_col = col_mapping.get("link_id", "link name")
 
                     # Memory estimation
                     try:
@@ -983,13 +1265,40 @@ elif page == "Run Your Own Analysis":
                             return proc.returncode
 
                         # Step 1: Data preparation
+                        # Convert file to CSV if needed (Excel/Parquet)
+                        if ext in (".xlsx", ".xls", ".parquet"):
+                            st.info(f"Converting {ext} to CSV for processing...")
+                            tmp_csv = os.path.join(UPLOAD_DIR, "converted_input.csv")
+                            if ext == ".parquet":
+                                pd.read_parquet(upload_path).to_csv(tmp_csv, index=False)
+                            else:
+                                pd.read_excel(upload_path).to_csv(tmp_csv, index=False)
+                            upload_path_csv = tmp_csv
+                        else:
+                            upload_path_csv = upload_path
+
                         prep_output = os.path.join(UPLOAD_DIR, "prepared_data.csv")
+
+                        # Build rename mapping for data_preparation script
+                        rename_args = []
+                        # Map user's column names to what the script expects
+                        time_col = col_mapping.get("datetime", "time")
+                        temp_col = col_mapping.get("temperature", "air_temperature")
+                        precip_col = col_mapping.get("precipitation", "prcp_amt")
+                        vol_col = col_mapping.get("volume", "Total Volume")
+                        accident_col = col_mapping.get("accident", "")
+                        maint_col = col_mapping.get("maintenance", "")
+
                         cmd1 = [
                             sys.executable, os.path.join(repo_dir, "scripts", "01_data_preparation.py"),
-                            "--input", upload_path,
+                            "--input", upload_path_csv,
                             "--output", prep_output,
                             "--speed-col", speed_col,
                             "--link-col", link_col,
+                            "--time-col", time_col,
+                            "--temp-col", temp_col,
+                            "--precip-col", precip_col,
+                            "--volume-col", vol_col,
                             "--sample", str(sample_pct / 100),
                         ]
                         run_with_progress(cmd1, "Step 1/2: Preparing data...", timeout=600)
@@ -1047,151 +1356,262 @@ elif page == "Run Your Own Analysis":
             except Exception as e:
                 st.error(f"Error reading file: {e}")
 
-        else:
-            st.info("Upload a CSV file to get started, or explore the Cambridgeshire example using the Map and Dashboard pages.")
+        # ---- Always show previous results if they exist on disk ----
+        prev_results_file = os.path.join(USER_RESULTS_DIR, "precipitation_interaction_results.csv")
+        prev_full_file = os.path.join(USER_RESULTS_DIR, "gamma_glm_full_results.csv")
+        prev_summary_file = os.path.join(USER_RESULTS_DIR, "gamma_glm_summary.txt")
+        prev_model_json = os.path.join(USER_RESULTS_DIR, "model_summary.json")
 
-    # ---- Tab 2: Upload results to visualise on map ----
+        if os.path.exists(prev_results_file):
+            st.divider()
+            st.subheader("Previous Analysis Results")
+            import datetime as _dt
+            mod_time = os.path.getmtime(prev_results_file)
+            mod_str = _dt.datetime.fromtimestamp(mod_time).strftime("%Y-%m-%d %H:%M")
+            st.caption(f"Last run: {mod_str}")
+
+            prev_df = pd.read_csv(prev_results_file)
+            st.dataframe(prev_df.round(6), **_USE_WIDTH)
+
+            # Download buttons (always available)
+            dl_c1, dl_c2, dl_c3 = st.columns(3)
+            with dl_c1:
+                st.download_button(
+                    "Download Interaction Results",
+                    prev_df.to_csv(index=False),
+                    "precipitation_interactions.csv", "text/csv",
+                    key="dl_prev_interactions",
+                )
+            if os.path.exists(prev_full_file):
+                with dl_c2:
+                    st.download_button(
+                        "Download Full GLM Results",
+                        open(prev_full_file).read(),
+                        "gamma_glm_full_results.csv", "text/csv",
+                        key="dl_prev_full",
+                    )
+            if os.path.exists(prev_summary_file):
+                with dl_c3:
+                    st.download_button(
+                        "Download Model Summary",
+                        open(prev_summary_file).read(),
+                        "gamma_glm_summary.txt", "text/plain",
+                        key="dl_prev_summary",
+                    )
+
+            st.info("These results are also shown in **Interactive Resilience Map** and **Summary Dashboard**. "
+                    "Upload new data above to run a fresh analysis.")
+        elif upload_path is None:
+            st.info("Upload a data file to get started, or explore the Cambridgeshire example using the Map and Dashboard pages.")
+
+    # ---- Tab 2: Upload results + GIS to visualise on map ----
     with upload_tab2:
         st.markdown("""
-        Upload a CSV with your resilience analysis results to visualise them on an interactive map.
+        Visualise your resilience results on an interactive map. Two options:
 
-        ### Required Columns
+        **Option A**: Upload a results file that already has coordinates (latitude/longitude).
 
-        | Column | Description |
-        |--------|-------------|
-        | `latitude` | Latitude of road link (WGS84) |
-        | `longitude` | Longitude of road link (WGS84) |
-        | `coefficient` | Precipitation sensitivity coefficient |
-
-        ### Optional Columns (for richer tooltips)
-        `link_name`, `highway`, `road_name`, `p_value`, `significance_level`,
-        `Number of lanes`, `Speed limit (mph)`, `Average daily flow`
+        **Option B**: Upload results + a separate GIS layer (Shapefile/GeoJSON), then match
+        them by a shared identifier (e.g., link ID, road name).
         """)
 
         st.divider()
 
+        vis_mode = st.radio(
+            "How would you like to provide spatial data?",
+            [
+                "My results already have lat/lon coordinates",
+                "I have a separate GIS layer (SHP/GeoJSON) to match with results",
+            ],
+            horizontal=True, key="vis_mode",
+        )
+
+        # ---- Step 1: Upload results ----
+        st.subheader("Step 1: Upload Results")
         results_file = st.file_uploader(
-            "Upload your results CSV",
-            type=["csv"],
-            help="CSV with at least latitude, longitude, and a precipitation coefficient column.",
+            "Upload your resilience results",
+            type=["csv", "xlsx", "parquet"],
+            help="CSV/Excel/Parquet with coefficient values per road link.",
             key="results_upload",
         )
 
+        result_df = None
         if results_file is not None:
             try:
-                result_df = pd.read_csv(results_file)
-                st.success(f"Loaded {len(result_df)} road links")
-
-                # Find coordinate columns
-                lat_col = None
-                lon_col = None
-                for c in result_df.columns:
-                    cl = c.lower()
-                    if "lat" in cl:
-                        lat_col = c
-                    if "lon" in cl:
-                        lon_col = c
-
-                coef_col = None
-                for candidate in ["coefficient", "precipitat", "precipitation_interaction_coefficient",
-                                  "total_precipitation_effect", "precip_coef"]:
-                    if candidate in result_df.columns:
-                        coef_col = candidate
-                        break
-
-                if not lat_col or not lon_col:
-                    st.error("Could not find latitude/longitude columns. Please ensure your CSV has columns containing 'lat' and 'lon'.")
-                    st.info(f"Available columns: {list(result_df.columns)}")
-                elif not coef_col:
-                    st.error("Could not find a coefficient column. Expected one of: coefficient, precipitat, precipitation_interaction_coefficient")
-                    st.info(f"Available columns: {list(result_df.columns)}")
+                ext_r = os.path.splitext(results_file.name)[1].lower()
+                if ext_r == ".parquet":
+                    result_df = pd.read_parquet(results_file)
+                elif ext_r in (".xlsx", ".xls"):
+                    result_df = pd.read_excel(results_file)
                 else:
-                    st.write(f"Using: **{lat_col}** (lat), **{lon_col}** (lon), **{coef_col}** (coefficient)")
-
-                    # Preview data
-                    st.subheader("Data Preview")
-                    st.dataframe(result_df.head(10).round(6), **_USE_WIDTH)
-
-                    # Build map
-                    st.subheader("Resilience Map")
-
-                    valid = result_df.dropna(subset=[lat_col, lon_col, coef_col])
-                    center_lat = valid[lat_col].mean()
-                    center_lon = valid[lon_col].mean()
-                    vmin = valid[coef_col].min()
-                    vmax = valid[coef_col].max()
-
-                    m = folium.Map(location=[center_lat, center_lon], zoom_start=10, tiles="CartoDB positron")
-
-                    for _, row in valid.iterrows():
-                        coef_val = row[coef_col]
-                        color, _ = get_discrete_color(coef_val, vmin, vmax)
-
-                        # Build popup from available columns
-                        popup_parts = []
-                        for display_col in ["road_name", "highway", "link_name", "linkname",
-                                            "Number of lanes", "Speed limit (mph)", "p_value"]:
-                            if display_col in row.index and pd.notna(row[display_col]):
-                                popup_parts.append(f"<b>{display_col}:</b> {row[display_col]}")
-
-                        popup_html = f"""
-                        <div style="font-family: Arial; font-size: 12px;">
-                            <b>Coefficient:</b> {coef_val:.6f}<br>
-                            {'<br>'.join(popup_parts)}
-                        </div>
-                        """
-
-                        label = str(row.get("road_name", row.get("linkname", row.get("link_name", ""))))
-
-                        folium.CircleMarker(
-                            location=[row[lat_col], row[lon_col]],
-                            radius=7,
-                            color=color,
-                            fill=True,
-                            fill_color=color,
-                            fill_opacity=0.8,
-                            popup=folium.Popup(popup_html, max_width=300),
-                            tooltip=f"{label}: {coef_val:.4f}",
-                        ).add_to(m)
-
-                    # Legend
-                    legend_html = """
-                    <div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
-                                background: white; padding: 10px; border: 1px solid grey;
-                                border-radius: 5px; font-size: 12px;">
-                        <b>Precipitation Sensitivity</b><br>
-                        <span style="color: #00ff00;">&#9679;</span> More resilient<br>
-                        <span style="color: #ffff00;">&#9679;</span> Moderate<br>
-                        <span style="color: #ff0000;">&#9679;</span> Less resilient
-                    </div>
-                    """
-                    m.get_root().html.add_child(folium.Element(legend_html))
-
-                    st_folium(m, width=900, height=600)
-
-                    # Summary stats
-                    st.subheader("Summary Statistics")
-                    col1, col2, col3, col4 = st.columns(4)
-                    with col1:
-                        st.metric("Total Links", len(valid))
-                    with col2:
-                        st.metric("Mean Coefficient", f"{valid[coef_col].mean():.6f}")
-                    with col3:
-                        st.metric("Most Vulnerable", f"{valid[coef_col].min():.6f}")
-                    with col4:
-                        st.metric("Most Resilient", f"{valid[coef_col].max():.6f}")
-
-                    if "highway" in valid.columns:
-                        st.subheader("By Highway")
-                        hw_stats = valid.groupby("highway")[coef_col].agg(["mean", "count", "min", "max"]).round(6)
-                        hw_stats.columns = ["Mean", "N Links", "Min", "Max"]
-                        st.dataframe(hw_stats, **_USE_WIDTH)
-
+                    result_df = pd.read_csv(results_file)
+                st.success(f"Loaded {len(result_df)} rows, {len(result_df.columns)} columns")
+                st.dataframe(result_df.head(5), **_USE_WIDTH)
             except Exception as e:
-                st.error(f"Error processing file: {e}")
+                st.error(f"Error reading results file: {e}")
+
+        # Also allow loading from GLM run output
+        glm_results_path = os.path.join(UPLOAD_DIR, "results", "precipitation_interaction_results.csv")
+        if result_df is None and os.path.exists(glm_results_path):
+            if st.button("Use results from last GLM run"):
+                result_df = pd.read_csv(glm_results_path)
+                st.success(f"Loaded {len(result_df)} links from last run")
+                st.dataframe(result_df.head(5), **_USE_WIDTH)
+
+        if result_df is not None:
+            # ---- Select coefficient column ----
+            all_result_cols = list(result_df.columns)
+            coef_guess = _auto_match(all_result_cols,
+                ["total_precipitation_effect", "precipitation_interaction_coefficient",
+                 "coefficient", "coef", "sensitivity", "precip_coef"])
+            coef_idx = all_result_cols.index(coef_guess) if coef_guess else 0
+            coef_col = st.selectbox("Coefficient column (the value to visualise):",
+                                     all_result_cols, index=coef_idx, key="coef_col")
+
+            # ---- Option A: Results already have coordinates ----
+            if vis_mode == "My results already have lat/lon coordinates":
+                lat_guess = _auto_match(all_result_cols, ["latitude", "lat", "Latitude", "y"])
+                lon_guess = _auto_match(all_result_cols, ["longitude", "lon", "Longitude", "lng", "x"])
+                lat_idx = all_result_cols.index(lat_guess) if lat_guess else 0
+                lon_idx = all_result_cols.index(lon_guess) if lon_guess else 0
+
+                lc1, lc2 = st.columns(2)
+                with lc1:
+                    lat_col = st.selectbox("Latitude column:", all_result_cols, index=lat_idx, key="lat_col")
+                with lc2:
+                    lon_col = st.selectbox("Longitude column:", all_result_cols, index=lon_idx, key="lon_col")
+
+                valid = result_df.dropna(subset=[lat_col, lon_col, coef_col]).copy()
+                if len(valid) == 0:
+                    st.error("No valid rows with coordinates and coefficients.")
+                else:
+                    _render_results_map(valid, lat_col, lon_col, coef_col)
+
+            # ---- Option B: Separate GIS layer ----
+            else:
+                st.subheader("Step 2: Upload GIS Layer")
+                st.markdown("""
+                Upload your road network geometry. Supported formats:
+                - **GeoJSON** (.geojson)
+                - **Shapefile** (.shp — upload the .shp file; .dbf, .shx, .prj must be in the same folder)
+                - **GeoPackage** (.gpkg)
+
+                The GIS layer must have a field that matches your results (e.g., link ID, road name).
+                """)
+
+                gis_input_method = st.radio(
+                    "How to provide GIS data?",
+                    ["Upload file", "Enter file path"],
+                    horizontal=True, key="gis_input",
+                )
+
+                gis_gdf = None
+
+                if gis_input_method == "Enter file path":
+                    gis_path = st.text_input(
+                        "Path to your GIS file (.geojson, .shp, .gpkg)",
+                        placeholder="/Users/you/data/road_network.geojson",
+                        key="gis_path_input",
+                    )
+                    if gis_path and os.path.exists(gis_path):
+                        try:
+                            import geopandas as gpd
+                            gis_gdf = gpd.read_file(gis_path)
+                            st.success(f"Loaded {len(gis_gdf)} features from `{os.path.basename(gis_path)}`")
+                        except ImportError:
+                            st.error("Please install geopandas: `pip install geopandas`")
+                        except Exception as e:
+                            st.error(f"Error reading GIS file: {e}")
+                else:
+                    gis_file = st.file_uploader(
+                        "Upload GIS file",
+                        type=["geojson", "gpkg", "shp"],
+                        key="gis_upload",
+                    )
+                    if gis_file is not None:
+                        try:
+                            import geopandas as gpd
+                            gis_save_path = os.path.join(UPLOAD_DIR, gis_file.name)
+                            with open(gis_save_path, "wb") as f:
+                                f.write(gis_file.getbuffer())
+                            gis_gdf = gpd.read_file(gis_save_path)
+                            st.success(f"Loaded {len(gis_gdf)} features")
+                        except ImportError:
+                            st.error("Please install geopandas: `pip install geopandas`")
+                        except Exception as e:
+                            st.error(f"Error reading GIS file: {e}")
+
+                if gis_gdf is not None:
+                    st.subheader("Step 3: Match Fields")
+                    st.markdown("Select which field in your **GIS layer** matches which field in your **results**.")
+
+                    gc1, gc2 = st.columns(2)
+                    gis_cols = [c for c in gis_gdf.columns if c != "geometry"]
+                    with gc1:
+                        gis_match_col = st.selectbox(
+                            "GIS layer: match field",
+                            gis_cols,
+                            help="The field in your GIS layer that identifies each road link",
+                            key="gis_match",
+                        )
+                        st.caption(f"Sample values: {list(gis_gdf[gis_match_col].head(5))}")
+                    with gc2:
+                        result_match_guess = _auto_match(all_result_cols,
+                            ["link_name", "link_id", "linkname", "road_id", "sensor_id", gis_match_col])
+                        r_idx = all_result_cols.index(result_match_guess) if result_match_guess else 0
+                        result_match_col = st.selectbox(
+                            "Results: match field",
+                            all_result_cols,
+                            index=r_idx,
+                            help="The field in your results that matches the GIS layer",
+                            key="result_match",
+                        )
+                        st.caption(f"Sample values: {list(result_df[result_match_col].head(5))}")
+
+                    # Show match preview
+                    gis_keys = set(gis_gdf[gis_match_col].astype(str).unique())
+                    result_keys = set(result_df[result_match_col].astype(str).unique())
+                    matched = gis_keys & result_keys
+                    mc1, mc2, mc3 = st.columns(3)
+                    with mc1:
+                        st.metric("GIS features", len(gis_keys))
+                    with mc2:
+                        st.metric("Result links", len(result_keys))
+                    with mc3:
+                        match_pct = len(matched) / max(len(result_keys), 1) * 100
+                        st.metric("Matched", f"{len(matched)} ({match_pct:.0f}%)")
+
+                    if len(matched) == 0:
+                        st.error("No matches found! Check that the match fields contain the same identifiers.")
+                        st.write("GIS sample:", sorted(list(gis_keys))[:10])
+                        st.write("Results sample:", sorted(list(result_keys))[:10])
+                    else:
+                        if match_pct < 50:
+                            st.warning(f"Only {match_pct:.0f}% of results matched. Check field selection.")
+
+                        if st.button("Generate Map", type="primary", key="gen_map"):
+                            # Merge GIS geometry with results
+                            gis_gdf[gis_match_col] = gis_gdf[gis_match_col].astype(str)
+                            result_df[result_match_col] = result_df[result_match_col].astype(str)
+
+                            merged = gis_gdf.merge(
+                                result_df, left_on=gis_match_col, right_on=result_match_col, how="inner"
+                            )
+                            st.success(f"Merged: {len(merged)} features with coefficients")
+
+                            # Get centroids for point display
+                            merged["_centroid"] = merged.geometry.centroid
+                            merged["_lat"] = merged["_centroid"].y
+                            merged["_lon"] = merged["_centroid"].x
+
+                            _render_results_map(
+                                merged.drop(columns=["geometry", "_centroid"]),
+                                "_lat", "_lon", coef_col,
+                                gis_gdf=merged,  # pass for line/polygon rendering
+                            )
 
         else:
-            st.info("Upload a results CSV to visualise your road-level resilience scores on an interactive map.")
+            st.info("Upload a results file to get started, or run a GLM analysis in the **Upload Raw Data** tab first.")
 
 
 # ---- Page: About ----
