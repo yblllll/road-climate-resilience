@@ -1,0 +1,568 @@
+{
+  "catalog_created": "2026-03-28",
+  "purpose": "Figure catalog for road climate resilience academic paper",
+  "paper_figure_needs": [
+    "Study area map with link locations and weather stations",
+    "Spatial map of precipitation sensitivity coefficients",
+    "Betweenness centrality map/figure (normal vs extreme rainfall)",
+    "Speed-precipitation relationship plots",
+    "Model diagnostics plots",
+    "Temporal pattern figures",
+    "Framework/methodology flowchart"
+  ],
+  "presentations": [
+    {
+      "ppt_file": "Cambridgeshire Case Study mini meeting.pptx",
+      "ppt_path": "/Users/ybl/Desktop/Postdoc research/Powerpoint/30:3:2026 - WP2 mini meeting/Cambridgeshire Case Study mini meeting.pptx",
+      "presentation_date": "2026-03-30",
+      "context": "WP2 mini meeting - internal project update",
+      "total_slides": 13,
+      "slides": [
+        {
+          "slide_number": 1,
+          "title": "Stress Testing the Road Network in Cambridgeshire",
+          "figures": [],
+          "notes": "Title slide with authors (Dr Yibin Li & Prof. Li Wan, Dept of Land Economy, University of Cambridge). No figures."
+        },
+        {
+          "slide_number": 2,
+          "title": "WP1 & WP2: Research Plan",
+          "figures": [
+            {
+              "type": "table",
+              "description": "Research plan table (3x4) showing tasks (Road resilience analysis, Demand modelling) across March, April-August, and Enhanced Version timeline columns. Details deliverables including road criticality analysis map output, transport demand estimation, and scenario testing.",
+              "potential_use": "Not directly for paper figures, but useful reference for methodology timeline",
+              "quality_notes": "Text-based table, can be recreated"
+            }
+          ]
+        },
+        {
+          "slide_number": 3,
+          "title": "Cambridgeshire - Peterborough: Stress Testing the Road Network",
+          "figures": [],
+          "notes": "Text-only slide describing research objective: GLM & NB models, controlling for ToD/DoW/month/year/school terms/events/roadworks/accidents, 9.5 million obs (2022-2024), Gamma GLM for road speed. No embedded figures."
+        },
+        {
+          "slide_number": 4,
+          "title": "Cambridgeshire - Peterborough: Stress Testing - WP1",
+          "figures": [],
+          "notes": "Text-only slide with scope (investigate low resilience links), data sources (WebTRIS, Alchera, CEDA Archive), and next steps. No embedded figures."
+        },
+        {
+          "slide_number": 5,
+          "title": "Cambridgeshire - Peterborough: Stress Testing - Data",
+          "figures": [],
+          "notes": "Text-only slide listing data sources: WebTRIS (hourly volume/speed), Alchera (disruption, local road volume), CEDA Archive (temp/rainfall/wind), National Highways road features (length, road class, lanes, speed limit, delays, elevation). No embedded figures."
+        },
+        {
+          "slide_number": 6,
+          "title": "(Untitled - Full-slide image)",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Large full-slide map image (1017x720px, 5138KB PNG). Based on context from other slides showing study area and results, this is likely a study area map or spatial results map for the Cambridgeshire road network showing link locations, weather stations, or road features.",
+              "potential_use": "Study area map (Paper Figure 1) OR Spatial coefficient map (Paper Figure 2) - needs visual verification",
+              "quality_notes": "High resolution PNG (5138KB, 1017x720px). Good quality for publication. Full-slide image with no overlapping text."
+            }
+          ]
+        },
+        {
+          "slide_number": 7,
+          "title": "Model",
+          "figures": [
+            {
+              "type": "diagram",
+              "description": "Model specification diagram showing the hierarchical structure of the GLM model. Contains text boxes for 'Road-specific effect', 'Link-specific effect', 'Marginal effect of rainfall on a particular road', and 'Marginal effect of rainfall on a particular link', connected by arrow connectors. Illustrates the nested road-link structure of the econometric model.",
+              "potential_use": "Methodology section - Model specification figure showing the hierarchical/nested structure of the GLM approach",
+              "quality_notes": "Vector diagram built from PowerPoint shapes (text boxes + arrow connectors). Can be recreated at any resolution. Clean and simple layout."
+            }
+          ]
+        },
+        {
+          "slide_number": 8,
+          "title": "(Untitled - Dual map slide)",
+          "figures": [
+            {
+              "type": "map",
+              "description": "First map image (1016x719px, 4733KB PNG). One of a pair of spatial result maps displayed side by side. Likely shows precipitation sensitivity coefficients or resilience results for the Cambridgeshire road network.",
+              "potential_use": "Spatial map of precipitation sensitivity coefficients (Paper Figure 2) - needs visual verification",
+              "quality_notes": "High resolution PNG (4733KB, 1016x719px). Good quality for publication."
+            },
+            {
+              "type": "map",
+              "description": "Second map image (1017x719px, 5549KB PNG). Paired with the first map for comparison. Likely shows a different set of spatial results or a comparison scenario (e.g., normal vs extreme conditions).",
+              "potential_use": "Spatial coefficient comparison map OR betweenness centrality comparison (Paper Figure 2 or 3) - needs visual verification",
+              "quality_notes": "High resolution PNG (5549KB, 1017x719px). Good quality for publication."
+            }
+          ]
+        },
+        {
+          "slide_number": 9,
+          "title": "(Untitled - Cambridge map)",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Map image (1017x720px, 4037KB PNG) with a text label 'Cambridge'. Shows spatial results focused on the Cambridge area, likely zoomed into the Cambridge sub-region of the study area.",
+              "potential_use": "Detailed Cambridge area results map - could serve as an inset or supplementary figure showing local-level results",
+              "quality_notes": "High resolution PNG (4037KB, 1017x720px). Good quality. Has 'Cambridge' text overlay."
+            }
+          ]
+        },
+        {
+          "slide_number": 10,
+          "title": "Model (Local Roads)",
+          "figures": [
+            {
+              "type": "diagram",
+              "description": "Model specification diagram for local roads analysis. Shows 'Countline effect' and 'Marginal effect of rainfall on a particular Countline' connected by arrows. Includes text specifying dependent variables: Travel Speed (GLM Gamma with log link) for Strategic Roads and Travel Volume (Negative Binomial) for Local Roads. Independent variables listed: Volume, Precipitation, lines (Millroad, Hillsroad etc.), link, interaction terms (lines*Precipitation) and controls.",
+              "potential_use": "Methodology section - Model specification for local roads (could be combined with Slide 7 diagram for a comprehensive model figure)",
+              "quality_notes": "Vector diagram from PowerPoint shapes. Can be recreated. Contains detailed variable specifications."
+            }
+          ]
+        },
+        {
+          "slide_number": 11,
+          "title": "(Untitled - Cambridge local roads map)",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Map image (1018x720px, 5125KB PNG) with 'Cambridge' text label. Shows local road results for the Cambridge area, likely displaying Alchera countline-level resilience results or local road precipitation sensitivity.",
+              "potential_use": "Local road results map - supplementary figure for local road analysis section",
+              "quality_notes": "High resolution PNG (5125KB, 1018x720px). Good quality. Has 'Cambridge' text overlay."
+            }
+          ]
+        },
+        {
+          "slide_number": 12,
+          "title": "Future Research Plan",
+          "figures": [],
+          "notes": "Text-only slide describing WP2 (future demand via gravity model, population projection) and WP3 (future climate maps). No embedded figures."
+        },
+        {
+          "slide_number": 13,
+          "title": "Cambridgeshire - Peterborough: Understanding future pressures - WP2",
+          "figures": [],
+          "notes": "Text-only slide with WP2 scope on future transport demand from population projections and employment. No embedded figures."
+        }
+      ]
+    },
+    {
+      "ppt_file": "VFinal_Stress test for Cambridgeshire region HK.pptx",
+      "ppt_path": "/Users/ybl/Desktop/Postdoc research/Powerpoint/2:4:2024 - CityUniversityHK/VFinal_Stress test for Cambridgeshire region HK.pptx",
+      "presentation_date": "2024-04-02",
+      "context": "Presentation at City University of Hong Kong - comprehensive overview of the project",
+      "total_slides": 20,
+      "slides": [
+        {
+          "slide_number": 1,
+          "title": "Stress Testing the road network in Cambridgeshire",
+          "figures": [
+            {
+              "type": "photo",
+              "description": "Small image embedded in title slide (likely a university logo or decorative image). Image blob is empty/inaccessible.",
+              "potential_use": "Not useful for paper",
+              "quality_notes": "Image data not accessible (0KB). Decorative only."
+            }
+          ]
+        },
+        {
+          "slide_number": 2,
+          "title": "Outline",
+          "figures": [],
+          "notes": "Text outline: 1. What is Road Climate Resilience? 2. Why Study This? 3. Aim of Cambridgeshire. No figures."
+        },
+        {
+          "slide_number": 3,
+          "title": "What is Road Climate Resilience?",
+          "figures": [
+            {
+              "type": "photo",
+              "description": "Photograph (576x384px, 247KB JPEG) accompanying the definition of road climate resilience. Likely shows a real-world example of weather impact on roads (flooding, road damage, or traffic disruption).",
+              "potential_use": "Introduction section - motivational/contextual image showing real-world road weather impact",
+              "quality_notes": "JPEG format, 247KB, 576x384px. Moderate resolution - may need higher quality for print publication."
+            }
+          ]
+        },
+        {
+          "slide_number": 4,
+          "title": "Why Study Road Climate Resilience?",
+          "figures": [],
+          "notes": "Text-only slide about global challenge ($18 billion/year damage). No figures."
+        },
+        {
+          "slide_number": 5,
+          "title": "(Untitled - Flooding examples in Cambridgeshire)",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Map of Cambridgeshire region (606x719px, 1774KB PNG) showing locations of flooding incidents, with circles and connecting lines pointing to specific flood locations.",
+              "potential_use": "Introduction/Study Area section - map showing flood-prone locations in the study area to motivate the research",
+              "quality_notes": "PNG format, 1774KB, 606x719px. Good resolution."
+            },
+            {
+              "type": "photo",
+              "description": "Photograph of flooding on Mill Lane between St Neots and Little Paxton (313x207px, 3241KB PNG). News photo from Cambridge News.",
+              "potential_use": "Introduction - real-world flooding example (with attribution needed from Cambridge News)",
+              "quality_notes": "PNG, 3241KB but small dimensions (313x207px). May have copyright restrictions (news source photo)."
+            },
+            {
+              "type": "photo",
+              "description": "Photograph of flooding in Roberts Way, Cambridge (299x195px, 3782KB PNG). News photo.",
+              "potential_use": "Introduction - real-world flooding example (with attribution needed)",
+              "quality_notes": "PNG, 3782KB but small dimensions (299x195px). May have copyright restrictions."
+            },
+            {
+              "type": "photo",
+              "description": "Photograph of flooding in Peterborough (294x197px, 1261KB PNG). News photo from Peterborough Today.",
+              "potential_use": "Introduction - real-world flooding example (with attribution needed from Peterborough Today)",
+              "quality_notes": "PNG, 1261KB, small dimensions (294x197px). May have copyright restrictions."
+            }
+          ]
+        },
+        {
+          "slide_number": 6,
+          "title": "Aims of the Cambridgeshire Integrated Case Study",
+          "figures": [
+            {
+              "type": "diagram",
+              "description": "Group shape (2 sub-shapes) - likely a small diagram or annotated element related to project aims.",
+              "potential_use": "Limited direct use for paper",
+              "quality_notes": "Group shape - would need visual inspection."
+            },
+            {
+              "type": "photo",
+              "description": "Photograph of Cambridge area (530x484px, 279KB JPEG). Aerial or landscape photo sourced from Flickr (credited). Shows the Cambridgeshire region.",
+              "potential_use": "Study area context photo - decorative, not analytical",
+              "quality_notes": "JPEG, 279KB, 530x484px. Flickr photo with attribution link. Copyright considerations apply."
+            }
+          ]
+        },
+        {
+          "slide_number": 7,
+          "title": "Case Study Approach",
+          "figures": [
+            {
+              "type": "diagram",
+              "description": "Complex framework/flowchart diagram built from multiple group shapes (7 groups with 2-3 sub-shapes each), arrow connectors, and text boxes. Shows the DARe case study approach with work packages (WP1-WP5), integrated modelling platform (IMP), decision support platform (DSP), and outputs (lost revenue, lost time/delays, infrastructure damage). Includes 'Transport network screening and prioritisation' component.",
+              "potential_use": "Framework/methodology flowchart (Paper Figure - Methodology section). This is a KEY figure showing the overall research framework linking WP1-WP5.",
+              "quality_notes": "Vector diagram built from PowerPoint shapes - can be recreated at any resolution. Complex layout with multiple interconnected components. HIGH PRIORITY for paper."
+            }
+          ]
+        },
+        {
+          "slide_number": 8,
+          "title": "(Untitled - Work Package Overview)",
+          "figures": [
+            {
+              "type": "diagram",
+              "description": "Work package structure diagram showing WP1-WP5 as rounded rectangles with their descriptions: WP1 (Road resilience analysis), WP2 (Demand modelling using population projections), WP3 (Climate hazard mapping), WP4 (Risk evaluation), WP5 (Testing the Framework + Multi Criteria Decision Making). Also includes cross-cutting themes: Ageing Infrastructure, System Interdependency, Decarbonisation.",
+              "potential_use": "Supplementary methodology figure showing the broader DARe project structure and how WP1 (this paper) fits within it",
+              "quality_notes": "Vector diagram from PowerPoint auto-shapes. Clean layout, can be recreated. Useful for situating the paper within the larger project."
+            }
+          ]
+        },
+        {
+          "slide_number": 9,
+          "title": "WP1 - Road Resilience Analysis",
+          "figures": [],
+          "notes": "Text-only slide explaining what stress testing is for (examining whether road transport system can withstand severe climate/growth scenarios) and why stress testing (complex interaction and feedback loops). No figures."
+        },
+        {
+          "slide_number": 10,
+          "title": "WP1 - Overview of Methods & Outcomes",
+          "figures": [],
+          "notes": "Text-only slide: betweenness centrality for criticality, hourly road traffic volume/speed (2022-2024, WebTRIS), panel model to isolate extreme weather impact. No figures."
+        },
+        {
+          "slide_number": 11,
+          "title": "Criticality - What is Betweenness Centrality (BC)?",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Betweenness centrality map of the Cambridgeshire road network (518x547px, 766KB PNG). Shows road network with darker shading indicating more critical roads. Key roads identified: A14, A1M, A10, M11. Accompanied by explanatory text about BC measurement and traffic-volume weighting.",
+              "potential_use": "Betweenness centrality map (Paper Figure 3) - shows network criticality under normal conditions. KEY FIGURE for the paper.",
+              "quality_notes": "PNG, 766KB, 518x547px. Moderate resolution - may need to regenerate at higher resolution for print. Color-coded map with clear legend needed."
+            }
+          ]
+        },
+        {
+          "slide_number": 12,
+          "title": "(Untitled - BC Comparison: Extreme Heat vs Extreme Rainfall)",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Betweenness centrality map comparing extreme HEAT day (19/07/2022) to a normal weekday (620x632px, 702KB PNG). Shows how network criticality shifts during extreme heat events. Traffic-volume-weighted BC.",
+              "potential_use": "Betweenness centrality comparison figure (Paper Figure 3) - extreme heat scenario. Shows network redistribution during heat events.",
+              "quality_notes": "PNG, 702KB, 620x632px. Moderate resolution. Paired with rainfall comparison map."
+            },
+            {
+              "type": "map",
+              "description": "Betweenness centrality map comparing extreme RAINFALL day (20/10/2023) to a normal weekday (603x628px, 705KB PNG). Shows how network criticality shifts during extreme rainfall. Caption notes 'Resilience is not uniform'.",
+              "potential_use": "Betweenness centrality comparison figure (Paper Figure 3) - extreme rainfall scenario. KEY FIGURE showing differential network vulnerability to rainfall. Directly relevant to the paper.",
+              "quality_notes": "PNG, 705KB, 603x628px. Moderate resolution. Should be paired with heat map and/or normal weekday baseline for comparison figure."
+            }
+          ]
+        },
+        {
+          "slide_number": 13,
+          "title": "Road Climate Resilience - What Can We Learn?",
+          "figures": [
+            {
+              "type": "chart",
+              "description": "Two identical images (507x570px, 241KB JPEG each) showing what appears to be a speed-precipitation relationship plot or model results visualization. Duplicated on the slide. Shows the knowledge gap: rainfall disrupts traffic but quantification is needed.",
+              "potential_use": "Speed-precipitation relationship (Paper Figure 4) - needs visual verification to confirm exact content. Could be scatter plot or fitted relationship.",
+              "quality_notes": "JPEG, 241KB, 507x570px. Duplicated image (appears twice). Moderate resolution. Needs visual inspection to confirm content."
+            }
+          ]
+        },
+        {
+          "slide_number": 14,
+          "title": "The Cambridgeshire Case Study",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Study area map of the Cambridgeshire & Peterborough region (655x463px, 5138KB PNG). Shows the study area with monitoring stations. Accompanied by text: 218 monitoring stations, 9.7 million hourly observations, 2022-2024 data period. Covers mix of motorways, A-roads, and rural lanes in a flood-prone low-lying terrain (Fens area).",
+              "potential_use": "Study area map with link locations and weather stations (Paper Figure 1). KEY FIGURE - primary candidate for the paper's study area map.",
+              "quality_notes": "High resolution PNG (5138KB, 655x463px). Large file size suggests good detail. HIGH PRIORITY for paper."
+            }
+          ]
+        },
+        {
+          "slide_number": 15,
+          "title": "Model",
+          "figures": [
+            {
+              "type": "diagram",
+              "description": "Model specification diagram identical to PPT1 Slide 7. Shows hierarchical structure: Road-specific effect and Link-specific effect, with arrows to 'Marginal effect of rainfall on a particular road' and 'Marginal effect of rainfall on a particular link'.",
+              "potential_use": "Methodology section - Model specification figure (same as PPT1 Slide 7, choose better version)",
+              "quality_notes": "Vector diagram from shapes. Identical to PPT1 Slide 7."
+            }
+          ]
+        },
+        {
+          "slide_number": 16,
+          "title": "(Untitled - Full-slide results map)",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Full-slide map image (1017x719px, 5549KB PNG). Large spatial results map - likely shows precipitation sensitivity coefficients or resilience results across the full Cambridgeshire road network. Same image as PPT1 Slide 8 second map (identical file size: 5549KB).",
+              "potential_use": "Spatial map of precipitation sensitivity coefficients (Paper Figure 2). KEY FIGURE - primary candidate for spatial coefficient visualization.",
+              "quality_notes": "High resolution PNG (5549KB, 1017x719px). Full-slide image without overlapping elements. HIGH PRIORITY for paper. Same image reused in PPT1 Slide 8."
+            }
+          ]
+        },
+        {
+          "slide_number": 17,
+          "title": "Criticality Road with Low Climate Resilience",
+          "figures": [
+            {
+              "type": "map",
+              "description": "Betweenness centrality map (516x483px, 702KB PNG) showing network criticality, with overlay indicating roads with low climate resilience and critical roads with low resilience. Extreme rainfall compared to weekday scenario.",
+              "potential_use": "Combined criticality + resilience map (Paper Figure 3 variant) - shows which critical roads are also vulnerable to rainfall. KEY FIGURE.",
+              "quality_notes": "PNG, 702KB, 516x483px. Has annotation overlays (circles, arrows)."
+            },
+            {
+              "type": "map",
+              "description": "Spatial results map (675x477px, 5549KB PNG) showing road-level resilience results. Same base map as Slide 16 but displayed at smaller size alongside the BC map.",
+              "potential_use": "Spatial coefficient map paired with criticality (same base image as Slide 16)",
+              "quality_notes": "Same 5549KB PNG as Slide 16 but displayed smaller (675x477px). Use the full-size version from Slide 16 instead."
+            },
+            {
+              "type": "photo",
+              "description": "News photograph of A47 flooding (319x256px, 1210KB PNG). Shows A47 closed by flooding near Peterborough. Source: Peterborough Today.",
+              "potential_use": "Case study illustration for A47 - shows real-world validation of the model identifying A47 as critical and low resilience",
+              "quality_notes": "PNG, 1210KB, 319x256px. Small dimensions. News photo - copyright attribution needed."
+            },
+            {
+              "type": "photo",
+              "description": "News clipping/headline image about A47 flooding (388x137px, 96KB PNG). Small headline image.",
+              "potential_use": "Supplementary evidence for A47 case study",
+              "quality_notes": "Very small (388x137px, 96KB). Too low resolution for publication."
+            },
+            {
+              "type": "photo",
+              "description": "News photograph of A47 delays due to flooding (388x233px, 201KB PNG). Shows traffic delays on A47 near Peterborough. Source: Peterborough Today.",
+              "potential_use": "Supplementary evidence for A47 case study",
+              "quality_notes": "PNG, 201KB, 388x233px. Small dimensions. News photo - copyright considerations."
+            }
+          ]
+        },
+        {
+          "slide_number": 18,
+          "title": "Deliverable - Road Resilience Analysis Platform",
+          "figures": [
+            {
+              "type": "chart",
+              "description": "Screenshot of the Streamlit platform showing a dashboard view (578x295px, 529KB PNG). Shows rankings and statistics interface of the road resilience analysis tool.",
+              "potential_use": "Platform/tool demonstration figure - could be used in a 'Policy Implications' or 'Deliverables' section to show the practical output",
+              "quality_notes": "PNG, 529KB, 578x295px. Screenshot - moderate resolution. Wide aspect ratio."
+            },
+            {
+              "type": "chart",
+              "description": "Screenshot of the Streamlit platform showing another view (585x330px, 341KB PNG). Likely shows statistical results or model output interface.",
+              "potential_use": "Platform demonstration - supplementary figure showing analytical capabilities",
+              "quality_notes": "PNG, 341KB, 585x330px. Screenshot - moderate resolution."
+            },
+            {
+              "type": "map",
+              "description": "Screenshot of the Streamlit platform showing the interactive map view (551x367px, 871KB PNG). Shows the resilience visualization of every road link on an interactive map.",
+              "potential_use": "Platform demonstration - interactive map output showing spatial resilience results. Could be used to illustrate the practical tool output.",
+              "quality_notes": "PNG, 871KB, 551x367px. Screenshot - moderate resolution. Shows the map-based visualization feature."
+            }
+          ]
+        },
+        {
+          "slide_number": 19,
+          "title": "WP2: Where Will Traffic Grow?",
+          "figures": [],
+          "notes": "Text-only slide about gravity model for future traffic demand prediction. No figures."
+        },
+        {
+          "slide_number": 20,
+          "title": "Future Contributions to WP3, 4 & 5",
+          "figures": [],
+          "notes": "Text-only slide about future work overlaying resilience results with climate projections. No figures."
+        }
+      ]
+    }
+  ],
+  "figure_matching_summary": {
+    "paper_figure_1_study_area_map": {
+      "description": "Study area map with link locations and weather stations",
+      "best_candidates": [
+        {
+          "source": "PPT2 Slide 14",
+          "reason": "Study area map of Cambridgeshire & Peterborough with 218 monitoring stations noted. High resolution (5138KB PNG). PRIMARY CANDIDATE.",
+          "priority": "HIGH"
+        },
+        {
+          "source": "PPT1 Slide 6",
+          "reason": "Full-slide map (5138KB PNG, 1017x720px). May be the same or similar study area map. Needs visual comparison.",
+          "priority": "MEDIUM"
+        }
+      ],
+      "recommendation": "Visually inspect PPT2 Slide 14 and PPT1 Slide 6 to determine which better shows link locations and weather stations. May need to regenerate with explicit station markers."
+    },
+    "paper_figure_2_spatial_coefficients": {
+      "description": "Spatial map of precipitation sensitivity coefficients",
+      "best_candidates": [
+        {
+          "source": "PPT2 Slide 16",
+          "reason": "Full-slide spatial results map (5549KB PNG, 1017x719px). Largest and cleanest version of the coefficient map. PRIMARY CANDIDATE.",
+          "priority": "HIGH"
+        },
+        {
+          "source": "PPT1 Slide 8",
+          "reason": "Contains two side-by-side maps (4733KB + 5549KB). The 5549KB map is identical to PPT2 Slide 16. The 4733KB map may show a different variable.",
+          "priority": "HIGH"
+        }
+      ],
+      "recommendation": "Use PPT2 Slide 16 for the cleanest full-slide version. PPT1 Slide 8 has a useful side-by-side comparison format. Consider regenerating from source code for publication quality."
+    },
+    "paper_figure_3_betweenness_centrality": {
+      "description": "Betweenness centrality map/figure (normal vs extreme rainfall)",
+      "best_candidates": [
+        {
+          "source": "PPT2 Slide 12",
+          "reason": "Two BC maps comparing extreme heat (19/07/2022) vs extreme rainfall (20/10/2023) against normal weekday. Shows 'Resilience is not uniform'. PRIMARY CANDIDATE for paired comparison.",
+          "priority": "HIGH"
+        },
+        {
+          "source": "PPT2 Slide 11",
+          "reason": "Single BC map showing baseline network criticality (darker = more critical, key roads: A14, A1M, A10, M11). Good as baseline/reference map.",
+          "priority": "HIGH"
+        },
+        {
+          "source": "PPT2 Slide 17",
+          "reason": "Combined criticality + low resilience overlay map with A47 case study. Shows critical roads that are also vulnerable. Useful for highlighting policy-relevant findings.",
+          "priority": "MEDIUM"
+        }
+      ],
+      "recommendation": "Create a multi-panel figure: (a) baseline BC from Slide 11, (b) extreme rainfall BC from Slide 12, (c) difference or overlay from Slide 17. May need to regenerate at higher resolution."
+    },
+    "paper_figure_4_speed_precipitation": {
+      "description": "Speed-precipitation relationship plots",
+      "best_candidates": [
+        {
+          "source": "PPT2 Slide 13",
+          "reason": "Contains what appears to be a relationship plot (507x570px JPEG). Needs visual verification. Only candidate found.",
+          "priority": "MEDIUM"
+        }
+      ],
+      "recommendation": "Visually inspect PPT2 Slide 13 images. These may not be speed-precipitation plots. Likely need to generate new publication-quality plots from the Stata/R model output."
+    },
+    "paper_figure_5_model_diagnostics": {
+      "description": "Model diagnostics plots",
+      "best_candidates": [],
+      "recommendation": "NO model diagnostics plots found in either PPT. These will need to be generated fresh from model output (e.g., residual plots, QQ plots, predicted vs actual, deviance residuals)."
+    },
+    "paper_figure_6_temporal_patterns": {
+      "description": "Temporal pattern figures",
+      "best_candidates": [],
+      "recommendation": "NO temporal pattern figures found in either PPT. These will need to be generated fresh (e.g., hourly/daily/monthly speed patterns, seasonal precipitation effects, time-of-day interaction plots)."
+    },
+    "paper_figure_7_framework_flowchart": {
+      "description": "Framework/methodology flowchart",
+      "best_candidates": [
+        {
+          "source": "PPT2 Slide 7",
+          "reason": "Complex framework diagram showing the full DARe case study approach with WP1-WP5, IMP, DSP, and outputs. Shows transport network screening and prioritisation flow. PRIMARY CANDIDATE.",
+          "priority": "HIGH"
+        },
+        {
+          "source": "PPT2 Slide 8",
+          "reason": "Work package structure diagram showing WP1-WP5 with cross-cutting themes. Simpler but clearer layout.",
+          "priority": "MEDIUM"
+        },
+        {
+          "source": "PPT1 Slide 7 / PPT2 Slide 15",
+          "reason": "Model specification diagram showing the hierarchical GLM structure. Useful as a sub-component of the methodology flowchart.",
+          "priority": "MEDIUM"
+        }
+      ],
+      "recommendation": "PPT2 Slide 7 is the most comprehensive framework diagram. Consider adapting it to focus on WP1 specifically for the paper, and incorporating the model specification from Slide 15 as a nested component."
+    },
+    "additional_useful_figures": [
+      {
+        "source": "PPT2 Slide 5",
+        "description": "Flooding examples map with news photos showing real flood incidents at specific locations in Cambridgeshire. Useful for introduction/motivation but news photos have copyright restrictions.",
+        "priority": "LOW"
+      },
+      {
+        "source": "PPT1 Slides 9, 11",
+        "description": "Cambridge-area zoomed maps showing local road results. Useful for detailed local analysis figures.",
+        "priority": "LOW"
+      },
+      {
+        "source": "PPT2 Slide 18",
+        "description": "Three Streamlit platform screenshots (dashboard, statistics, interactive map). Useful for demonstrating the practical tool deliverable.",
+        "priority": "LOW"
+      }
+    ]
+  },
+  "total_figures_found": {
+    "PPT1": {
+      "maps": 5,
+      "diagrams": 2,
+      "tables": 1,
+      "charts": 0,
+      "photos": 0,
+      "total": 8
+    },
+    "PPT2": {
+      "maps": 9,
+      "diagrams": 4,
+      "tables": 0,
+      "charts": 2,
+      "photos": 7,
+      "total": 22
+    },
+    "grand_total": 30
+  },
+  "figures_needing_generation": [
+    "Model diagnostics plots (residuals, QQ, predicted vs actual)",
+    "Temporal pattern figures (hourly/seasonal speed-precipitation effects)",
+    "Speed-precipitation scatter/relationship plots (publication quality)",
+    "Higher resolution versions of BC maps for print publication"
+  ]
+}
