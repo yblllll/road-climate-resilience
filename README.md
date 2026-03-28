@@ -64,6 +64,25 @@ Your input CSV needs these columns:
 
 Optional: `AbnormalTraffic`, `GeneralObstruction`, `EnvironmentalObstruction`, `VehicleObstruction`, `AnimalPresenceObstruction`, `RoadOrCarriagewayOrLaneManagement`
 
+## Project Structure
+
+```
+road-climate-resilience/
+├── app.py                  # Streamlit interactive platform
+├── requirements.txt        # Python dependencies
+├── README.md
+├── data/
+│   └── example/            # Cambridgeshire demonstration data
+├── scripts/
+│   ├── 01_data_preparation.py    # Clean & merge input data
+│   ├── 02_glm_estimation.py      # Gamma GLM with interactions
+│   └── 03_feature_analysis.py    # Road features regression
+├── uploads/                # User-uploaded data (gitignored)
+├── backup/                 # Original analysis files (not for distribution)
+└── docs/
+    └── user_guide.md       # Detailed usage guide
+```
+
 ## Methodology
 
 ### Stage 1: Gamma GLM
@@ -100,70 +119,6 @@ total_precip_effect_i = α + β₁·lanes + β₂·speed_limit + β₃·delay
 - **Transferable**: Any local authority can apply this to their own strategic road network
 - **Interpretable**: Coefficients map directly to planning-relevant quantities
 
-## Academic Dashboard
-
-An interactive research management platform for the project's literature review, journal analysis, and paper writing workflow.
-
-```bash
-cd docs/academic-dashboard
-python3 run.py
-```
-
-Opens at `http://localhost:8765/literature_viewer.html` with 10 interactive tabs:
-
-| Tab | Function |
-|-----|----------|
-| Overview | Paper counts, themes, method distribution |
-| Matrix Table | Sortable/filterable literature table |
-| Citation Graph | D3 force-directed citation network |
-| Citation Chain | Chronological knowledge flow |
-| Paper Cards | Expandable 4-color annotated cards |
-| Knowledge Gaps | Research gap identification |
-| PDF Reader | Full-text reader with annotation sidebar |
-| Research Pipeline | 9-stage workflow tracker |
-| Journal Rankings | 32 transport journals with IF/tier/relevance |
-| Paper | LaTeX editor with live preview and AI assistant |
-
-See [`docs/academic-dashboard/README.md`](docs/academic-dashboard/README.md) for details.
-
-## Paper
-
-Target journal: **Transportation Research Part D** (IF 8.62, Q1)
-
-Current status: v4 revised draft, peer review passed (Accept conditional on Stata output).
-
-See [`docs/paper/README.md`](docs/paper/README.md) for the full paper pipeline documentation.
-
-## Project Structure
-
-```
-road-climate-resilience/
-├── app.py                      # Streamlit interactive map platform
-├── requirements.txt            # Python dependencies
-├── README.md
-├── data/
-│   └── example/                # Cambridgeshire demonstration data
-├── scripts/
-│   ├── 01_data_preparation.py  # Clean & merge input data
-│   ├── 02_glm_estimation.py    # Gamma GLM with interactions
-│   └── 03_feature_analysis.py  # Road features regression
-├── docs/
-│   ├── academic-dashboard/     # Academic Dashboard (10-tab HTML platform)
-│   │   ├── literature_viewer.html
-│   │   ├── literature_reader.html
-│   │   ├── annotation_data_final.json
-│   │   ├── d3.v7.min.js
-│   │   └── run.py
-│   ├── paper/                  # Paper manuscript and review artifacts
-│   │   ├── main_v4_revised.tex
-│   │   ├── references_v2.bib
-│   │   ├── Literature_Review/  # Source PDFs (not tracked)
-│   │   └── *.md                # Review/audit reports
-│   └── user_guide.md           # Detailed usage guide
-├── uploads/                    # User-uploaded data (gitignored)
-└── backup/                     # Original analysis files
-```
-
 ## Citation
 
 > [Paper reference to be added upon publication]
@@ -174,4 +129,4 @@ This project is open source. See LICENSE file for details.
 
 ## Acknowledgements
 
-Developed as part of the DARe (Digital Architecture for Resilience) Flex Fund Project, University of Cambridge, Department of Land Economy.
+Developed as part of the DARe (Digital Architecture for Resilience) Flex Fund Project.
