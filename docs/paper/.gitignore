@@ -1,0 +1,14 @@
+_archive/
+*.pyc
+__pycache__/
+.DS_Store
+*.tmp
+batch*_annotations.json
+precise_batch_*.json
+precise_final_*.json
+precise_merged_final.json
+close_read_all.json
+*.bak
+Literature_Review/
+qa_audit_report.json
+wan2024_precise.json

@@ -1,0 +1,399 @@
+{
+  "Becker_2026_Impact_Rainfall_Driving_Speed.pdf": {
+    "method": [
+      {
+        "note": "Three linear regression models fitted: NULL (intercept only), CAT (rainfall as categorical variable with K categories), and LOG (rainfall as continuous log-transformed predictor: mu = beta0 + beta1*ln(1+R)). Speed v modeled as Gaussian: V ~ N(mu, sigma^2).",
+        "original_texts": [
+          {
+            "text": "a NULL model",
+            "page": 5
+          },
+          {
+            "text": "a categorical model CAT",
+            "page": 5
+          },
+          {
+            "text": "model LOG with",
+            "page": 5
+          }
+        ]
+      },
+      {
+        "note": "Data: 5-min average driving speeds from HERE Europe GNSS floating car data on ~1.5 million road sections in Germany, combined with RADKLIM calibrated radar-gauge precipitation at 1km x 5min resolution. Analysis covers three summer days with heavy rainfall (20 May, 3 Jun, 12 Jun 2019).",
+        "original_texts": [
+          {
+            "text": "HERE Europe",
+            "page": 3
+          },
+          {
+            "text": "1.5 million road sections",
+            "page": 1
+          },
+          {
+            "text": "RADKLIM",
+            "page": 3
+          },
+          {
+            "text": "three days with heavy rainfall",
+            "page": 1
+          }
+        ]
+      },
+      {
+        "note": "Models estimated by ordinary least squares with clustered standard errors at the road-section level to account for within-section correlation. Relative speed difference delta_v_rel = (v - v0)/v0 used to normalize across road types.",
+        "original_texts": [
+          {
+            "text": "ordinary least squares",
+            "page": 5
+          },
+          {
+            "text": "standard errors clustered at the",
+            "page": 6
+          },
+          {
+            "text": "relative speed difference",
+            "page": 5
+          }
+        ]
+      },
+      {
+        "note": "Cross-validation: leave-one-day-out scheme (3-fold). Parameters estimated on 2 days, scored on the remaining day, repeated 3 times and averaged. Used to detect overfitting and compare CAT vs LOG model performance.",
+        "original_texts": [
+          {
+            "text": "split the data based on the three",
+            "page": 6
+          },
+          {
+            "text": "To detect potential overfitting in our models, cross-validation is app",
+            "page": 6
+          }
+        ]
+      },
+      {
+        "note": "Road sections stratified by speed limit (50, 70, 100, 130 km/h), lane category (single/multi), and road environment (urban/non-urban). Sections with tunnels, ramps, intersections, and persistent congestion excluded. Congestion defined as speed < 50% of speed limit in >10% of time steps.",
+        "original_texts": [
+          {
+            "text": "50, 70, 100 and 130 km/h",
+            "page": 4
+          },
+          {
+            "text": "single- and multi-lane roads",
+            "page": 4
+          },
+          {
+            "text": "congested if, in more than 10%",
+            "page": 4
+          }
+        ]
+      },
+      {
+        "note": "For highway sections (multi-lane, 130 km/h, non-urban): 3,732,957 total speed observations, of which 265,040 (7.1%) had rainfall. Only 7,828 (0.2%) had rainfall > 1 L/m2 per 5 min.",
+        "original_texts": [
+          {
+            "text": "3,732,957 speed observations",
+            "page": 6
+          },
+          {
+            "text": "265,040",
+            "page": 6
+          }
+        ]
+      },
+      {
+        "note": "Mean squared error skill score (MSESS) computed relative to the NULL model to quantify predictive benefit of including rainfall. MSESS computed both with and without cross-validation, and separately for all rainfall and heavy rainfall (>1 L/m2) conditions.",
+        "original_texts": [
+          {
+            "text": "skill score",
+            "page": 6
+          },
+          {
+            "text": "a NULL model",
+            "page": 5
+          }
+        ]
+      }
+    ],
+    "conclusion": [
+      {
+        "note": "Non-linear, approximately logarithmic decrease in driving speed with increasing rainfall, consistent with earlier studies. Logarithmic continuous predictor (LOG) outperforms categorical (CAT) model and avoids overfitting in sparse rainfall bins.",
+        "original_texts": [
+          {
+            "text": "The results indicate a non-linear, approximately logarithmic decrease ",
+            "page": 12
+          },
+          {
+            "text": "LOG model performs slightly better",
+            "page": 8
+          }
+        ]
+      },
+      {
+        "note": "Speed reductions range from ~2-10% under light rainfall / low speeds to >20% under heavy rainfall / high speeds. On highways (130 km/h), heavy rainfall >8 L/m2 in 5 min causes average speed reduction >30%. At 50 km/h, same rainfall gives only -8%.",
+        "original_texts": [
+          {
+            "text": "The estimated magnitudes of rainfall-related speed reduction",
+            "page": 12
+          },
+          {
+            "text": "more than 30%",
+            "page": 1
+          }
+        ]
+      },
+      {
+        "note": "Speed reductions systematically larger on roads with higher speed limits and on multi-lane roads. At 100 km/h non-urban, single-lane delta_v_rel = -15% vs multi-lane -26% at 8 L/m2 rainfall. Urban/non-urban differences are comparatively small for same speed limit.",
+        "original_texts": [
+          {
+            "text": "single- and multi-lane roads",
+            "page": 9
+          },
+          {
+            "text": "urban and non-urban",
+            "page": 12
+          }
+        ]
+      },
+      {
+        "note": "Cross-validated MSESS_LOG = 0.135 on highways (13.5% MSE reduction). For heavy rainfall only (>1 L/m2), MSESS_LOG = 0.500 (50% MSE reduction). MSE reduction up to 14% on average across road types, up to 52.1% under heavy rainfall.",
+        "original_texts": [
+          {
+            "text": "MSESSLOG = 0.135",
+            "page": 8
+          },
+          {
+            "text": "MSESSLOG = 0.500",
+            "page": 8
+          },
+          {
+            "text": "reduced by 52.1%",
+            "page": 11
+          }
+        ]
+      },
+      {
+        "note": "Incorporating rainfall as a predictor improves speed prediction, reducing cross-validated MSE by up to 14% on average, with substantially larger improvements under heavy rainfall. Consistent with ML-based studies reporting 1.5-25% improvements.",
+        "original_texts": [
+          {
+            "text": "Incorporating rainfall as a predictor improves speed prediction, reduc",
+            "page": 13
+          }
+        ]
+      },
+      {
+        "note": "Results are event-based estimates from 3 days only; the analysis is explicitly described as a descriptive, event-specific study that does not support generalizable inference across time, seasons, or broader traffic conditions.",
+        "original_texts": [
+          {
+            "text": "event-based estimates rather than long-term",
+            "page": 12
+          },
+          {
+            "text": "descriptive, event-specific study",
+            "page": 1
+          },
+          {
+            "text": "does not support generalizable",
+            "page": 1
+          }
+        ]
+      },
+      {
+        "note": "Speed reduction should NOT be interpreted as improved road safety. Rainfall increases crash risk through reduced visibility, adverse surface conditions, and altered traffic flow, even as drivers reduce speed.",
+        "original_texts": [
+          {
+            "text": "does not assess traffic safety outcomes",
+            "page": 14
+          },
+          {
+            "text": "Although a speed reduction might lower crash severity compared to an u",
+            "page": 14
+          }
+        ]
+      }
+    ],
+    "innovation": [
+      {
+        "note": "First study to combine GNSS-based floating car data with calibrated radar-gauge rainfall (RADKLIM) at country scale (Germany) to model rainfall-speed relationships. Claims this as a first step toward country-scale, rainfall-aware speed modeling.",
+        "original_texts": [
+          {
+            "text": "combine GNSS-based floating car data with",
+            "page": 3
+          },
+          {
+            "text": "first step toward country-scale",
+            "page": 3
+          }
+        ]
+      },
+      {
+        "note": "Uses ~1.5 million road sections simultaneously, enabling comparison across diverse road types (speed limits, lanes, urban/non-urban) within a single study framework -- far broader spatial coverage than typical station-based approaches.",
+        "original_texts": [
+          {
+            "text": "1.5 million road sections",
+            "page": 1
+          },
+          {
+            "text": "This dataset offers a unique opportunity to investigate rainfall–speed",
+            "page": 3
+          }
+        ]
+      },
+      {
+        "note": "High spatio-temporal resolution data fusion: 1 km radar rainfall grid at 5-min intervals matched to 5-min average FCD speeds, enabling analysis of short-duration heavy rainfall effects that coarser data would miss.",
+        "original_texts": [
+          {
+            "text": "high-resolution radar-based rainfall",
+            "page": 1
+          },
+          {
+            "text": "The average speed is computed based on all vehicles contributing a mea",
+            "page": 3
+          }
+        ]
+      },
+      {
+        "note": "Demonstrates that parsimonious, interpretable linear models (LOG) can capture systematic rainfall-speed relationships without complex ML approaches, while also showing LOG outperforms categorical treatment of rainfall.",
+        "original_texts": [
+          {
+            "text": "parsimonious, interpretable models",
+            "page": 1
+          },
+          {
+            "text": "logarithmic transformation of rainfall",
+            "page": 7
+          }
+        ]
+      }
+    ],
+    "limitation": [
+      {
+        "note": "Analysis based on only 3 summer days with heavy rainfall, limiting ability to capture seasonal effects, weekday variability, and diurnal traffic volume cycles. Results are event-based estimates, not long-term averages.",
+        "original_texts": [
+          {
+            "text": "limits the ability to capture seasonal",
+            "page": 14
+          },
+          {
+            "text": "weekday variability",
+            "page": 14
+          },
+          {
+            "text": "event-based estimates rather than long-term",
+            "page": 12
+          }
+        ]
+      },
+      {
+        "note": "No direct traffic volume or congestion data available. Only a simple filtering heuristic applied (speed < 50% of limit in >10% of timesteps). Short-term congestion effects likely still present in data, confounding rainfall effects.",
+        "original_texts": [
+          {
+            "text": "direct traffic volume data were not available",
+            "page": 13
+          },
+          {
+            "text": "Short-term congestion effects are likely still present",
+            "page": 13
+          }
+        ]
+      },
+      {
+        "note": "Intentionally simple linear regression approach. More complex frameworks (mixed-effects models, explicit temporal correlation structures) could better handle repeated observations, unobserved heterogeneity, and autocorrelation but were infeasible with available data.",
+        "original_texts": [
+          {
+            "text": "modeling approach was intentionally kept relatively simple",
+            "page": 13
+          },
+          {
+            "text": "mixed-effects models",
+            "page": 13
+          }
+        ]
+      },
+      {
+        "note": "Residual clustering and temporal dependence remain in model errors, leading to potentially underestimated standard errors. Confidence intervals should be interpreted conservatively.",
+        "original_texts": [
+          {
+            "text": "residual clustering",
+            "page": 13
+          },
+          {
+            "text": "underestimated standard errors",
+            "page": 13
+          },
+          {
+            "text": "confidence intervals should be interpreted conservatively",
+            "page": 13
+          }
+        ]
+      },
+      {
+        "note": "Rainfall assumed homogeneous within each 1 km radar grid cell. During convective events, sub-grid variability causes exposure misclassification at road-section level, likely attenuating estimated rainfall effects (conservative bias).",
+        "original_texts": [
+          {
+            "text": "homogeneous within each 1 km radar grid cell",
+            "page": 13
+          },
+          {
+            "text": "sub-grid variability",
+            "page": 13
+          },
+          {
+            "text": "exposure misclassification",
+            "page": 13
+          },
+          {
+            "text": "speed reductions may represent conservative estimates",
+            "page": 13
+          }
+        ]
+      },
+      {
+        "note": "Only instantaneous rainfall effects analyzed; lagged effects (e.g., driving on wet roads after rain stops) not considered. RADKLIM cannot distinguish precipitation types (rain vs hail vs sleet vs snow).",
+        "original_texts": [
+          {
+            "text": "Lagged effects of",
+            "page": 13
+          },
+          {
+            "text": "distinction of between different types of precipitation",
+            "page": 13
+          }
+        ]
+      },
+      {
+        "note": "No vehicle type information in GNSS probe data (cannot differentiate cars, trucks, etc.). Probe vehicle penetration rates may vary spatially and temporally, affecting representativeness.",
+        "original_texts": [
+          {
+            "text": "vehicle types is not available",
+            "page": 14
+          },
+          {
+            "text": "penetration rates may vary",
+            "page": 14
+          }
+        ]
+      },
+      {
+        "note": "Study does not assess traffic safety outcomes (crash occurrence, injury risk, mortality). Speed reduction should not be interpreted as evidence of improved road safety due to countervailing mechanisms.",
+        "original_texts": [
+          {
+            "text": "does not assess traffic safety outcomes",
+            "page": 14
+          }
+        ]
+      },
+      {
+        "note": "Transferability unclear: results based on German road network with specific characteristics. Direct numerical comparisons across studies are difficult due to differences in data resolution, road types, and rainfall representation.",
+        "original_texts": [
+          {
+            "text": "However, it often remains unclear to what extent the results are trans",
+            "page": 2
+          },
+          {
+            "text": "Direct numerical comparisons across studies are, however, difficult, a",
+            "page": 12
+          }
+        ]
+      }
+    ]
+  }
+}
