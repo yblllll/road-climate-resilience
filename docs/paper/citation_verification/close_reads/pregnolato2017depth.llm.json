@@ -1,0 +1,54 @@
+{
+  "cite_key": "pregnolato2017depth",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
+  "total_pages": 15,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 66,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Pregnolato 2017 does not contain the phrases 'Strategic Road Network', 'one-third of all road traffic', 'two-thirds of freight tonne-kilometres', or 'adaptive capacity'. The paper focuses on a depth-disruption function derived from a Newcastle case study. These SRN statistics originate from other sources (e.g. Highways England or DfT SRN reports) and are not present in this paper. Citation is misattributed."
+    },
+    {
+      "line_num": 70,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Identical to line 66. Pregnolato 2017 does not contain any of the key phrases in this claim ('Strategic Road Network', 'one-third', 'two-thirds', 'freight tonne-kilometres', 'adaptive capacity'). The paper is about a flood-depth to vehicle-speed function and a Newcastle, UK case study. This statistic is not sourced from Pregnolato 2017."
+    },
+    {
+      "line_num": 104,
+      "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+      "source_quote": "this paper undertakes a systematic review of empirical, simulation and experimental studies of the impacts of extreme weather on transport disruption",
+      "quote_page": 3,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "Pregnolato 2017 does conduct a multi-method literature review covering observational, simulation, and experimental studies (Table 1), which broadly supports the idea that the field uses diverse methodological approaches. However, the paper does not use the terms 'qualitative risk reviews', 'quantitative resilience methodologies', or 'simulation-based approaches'. The paper's own framing is 'empirical, simulation and experimental studies'. The characterisation in the citing paper is a loose paraphrase that somewhat overstates the breadth and misnames the categories."
+    },
+    {
+      "line_num": 104,
+      "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+      "source_quote": "this paper undertakes a systematic review of empirical, simulation and experimental studies of the impacts of extreme weather on transport disruption",
+      "quote_page": 3,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "Duplicate of previous claim at line 104. Same verdict applies: the paper does review multiple methodological traditions but does not use the specific terms in the claim. The three categories in the paper are 'observational studies', 'modelling and simulation analysis', and 'experimental analysis' (Table 1 headings), not 'qualitative risk reviews' or 'quantitative resilience methodologies'. A PARTIAL match at best."
+    },
+    {
+      "line_num": 111,
+      "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+      "source_quote": "Flooding, especially flash flood events that start rapidly as a result of intense precipitation, is the predominant cause of weather-related disruption to the transport sector (DfT, 2014a) and this is expected to continue into the future",
+      "quote_page": 1,
+      "search_verified": true,
+      "verdict": "MISMATCH",
+      "reasoning": "Pregnolato 2017 cites DfT (2014a) only once, as supporting evidence that flooding is the 'predominant cause of weather-related disruption to the transport sector'. The DfT 2014a reference in the paper's bibliography is titled 'Transport Resilience Review: A review of the resilience of the transport network to extreme weather events', not a 'Rapid Evidence Assessment'. The paper makes no mention of 'cost-benefit analyses of adaptation' being limited or challenging. The citing paper appears to attribute claims from a different DfT document (likely the DfT Rapid Evidence Assessment) to Pregnolato 2017, which only passes through the DfT citation narrowly."
+    }
+  ]
+}

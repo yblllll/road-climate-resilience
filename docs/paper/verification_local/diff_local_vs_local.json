@@ -1,9 +1,9 @@
 {
   "total": 63,
   "agreement_buckets": {
-    "LLM_NOT_FOUND_LOCAL_MATCH": 48,
-    "LOCAL_STRONGER_THAN_LLM": 10,
-    "UNCLASSIFIED_NOT_FOUND_NO_QUOTE": 5
+    "LLM_NOT_FOUND_LOCAL_MATCH": 49,
+    "AGREE_PARTIAL_QUOTE_VERIFIED": 10,
+    "AGREE_NOT_FOUND": 4
   },
   "diffs": [
     {
@@ -178,9 +178,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.471 (n=8) on p.1",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 35,
-      "local_snippet": "apid evidence assessment toolkit index. available at https://webarchive.nationalarchives.gov.uk/ukgwa/20140402164155/http:/www.civi lservice.gov.uk/networks/gsr/resources-and-guidance/rapid-evidence-a",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 1,
+      "local_snippet": "climate change adaptation and transport infrastructure a rapid evidence assessment authors: bernard steen, rezina chowdhury, alina fletcher, cate standing-tattersall date: 25/04/2022 prepared for: dep",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "koetse2009impact",
@@ -189,8 +189,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.267 (n=4) on p.12",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "tion, however, is the transport sector. this is not entirely surprising, since to date the consequences of climate change and changing weather conditions for the transport sector have not received muc",
+      "local_page": 12,
+      "local_snippet": "alities with moderate wind speeds. 8.3. mode choice decisions: passenger transport as is clear from previous sections, the net effect of climate change on infrastructure disruptions, and the associate",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -200,8 +200,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.267 (n=4) on p.27",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
+      "local_page": 27,
+      "local_snippet": "l time and the increase due to weather. despite limitations in data (primarily, the absence of other variables affecting travel time and the temporal and spatial differences between weather and traffi",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -211,8 +211,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.2 (n=3) on p.3",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "010, 2014; wang et al. 2007, 2013a, b). in addition, the generalized function proposed in this paper may also provide benefits for improving the urban traffic control and management, e.g., the analysi",
+      "local_page": 3,
+      "local_snippet": "he selected traffic detector is 1.7 km. the hourly rainfall precipitation data collected at the happy valley station were used to represent the weather conditions of the selected urban road section. t",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -222,8 +222,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.267 (n=4) on p.9",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "hanging road conditions by the weather. on a macroscale road conditions can be regarded as a manifestation of traffic volume on a road network, and the fluctuation of road conditions is also influence",
+      "local_page": 9,
+      "local_snippet": " conditions do not directly affect tti. on non-weekdays, weather does indeed impose a more significant and stronger effect on road conditions than on weekdays, as can be seen from the values of dummy ",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -233,8 +233,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.267 (n=4) on p.2",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 1,
-      "local_snippet": "seasons, or broader traffic conditions. to make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datas",
+      "local_page": 2,
+      "local_snippet": "fluence how drivers behave on the road. precipitation, including different forms like rain, hail, sleet or snow, is one of the most influential weather phenomena affecting road traffic, consistently l",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -244,8 +244,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.267 (n=4) on p.12",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "tion, however, is the transport sector. this is not entirely surprising, since to date the consequences of climate change and changing weather conditions for the transport sector have not received muc",
+      "local_page": 12,
+      "local_snippet": "alities with moderate wind speeds. 8.3. mode choice decisions: passenger transport as is clear from previous sections, the net effect of climate change on infrastructure disruptions, and the associate",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -255,8 +255,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.267 (n=4) on p.27",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
+      "local_page": 27,
+      "local_snippet": "l time and the increase due to weather. despite limitations in data (primarily, the absence of other variables affecting travel time and the temporal and spatial differences between weather and traffi",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -266,8 +266,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.267 (n=4) on p.9",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "hanging road conditions by the weather. on a macroscale road conditions can be regarded as a manifestation of traffic volume on a road network, and the fluctuation of road conditions is also influence",
+      "local_page": 9,
+      "local_snippet": " conditions do not directly affect tti. on non-weekdays, weather does indeed impose a more significant and stronger effect on road conditions than on weekdays, as can be seen from the values of dummy ",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -312,7 +312,7 @@
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "UNCLASSIFIED_NOT_FOUND_NO_QUOTE"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "bergantino2024assessing",
@@ -323,7 +323,7 @@
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "UNCLASSIFIED_NOT_FOUND_NO_QUOTE"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "huang2022overview",
@@ -332,8 +332,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.154 (n=2) on p.3",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 10,
-      "local_snippet": "available seats and detour constraints. further study of psychological characteristics aﬀecting the medium-term behaviors of drivers can be conducted to the incorporated preference of agents like pass",
+      "local_page": 3,
+      "local_snippet": "ng road users and the transport system. second, new technologies (such as av, vehicle-to-vehicle (v2v), and vehicle-to-everything (v2x)) expand the scope of research, add complexity to the transport s",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -343,8 +343,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.231 (n=3) on p.14",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 4,
-      "local_snippet": "times and speed in greater london area. the impact of adverse weather on the network is investigated during different times of the day (morning, noon, evening) and for multiple parts of the area (cent",
+      "local_page": 14,
+      "local_snippet": "ski, d., hooper, e., chapman, l., 2014. the impact of climate change on urban transport resilience in a changing world. prog. phys. geogr. 38 (4), 448-463. jen",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -354,8 +354,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.231 (n=3) on p.14",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 4,
-      "local_snippet": "times and speed in greater london area. the impact of adverse weather on the network is investigated during different times of the day (morning, noon, evening) and for multiple parts of the area (cent",
+      "local_page": 14,
+      "local_snippet": "ski, d., hooper, e., chapman, l., 2014. the impact of climate change on urban transport resilience in a changing world. prog. phys. geogr. 38 (4), 448-463. jen",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -365,8 +365,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.231 (n=3) on p.19",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 1,
-      "local_snippet": "nsidering agent-based traffic dynamics. matsim, an open-source transport simulator, is employed to model dynamic traffic redistribution and congestion under both baseline (non-flood) and flood conditi",
+      "local_page": 19,
+      "local_snippet": "t also longer-term accessibility risks. this research contributes to proactive urban flood risk management by informing adaptive planning and resilience strategies. the model identifies how congestion",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -376,9 +376,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.308 (n=4) on p.3",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "i et al., 2022; mitoulis et al., 2023). finally, a comprehensive road network resilience assessment requires the ability to incorporate climate projections that influence the extent and likelihood of ",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 3,
+      "local_snippet": "transportation research part d 133 (2024) 104229 3 of the proposed framework is demonstrated in a case study for the southern part of the haiti road network to inform a $120 million regional climate r",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "dft2024rea",
@@ -387,9 +387,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.385 (n=5) on p.28",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 35,
-      "local_snippet": "apid evidence assessment toolkit index. available at https://webarchive.nationalarchives.gov.uk/ukgwa/20140402164155/http:/www.civi lservice.gov.uk/networks/gsr/resources-and-guidance/rapid-evidence-a",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 28,
+      "local_snippet": "28 natcen social research | climate change adaptation and transport infrastructure participants were asked to assess the likelihood of a given climate risk occurring, the timeframe in which it would b",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "zare2025risk",
@@ -409,8 +409,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.182 (n=4) on p.13",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 4,
-      "local_snippet": "times and speed in greater london area. the impact of adverse weather on the network is investigated during different times of the day (morning, noon, evening) and for multiple parts of the area (cent",
+      "local_page": 13,
+      "local_snippet": "ood, r., thompson, d., johns, d., 2016. chapter 4: infrastructure in uk climate change risk assessment 2017 (ccra 2017). in: adaptation sub-committee (asc) of t",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -420,8 +420,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.227 (n=5) on p.3",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 1,
-      "local_snippet": "the challenge we must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major a-roads we manage including bridges, tunnels, drains and earthwo",
+      "local_page": 3,
+      "local_snippet": "are doing across all sectors of the uk. climate change and the strategic road network fourth round adaptation reporting power (arp4) arp4 - appendix a (complete climate change risk assessment) 2026/4/",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -431,8 +431,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.182 (n=4) on p.47",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 9,
-      "local_snippet": "rformance april 2023 to march 2024 6 1. executive summary introduction national highways was set up as a government-owned company in 2015, tasked with managing the strategic road network (srn) - the m",
+      "local_page": 47,
+      "local_snippet": "office of rail and road | annual assessment of national highways' performance april 2023 to march 2024 44 should seek to avoid large in-year variations in its renewals programmes and to better evidenc",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -442,9 +442,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.312 (n=5) on p.18",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 18,
+      "local_snippet": "ata was limited and the quality uneven. the inclusion of analysis of crash rates and crash types correlated to traffic flow and speed under adverse weather conditions should also be considered. additi",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "becker2026rainfall",
@@ -464,9 +464,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.312 (n=5) on p.1",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "hanging road conditions by the weather. on a macroscale road conditions can be regarded as a manifestation of traffic volume on a road network, and the fluctuation of road conditions is also influence",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 1,
+      "local_snippet": "ng of the weather-traffic relationship. this study conducts a contrastive analysis of travel time index (tti) variations under weather conditions in four cities. notably, this study will consider the ",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "calvert2018methodology",
@@ -475,8 +475,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.188 (n=3) on p.2",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 21,
-      "local_snippet": "r priority when considering investment. prior to the explanation of the method, an extensive literature review was performed to set the scene for the lpir, but also to indicate where most efforts have",
+      "local_page": 2,
+      "local_snippet": "over from disturbances in traffic flow. in this contribution, an indicator is pre- sented, the link performance index for resilience (lpir), which eval- uates the resilience level of individual road s",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -486,9 +486,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.312 (n=5) on p.3",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "lationship between rainfall and damage. current studies primarily analyze resilience from the perspec­ tives of systems and networks, overlooking the effect of road segments on overall performance. li",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 3,
+      "local_snippet": "centrality (chalkiadakis et al., 2022). additionally, some studies have attempted to apply time-related performance indicators to quantitatively describe system resilience, such as road network effici",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "hranac2006empirical",
@@ -497,9 +497,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.312 (n=5) on p.18",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 18,
+      "local_snippet": "ata was limited and the quality uneven. the inclusion of analysis of crash rates and crash types correlated to traffic flow and speed under adverse weather conditions should also be considered. additi",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "hranac2006empirical",
@@ -508,9 +508,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.312 (n=5) on p.18",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 18,
+      "local_snippet": "ata was limited and the quality uneven. the inclusion of analysis of crash rates and crash types correlated to traffic flow and speed under adverse weather conditions should also be considered. additi",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "becker2026rainfall",
@@ -543,7 +543,7 @@
       "local_layer": 1,
       "local_page": 2,
       "local_snippet": "010, 2014; wang et al. 2007, 2013a, b). in addition, the generalized function proposed in this paper may also provide benefits for improving the urban traffic control and management, e.g., the analysi",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "mccullagh1989glm",
@@ -554,7 +554,7 @@
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "UNCLASSIFIED_NOT_FOUND_NO_QUOTE"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "wan2024paradox",
@@ -576,7 +576,7 @@
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "UNCLASSIFIED_NOT_FOUND_NO_QUOTE"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "hranac2006empirical",
@@ -585,9 +585,9 @@
       "llm_reasoning": "Keyword-overlap recall=0.429 (n=3) on p.29",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
-      "agreement": "LOCAL_STRONGER_THAN_LLM"
+      "local_page": 29,
+      "local_snippet": "terval of 22.3 percent to 35.8 percent. a regression analysis indicated that percent volume reduction had a statistically significant relationship with total snowfall and the square of the maximum win",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "koetse2009impact",
@@ -596,8 +596,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.286 (n=2) on p.9",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "tion, however, is the transport sector. this is not entirely surprising, since to date the consequences of climate change and changing weather conditions for the transport sector have not received muc",
+      "local_page": 9,
+      "local_snippet": "as large as under normal circumstances. a poisson model analysis furthermore shows a substantial increase in accident frequency for increasing snowfall intensities and a small but statistically signif",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -608,7 +608,7 @@
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
       "local_page": 1,
-      "local_snippet": "seasons, or broader traffic conditions. to make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datas",
+      "local_snippet": "n 1.5 million road sections in germany. using linear regression models, we investigate the functional relationship between rainfall and driving speeds depending on road section characteristics like sp",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -618,8 +618,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.182 (n=2) on p.15",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
+      "local_page": 15,
+      "local_snippet": "percent were found in snowy conditions. one of the more interesting findings was that the twin cities experienced more significant reductions in the traffic stream free-flow speed and speed-at-capacit",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -629,8 +629,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.214 (n=3) on p.30",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 58,
-      "local_snippet": "ted based on the following criteria: 1. the recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysi",
+      "local_page": 30,
+      "local_snippet": " a much greater impact than heavy rain. in light rain, a 1.9 km/hr (1.2 mph) and 6.4 to 12.9 km/hr (4 to 8 mph) reduction in operating speeds can be expected during free-flow conditions and at a flow ",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -640,8 +640,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.214 (n=3) on p.12",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 1,
-      "local_snippet": "seasons, or broader traffic conditions. to make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datas",
+      "local_page": 12,
+      "local_snippet": "m/h at a mean driving speed of 80 km/h. salvi et al. [23] find that speed reductions during rainfall strongly depend on baseline driving speed but observe no substantial effect of rainfall amount when",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -651,8 +651,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.286 (n=4) on p.10",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "tion, however, is the transport sector. this is not entirely surprising, since to date the consequences of climate change and changing weather conditions for the transport sector have not received muc",
+      "local_page": 10,
+      "local_snippet": "ated at 22 eurocent per commuting trip. again, the effects of rain are small, except for trips made during rush hours in congested areas, where speed reductions are around 10-15%. the associated welfa",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -662,8 +662,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.143 (n=2) on p.5",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 2,
-      "local_snippet": "lationship between rainfall and damage. current studies primarily analyze resilience from the perspec­ tives of systems and networks, overlooking the effect of road segments on overall performance. li",
+      "local_page": 5,
+      "local_snippet": "from road resilience to extreme events. in the specific scenario of this study, the service efficiency of road segments can be characterized by the average speed of all vehicles on the road segment pe",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -684,8 +684,8 @@
       "llm_reasoning": "Keyword-overlap recall=0.088 (n=3) on p.10",
       "local_verdict": "MATCH_EXACT",
       "local_layer": 1,
-      "local_page": 35,
-      "local_snippet": "apid evidence assessment toolkit index. available at https://webarchive.nationalarchives.gov.uk/ukgwa/20140402164155/http:/www.civi lservice.gov.uk/networks/gsr/resources-and-guidance/rapid-evidence-a",
+      "local_page": 10,
+      "local_snippet": "rthern ireland in the other uk nations. the local road network makes up 183,300 miles, and includes some motorways, dual carriageways, and busy urban distributor roads, in addition to minor roads. uk ",
       "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
@@ -693,11 +693,11 @@
       "line_num": 624,
       "llm_verdict": "NOT_FOUND",
       "llm_reasoning": "Keyword-overlap recall=0.107 (n=3) on p.1",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "UNCLASSIFIED_NOT_FOUND_NO_QUOTE"
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 1,
+      "local_snippet": "ndicators that are unquantifiable (19). other resilience approaches apply traffic network modeling to identify locations for crit- ical buildings (for example, hospitals and fire stations) (32), minim",
+      "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     }
   ]
 }

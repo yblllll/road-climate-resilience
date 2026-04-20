@@ -36,14 +36,23 @@ AGREEMENT_TABLE = {
     # (llm, local) → bucket
     ("MATCH", "MATCH_EXACT"): "AGREE_MATCH",
     ("MATCH", "MATCH_WRONG_PAGE"): "AGREE_PAGE_OFF",
-    ("MATCH", "MATCH_PARTIAL"): "AGREE_PARTIAL",
+    ("MATCH", "MATCH_PARTIAL"): "AGREE_MATCH_FUZZY",
     ("MATCH", "NOT_FOUND"): "LLM_MATCH_LOCAL_NOT_FOUND",
-    ("PARTIAL", "MATCH_EXACT"): "LOCAL_STRONGER_THAN_LLM",
+    ("MATCH", "NO_QUOTE"): "MATCH_WITHOUT_QUOTE",  # agent said MATCH but didn't supply a quote
+    ("PARTIAL", "MATCH_EXACT"): "AGREE_PARTIAL_QUOTE_VERIFIED",
     ("PARTIAL", "MATCH_PARTIAL"): "AGREE_PARTIAL",
     ("PARTIAL", "NOT_FOUND"): "LLM_PARTIAL_LOCAL_NOT_FOUND",
+    ("PARTIAL", "NO_QUOTE"): "LLM_PARTIAL_WITHOUT_QUOTE",
+    ("MISMATCH", "MATCH_EXACT"): "LLM_FLAG_QUOTE_REAL",
+    ("MISMATCH", "MATCH_PARTIAL"): "LLM_FLAG_QUOTE_FUZZY",
+    ("MISMATCH", "NOT_FOUND"): "AGREE_NOT_SUPPORTED",
+    ("MISMATCH", "NO_QUOTE"): "LLM_MISMATCH_WITHOUT_QUOTE",
+    ("OPPOSITE", "MATCH_EXACT"): "LLM_OPPOSITE_QUOTE_REAL",
+    ("OPPOSITE", "NO_QUOTE"): "LLM_OPPOSITE_WITHOUT_QUOTE",
     ("NOT_FOUND", "MATCH_EXACT"): "LLM_NOT_FOUND_LOCAL_MATCH",
     ("NOT_FOUND", "MATCH_PARTIAL"): "LLM_NOT_FOUND_LOCAL_PARTIAL",
     ("NOT_FOUND", "NOT_FOUND"): "AGREE_NOT_FOUND",
+    ("NOT_FOUND", "NO_QUOTE"): "AGREE_NOT_FOUND",
     ("PENDING_LLM", "*"): "LLM_NOT_RUN",
 }
 
@@ -69,20 +78,19 @@ def main() -> int:
 
     cm = json.loads(Path(args.citation_map).read_text())
     lv = json.loads(Path(args.local_verification).read_text())
-    local_by_key: dict[str, dict] = {}
-    # local verification is keyed by cite_key + claim_line; we use the first
-    # occurrence per cite_key (quote is usually the same across occurrences)
+    # Keyed by (cite_key, claim_line) because one paper is cited at multiple
+    # claim lines with different quotes per claim.
+    local_by_claim: dict[tuple[str, int], dict] = {}
     for r in lv["results"]:
-        k = r["cite_key"]
-        if k not in local_by_key:
-            local_by_key[k] = r
+        local_by_claim[(r["cite_key"], r.get("claim_line"))] = r
 
     diffs = []
     buckets: dict[str, int] = {}
     for entry in cm:
         k = entry["cite_key"]
+        line = entry.get("line_num_in_paper")
         llm = entry.get("match_verdict") or "PENDING_LLM"
-        local_entry = local_by_key.get(k, {"verdict": "NOT_RUN"})
+        local_entry = local_by_claim.get((k, line), {"verdict": "NOT_RUN"})
         local = local_entry["verdict"]
         b = bucket(llm, local)
         buckets[b] = buckets.get(b, 0) + 1

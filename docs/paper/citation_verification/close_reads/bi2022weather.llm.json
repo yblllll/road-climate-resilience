@@ -1,0 +1,45 @@
+{
+  "cite_key": "bi2022weather",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
+  "total_pages": 16,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T22:50:22.904358+00:00",
+  "per_claim": [
+    {
+      "line_num": 68,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Bi et al. (2022) focuses exclusively on four Chinese cities (Suzhou, Shenzhen, Jinan, Chengdu). No mention of the UK, UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity language appears anywhere in the paper. This claim is about UK transport infrastructure and does not originate from this source."
+    },
+    {
+      "line_num": 95,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "Some research find significant relationship between rainfall and traffic flow, and emphasized that heavy rainfall can lead to reduction in speed, road capacity, traffic flowing, resulting in longer travel time than normal",
+      "quote_page": 2,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "Bi et al. does report that heavy rainfall reduces speed and causes longer travel times (p.2), but the paper explicitly states the rainfall-road condition relationship 'is not necessarily monotonic' and that visibility — not precipitation — was the variable TTI was 'most sensitive' to on weekdays. The paper also notes rain can increase car use (positive TTI effect). The claim's framing of precipitation as having the 'most consistent negative effect' across transport modes mischaracterises Bi et al.'s nuanced, city- and time-varying findings."
+    },
+    {
+      "line_num": 97,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "Some research find significant relationship between rainfall and traffic flow, and emphasized that heavy rainfall can lead to reduction in speed, road capacity, traffic flowing, resulting in longer travel time than normal",
+      "quote_page": 2,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "Identical claim text to line 95. Same assessment applies: Bi et al. acknowledges rainfall's negative speed effects in reviewed literature, but the paper's own empirical results show visibility is the primary sensitivity variable on weekdays, and rainfall effects are non-monotonic. The characterisation of precipitation as having the 'most consistent negative effect' is an overstatement of what Bi et al. actually finds."
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "the extent of traffic congestion is measured by the travel time index (TTI), a frequently used indicator in transit systems. TTI is the ratio of free-flow speed to actual speed.",
+      "quote_page": 3,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "Bi et al. explicitly uses TTI (travel time index) and derives it from average speed as its traffic performance metrics. However, 'journey-time reliability' and 'composite resilience scores' do not appear anywhere in the paper. The paper critiques prior studies for using absolute indexes like traffic volume or vehicle speed, and proposes TTI as a more suitable relative measure. The claim accurately names two metrics this paper uses but appends two others (journey-time reliability, composite resilience scores) with no support in this source."
+    }
+  ]
+}

@@ -312,6 +312,59 @@
       "reason": "Keyword-overlap recall=0.286 (n=4) on p.10"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.468244+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T22:52:14.607533+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T22:52:14.607531+00:00",
+      "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+      "per_claim": [
+        {
+          "line_num": 66,
+          "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": false,
+          "verdict": "NOT_FOUND",
+          "reasoning": "Koetse 2009 is a global/empirical review paper focused primarily on the US, Canada, Netherlands, Norway and other regions. It contains no mention of the UK Strategic Road Network, the one-third road traffic statistic, or the two-thirds freight tonne-kilometres figure. These figures originate from UK Department for Transport sources, not from Koetse 2009. The citing paper has misattributed a UK-specific traffic statistic to this global review."
+        },
+        {
+          "line_num": 93,
+          "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+          "source_quote": "with respect to traffic safety by far the most important variable is precipitation, most studies finding that precipitation increases accident frequency, but decreases accident severity.",
+          "quote_page": 13,
+          "search_verified": true,
+          "verdict": "PARTIAL",
+          "reasoning": "Koetse 2009 does identify precipitation as the most important variable for road safety (Section 9 conclusions, p.13) and discusses speed reductions and congestion. However, the paper does not frame precipitation as having a 'most consistent negative effect on road performance' across all transport modes — the review covers road, rail, aviation, inland waterway, and cycling separately, and explicitly notes that precipitation's net effect is often mixed (e.g., it increases accident frequency but decreases severity). The claim slightly overstates the uniformity and cross-modal scope of the finding."
+        },
+        {
+          "line_num": 97,
+          "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+          "source_quote": "with respect to traffic safety by far the most important variable is precipitation, most studies finding that precipitation increases accident frequency, but decreases accident severity.",
+          "quote_page": 13,
+          "search_verified": true,
+          "verdict": "PARTIAL",
+          "reasoning": "Identical claim to line 93. Koetse 2009 confirms precipitation is the dominant variable for road safety, but describes effects as mixed (frequency up, severity down, speed reduced mainly at congested/peak conditions). The characterisation as 'most consistent negative effect' across transport modes is an oversimplification of a nuanced synthesis. Same reasoning as line 93 — PARTIAL match."
+        },
+        {
+          "line_num": 238,
+          "claim_text": "Speed and volume are jointly determined through the speed--flow relationship .",
+          "source_quote": "traffic speed is likely a relevant mediating factor in accident severity, traffic volume is likely more relevant in accident probability per time period.",
+          "quote_page": 9,
+          "search_verified": true,
+          "verdict": "PARTIAL",
+          "reasoning": "Koetse 2009 does reference the speed-flow and flow-occupancy relationship (Ibrahim and Hall 1994 cited on p.10) and footnote 19 on p.9 distinguishes the roles of speed and volume. However, the exact claim — that speed and volume are 'jointly determined through the speed-flow relationship' — is not stated as a proposition by Koetse; this is background traffic engineering theory that Koetse invokes implicitly. The paper supports the relevance of both variables but does not articulate the joint-determination claim explicitly."
+        },
+        {
+          "line_num": 503,
+          "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+          "source_quote": "Reductions generally increase with rain intensity, with maximum reductions around 6–9% and 8–14%, respectively. For snow the effects are larger; light snow causes reductions in free-flow speed and speed-at-capacity of 5–16%.",
+          "quote_page": 10,
+          "search_verified": true,
+          "verdict": "MISMATCH",
+          "reasoning": "Koetse 2009 (p.10) reports the 8–14% figure as the *maximum* reduction in speed-at-capacity across rain intensity levels, citing Hranac et al. (2006) — it is not attributed to 'sustained rain' specifically. Koetse is itself summarising Hranac et al., so the figure originates there, not in Koetse. Furthermore, Koetse does not discuss this as a 'marginal effect per millimetre' vs 'average effect' distinction — that interpretive framing is introduced by the citing paper. The numerical figure exists in Koetse but the methodological characterisation ('average effects during sustained rain, not marginal per mm') is not supported."
+        }
+      ]
+    }
+  }
 }

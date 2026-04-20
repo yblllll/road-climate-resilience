@@ -1,0 +1,72 @@
+{
+  "cite_key": "becker2026rainfall",
+  "pdf_path": "docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+  "total_pages": 22,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T22:50:19Z",
+  "per_claim": [
+    {
+      "line_num": 68,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Becker et al. study Germany exclusively and contain no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity framing; this statistic originates from a UK policy source unrelated to Becker."
+    },
+    {
+      "line_num": 95,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "Precipitation, including different forms like rain, hail, sleet or snow, is one of the most influential weather phenomena affecting road traffic, consistently leading to reductions in driving speed.",
+      "quote_page": 2,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "Becker confirms precipitation consistently reduces driving speed but does not synthesise across transport modes or rank precipitation against other weather variables as most consistent; the multi-modal synthesis framing is an overgeneralisation."
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "PARTIAL",
+      "reasoning": "Becker measures only 5-min average driving speed and a relative speed difference metric; travel time index, journey-time reliability, and composite resilience scores are absent from this paper, making the list an overgeneralisation of what Becker contributes."
+    },
+    {
+      "line_num": 202,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "PARTIAL",
+      "reasoning": "Becker measures only 5-min average driving speed and a relative speed difference metric; travel time index, journey-time reliability, and composite resilience scores are absent from this paper, making the list an overgeneralisation of what Becker contributes."
+    },
+    {
+      "line_num": 202,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "PARTIAL",
+      "reasoning": "Becker measures only 5-min average driving speed and a relative speed difference metric; travel time index, journey-time reliability, and composite resilience scores are absent from this paper, making the list an overgeneralisation of what Becker contributes."
+    },
+    {
+      "line_num": 238,
+      "claim_text": "Speed and volume are jointly determined through the speed--flow relationship .",
+      "source_quote": "traffic volume and congestion are known to be key determinants of driving speed",
+      "quote_page": 13,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "Becker acknowledges traffic volume as a key determinant of speed but does not model it or discuss the speed-flow relationship as a joint determination mechanism; the citing claim overgeneralises Becker's scope."
+    },
+    {
+      "line_num": 501,
+      "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+      "source_quote": "The estimated magnitudes of rainfall-related speed reductions range from approximately 2",
+      "quote_page": 12,
+      "search_verified": true,
+      "verdict": "MISMATCH",
+      "reasoning": "Becker reports speed reductions of 2-10% (light rain) to >20% (heavy rain) and a 14% MSE reduction, not a 8-14% speed-at-capacity reduction; the citing paper conflates the MSE improvement metric with speed reduction percentages and imposes a sustained-rain framing absent from Becker."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "cite_key": "hranac2006empirical",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+  "total_pages": 108,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 66,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "This paper is a US-focused FHWA study on Minneapolis, Baltimore, and Seattle; it contains no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity to climate change."
+    },
+    {
+      "line_num": 68,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "This paper is a US-focused FHWA study on Minneapolis, Baltimore, and Seattle; it contains no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity to climate change."
+    },
+    {
+      "line_num": 93,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "day-to-day weather events such as rain, fog, snow, and freezing rain can have a serious impact on the mobility and safety of the transportation system users.",
+      "quote_page": 11,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "The paper studies precipitation impacts on road performance but is limited to road traffic (not multi-modal synthesis) and does not explicitly rank precipitation as the single 'most consistent' weather variable relative to others like fog or visibility."
+    },
+    {
+      "line_num": 97,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "day-to-day weather events such as rain, fog, snow, and freezing rain can have a serious impact on the mobility and safety of the transportation system users.",
+      "quote_page": 11,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "The paper studies precipitation impacts on road performance but is limited to road traffic (not multi-modal synthesis) and does not explicitly rank precipitation as the single 'most consistent' weather variable relative to others like fog or visibility."
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "No impacts were found on traffic stream jam density, but both rain and snow did impact traffic free-flow speed, speed-at-capacity and capacity and parameters varied with precipitation",
+      "quote_page": 15,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "The paper measures traffic performance by free-flow speed, speed-at-capacity, and capacity — not by travel time index, journey-time reliability, or composite resilience scores, so the claim overstates the metrics used here."
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "No impacts were found on traffic stream jam density, but both rain and snow did impact traffic free-flow speed, speed-at-capacity and capacity and parameters varied with precipitation",
+      "quote_page": 15,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "The paper measures traffic performance by free-flow speed, speed-at-capacity, and capacity — not by travel time index, journey-time reliability, or composite resilience scores, so the claim overstates the metrics used here."
+    },
+    {
+      "line_num": 202,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "No impacts were found on traffic stream jam density, but both rain and snow did impact traffic free-flow speed, speed-at-capacity and capacity and parameters varied with precipitation",
+      "quote_page": 15,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "The paper measures traffic performance by free-flow speed, speed-at-capacity, and capacity — not by travel time index, journey-time reliability, or composite resilience scores, so the claim overstates the metrics used here."
+    },
+    {
+      "line_num": 238,
+      "claim_text": "Speed and volume are jointly determined through the speed--flow relationship .",
+      "source_quote": "The calibration of macroscopic speed-flow-density relationships requires identification of a number of key parameters, including the facility's capacity, speed-at-capacity, free-flow speed, and jam density.",
+      "quote_page": 48,
+      "search_verified": true,
+      "verdict": "MATCH",
+      "reasoning": "The paper explicitly uses and calibrates speed-flow-density relationships that jointly characterise speed and flow (volume) as interdependent parameters of the traffic stream model."
+    },
+    {
+      "line_num": 492,
+      "claim_text": "Aggregate estimates, such as the 8--14\\% speed-at-capacity reductions reported by , are insufficient for targeted adaptation at the local level.",
+      "source_quote": "The maximum reductions are in the range of 6 to 9 percent and 8 to 14 percent for free-flow speed and speed-at-capacity, respectively at a rain intensity of approximately 1.6 cm/h (0.63 in/h).",
+      "quote_page": 79,
+      "search_verified": true,
+      "verdict": "MATCH",
+      "reasoning": "The paper reports exactly the 8 to 14 percent speed-at-capacity reductions cited in the claim; the characterisation as 'aggregate' is accurate as these are averages across Baltimore, Twin Cities, and Seattle."
+    },
+    {
+      "line_num": 501,
+      "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+      "source_quote": "The maximum reductions are in the range of 6 to 9 percent and 8 to 14 percent for free-flow speed and speed-at-capacity, respectively at a rain intensity of approximately 1.6 cm/h (0.63 in/h).",
+      "quote_page": 79,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "The paper does report 8-14% speed-at-capacity reductions at a specific rain intensity level (1.6 cm/h), but the paper also models how reductions vary with precipitation intensity (not just a single average), so the claim that it captures only average effects and not marginal effects per millimetre is not fully accurate."
+    }
+  ]
+}
