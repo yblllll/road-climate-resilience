@@ -1,7 +1,261 @@
 {
   "cite_key": "dft2024rea",
-  "pdf_path": null,
-  "read_complete": false,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.464823+00:00",
+  "candidate_quotes": [
+    {
+      "page": 35,
+      "quote": "Available at https://webarchive.nationalarchives.gov.uk/ukgwa/20140402164155/http:/www.civi lservice.gov.uk/networks/gsr/resources-and-guidance/rapid-evidence-assessment National Highways (2021) Preparing for climate change on the strategic road network - third adaptation report under the Climate Change Act.",
+      "word_count": 25,
+      "overlap_n": 5,
+      "recall": 0.263,
+      "search_verified": true,
+      "bbox": [
+        388.5205078125,
+        181.36080932617188,
+        448.33514404296875,
+        196.43040466308594
+      ]
+    },
+    {
+      "page": 10,
+      "quote": "It concludes by discussing interactions between modes and sectors. 3.1 Roads 3.1.1 Road infrastructure and governance The UK has a network of 422,100km of paved roads, divided between the Strategic Road Network (SRN) and the local road network.",
+      "word_count": 38,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        413.2665100097656,
+        175.22781372070312,
+        489.8675842285156,
+        190.2974090576172
+      ]
+    },
+    {
+      "page": 10,
+      "quote": "In addition to the strategic and local road network, there is a large network of private roads used for servicing important infrastructure such as power lines, wind farms, communication facilities and water storage.",
+      "word_count": 33,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        84.99302673339844,
+        518.3932495117188,
+        457.3922424316406,
+        533.462890625
+      ]
+    },
+    {
+      "page": 11,
+      "quote": "The UK Climate Change Risk Assessment (2017) reported that 6,600km of the UK road network is in areas that are vulnerable to flooding, claiming that this could increase by 53-160% by the 2080s.",
+      "word_count": 33,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        84.9599609375,
+        253.71310424804688,
+        489.3288269042969,
+        268.78271484375
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "12 NatCen Social Research | Climate Change Adaptation and Transport Infrastructure repeated disruption to the major road network in Scotland.",
+      "word_count": 20,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        84.95999908447266,
+        816.3508911132812,
+        99.97150421142578,
+        828.7996826171875
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Climate Change Adaptation and Transport Infrastructure A Rapid Evidence Assessment Authors: Bernard Steen, Rezina Chowdhury, Alina Fletcher, Cate Standing-Tattersall Date: 25/04/2022 Prepared for: Department for Transport",
+      "word_count": 26,
+      "overlap_n": 8,
+      "recall": 0.471,
+      "search_verified": true,
+      "bbox": [
+        56.63999938964844,
+        231.4857635498047,
+        483.48974609375,
+        277.3670349121094
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "Secondly, there is a need to better understand the likely impacts of climate change on transport infrastructure, and, conversely, the extent of the damage and disruption that can be avoided by adaptation.",
+      "word_count": 32,
+      "overlap_n": 7,
+      "recall": 0.412,
+      "search_verified": true,
+      "bbox": [
+        85.07998657226562,
+        178.69577026367188,
+        468.5830383300781,
+        193.76536560058594
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "6 NatCen Social Research | Climate Change Adaptation and Transport Infrastructure 1 Introduction This report presents the findings of a Rapid Evidence Assessment (REA) on Climate Change Adaptation (CCA) and transport infrastructure.",
+      "word_count": 32,
+      "overlap_n": 7,
+      "recall": 0.412,
+      "search_verified": true,
+      "bbox": [
+        84.95999908447266,
+        816.3508911132812,
+        94.93732452392578,
+        828.7996826171875
+      ]
+    },
+    {
+      "page": 8,
+      "quote": "8 NatCen Social Research | Climate Change Adaptation and Transport Infrastructure 2 Methodology This chapter provides a summary of the methodological approach taken in this Rapid Evidence Assessment (REA).",
+      "word_count": 29,
+      "overlap_n": 7,
+      "recall": 0.412,
+      "search_verified": true,
+      "bbox": [
+        84.95999908447266,
+        816.3508911132812,
+        94.93732452392578,
+        828.7996826171875
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "CCA works with an understanding that climate change is already happening and will continue to happen, and therefore transport infrastructure will need to be adapted to ensure it is resilient enough to cope with more extreme weather events over the next 30-50 years.",
+      "word_count": 43,
+      "overlap_n": 6,
+      "recall": 0.353,
+      "search_verified": true,
+      "bbox": [
+        364.55902099609375,
+        328.8278503417969,
+        460.3476867675781,
+        343.8974609375
+      ]
+    },
+    {
+      "page": 28,
+      "quote": "28 NatCen Social Research | Climate Change Adaptation and Transport Infrastructure Participants were asked to assess the likelihood of a given climate risk occurring, the timeframe in which it would be expected to occur, the severity of the consequences, and the current level of resilience.",
+      "word_count": 45,
+      "overlap_n": 5,
+      "recall": 0.385,
+      "search_verified": true,
+      "bbox": [
+        85.08000183105469,
+        816.4769897460938,
+        100.06500244140625,
+        828.761962890625
+      ]
+    },
+    {
+      "page": 31,
+      "quote": "NatCen Social Research | Climate Change Adaptation and Transport Infrastructure 31 A level of uncertainty in climate change projections is inevitable, and several studies highlighted the need for approaches to risk assessment and cost-benefit analysis that were sensitive to this uncertainty.",
+      "word_count": 41,
+      "overlap_n": 5,
+      "recall": 0.385,
+      "search_verified": true,
+      "bbox": [
+        85.08000183105469,
+        816.3329467773438,
+        422.85894775390625,
+        829.220947265625
+      ]
+    },
+    {
+      "page": 4,
+      "quote": "4 NatCen Social Research | Climate Change Adaptation and Transport Infrastructure Executive summary Climate change is already creating risks for transport infrastructure.",
+      "word_count": 22,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        84.95999908447266,
+        816.3508911132812,
+        94.93732452392578,
+        828.7996826171875
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "NatCen Social Research | Climate Change Adaptation and Transport Infrastructure 5 In addition to the challenges involved in considering such a wide range of potential benefits, there are some distinct methodological challenges.",
+      "word_count": 32,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        85.08000183105469,
+        816.3329467773438,
+        422.85894775390625,
+        829.220947265625
+      ]
+    },
+    {
+      "page": 10,
+      "quote": "The local road network makes up 183,300 miles, and includes some motorways, dual carriageways, and busy urban distributor roads, in addition to minor roads.",
+      "word_count": 24,
+      "overlap_n": 3,
+      "recall": 0.088,
+      "search_verified": true,
+      "bbox": [
+        84.97100830078125,
+        406.0943908691406,
+        499.6864929199219,
+        421.16400146484375
+      ]
+    },
+    {
+      "page": 27,
+      "quote": "A central challenge is uncertainty about future climate change projections: all climate projections have a degree of uncertainty, and the degree of uncertainty is higher at the smaller geographies necessary for transport infrastructure planning (Dawson et al., 2018).",
+      "word_count": 38,
+      "overlap_n": 3,
+      "recall": 0.088,
+      "search_verified": true,
+      "bbox": [
+        392.77581787109375,
+        167.65573120117188,
+        500.22357177734375,
+        182.72532653808594
+      ]
+    },
+    {
+      "page": 4,
+      "quote": "REAs sit between literature reviews and systematic reviews, using rigorous search methods and prioritising the most relevant evidence for inclusion.",
+      "word_count": 20,
+      "overlap_n": 2,
+      "recall": 0.059,
+      "search_verified": true,
+      "bbox": [
+        208.0814208984375,
+        239.28866577148438,
+        503.7624816894531,
+        254.35826110839844
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "Firstly, most climate models operate at relatively large geographies, such as countries or regions, but transport infrastructure exists and operates at smaller geographies, and multiple studies in the review discussed lower levels.",
+      "word_count": 32,
+      "overlap_n": 2,
+      "recall": 0.059,
+      "search_verified": true,
+      "bbox": [
+        85.08000183105469,
+        91.83309936523438,
+        469.8834533691406,
+        106.90269470214844
+      ]
+    }
+  ],
+  "read_complete": true
 }

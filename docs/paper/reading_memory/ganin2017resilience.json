@@ -14,9 +14,97 @@
       "claim_type": "mechanism"
     }
   ],
-  "close_read_complete": false,
-  "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "close_read_complete": true,
+  "candidate_quotes": [
+    {
+      "page": 1,
+      "quote": "Other resilience approaches apply traffic network modeling to identify locations for crit- ical buildings (for example, hospitals and fire stations) (32), minimize trip distance for individual passengers (33), and minimize travel time across the system (12).",
+      "word_count": 36,
+      "overlap_n": 3,
+      "recall": 0.107,
+      "search_verified": true,
+      "bbox": [
+        501.89056396484375,
+        487.1551513671875,
+        558.1353149414062,
+        496.6551818847656
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "Because these stressors are inev- itable, whether from crashes, construction, special events, extreme weather, equipment malfunctions, or even deliberate attack, invest- ment strategies that prioritize reduction of normal operating delays may have the unintended consequence of exacerbating tail risks- that is, the risk of worse catastrophe under unlikely but possible conditions.",
+      "word_count": 51,
+      "overlap_n": 3,
+      "recall": 0.107,
+      "search_verified": true,
+      "bbox": [
+        171.3262939453125,
+        333.7462158203125,
+        291.0453796386719,
+        343.2462158203125
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Whereas typical policy responses prioritize reduction of delays under normal conditions to improve the ef- ficiency of urban road systems, analytic support for investments that improve resilience (defined as system recovery from additional disruptions) is still scarce.",
+      "word_count": 37,
+      "overlap_n": 2,
+      "recall": 0.071,
+      "search_verified": true,
+      "bbox": [
+        64.91429901123047,
+        149.5175323486328,
+        372.137451171875,
+        158.5175323486328
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "In this effort, we represent paved roads as a transportation network by mapping intersections to nodes and road segments between the intersections to links.",
+      "word_count": 24,
+      "overlap_n": 2,
+      "recall": 0.071,
+      "search_verified": true,
+      "bbox": [
+        196.83717346191406,
+        170.43800354003906,
+        469.4021301269531,
+        179.43800354003906
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "The results demonstrate that many urban road systems that operate inef- ficiently under normal conditions are nevertheless resilient to disruption, whereas some more efficient cities are more fragile.",
+      "word_count": 28,
+      "overlap_n": 2,
+      "recall": 0.071,
+      "search_verified": true,
+      "bbox": [
+        187.52041625976562,
+        254.11903381347656,
+        469.4104309082031,
+        263.1190185546875
+      ]
+    }
+  ],
+  "per_claim_verdicts": [
+    {
+      "line_num": 102,
+      "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+      "source_quote": null,
+      "verdict": "NOT_FOUND",
+      "matched_page": null,
+      "reason": "No candidate sentence passed the keyword-overlap threshold"
+    },
+    {
+      "line_num": 624,
+      "claim_text": "A complementary extension is network vulnerability analysis: betweenness centrality under normal and extreme-weather scenarios would identify links whose rainfall degradation cascades into network-wide journey time losses, connecting these link-level estimates to system-level climate risk assessment",
+      "source_quote": "Other resilience approaches apply traffic network modeling to identify locations for crit- ical buildings (for example, hospitals and fire stations) (32), minimize trip distance for individual passengers (33), and minimize travel time across the system (12).",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.107 (n=3) on p.1"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.466053+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }

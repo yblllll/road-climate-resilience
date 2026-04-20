@@ -1,7 +1,387 @@
 {
   "cite_key": "hranac2006empirical",
-  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather_annotated.pdf",
-  "read_complete": true,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.467033+00:00",
+  "candidate_quotes": [
+    {
+      "page": 58,
+      "quote": "The recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysis over all traffic regimes. 2.",
+      "word_count": 27,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        161.99620056152344,
+        123.78269958496094,
+        539.9366455078125,
+        137.0135955810547
+      ]
+    },
+    {
+      "page": 15,
+      "quote": "One of the more interesting findings was that the Twin Cities experienced more significant reductions in the traffic stream free-flow speed and speed-at-capacity under snowy conditions when compared to Baltimore (19 versus 5 percent reductions).",
+      "word_count": 35,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        506.6794128417969,
+        626.9507446289062,
+        542.754150390625,
+        640.181640625
+      ]
+    },
+    {
+      "page": 18,
+      "quote": "The inclusion of analysis of crash rates and crash types correlated to traffic flow and speed under adverse weather conditions should also be considered.",
+      "word_count": 24,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        191.7245635986328,
+        554.3408813476562,
+        542.8956298828125,
+        567.57177734375
+      ]
+    },
+    {
+      "page": 19,
+      "quote": "Empirical Studies on Traffic Flow in Inclement Weather Cambridge Systematics, Inc. 1-1 1.0 Introduction 1.1 BACKGROUND Weather conditions affect the operation of the national transportation system by changing the driving environment as well as the behavior of drivers, who modify their individual headways, target speeds, or other travel parameters in reaction to specific weather events.",
+      "word_count": 55,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        336.239990234375,
+        44.97303009033203,
+        542.2401733398438,
+        55.818031311035156
+      ]
+    },
+    {
+      "page": 19,
+      "quote": "Approximately two-thirds of traffic flow and delay impacts during the winter season can be attributed to adverse weather.",
+      "word_count": 18,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        143.99990844726562,
+        629.6398315429688,
+        542.7802734375,
+        642.8707275390625
+      ]
+    },
+    {
+      "page": 27,
+      "quote": "Despite limitations in data (primarily, the absence of other variables affecting travel time and the temporal and spatial differences between weather and traffic data), the study found that, when weather phenomena occur, the average regional increase in travel time is 14 percent, with pavement condition the most frequent explanatory variable, followed by precipitation.",
+      "word_count": 53,
+      "overlap_n": 4,
+      "recall": 0.267,
+      "search_verified": true,
+      "bbox": [
+        143.99998474121094,
+        556.0186767578125,
+        540.0529174804688,
+        569.2495727539062
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "Study the impact of precipitation on macroscopic traffic flow parameters using consistent, continuous weather variables; 3.",
+      "word_count": 16,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        161.9962158203125,
+        90.42546081542969,
+        193.56370544433594,
+        103.65635681152344
+      ]
+    },
+    {
+      "page": 38,
+      "quote": "A series of VMS and Variable Speed Limit Signs are used to provide information and modify speeds based on information gathered from road weather monitoring systems. 590 drivers were interviewed at various intervals after implementation to assess their reactions.",
+      "word_count": 39,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        508.3345947265625,
+        611.1510620117188,
+        536.9933471679688,
+        621.4650268554688
+      ]
+    },
+    {
+      "page": 39,
+      "quote": "Owens, University of North Dakota The ATWIS project was designed to provide a current road and forecasted weather report to the traveling public and commercial vehicles across the Interstate system in the Dakotas and Minnesota.",
+      "word_count": 35,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        265.0194091796875,
+        283.9649963378906,
+        292.05902099609375,
+        294.27899169921875
+      ]
+    },
+    {
+      "page": 40,
+      "quote": "Study the impact of precipitation on macroscopic traffic flow parameters using consistent, continuous weather variables. 3.",
+      "word_count": 16,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        161.9962158203125,
+        192.42613220214844,
+        193.56370544433594,
+        205.6570281982422
+      ]
+    },
+    {
+      "page": 37,
+      "quote": "Empirical Studies on Traffic Flow in Inclement Weather Cambridge Systematics, Inc. 2-15 Table 2.10 Literature and Research on Focused on Individual Drivers Reference Authors Year Comment Effects of Variable Message Signs on Driver Speed Behavior on a Section of Expressway under Adverse Fog Conditions V.",
+      "word_count": 45,
+      "overlap_n": 5,
+      "recall": 0.312,
+      "search_verified": true,
+      "bbox": [
+        336.239990234375,
+        44.97303009033203,
+        542.2401733398438,
+        55.818031311035156
+      ]
+    },
+    {
+      "page": 23,
+      "quote": "A number of researchers have been able to collect primary data on traffic speed and volumes during adverse weather.",
+      "word_count": 19,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        365.857421875,
+        495.2224426269531,
+        542.7332763671875,
+        508.453369140625
+      ]
+    },
+    {
+      "page": 24,
+      "quote": "Demand is the number of vehicles that desire to travel past a point during a specified period. • Speed - Freeway speed is the average speed of vehicles in the absence of traffic control devices.",
+      "word_count": 35,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        339.78228759765625,
+        620.6720581054688,
+        542.7453002929688,
+        633.9029541015625
+      ]
+    },
+    {
+      "page": 29,
+      "quote": "A regression analysis indicated that percent volume reduction had a statistically significant relationship with total snowfall and the square of the maximum wind speed.",
+      "word_count": 24,
+      "overlap_n": 3,
+      "recall": 0.429,
+      "search_verified": true,
+      "bbox": [
+        212.12327575683594,
+        246.7806854248047,
+        542.7650756835938,
+        260.0115966796875
+      ]
+    },
+    {
+      "page": 24,
+      "quote": "A discussion of macroscopic effects of weather on capacity, delay, volume, and speed is followed by a summary of much less understood microscopic behavioral and human factors impacts.",
+      "word_count": 28,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        192.98777770996094,
+        315.1312255859375,
+        204.28070068359375,
+        328.3621520996094
+      ]
+    },
+    {
+      "page": 26,
+      "quote": "Traffic data (volume, time mean speed, and occupancy) were collected from the Smart Travel Laboratory at two-minute intervals.",
+      "word_count": 18,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        193.19808959960938,
+        233.09959411621094,
+        542.7595825195312,
+        246.3304901123047
+      ]
+    },
+    {
+      "page": 31,
+      "quote": "In good weather, there was a nearly constant relationship between vehicle speed and flow rate, resulting in an estimated free-flow speed of 122 kilometers per hour (76 miles per hour) in ideal conditions (9 km/hr greater than the value computed using the HCM method).",
+      "word_count": 44,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        144.00001525878906,
+        137.40892028808594,
+        542.786865234375,
+        150.6398162841797
+      ]
+    },
+    {
+      "page": 31,
+      "quote": "Wind conditions did not have as clear a relationship, perhaps due to wind gust that are not reflected in average wind speed or variable driver responses to wind.",
+      "word_count": 28,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        347.4374694824219,
+        246.79173278808594,
+        542.8155517578125,
+        260.02264404296875
+      ]
+    },
+    {
+      "page": 17,
+      "quote": "Alternatively, the free-flow speed and speed-at-capacity appear to be impacted by the precipitation level.",
+      "word_count": 14,
+      "overlap_n": 2,
+      "recall": 0.182,
+      "search_verified": true,
+      "bbox": [
+        349.5569152832031,
+        550.3298950195312,
+        542.7304077148438,
+        563.560791015625
+      ]
+    },
+    {
+      "page": 41,
+      "quote": "The optimum free-flow speed, speed-at-capacity, capacity, and jam density are computed for different weather conditions and inclement weather adjustment factors are developed for each precipitation level.",
+      "word_count": 26,
+      "overlap_n": 2,
+      "recall": 0.182,
+      "search_verified": true,
+      "bbox": [
+        472.8528137207031,
+        363.541748046875,
+        542.6975708007812,
+        376.7726745605469
+      ]
+    },
+    {
+      "page": 57,
+      "quote": "Visibilities greater than 16 km were reported as 16 km and values less than a 0.4 km were recorded as a 0.4 km visibility level.",
+      "word_count": 25,
+      "overlap_n": 2,
+      "recall": 0.182,
+      "search_verified": true,
+      "bbox": [
+        289.47186279296875,
+        90.42546081542969,
+        542.7364501953125,
+        103.65635681152344
+      ]
+    },
+    {
+      "page": 70,
+      "quote": "In the case of snow, Figure 5.6 demonstrates that the free-flow speed and speed-at-capacity WAFs are impacted by both the snow precipitation rate and the visibility level.",
+      "word_count": 27,
+      "overlap_n": 2,
+      "recall": 0.182,
+      "search_verified": true,
+      "bbox": [
+        177.02774047851562,
+        418.2049865722656,
+        542.7957763671875,
+        431.4359130859375
+      ]
+    },
+    {
+      "page": 30,
+      "quote": "In light rain, a 1.9 km/hr (1.2 mph) and 6.4 to 12.9 km/hr (4 to 8 mph) reduction in operating speeds can be expected during free-flow conditions and at a flow of 2,400 vehicles per hour, respectively.",
+      "word_count": 37,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        143.99998474121094,
+        428.8071594238281,
+        533.63623046875,
+        442.0380859375
+      ]
+    },
+    {
+      "page": 32,
+      "quote": "The difference between speed reductions during light and heavy rain is not statistically significant.",
+      "word_count": 14,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        302.8838806152344,
+        131.40281677246094,
+        542.7803344726562,
+        144.6337127685547
+      ]
+    },
+    {
+      "page": 79,
+      "quote": "Light rain (0.01 cm/h / 0.0039 in/h) results in reductions in the traffic free- flow speed, speed-at-capacity, and capacity in the range of 2 to 3.6 percent, 8 to 10 percent, and 10 to 11 percent, respectively.",
+      "word_count": 37,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        161.9962158203125,
+        239.4635467529297,
+        540.0101928710938,
+        252.69444274902344
+      ]
+    },
+    {
+      "page": 79,
+      "quote": "These results are consistent with the 2 percent free-flow speed reductions for light rain conditions that were reported in earlier studies (Ibrahim and Hall 1994). 3.",
+      "word_count": 26,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        405.62921142578125,
+        266.8257141113281,
+        542.8079223632812,
+        280.056640625
+      ]
+    },
+    {
+      "page": 79,
+      "quote": "Reductions in free-flow speed and speed-at-capacity generally increase with rain intensity.",
+      "word_count": 11,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        161.99620056152344,
+        313.80914306640625,
+        542.7442626953125,
+        327.0400695800781
+      ]
+    }
+  ],
+  "read_complete": true
 }

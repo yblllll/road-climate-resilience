@@ -9,9 +9,18 @@
       "claim_type": "unclassified"
     }
   ],
-  "close_read_complete": false,
+  "close_read_complete": true,
   "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "per_claim_verdicts": [
+    {
+      "line_num": 102,
+      "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+      "source_quote": null,
+      "verdict": "NOT_FOUND",
+      "matched_page": null,
+      "reason": "No candidate sentence passed the keyword-overlap threshold"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.463409+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }

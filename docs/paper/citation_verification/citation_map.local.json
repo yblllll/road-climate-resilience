@@ -1,0 +1,1506 @@
+[
+  {
+    "cite_key": "nh2024climate",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "The challenge We must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major A-roads we manage including bridges, tunnels, drains and earthworks.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.263 (n=5) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "Available at https://webarchive.nationalarchives.gov.uk/ukgwa/20140402164155/http:/www.civi lservice.gov.uk/networks/gsr/resources-and-guidance/rapid-evidence-assessment National Highways (2021) Preparing for climate change on the strategic road network - third adaptation report under the Climate Change Act.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
+      "page": 35
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.263 (n=5) on p.35",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "sias2025roadways",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "Climate stressors and impacts Temperature, moisture (largely as precipitation but also through humidity), SLR, snow and wildfire affect the structural (ability to carry traffic loads) and functional (ability to provide a smooth and safe roadway surface) capacity of roadways, collectively termed distresses (Table 1).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Sias_2025_Climate_Roadways_Review.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Nature Reviews Earth \\& Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.158 (n=3) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "orr2024annual",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "Executive summary Introduction National Highways was set up as a government-owned company in 2015, tasked with managing the strategic road network (SRN) - the motorways and major A-roads in England.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/ORR_2024_NH_Annual_Performance.pdf",
+      "page": 9
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.158 (n=3) on p.9",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "This is not entirely surprising, since to date the consequences of climate change and changing weather conditions for the transport sector have not received much attention in the literature.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.158 (n=3) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "The recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysis over all traffic regimes. 2.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 58
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.211 (n=4) on p.58",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "The impact of adverse weather on the network is investigated during different times of the day (morning, noon, evening) and for multiple parts of the area (central London, inner, outer), comparing travel times under normal and perturbed conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
+      "page": 4
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.158 (n=3) on p.4",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "The recorded data provided sufficient coverage for all traffic conditions, i.e., uncongested, around capacity, and congested conditions, to allow a full analysis over all traffic regimes. 2.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 58
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.211 (n=4) on p.58",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.158 (n=3) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "On a macroscale road conditions can be regarded as a manifestation of traffic volume on a road network, and the fluctuation of road conditions is also influenced by weather conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Keyword-overlap recall=0.211 (n=4) on p.2",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "In addition, the generalized function proposed in this paper may also provide benefits for improving the urban traffic control and management, e.g., the analysis of road traffic safety under rainy conditions (e.g., Li et al. 2012a) and the impacts of adverse weather on travel time reliability (Sumalee et al. 2011a).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.211 (n=4) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "huang2022overview",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "Further study of psychological characteristics aﬀecting the medium-term behaviors of drivers can be conducted to the incorporated preference of agents like passengers' sharing preference of riding alone or with other riders under certain conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf",
+      "page": 10
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.105 (n=2) on p.10",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "he2026flood",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "MATSim, an open-source transport simulator, is employed to model dynamic traffic redistribution and congestion under both baseline (non-flood) and flood conditions of the urban road transportation network.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Keyword-overlap recall=0.263 (n=5) on p.1",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "The impact of adverse weather on the network is investigated during different times of the day (morning, noon, evening) and for multiple parts of the area (central London, inner, outer), comparing travel times under normal and perturbed conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
+      "page": 4
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.158 (n=3) on p.4",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": "Finally, a comprehensive road network resilience assessment requires the ability to incorporate climate projections that influence the extent and likelihood of hazard exposure of transportation assets (Rowan et al., 2014; Wang et al., 2019).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.158 (n=3) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 81,
+    "claim_in_paper": "This directly addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure .",
+    "claim_type": "mechanism",
+    "source_quote": "Climate Change Adaptation and Transport Infrastructure A Rapid Evidence Assessment Authors: Bernard Steen, Rezina Chowdhury, Alina Fletcher, Cate Standing-Tattersall Date: 25/04/2022 Prepared for: Department for Transport",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
+      "page": 1
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.471 (n=8) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 93,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "Mode choice decisions: passenger transport As is clear from previous sections, the net effect of climate change on infrastructure disruptions, and the associated changes in transport costs, is ambiguous for most transport modes.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
+      "page": 12
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.267 (n=4) on p.12",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 93,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "Despite limitations in data (primarily, the absence of other variables affecting travel time and the temporal and spatial differences between weather and traffic data), the study found that, when weather phenomena occur, the average regional increase in travel time is 14 percent, with pavement condition the most frequent explanatory variable, followed by precipitation.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 27
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.267 (n=4) on p.27",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "line_num_in_paper": 95,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "The hourly rainfall precipitation data collected at the Happy Valley station were used to represent the weather conditions of the selected urban road section.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf",
+      "page": 3
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.2 (n=3) on p.3",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 95,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "On non-weekdays, weather does indeed impose a more significant and stronger effect on road conditions than on weekdays, as can be seen from the values of dummy variable D (all above 0).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
+      "page": 9
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Keyword-overlap recall=0.267 (n=4) on p.9",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 95,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "Precipitation, including different forms like rain, hail, sleet or snow, is one of the most influential weather phenomena affecting road traffic, consistently leading to reductions in driving speed.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.267 (n=4) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "Mode choice decisions: passenger transport As is clear from previous sections, the net effect of climate change on infrastructure disruptions, and the associated changes in transport costs, is ambiguous for most transport modes.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
+      "page": 12
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.267 (n=4) on p.12",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "Despite limitations in data (primarily, the absence of other variables affecting travel time and the temporal and spatial differences between weather and traffic data), the study found that, when weather phenomena occur, the average regional increase in travel time is 14 percent, with pavement condition the most frequent explanatory variable, followed by precipitation.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 27
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.267 (n=4) on p.27",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "On non-weekdays, weather does indeed impose a more significant and stronger effect on road conditions than on weekdays, as can be seen from the values of dummy variable D (all above 0).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
+      "page": 9
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Keyword-overlap recall=0.267 (n=4) on p.9",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": "Current studies primarily analyze resilience from the perspec­ tives of systems and networks, overlooking the effect of road segments on overall performance.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.2 (n=3) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "wang2020climate",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": "The top journals that published the most articles in the literature review are listed in Table 1.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wang_2020_Climate_Transport_Review.pdf",
+      "page": 3
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.167 (n=2) on p.3",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": "Prior to the explanation of the method, an extensive literature review was performed to set the scene for the LPIR, but also to indicate where most efforts have been performed in the past.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",
+      "page": 21
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.167 (n=2) on p.21",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf"
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Science Advances",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "No candidate sentence passed the keyword-overlap threshold",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bergantino2024assessing",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bergantino_2024_Transport_Network_Resilience.pdf"
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transport Reviews",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "No candidate sentence passed the keyword-overlap threshold",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "huang2022overview",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": "Second, new technologies (such as AV, vehicle-to-vehicle (V2V), and vehicle-to-everything (V2X)) expand the scope of research, add complexity to the transport system, and bring more challenges to the modeling process. 'e technology devel- opment also brings a large amount of detailed data, which are very important for calibrating agent-based models.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf",
+      "page": 3
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.154 (n=2) on p.3",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": "The impact of climate change on urban transport resilience in a changing world.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
+      "page": 14
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.231 (n=3) on p.14",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": "The impact of climate change on urban transport resilience in a changing world.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
+      "page": 14
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.231 (n=3) on p.14",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "he2026flood",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": "This research contributes to proactive urban flood risk management by informing adaptive planning and resilience strategies.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf",
+      "page": 19
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Keyword-overlap recall=0.231 (n=3) on p.19",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": "Transportation Research Part D 133 (2024) 104229 3 of the proposed framework is demonstrated in a case study for the southern part of the Haiti road network to inform a $120 million regional climate resilience investment in the road network funded by the Resilient Connectivity and Urban Transport Accessibility Project of the World Bank. 2.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf",
+      "page": 3
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.308 (n=4) on p.3",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 106,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": "28 NatCen Social Research | Climate Change Adaptation and Transport Infrastructure Participants were asked to assess the likelihood of a given climate risk occurring, the timeframe in which it would be expected to occur, the severity of the consequences, and the current level of resilience.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
+      "page": 28
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.385 (n=5) on p.28",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "zare2025risk",
+    "line_num_in_paper": 106,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": "Other sectors of trans­ portation (e.g., marine and air transport) are also prone to the effects of climate change.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Zare_2025_Risk_Climate_Investment.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.154 (n=2) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 111,
+    "claim_in_paper": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "claim_type": "mechanism",
+    "source_quote": "Chapter 4: Infrastructure in UK Climate Change Risk Assessment 2017 (CCRA 2017).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
+      "page": 13
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.182 (n=4) on p.13",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "nh2024climate",
+    "line_num_in_paper": 111,
+    "claim_in_paper": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "claim_type": "mechanism",
+    "source_quote": "Climate change and the strategic road network Fourth round adaptation reporting power (ARP4) ARP4 - Appendix A (complete Climate Change Risk Assessment) 2026/4/20 23:08 Climate change and the strategic road network - National Highways https://nationalhighways.co.uk/our-work/environment/climate-change-and-the-strategic-road-network/ 3/4",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf",
+      "page": 3
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.227 (n=5) on p.3",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "orr2024annual",
+    "line_num_in_paper": 111,
+    "claim_in_paper": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "claim_type": "mechanism",
+    "source_quote": "Office of Rail and Road | Annual Assessment of National Highways' performance April 2023 to March 2024 44 should seek to avoid large in-year variations in its renewals programmes and to better evidence the reason for any large in-year changes.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/ORR_2024_NH_Annual_Performance.pdf",
+      "page": 47
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.182 (n=4) on p.47",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "The inclusion of analysis of crash rates and crash types correlated to traffic flow and speed under adverse weather conditions should also be considered.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 18
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.312 (n=5) on p.18",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.188 (n=3) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "This study conducts a contrastive analysis of travel time index (TTI) variations under weather conditions in four cities.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
+      "page": 1
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Keyword-overlap recall=0.312 (n=5) on p.1",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "In this contribution, an indicator is pre- sented, the Link Performance Index for Resilience (LPIR), which eval- uates the resilience level of individual road sections in relation to a wider road network.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",
+      "page": 2
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.188 (n=3) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "Additionally, some studies have attempted to apply time-related performance indicators to quantitatively describe system resilience, such as road network efficiency (Chalkiadakis et al., 2022), reduction rate (Li et al., 2020), travel time (Zhang et al., 2021), recovery speed (Chen et al., 2022), and travel delay (Ganin et al., 2017).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
+      "page": 3
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.312 (n=5) on p.3",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "The inclusion of analysis of crash rates and crash types correlated to traffic flow and speed under adverse weather conditions should also be considered.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 18
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.312 (n=5) on p.18",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "The inclusion of analysis of crash rates and crash types correlated to traffic flow and speed under adverse weather conditions should also be considered.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 18
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.312 (n=5) on p.18",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.188 (n=3) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.188 (n=3) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "In addition, the generalized function proposed in this paper may also provide benefits for improving the urban traffic control and management, e.g., the analysis of road traffic safety under rainy conditions (e.g., Li et al. 2012a) and the impacts of adverse weather on travel time reliability (Sumalee et al. 2011a).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf",
+      "page": 2
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.438 (n=7) on p.2",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "line_num_in_paper": 204,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": null,
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "severity": "minor",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "PDF not available",
+    "recommended_action": "Download the source PDF via academic-literature, then re-run verification."
+  },
+  {
+    "cite_key": "wan2024paradox",
+    "line_num_in_paper": 204,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": "Despite a marked decline in overall travel demand in Great Britain, travel congestion, measured by average delay time per vehicle per mile, on both local loads and the Strategic Road Network1 has returned to, if not exceeded, pre-pandemic levels, as illustrated in Figure 1.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel.pdf",
+      "page": 3
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Keyword-overlap recall=0.25 (n=4) on p.3",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "line_num_in_paper": 206,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship, and rainfall may reduce both demand and speeds .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": null,
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "severity": "minor",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "PDF not available",
+    "recommended_action": "Download the source PDF via academic-literature, then re-run verification."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 238,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "claim_type": "unclassified",
+    "source_quote": "A regression analysis indicated that percent volume reduction had a statistically significant relationship with total snowfall and the square of the maximum wind speed.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 29
+    },
+    "match_verdict": "PARTIAL",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.429 (n=3) on p.29",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 238,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "claim_type": "unclassified",
+    "source_quote": "A Poisson model analysis furthermore shows a substantial increase in accident frequency for increasing snowfall intensities and a small but statistically significant impact of storm event duration. 19 Where traffic speed is likely a relevant mediating factor in accident severity, traffic volume is likely more relevant in accident probability per time period.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
+      "page": 9
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.286 (n=2) on p.9",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 238,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "claim_type": "unclassified",
+    "source_quote": "Using linear regression models, we investigate the functional relationship between rainfall and driving speeds depending on road section characteristics like speed limit and number of lanes.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.286 (n=2) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 492,
+    "claim_in_paper": "Aggregate estimates, such as the 8--14\\% speed-at-capacity reductions reported by , are insufficient for targeted adaptation at the local level.",
+    "claim_type": "empirical_result",
+    "source_quote": "One of the more interesting findings was that the Twin Cities experienced more significant reductions in the traffic stream free-flow speed and speed-at-capacity under snowy conditions when compared to Baltimore (19 versus 5 percent reductions).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 15
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.182 (n=2) on p.15",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 501,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": "In light rain, a 1.9 km/hr (1.2 mph) and 6.4 to 12.9 km/hr (4 to 8 mph) reduction in operating speeds can be expected during free-flow conditions and at a flow of 2,400 vehicles per hour, respectively.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+      "page": 30
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.214 (n=3) on p.30",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 501,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": "Salvi et al. [23] find that speed reductions during rainfall strongly depend on baseline driving speed but observe no substantial effect of rainfall amount when comparing four rainfall intensity classes.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+      "page": 12
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.214 (n=3) on p.12",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 503,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": "Again, the effects of rain are small, except for trips made during rush hours in congested areas, where speed reductions are around 10-15%.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
+      "page": 10
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.286 (n=4) on p.10",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "line_num_in_paper": 505,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": "In the specific scenario of this study, the service efficiency of road segments can be characterized by the average speed of all vehicles on the road segment per unit time. 3.2.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
+      "page": 5
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.143 (n=2) on p.5",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "nh2024climate",
+    "line_num_in_paper": 524,
+    "claim_in_paper": "The map translates per-millimetre coefficients into absolute scenario impacts that are directly interpretable by transport planners and drainage engineers.} Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction .",
+    "claim_type": "empirical_result",
+    "source_quote": "The challenge We must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major A-roads we manage including bridges, tunnels, drains and earthworks.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.043 (n=2) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 528,
+    "claim_in_paper": "Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction .",
+    "claim_type": "empirical_result",
+    "source_quote": "The local road network makes up 183,300 miles, and includes some motorways, dual carriageways, and busy urban distributor roads, in addition to minor roads.",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
+      "page": 10
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.088 (n=3) on p.10",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "line_num_in_paper": 624,
+    "claim_in_paper": "A complementary extension is network vulnerability analysis: betweenness centrality under normal and extreme-weather scenarios would identify links whose rainfall degradation cascades into network-wide journey time losses, connecting these link-level estimates to system-level climate risk assessment .",
+    "claim_type": "mechanism",
+    "source_quote": "Other resilience approaches apply traffic network modeling to identify locations for crit- ical buildings (for example, hospitals and fire stations) (32), minimize trip distance for individual passengers (33), and minimize travel time across the system (12).",
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf",
+      "page": 1
+    },
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Science Advances",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "Keyword-overlap recall=0.107 (n=3) on p.1",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  }
+]

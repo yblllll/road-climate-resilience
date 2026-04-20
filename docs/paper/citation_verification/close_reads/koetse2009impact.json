@@ -1,7 +1,247 @@
 {
   "cite_key": "koetse2009impact",
-  "pdf_path": null,
-  "read_complete": false,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.468002+00:00",
+  "candidate_quotes": [
+    {
+      "page": 2,
+      "quote": "This is not entirely surprising, since to date the consequences of climate change and changing weather conditions for the transport sector have not received much attention in the literature.",
+      "word_count": 29,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        127.16669464111328,
+        75.17439270019531,
+        418.62890625,
+        83.14459228515625
+      ]
+    },
+    {
+      "page": 10,
+      "quote": "Although these insights are clear enough in themselves, the net impact of climate change through changes in weather conditions on road transport is ambiguous.",
+      "word_count": 24,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        296.7162780761719,
+        535.3948974609375,
+        507.3484802246094,
+        543.471923828125
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "It is clear that changes in weather conditions due to climate change will affect the competitive positions of the different transport modes, both within passenger and freight transport.",
+      "word_count": 28,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        48.46531677246094,
+        650.291748046875,
+        345.0350341796875,
+        658.3687744140625
+      ]
+    },
+    {
+      "page": 14,
+      "quote": "Less attention is paid to impacts at the seasonal level, or the long run effects as they can be detected by comparing regions that operate under different climate conditions.",
+      "word_count": 29,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        265.2561950683594,
+        85.57933807373047,
+        507.3690185546875,
+        93.6563720703125
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Still, it is widely known that transport systems on the whole perform worse under adverse and extreme weather conditions.",
+      "word_count": 19,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        364.29608154296875,
+        85.66316223144531,
+        507.4329528808594,
+        93.63336181640625
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "Mode choice decisions: passenger transport As is clear from previous sections, the net effect of climate change on infrastructure disruptions, and the associated changes in transport costs, is ambiguous for most transport modes.",
+      "word_count": 33,
+      "overlap_n": 4,
+      "recall": 0.267,
+      "search_verified": true,
+      "bbox": [
+        57.8897819519043,
+        221.59861755371094,
+        214.7201385498047,
+        229.6756591796875
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "However, although the effects on the inland navigation sector will most likely be negative, the net impact for most transport modes are ambiguous, and likely also region-specific.",
+      "word_count": 27,
+      "overlap_n": 4,
+      "recall": 0.267,
+      "search_verified": true,
+      "bbox": [
+        271.5966491699219,
+        660.7247314453125,
+        503.0930480957031,
+        668.8017578125
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Differences in performance of road, rail and waterway transport systems give an indication of the po- tential impacts of climate change.",
+      "word_count": 21,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        122.50347900390625,
+        242.5048065185547,
+        429.8041687011719,
+        250.58184814453125
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Variations in travel behavior and performance of transport systems between seasons can be partly explained by weather variations.",
+      "word_count": 18,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        189.7948760986328,
+        284.34832763671875,
+        498.78167724609375,
+        292.42535400390625
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Furthermore, most stud- ies on climate and weather concern passenger transport.",
+      "word_count": 11,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        415.0705871582031,
+        399.39007568359375,
+        507.36798095703125,
+        407.46710205078125
+      ]
+    },
+    {
+      "page": 9,
+      "quote": "A Poisson model analysis furthermore shows a substantial increase in accident frequency for increasing snowfall intensities and a small but statistically significant impact of storm event duration. 19 Where traffic speed is likely a relevant mediating factor in accident severity, traffic volume is likely more relevant in accident probability per time period.",
+      "word_count": 52,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        105.0560073852539,
+        665.7594604492188,
+        342.21124267578125,
+        672.1354370117188
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "Welfare effects of adverse weather through speed changes in car commuting trips.",
+      "word_count": 12,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        223.5338592529297,
+        580.4072875976562,
+        474.9575500488281,
+        586.8687133789062
+      ]
+    },
+    {
+      "page": 10,
+      "quote": "Again, the effects of rain are small, except for trips made during rush hours in congested areas, where speed reductions are around 10-15%.",
+      "word_count": 23,
+      "overlap_n": 4,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        352.28228759765625,
+        294.796875,
+        507.4263610839844,
+        302.8739013671875
+      ]
+    },
+    {
+      "page": 9,
+      "quote": "On average, precipitation increases the number of accidents by 75% and the number of related injuries by 45%, with snowfall having a more substantial effect than rainfall.18 An issue that appears to mediate the impact of rain and snow on road accidents is lagged precipitation.",
+      "word_count": 45,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        368.1422119140625,
+        338.3834228515625,
+        503.1177062988281,
+        346.46044921875
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "This may open up the possibility for sea transport on the Northwest Passage during at least several months per year.",
+      "word_count": 20,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        36.84930419921875,
+        191.9415740966797,
+        347.9561767578125,
+        200.01861572265625
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "Losses over the entire period amount to $77 million per year on average.",
+      "word_count": 13,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        200.2196807861328,
+        495.2984313964844,
+        470.8909912109375,
+        503.3754577636719
+      ]
+    },
+    {
+      "page": 9,
+      "quote": "Similar results are obtained by Changnon (1996), who shows that rain had a substantial increasing effect on the number of departures with a delay of at least 30 min at Chicago O'Hare airport at the end of the 1970s.",
+      "word_count": 39,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        36.850399017333984,
+        64.65758514404297,
+        348.68572998046875,
+        72.734619140625
+      ]
+    }
+  ],
+  "read_complete": true
 }

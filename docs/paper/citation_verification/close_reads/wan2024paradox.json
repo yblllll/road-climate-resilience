@@ -1,7 +1,79 @@
 {
   "cite_key": "wan2024paradox",
-  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel_annotated.pdf",
-  "read_complete": true,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.469992+00:00",
+  "candidate_quotes": [
+    {
+      "page": 3,
+      "quote": "Despite a marked decline in overall travel demand in Great Britain, travel congestion, measured by average delay time per vehicle per mile, on both local loads and the Strategic Road Network1 has returned to, if not exceeded, pre-pandemic levels, as illustrated in Figure 1.",
+      "word_count": 44,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        72.0,
+        145.9319610595703,
+        476.27398681640625,
+        160.58396911621094
+      ]
+    },
+    {
+      "page": 28,
+      "quote": "Average speed, delay and reliability of travel times. https://www.gov.uk/government/statistical-data-sets/average-speed-delay-and- reliability-of-travel-times-cgn DfT. (2024b).",
+      "word_count": 12,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        139.376953125,
+        600.251953125,
+        400.6619873046875,
+        614.9039306640625
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Using longitudinal traFic count and car journey time data, we compare intra-day and intra-week travel demand patterns across four distinct periods, namely the pre- pandemic, during pandemic, post-pandemic transitional and post-pandemic stabilised periods, controlling for month, school and university term, bank holidays, major public events, roadworks, traFic accidents and weather.",
+      "word_count": 50,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        92.86454010009766,
+        370.81195068359375,
+        505.2587890625,
+        385.4639587402344
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Despite the overall reduction in travel demand, daily average journey time on key transport corridors in Cambridge has increased by 12.0% from 2022 to 2024.",
+      "word_count": 25,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        297.2987976074219,
+        471.8519592285156,
+        491.09014892578125,
+        486.50396728515625
+      ]
+    },
+    {
+      "page": 19,
+      "quote": "Recent trends: car journey time Models (5), (5A) and (5B) investigate recent road congestion in Cambridge, measured by the average car journey time across five transport corridors in and around Cambridge in five-minute intervals.",
+      "word_count": 34,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        114.55005645751953,
+        447.2490539550781,
+        292.7970886230469,
+        464.2453918457031
+      ]
+    }
+  ],
+  "read_complete": true
 }

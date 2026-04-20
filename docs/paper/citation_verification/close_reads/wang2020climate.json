@@ -1,7 +1,23 @@
 {
   "cite_key": "wang2020climate",
-  "pdf_path": null,
-  "read_complete": false,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wang_2020_Climate_Transport_Review.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.470515+00:00",
+  "candidate_quotes": [
+    {
+      "page": 3,
+      "quote": "The top journals that published the most articles in the literature review are listed in Table 1.",
+      "word_count": 17,
+      "overlap_n": 2,
+      "recall": 0.167,
+      "search_verified": true,
+      "bbox": [
+        51.42039489746094,
+        508.06939697265625,
+        324.2098388671875,
+        521.1005249023438
+      ]
+    }
+  ],
+  "read_complete": true
 }

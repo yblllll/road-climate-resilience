@@ -1,7 +1,149 @@
 {
   "cite_key": "cai2016rainfall",
-  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion_annotated.pdf",
-  "read_complete": true,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.463966+00:00",
+  "candidate_quotes": [
+    {
+      "page": 2,
+      "quote": "In addition, the generalized function proposed in this paper may also provide benefits for improving the urban traffic control and management, e.g., the analysis of road traffic safety under rainy conditions (e.g., Li et al. 2012a) and the impacts of adverse weather on travel time reliability (Sumalee et al. 2011a).",
+      "word_count": 50,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        286.1869201660156,
+        390.7256164550781,
+        293.99591064453125,
+        400.2256164550781
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "The analysis shows that the empirical values of CVS typically range from 0.05 to 0.2 at different traffic densities and rainfall intensities, and the exponential function provides a good fit to traffic speed data under both dry and rain conditions.",
+      "word_count": 40,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        430.0738525390625,
+        210.83847045898438,
+        569.9451293945312,
+        220.33847045898438
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Recently, Lam et al. (2013) investigated the relationships between traffic speed, flow, and density under various rainfall conditions on urban roads in Hong Kong.",
+      "word_count": 24,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        42.01036071777344,
+        523.5589599609375,
+        294.0235595703125,
+        533.0589599609375
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "It has been found that rainfall intensity has significant impacts on urban road key traffic stream parameters, e.g., free-flow speed, speed at capacity, and roadway capacity.",
+      "word_count": 26,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        423.7782897949219,
+        346.33734130859375,
+        569.9376220703125,
+        355.83734130859375
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Fig. 1 shows an illustrative example of the heteroscedastic traffic speed dispersion under different weather conditions in Hong Kong.",
+      "word_count": 19,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        508.81732177734375,
+        544.9879150390625,
+        569.9888916015625,
+        554.4879150390625
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "The hourly rainfall precipitation data collected at the Happy Valley station were used to represent the weather conditions of the selected urban road section.",
+      "word_count": 24,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        354.161376953125,
+        306.13739013671875,
+        570.0069580078125,
+        315.63739013671875
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Introduction Speed is a fundamental traffic performance measure of the roadway system, and speed dispersion is a key variable in traffic safety analysis.",
+      "word_count": 23,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        42.0093994140625,
+        345.8578796386719,
+        99.54998779296875,
+        355.8580017089844
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Gloucester Road is a major section of a primary distributor, which belongs to one road type of urban roads in Hong Kong with high capacity junc- tions, segregated pedestrian facilities and limited frontage access (Transport Department 2011).",
+      "word_count": 37,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        222.69088745117188,
+        277.9071044921875,
+        293.9969177246094,
+        287.4071044921875
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "In this study, the study area of the selected road section was confined to the second and the third traffic lanes (Fig. 2), which are toward the most congested tunnel, Cross Harbor Tunnel, in Hong Kong.",
+      "word_count": 36,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        187.99497985839844,
+        387.94549560546875,
+        293.9921569824219,
+        397.44549560546875
+      ]
+    },
+    {
+      "page": 8,
+      "quote": "One possible application is to analyze the relationship between traffic speed dispersion, adverse weather, and accident rates (e.g., Li et al. 2012a).",
+      "word_count": 22,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        80.10723876953125,
+        354.8324279785156,
+        294.0035705566406,
+        364.3324279785156
+      ]
+    }
+  ],
+  "read_complete": true
 }

@@ -14,9 +14,139 @@
       "claim_type": "unclassified"
     }
   ],
-  "close_read_complete": false,
-  "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "close_read_complete": true,
+  "candidate_quotes": [
+    {
+      "page": 10,
+      "quote": "Further study of psychological characteristics aﬀecting the medium-term behaviors of drivers can be conducted to the incorporated preference of agents like passengers' sharing preference of riding alone or with other riders under certain conditions.",
+      "word_count": 34,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        65.8770980834961,
+        496.6962585449219,
+        291.048828125,
+        506.6588439941406
+      ]
+    },
+    {
+      "page": 10,
+      "quote": "On the other hand, the trip/plan execution activity in the carpooling model involves simulating driving agents on the road net- work. 'e behavior of a driver activity primarily involves path planning and collision avoidance in the network.",
+      "word_count": 37,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        519.9278564453125,
+        587.5747680664062,
+        549.075439453125,
+        597.537353515625
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "Human behavior usually needs to be understood concerning Road Network Travel Mode & Departure Time Choice Decision Rules Search Rules Search?",
+      "word_count": 21,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        308.98828125,
+        737.063720703125,
+        549.0750122070312,
+        747.0263061523438
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Second, new technologies (such as AV, vehicle-to-vehicle (V2V), and vehicle-to-everything (V2X)) expand the scope of research, add complexity to the transport system, and bring more challenges to the modeling process. 'e technology devel- opment also brings a large amount of detailed data, which are very important for calibrating agent-based models.",
+      "word_count": 50,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        497.48187255859375,
+        451.3265380859375,
+        549.0831909179688,
+        461.28912353515625
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "Note that many of them exhibit a similar theory of simulation-based dynamic traﬃc assignment (DTA) in agent-based transport modeling.",
+      "word_count": 19,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        323.942138671875,
+        462.36627197265625,
+        549.1051025390625,
+        472.328857421875
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "It should be noted that simulation-based DTA and agent-based transport modeling share some similarities and dissimilarities.",
+      "word_count": 16,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        448.5565185546875,
+        485.26031494140625,
+        549.0820922851562,
+        495.222900390625
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "More and more studies have applied agent-based sim- ulation tools to traﬃc and transport systems, and diﬀerent platforms and tools can be chosen to serve the research purpose.",
+      "word_count": 28,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        65.88091278076172,
+        229.8860321044922,
+        291.06756591796875,
+        239.8486328125
+      ]
+    },
+    {
+      "page": 11,
+      "quote": "Some cognition-oriented behavior modeling approaches are also developed to capture the uniqueness, such as motivation, emotion, and risk avoidance that make us human (driver). 'e information source for adaptation behaviors comes from the agent environment, where pos- itive and negative feedback are introduced.",
+      "word_count": 43,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        100.73821258544922,
+        656.674072265625,
+        291.05181884765625,
+        666.6366577148438
+      ]
+    }
+  ],
+  "per_claim_verdicts": [
+    {
+      "line_num": 70,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": "Further study of psychological characteristics aﬀecting the medium-term behaviors of drivers can be conducted to the incorporated preference of agents like passengers' sharing preference of riding alone or with other riders under certain conditions.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 10,
+      "reason": "Keyword-overlap recall=0.105 (n=2) on p.10"
+    },
+    {
+      "line_num": 104,
+      "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+      "source_quote": "Second, new technologies (such as AV, vehicle-to-vehicle (V2V), and vehicle-to-everything (V2X)) expand the scope of research, add complexity to the transport system, and bring more challenges to the modeling process. 'e technology devel- opment also brings a large amount of detailed data, which are very important for calibrating agent-based models.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 3,
+      "reason": "Keyword-overlap recall=0.154 (n=2) on p.3"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.467885+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }

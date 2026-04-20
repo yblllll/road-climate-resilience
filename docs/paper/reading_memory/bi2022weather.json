@@ -24,9 +24,239 @@
       "claim_type": "unclassified"
     }
   ],
-  "close_read_complete": false,
-  "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "close_read_complete": true,
+  "candidate_quotes": [
+    {
+      "page": 2,
+      "quote": "On a macroscale road conditions can be regarded as a manifestation of traffic volume on a road network, and the fluctuation of road conditions is also influenced by weather conditions.",
+      "word_count": 30,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        50.966224670410156,
+        164.39979553222656,
+        326.82330322265625,
+        177.430908203125
+      ]
+    },
+    {
+      "page": 14,
+      "quote": "On the one hand, climate monitoring can help a transport agency identify the weak links with higher sensitivity to weather among the whole road network system, and then look for the underlying causes such as inefficient transport infrastructure, unbalanced traffic volume dis­ tribution and so on.",
+      "word_count": 46,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        465.9549865722656,
+        342.75390625,
+        507.58203125,
+        355.7850036621094
+      ]
+    },
+    {
+      "page": 14,
+      "quote": "On the other hand, early prediction and precautionary measures under adverse weather conditions might be considered for the specific road or area that is more prone to traffic jams in order to ease the influences of the dramatic changes of traffic volume on traffic flow.",
+      "word_count": 45,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        113.66780090332031,
+        374.1050720214844,
+        416.4351806640625,
+        387.13616943359375
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Here, this study will focus on analyzing and examining the following research questions: • Do weather parameters (including temperature, wind speed, rainfall accumulation, and visibility) have a significant impact on real- time road traffic conditions? • If so, what is the individual impact of each weather parameter on traffic conditions?",
+      "word_count": 50,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        470.88690185546875,
+        268.99700927734375,
+        507.5804443359375,
+        282.0281066894531
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Some research find significant relationship between rainfall and traffic flow, and emphasized that heavy rainfall can lead to reduction in speed, road capacity, traffic flowing, resulting in longer travel time than normal (Yuan-qing and Jing, 2017; Zheng et al., 2019; Sathiaraj et al., 2018).",
+      "word_count": 44,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        437.38134765625,
+        561.9834594726562,
+        507.6019592285156,
+        575.0145874023438
+      ]
+    },
+    {
+      "page": 9,
+      "quote": "On non-weekdays, weather does indeed impose a more significant and stronger effect on road conditions than on weekdays, as can be seen from the values of dummy variable D (all above 0).",
+      "word_count": 32,
+      "overlap_n": 4,
+      "recall": 0.267,
+      "search_verified": true,
+      "bbox": [
+        361.86785888671875,
+        212.19171142578125,
+        507.5589599609375,
+        225.2228240966797
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Urban Climate 41 (2022) 101065 2 mainly highlight that weather conditions play an important role in intensity fluctuation across various climatic measurements including temperature, precipitation, wind speed, humidity and climate pattern.",
+      "word_count": 31,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        414.21099853515625,
+        31.65277671813965,
+        506.6373291015625,
+        42.077537536621094
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "Model specifications This paper applies multivariate regression models to capture the influence of weather on urban road conditions, in which TTI is considered as the dependent variable and the associated weather parameters as the set of independent variables.",
+      "word_count": 38,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        57.316001892089844,
+        187.3600616455078,
+        126.8989486694336,
+        200.39117431640625
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "Data collection & analysis The study objective was to explore the effect of weather conditions on urban road conditions, which was conducted in two stages.",
+      "word_count": 25,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        51.19517517089844,
+        481.48455810546875,
+        111.2291488647461,
+        494.5156555175781
+      ]
+    },
+    {
+      "page": 9,
+      "quote": "The effect of weather condition on daily TTI at city level The relationship between weather parameters and road conditions was modeled in this sub-section, and the results are displayed in Table 5 Note that Model 1 was modeled for the whole sample while Models 2-3 were conducted on weekdays and non-weekdays, respectively.",
+      "word_count": 52,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        57.316001892089844,
+        139.00148010253906,
+        249.9381561279297,
+        152.0325927734375
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "This study conducts a contrastive analysis of travel time index (TTI) variations under weather conditions in four cities.",
+      "word_count": 18,
+      "overlap_n": 5,
+      "recall": 0.312,
+      "search_verified": true,
+      "bbox": [
+        442.8255920410156,
+        331.52099609375,
+        507.3581848144531,
+        343.2488708496094
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "However, some problems still remain: 1) little is known of the relationship between weather and real-time road traffic condition; 2) more reasonable congestion indicator, such as travel time index (TTI), is rarely applied in road traffic flow evaluation.",
+      "word_count": 38,
+      "overlap_n": 5,
+      "recall": 0.312,
+      "search_verified": true,
+      "bbox": [
+        58.166412353515625,
+        258.5091552734375,
+        335.663818359375,
+        271.5402526855469
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "In this study, the extent of traffic congestion is measured by the travel time index (TTI), a frequently used indicator in transit systems.",
+      "word_count": 23,
+      "overlap_n": 5,
+      "recall": 0.312,
+      "search_verified": true,
+      "bbox": [
+        384.8847351074219,
+        310.8360595703125,
+        507.5836181640625,
+        323.8671569824219
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Notably, this study will consider the potential benefits of replacing an absolute index of traffic conditions, like traffic volume and travel speed, with TTI, a relative index.",
+      "word_count": 27,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        197.7449951171875,
+        350.62628173828125,
+        451.0688171386719,
+        362.3541564941406
+      ]
+    }
+  ],
+  "per_claim_verdicts": [
+    {
+      "line_num": 68,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": "On a macroscale road conditions can be regarded as a manifestation of traffic volume on a road network, and the fluctuation of road conditions is also influenced by weather conditions.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 2,
+      "reason": "Keyword-overlap recall=0.211 (n=4) on p.2"
+    },
+    {
+      "line_num": 95,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "On non-weekdays, weather does indeed impose a more significant and stronger effect on road conditions than on weekdays, as can be seen from the values of dummy variable D (all above 0).",
+      "verdict": "NOT_FOUND",
+      "matched_page": 9,
+      "reason": "Keyword-overlap recall=0.267 (n=4) on p.9"
+    },
+    {
+      "line_num": 97,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "On non-weekdays, weather does indeed impose a more significant and stronger effect on road conditions than on weekdays, as can be seen from the values of dummy variable D (all above 0).",
+      "verdict": "NOT_FOUND",
+      "matched_page": 9,
+      "reason": "Keyword-overlap recall=0.267 (n=4) on p.9"
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "This study conducts a contrastive analysis of travel time index (TTI) variations under weather conditions in four cities.",
+      "verdict": "PARTIAL",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.312 (n=5) on p.1"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.463824+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }

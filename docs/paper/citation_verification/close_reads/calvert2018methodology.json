@@ -1,7 +1,93 @@
 {
   "cite_key": "calvert2018methodology",
-  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology_annotated.pdf",
-  "read_complete": true,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.464274+00:00",
+  "candidate_quotes": [
+    {
+      "page": 21,
+      "quote": "Prior to the explanation of the method, an extensive literature review was performed to set the scene for the LPIR, but also to indicate where most efforts have been performed in the past.",
+      "word_count": 33,
+      "overlap_n": 2,
+      "recall": 0.167,
+      "search_verified": true,
+      "bbox": [
+        71.70999908447266,
+        401.7698974609375,
+        400.3448791503906,
+        411.7698974609375
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "In this contribution, an indicator is pre- sented, the Link Performance Index for Resilience (LPIR), which eval- uates the resilience level of individual road sections in relation to a wider road network.",
+      "word_count": 32,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        177.00299072265625,
+        244.17787170410156,
+        325.84490966796875,
+        253.17787170410156
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "The methodology, the Link Performance Index for Resilience (LPIR), evaluates the resilience level of individual road sections in relation to a wider road network.",
+      "word_count": 24,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        174.52398681640625,
+        479.46112060546875,
+        433.4478759765625,
+        489.46112060546875
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Current literature does not readily consider traffic performance from this per- spective, while resilience's resistance and recovery parts are important to evaluate the overallperformanceofroads.Moreover,roadperformanceisdirectlyrelatedtostabletraffic flow, which we explicitly consider, and is one of the main contributions of the methodol- ogy.",
+      "word_count": 40,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        113.53199005126953,
+        531.2611694335938,
+        433.38800048828125,
+        541.2611694335938
+      ]
+    },
+    {
+      "page": 4,
+      "quote": "In Section 2, the paper first takes a detailed look at performance concepts commonly used in traffic and related fields and considers their various definitions and relevance in relation to traffic resilience.",
+      "word_count": 32,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        71.70999908447266,
+        116.85086059570312,
+        415.3249206542969,
+        126.85086059570312
+      ]
+    },
+    {
+      "page": 8,
+      "quote": "The main definitions of the various concepts are summarised as: Reliability • The probability that a system or a unit will perform its purpose adequately for the period of time intended under the operating conditions encountered.",
+      "word_count": 36,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        59.7599983215332,
+        429.67584228515625,
+        325.4700012207031,
+        439.67584228515625
+      ]
+    }
+  ],
+  "read_complete": true
 }

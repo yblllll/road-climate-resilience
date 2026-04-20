@@ -1,7 +1,191 @@
 {
   "cite_key": "pregnolato2017depth",
   "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
-  "read_complete": true,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.469215+00:00",
+  "candidate_quotes": [
+    {
+      "page": 4,
+      "quote": "The impact of adverse weather on the network is investigated during different times of the day (morning, noon, evening) and for multiple parts of the area (central London, inner, outer), comparing travel times under normal and perturbed conditions.",
+      "word_count": 38,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        275.7633056640625,
+        449.6800537109375,
+        487.6435852050781,
+        456.1414794921875
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "tion are complex as they relate to road network capacity, drainage systems and a number of other factors.",
+      "word_count": 18,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        41.159000396728516,
+        54.16881561279297,
+        352.5090026855469,
+        62.245849609375
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Changes in the climate, rapid urbanisation, and increased infras- tructure interdependence are putting societies, assets, and the built environment under increasing pressure.",
+      "word_count": 22,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        258.06512451171875,
+        535.2073974609375,
+        503.1253967285156,
+        543.284423828125
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "This problem is particularly acute on the road network in urban areas owing to the high proportion of imper- meable surfaces that prevent the infiltration of water into the soil.",
+      "word_count": 30,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        86.22949981689453,
+        587.5341796875,
+        393.33209228515625,
+        595.6112060546875
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "However, this paper is distinct from these reviews with its focus on the impact of flooding on traffic flows and network performance, considered in 'functional' terms (i.e. travel time, flows, accessibility).",
+      "word_count": 31,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        118.3718490600586,
+        480.09796142578125,
+        424.78594970703125,
+        488.17498779296875
+      ]
+    },
+    {
+      "page": 14,
+      "quote": "The impact of climate change on urban transport resilience in a changing world.",
+      "word_count": 13,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        184.08387756347656,
+        118.03385162353516,
+        428.9673767089844,
+        124.49528503417969
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "Multiple transport modelling approaches are presented, for impact assessment on transport network.",
+      "word_count": 12,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        294.9752502441406,
+        125.28946685791016,
+        494.6016540527344,
+        131.7509002685547
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "Summary The literature highlighted substantial amounts of research into the impact of a wide range of natural hazards, including snow, ice, rain, fog, wind and heat, on transport disruption.",
+      "word_count": 29,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        56.63533020019531,
+        598.1356201171875,
+        91.3000717163086,
+        606.212646484375
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "No modelling study is able to capture the breadth of variability in these factors and, in line with other flood risk assess- ment approaches (Merz et al., 2010; De Moel and Aerts, 2011; Jonkman and Dawson, 2012), reflecting and analysing these uncertainties is crucial.",
+      "word_count": 44,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        48.58580017089844,
+        127.41490936279297,
+        345.26116943359375,
+        135.491943359375
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "Chapter 4: Infrastructure in UK Climate Change Risk Assessment 2017 (CCRA 2017).",
+      "word_count": 12,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        471.41217041015625,
+        388.2320251464844,
+        503.10528564453125,
+        394.6934509277344
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "During extreme weather events transport infrastructure can be directly or indi- rectly damaged, posing a threat to human safety, and causing significant disruption and associated economic and social impacts.",
+      "word_count": 29,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        223.3142852783203,
+        284.86663818359375,
+        503.0919494628906,
+        292.1358947753906
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Flooding impacts this in a number of ways through both direct impacts (e.g. physical damage to transport infrastructure) and indirect impacts (e.g. disruption to traffic flow, business inter- ruption, increased emissions) (Brown and Dawson, 2016; Hammond et al., 2015; Walsh et al., 2012).",
+      "word_count": 43,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        262.48876953125,
+        169.25364685058594,
+        507.40753173828125,
+        177.3306884765625
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "In: Adaptation Sub-Committee (ASC) of the Committee on Climate Change, London (UK).",
+      "word_count": 12,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        273.94488525390625,
+        396.16888427734375,
+        503.11981201171875,
+        402.63031005859375
+      ]
+    }
+  ],
+  "read_complete": true
 }

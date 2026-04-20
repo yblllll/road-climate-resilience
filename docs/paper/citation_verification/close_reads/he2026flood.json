@@ -1,7 +1,149 @@
 {
   "cite_key": "he2026flood",
-  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol_annotated.pdf",
-  "read_complete": true,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.466627+00:00",
+  "candidate_quotes": [
+    {
+      "page": 1,
+      "quote": "MATSim, an open-source transport simulator, is employed to model dynamic traffic redistribution and congestion under both baseline (non-flood) and flood conditions of the urban road transportation network.",
+      "word_count": 27,
+      "overlap_n": 5,
+      "recall": 0.263,
+      "search_verified": true,
+      "bbox": [
+        174.7257537841797,
+        321.8273620605469,
+        444.9606018066406,
+        333.55523681640625
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "According to He et al. [16], an analysis of the functional loss of Bristol's road network under flood conditions indicated that the northern areas are not prone to flooding and are unaffected by Fig. 1.",
+      "word_count": 35,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        280.74102783203125,
+        467.64776611328125,
+        507.5955505371094,
+        480.6788635253906
+      ]
+    },
+    {
+      "page": 9,
+      "quote": "Traffic redistribution The second part of the analysis focuses on the traffic redistribution within the road network under various damage scenarios.",
+      "word_count": 21,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        63.953765869140625,
+        635.17822265625,
+        133.20755004882812,
+        648.2093505859375
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "This trend further implies that the main roads within Bristol's city centre may be subject to heightened traffic demand under flood conditions, thereby imposing additional strain on the central transport infrastructure. 4.2.2.",
+      "word_count": 32,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        61.68110656738281,
+        431.7042236328125,
+        340.5373229980469,
+        444.7353210449219
+      ]
+    },
+    {
+      "page": 18,
+      "quote": "Although the case study is centred on Bristol, the novelty of the framework lies in its ability to evaluate not only congestion under baseline conditions but also the emergence of potential hotspots following traffic redistribution when the network is flooded.",
+      "word_count": 40,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        190.0898895263672,
+        402.9068908691406,
+        462.2242126464844,
+        415.93798828125
+      ]
+    },
+    {
+      "page": 19,
+      "quote": "This research contributes to proactive urban flood risk management by informing adaptive planning and resilience strategies.",
+      "word_count": 16,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        104.14422607421875,
+        331.7559509277344,
+        391.5962219238281,
+        344.78704833984375
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "The findings highlight the importance of simulating agent-level behavioural responses to network disruption caused by flooding and provide a transferable framework for assessing urban transport resilience during flood events. 1.",
+      "word_count": 30,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        86.569580078125,
+        398.36181640625,
+        341.9427185058594,
+        410.0896911621094
+      ]
+    },
+    {
+      "page": 20,
+      "quote": "Alipour, Integrated framework for risk and resilience assessment of the road network under inland flooding, Transp.",
+      "word_count": 16,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        92.97537231445312,
+        121.01040649414062,
+        319.8076171875,
+        131.4350128173828
+      ]
+    },
+    {
+      "page": 20,
+      "quote": "Ohuru, The Resilience of Domestic Transport Networks in the Context of Food Security - a multi- country Analysis: Background Paper for the State of Food and Agriculture 2021, Food & Agriculture Org., 2021, p. 52, 2021. [26] Y.",
+      "word_count": 38,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        232.495361328125,
+        495.6327819824219,
+        464.99639892578125,
+        506.057373046875
+      ]
+    },
+    {
+      "page": 21,
+      "quote": "David Wilson Homes, from, https://www.dwh.co.uk/advice-and-inspiration/average-house-sizes-uk/, 2024. (Accessed 22 February 2025). [77] Office for National Statistics, Admin-based statistics for property floor space: feasibility research, England and Wales. https://www.ons.gov.uk/ peoplepopulationandcommunity/housing/methodologies/adminbasedstatisticsforpropertyfloorspacefeasibilityresearchenglandandwales, 2022.",
+      "word_count": 29,
+      "overlap_n": 2,
+      "recall": 0.154,
+      "search_verified": true,
+      "bbox": [
+        188.44558715820312,
+        647.9080200195312,
+        434.59747314453125,
+        658.3325805664062
+      ]
+    }
+  ],
+  "read_complete": true
 }

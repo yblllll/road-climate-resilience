@@ -19,9 +19,175 @@
       "claim_type": "empirical_result"
     }
   ],
-  "close_read_complete": false,
-  "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "close_read_complete": true,
+  "candidate_quotes": [
+    {
+      "page": 1,
+      "quote": "The challenge We must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major A-roads we manage including bridges, tunnels, drains and earthworks.",
+      "word_count": 32,
+      "overlap_n": 5,
+      "recall": 0.263,
+      "search_verified": true,
+      "bbox": [
+        480.85546875,
+        427.46527099609375,
+        710.139404296875,
+        463.46527099609375
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "How are we adapting? 2026/4/20 23:08 Climate change and the strategic road network - National Highways https://nationalhighways.co.uk/our-work/environment/climate-change-and-the-strategic-road-network/ 2/4",
+      "word_count": 18,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        414.3984375,
+        697.4652709960938,
+        776.5943603515625,
+        733.4652709960938
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Climate change and the strategic road network Fourth round adaptation reporting power (ARP4) ARP4 - Appendix A (complete Climate Change Risk Assessment) 2026/4/20 23:08 Climate change and the strategic road network - National Highways https://nationalhighways.co.uk/our-work/environment/climate-change-and-the-strategic-road-network/ 3/4",
+      "word_count": 36,
+      "overlap_n": 4,
+      "recall": 0.211,
+      "search_verified": true,
+      "bbox": [
+        39.0,
+        668.8331298828125,
+        523.8655395507812,
+        682.3331298828125
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "We must anticipate future trends in climate and weather conditions when planning long term development and improvement of our network.",
+      "word_count": 20,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        39.0,
+        59.27754211425781,
+        683.7416381835938,
+        77.27754211425781
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "This includes considering future trends in climate and weather conditions and keeping up to date with the latest climate science.",
+      "word_count": 20,
+      "overlap_n": 2,
+      "recall": 0.105,
+      "search_verified": true,
+      "bbox": [
+        39.0,
+        124.33316040039062,
+        513.3490600585938,
+        137.83316040039062
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "This diagram shows the elements of: our net zero carbon strategy (electric vehicles, renewable energy, energy efficiency, low carbon materials, led lighting and minimising waste) our approach to climate change (flood protection, condition monitoring, business continuity, temperature resilience and risk assessment).",
+      "word_count": 41,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        39.0,
+        248.83316040039062,
+        254.75677490234375,
+        262.3331604003906
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Some elements intersect both net zero and climate change adaptation (durable materials and asset design, technology, good governance and nature-based solutions).",
+      "word_count": 21,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        39.0,
+        359.0831604003906,
+        531.1824951171875,
+        372.5831604003906
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Our approach to net zero and climate change Under the Climate Change Act 2008, we are required to produce a report detailing our climate change adaptation strategies and, optionally, revisit it every five years afterward.",
+      "word_count": 35,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        227.37890625,
+        263.21527099609375,
+        963.61474609375,
+        299.21527099609375
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Asset and environmental resilience are key focus areas for us and these documents support investment planning for the future.",
+      "word_count": 19,
+      "overlap_n": 2,
+      "recall": 0.043,
+      "search_verified": true,
+      "bbox": [
+        39.0,
+        101.83316040039062,
+        526.22802734375,
+        115.33316040039062
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "They will also support the climate risk and resilience work that the Department for Environment, Food and Agriculture and the Committee for Climate Change Committee are doing across all sectors of the UK.",
+      "word_count": 33,
+      "overlap_n": 2,
+      "recall": 0.043,
+      "search_verified": true,
+      "bbox": [
+        39.0,
+        619.3331298828125,
+        504.1419982910156,
+        632.8331298828125
+      ]
+    }
+  ],
+  "per_claim_verdicts": [
+    {
+      "line_num": 66,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": "The challenge We must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major A-roads we manage including bridges, tunnels, drains and earthworks.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.263 (n=5) on p.1"
+    },
+    {
+      "line_num": 111,
+      "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+      "source_quote": "Climate change and the strategic road network Fourth round adaptation reporting power (ARP4) ARP4 - Appendix A (complete Climate Change Risk Assessment) 2026/4/20 23:08 Climate change and the strategic road network - National Highways https://nationalhighways.co.uk/our-work/environment/climate-change-and-the-strategic-road-network/ 3/4",
+      "verdict": "NOT_FOUND",
+      "matched_page": 3,
+      "reason": "Keyword-overlap recall=0.227 (n=5) on p.3"
+    },
+    {
+      "line_num": 524,
+      "claim_text": "The map translates per-millimetre coefficients into absolute scenario impacts that are directly interpretable by transport planners and drainage engineers.} Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the",
+      "source_quote": "The challenge We must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major A-roads we manage including bridges, tunnels, drains and earthworks.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.043 (n=2) on p.1"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.468685+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }

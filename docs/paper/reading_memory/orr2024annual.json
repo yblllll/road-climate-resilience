@@ -14,9 +14,167 @@
       "claim_type": "mechanism"
     }
   ],
-  "close_read_complete": false,
-  "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "close_read_complete": true,
+  "candidate_quotes": [
+    {
+      "page": 9,
+      "quote": "Executive summary Introduction National Highways was set up as a government-owned company in 2015, tasked with managing the strategic road network (SRN) - the motorways and major A-roads in England.",
+      "word_count": 30,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        99.24143981933594,
+        67.78172302246094,
+        350.8581848144531,
+        105.07100677490234
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "For the second road investment strategy (RIS2) it includes 12 key performance indicator (KPI) targets covering the outcome areas of: ● improving safety for all; ● providing fast and reliable journeys; ● a well maintained and resilient network; ● being environmentally responsible; ● meeting the needs of all users; and ● achieving efficient delivery.",
+      "word_count": 54,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        156.84002685546875,
+        170.2799530029297,
+        508.29608154296875,
+        186.65994262695312
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "These are: ● the number of people killed or seriously injured on the strategic road network (SRN); ● average delay; ● National Highways' carbon emissions; and ● roadworks information, timeliness and accuracy.",
+      "word_count": 32,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        304.9200439453125,
+        556.4400024414062,
+        365.61602783203125,
+        572.8200073242188
+      ]
+    },
+    {
+      "page": 27,
+      "quote": "Meeting the needs of all road users KPI: Road user satisfaction The Strategic Roads User Survey (SRUS) measures users' satisfaction with a single journey on one road of the SRN within the last 28 days.",
+      "word_count": 35,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        56.63999938964844,
+        425.8320007324219,
+        362.8379821777344,
+        451.6080017089844
+      ]
+    },
+    {
+      "page": 40,
+      "quote": "Operations National Highways is responsible for ensuring the effective operation of the Strategic Road Network (SRN).",
+      "word_count": 16,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        56.63999938964844,
+        547.3920288085938,
+        161.7239990234375,
+        573.1680297851562
+      ]
+    },
+    {
+      "page": 47,
+      "quote": "Office of Rail and Road | Annual Assessment of National Highways' performance April 2023 to March 2024 44 should seek to avoid large in-year variations in its renewals programmes and to better evidence the reason for any large in-year changes.",
+      "word_count": 40,
+      "overlap_n": 4,
+      "recall": 0.182,
+      "search_verified": true,
+      "bbox": [
+        56.63999938964844,
+        34.007991790771484,
+        520.29736328125,
+        51.191993713378906
+      ]
+    },
+    {
+      "page": 9,
+      "quote": "This process has operated successfully since 2015 and allows the Department for Transport (DfT) and the company to transparently agree changes to the RIS as circumstances change.",
+      "word_count": 27,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        144.8398895263672,
+        375.9599304199219,
+        499.0558776855469,
+        392.3399353027344
+      ]
+    },
+    {
+      "page": 11,
+      "quote": "National Highways is seeking to change the target for three KPIs (roadworks network impact; roadworks information, timeliness and accuracy; and efficiency) and set a target for one other (road user satisfaction) to ensure its performance specification remains challenging and deliverable in the final year of the road period.",
+      "word_count": 48,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        56.639984130859375,
+        463.7999572753906,
+        490.9439697265625,
+        480.1799621582031
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "However, the company has not been able to clearly evidence the consequences for or impacts on the outcomes for road users.",
+      "word_count": 21,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        258.9599609375,
+        576.3599853515625,
+        535.0559692382812,
+        592.739990234375
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "It is published by the Department for Transport (DfT) and sets out what it expects National Highways to deliver in the road period.",
+      "word_count": 23,
+      "overlap_n": 3,
+      "recall": 0.136,
+      "search_verified": true,
+      "bbox": [
+        376.3210754394531,
+        137.1599578857422,
+        488.97613525390625,
+        153.53994750976562
+      ]
+    }
+  ],
+  "per_claim_verdicts": [
+    {
+      "line_num": 66,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": "Executive summary Introduction National Highways was set up as a government-owned company in 2015, tasked with managing the strategic road network (SRN) - the motorways and major A-roads in England.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 9,
+      "reason": "Keyword-overlap recall=0.158 (n=3) on p.9"
+    },
+    {
+      "line_num": 111,
+      "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+      "source_quote": "Office of Rail and Road | Annual Assessment of National Highways' performance April 2023 to March 2024 44 should seek to avoid large in-year variations in its renewals programmes and to better evidence the reason for any large in-year changes.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 47,
+      "reason": "Keyword-overlap recall=0.182 (n=4) on p.47"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.469096+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }

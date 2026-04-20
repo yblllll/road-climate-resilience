@@ -1,7 +1,205 @@
 {
   "cite_key": "gao2024resilience",
-  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall_annotated.pdf",
-  "read_complete": true,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.466239+00:00",
+  "candidate_quotes": [
+    {
+      "page": 2,
+      "quote": "Current studies primarily analyze resilience from the perspec­ tives of systems and networks, overlooking the effect of road segments on overall performance.",
+      "word_count": 22,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        286.6930847167969,
+        49.31474685668945,
+        505.2635192871094,
+        62.34585952758789
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "In addition to extreme events, minor and persistent disturbances in road traffic systems have also been verified to significantly affect the service performance of systems (Calvert & Snelder, 2018).",
+      "word_count": 29,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        254.60546875,
+        469.8626708984375,
+        507.5947265625,
+        482.8937683105469
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Resilience analysis contributes to a comprehensive understanding of resilience performance in road traffic systems to rainfall disturbances.",
+      "word_count": 17,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        262.2591552734375,
+        237.59002685546875,
+        507.5955505371094,
+        250.6211395263672
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "We proposed a probabilistic modeling technique based on road segment resilience to quantify system resilience, considering the probabilities of segment failure and recovery. • This research provides further evidence on the effective integration of road environment and modeling techniques to address resilience analysis issues.",
+      "word_count": 44,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        453.8228759765625,
+        289.91693115234375,
+        507.6091003417969,
+        302.9480285644531
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "We visualize the resilience patterns in road traffic systems to different rainfall intensities, providing valuable insights for city managers and rainy weather commuters.",
+      "word_count": 23,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        305.1183776855469,
+        394.5141296386719,
+        507.60906982421875,
+        407.54522705078125
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Additionally, some studies have attempted to apply time-related performance indicators to quantitatively describe system resilience, such as road network efficiency (Chalkiadakis et al., 2022), reduction rate (Li et al., 2020), travel time (Zhang et al., 2021), recovery speed (Chen et al., 2022), and travel delay (Ganin et al., 2017).",
+      "word_count": 49,
+      "overlap_n": 5,
+      "recall": 0.312,
+      "search_verified": true,
+      "bbox": [
+        39.00482177734375,
+        164.39979553222656,
+        327.97674560546875,
+        177.430908203125
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "We investigate the performance of the road traffic system under 11 rainfall disturbance events from service efficiency, recovery time, and resilience, as shown in Fig. 6.",
+      "word_count": 26,
+      "overlap_n": 5,
+      "recall": 0.312,
+      "search_verified": true,
+      "bbox": [
+        50.966224670410156,
+        435.279052734375,
+        333.784423828125,
+        448.3101501464844
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Therefore, some studies have investigated the changing characteristics in the topology of urban road traffic systems under extreme events, attempting to measure and evaluate system resilience by topology indicators including maximum connectivity, average degree, redundancy coefficient, and centrality (Chalkiadakis et al., 2022).",
+      "word_count": 42,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        248.70928955078125,
+        132.9920196533203,
+        507.5956726074219,
+        146.02313232421875
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "The system resilience can be measured by the probability of failed components occurring and the recovery time required for failed components to return to initial reliability, as expressed in Eq. (10).",
+      "word_count": 31,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        158.628173828125,
+        487.7206726074219,
+        450.3091735839844,
+        500.75177001953125
+      ]
+    },
+    {
+      "page": 11,
+      "quote": "An interesting finding is that the average resilience of road segments under light rain is slightly higher than that under no-rain conditions, potentially linked to the travel psychology of individuals on rainy days. (Mathew & Pulugurtha, 2022).",
+      "word_count": 37,
+      "overlap_n": 4,
+      "recall": 0.25,
+      "search_verified": true,
+      "bbox": [
+        420.65771484375,
+        232.31910705566406,
+        507.6091003417969,
+        245.3502197265625
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "In the specific scenario of this study, the service efficiency of road segments can be characterized by the average speed of all vehicles on the road segment per unit time. 3.2.",
+      "word_count": 31,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        238.2244873046875,
+        616.016845703125,
+        507.6082763671875,
+        629.0479736328125
+      ]
+    },
+    {
+      "page": 11,
+      "quote": "Notably, the average resilience of urban roads under heavy rain is slightly higher than that under moderate rain, which is against our common notion that the stronger the disturbance, the more likely the system is to fail.",
+      "word_count": 37,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        323.9971618652344,
+        253.2382354736328,
+        507.56927490234375,
+        266.26934814453125
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "Rainfall Levels The proportion of road segments (%) No effect (R ≥1) Minor impact (0.8 ≤R＜1) Significant impact (R＜0.8) Light rain 27.1 65.2 7.7 Moderate rain 11.4 39.9 48.7 Heavy rain 38.4 10.8 50.8 Fig. 6.",
+      "word_count": 36,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        66.27400207519531,
+        274.4784240722656,
+        109.5038833618164,
+        284.90301513671875
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "During heavy rain and rainstorms, low-resilience corridors and clus­ ters are interconnected, significantly impacting the resilience of the road traffic system.",
+      "word_count": 21,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        258.5172119140625,
+        415.66259765625,
+        505.2539367675781,
+        428.6936950683594
+      ]
+    }
+  ],
+  "read_complete": true
 }

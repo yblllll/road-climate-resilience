@@ -1,7 +1,79 @@
 {
   "cite_key": "sias2025roadways",
-  "pdf_path": null,
-  "read_complete": false,
-  "candidate_quotes": [],
-  "note": "PLACEHOLDER \u2014 LLM close_reader agent has not been invoked. Full close reading requires Claude Code dispatch."
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Sias_2025_Climate_Roadways_Review.pdf",
+  "generated_by": "close_read_pymupdf.py (LLM-free)",
+  "generated_at": "2026-04-20T22:46:00.469569+00:00",
+  "candidate_quotes": [
+    {
+      "page": 2,
+      "quote": "Climate stressors and impacts Temperature, moisture (largely as precipitation but also through humidity), SLR, snow and wildfire affect the structural (ability to carry traffic loads) and functional (ability to provide a smooth and safe roadway surface) capacity of roadways, collectively termed distresses (Table 1).",
+      "word_count": 44,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        306.1416931152344,
+        322.8896179199219,
+        458.5423583984375,
+        337.7246398925781
+      ]
+    },
+    {
+      "page": 4,
+      "quote": "Freezing conditions increase the stiffness of the subgrade, increas- ing the structural capacity of roads; however, freezing can also accel- erate distress in various road types.",
+      "word_count": 26,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        56.692901611328125,
+        208.8456268310547,
+        294.80316162109375,
+        219.026123046875
+      ]
+    },
+    {
+      "page": 11,
+      "quote": "Both framework types should include a resilience assessment, checking the level of resilience priority due to fac- tors such as emergency route status, drainage capacity, pavement struc- ture and traffic volume in relation to future climate stressors.",
+      "word_count": 37,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        151.67877197265625,
+        488.3456115722656,
+        296.2765197753906,
+        498.526123046875
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "Distances travelled by vehicles are likely to increase nationally and globally, with global tonne-kilometres of freight movement expected to approximately double between 2020 and 2050 (according to Statista).",
+      "word_count": 28,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        170.08905029296875,
+        241.0956268310547,
+        296.29400634765625,
+        251.276123046875
+      ]
+    },
+    {
+      "page": 14,
+      "quote": "NNBFs do not always have clear, directly predictable impacts, and work is needed to model the roadway and environmental systems together under various climate conditions to quantify the benefits for the environment and roadway.",
+      "word_count": 34,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        329.77880859375,
+        122.84562683105469,
+        562.583740234375,
+        133.026123046875
+      ]
+    }
+  ],
+  "read_complete": true
 }

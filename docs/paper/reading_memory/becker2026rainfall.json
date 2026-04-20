@@ -39,9 +39,361 @@
       "claim_type": "empirical_result"
     }
   ],
-  "close_read_complete": false,
-  "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "close_read_complete": true,
+  "candidate_quotes": [
+    {
+      "page": 1,
+      "quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+      "word_count": 43,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        425.4547424316406,
+        529.5463256835938,
+        559.2711181640625,
+        539.4088134765625
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Introduction Road traffic is an essential part of the transport system and despite all efforts to move towards more sustainable solutions, the number of private and commercial vehicles contin- ues to increase.",
+      "word_count": 32,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        179.06651306152344,
+        676.2608032226562,
+        248.13169860839844,
+        688.2160034179688
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "For example, a given relative reduction on a high-speed motorway translates into a larger absolute decrease in speed than the same relative reduction on an urban road, potentially implying different traffic and safety-relevant conditions.",
+      "word_count": 34,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        504.508544921875,
+        653.00732421875,
+        560.5208740234375,
+        662.8698120117188
+      ]
+    },
+    {
+      "page": 14,
+      "quote": "Although a speed reduction might lower crash severity compared to an unaltered driving speed, a substantial body of literature shows that rainfall in general increases crash risk and traffic casualties, reflecting complex and sometimes countervailing mechanisms such as reduced visibility, adverse road surface conditions, and altered traffic flow dynamics [30-33].",
+      "word_count": 50,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        225.95263671875,
+        213.8863983154297,
+        559.271484375,
+        223.94813537597656
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "This pattern is plausible, as stricter filtering increasingly restricts the sample to road sections operating predominantly under free-flow conditions, where weather-related effects on driving behavior are expected to be more pronounced.",
+      "word_count": 31,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        369.25469970703125,
+        467.6598205566406,
+        559.2750854492188,
+        477.60247802734375
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Precipitation, including different forms like rain, hail, sleet or snow, is one of the most influential weather phenomena affecting road traffic, consistently leading to reductions in driving speed.",
+      "word_count": 28,
+      "overlap_n": 4,
+      "recall": 0.267,
+      "search_verified": true,
+      "bbox": [
+        187.6529998779297,
+        144.3733367919922,
+        510.6923828125,
+        154.26092529296875
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "This finding is consistent with previous studies employing more complex machine learning approaches, such as gradient boosting and neural network models, which also report gains in predictive performance when weather information is included.",
+      "word_count": 33,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        345.63885498046875,
+        130.3203582763672,
+        559.2714233398438,
+        140.38209533691406
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "For most types of road sections, stricter filtering (i.e., lower values of speed_thresh and time_thresh) leads to increasingly negative estimates of β1, suggesting a stronger estimated impact of rainfall on driving speed reduction.",
+      "word_count": 33,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        187.6529998779297,
+        439.6489562988281,
+        510.584228515625,
+        449.7408142089844
+      ]
+    },
+    {
+      "page": 16,
+      "quote": "An exception is observed for road sections with a speed limit of 130 km/h, where β1 becomes less negative under stricter filtering, indicating a weaker estimated rainfall effect.",
+      "word_count": 28,
+      "overlap_n": 3,
+      "recall": 0.2,
+      "search_verified": true,
+      "bbox": [
+        226.34461975097656,
+        509.357421875,
+        560.51708984375,
+        519.4191284179688
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Our results demonstrate that parsimonious, interpretable models combining radar rainfall data with floating car data can capture systematic rainfall-related speed reductions across a wide range of road types.",
+      "word_count": 28,
+      "overlap_n": 2,
+      "recall": 0.133,
+      "search_verified": true,
+      "bbox": [
+        281.6698303222656,
+        473.8353271484375,
+        559.27099609375,
+        483.69781494140625
+      ]
+    },
+    {
+      "page": 4,
+      "quote": "Since no direct measurements of traffic congestion are available, we classify a road section as congested if, in more than 10% of the observed time steps, the driving speed falls below 50% of the local speed limit (see Appendix A for a sensitivity analysis of these thresholds).",
+      "word_count": 47,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        313.26324462890625,
+        515.8173828125,
+        559.2715454101562,
+        525.8790893554688
+      ]
+    },
+    {
+      "page": 5,
+      "quote": "The relative speed difference ∆vrel = (v −v0)/v0, where v0 denotes the average driv- ing speed across all 5 min time steps without rainfall, is used to normalize speed changes across different types of road sections.",
+      "word_count": 36,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        187.6529998779297,
+        583.1276245117188,
+        328.2342834472656,
+        593.2516479492188
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "The average driving speed during time steps without rainfall is 112 km/h on the selected road section type (magenta x in Figure 4a).",
+      "word_count": 23,
+      "overlap_n": 3,
+      "recall": 0.188,
+      "search_verified": true,
+      "bbox": [
+        365.6151123046875,
+        462.2513427734375,
+        559.2710571289062,
+        472.11383056640625
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "Using linear regression models, we investigate the functional relationship between rainfall and driving speeds depending on road section characteristics like speed limit and number of lanes.",
+      "word_count": 26,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        226.23716735839844,
+        334.4153747558594,
+        559.5762939453125,
+        344.47711181640625
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "A logarithmic regression function was found to be most suitable to describe the relationship between rainfall and driving speed [5].",
+      "word_count": 20,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        266.4998474121094,
+        241.82421875,
+        559.2763671875,
+        251.7718505859375
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Using regression models allows us to compare the functional relationship between rainfall and driving speed for road sections with different characteristics like speed limits or the number of lanes.",
+      "word_count": 29,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        483.53509521484375,
+        213.8863983154297,
+        559.2714233398438,
+        223.94813537597656
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "The LOG model shows that a logarithmic transformation of rainfall leads to a reasonable representation of the functional relationship between rainfall and driving speed, without the overfitting effect observed for the CAT model.",
+      "word_count": 33,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        226.38980102539062,
+        559.745361328125,
+        559.2709350585938,
+        569.6078491210938
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "Discussion In this study, we analyzed the short-term relationship between rainfall amount and driving speed using 5 min GNSS-based probe vehicle data for approximately 1.5 million road sections across Germany.",
+      "word_count": 30,
+      "overlap_n": 2,
+      "recall": 0.286,
+      "search_verified": true,
+      "bbox": [
+        179.06651306152344,
+        373.75579833984375,
+        239.4761199951172,
+        385.71099853515625
+      ]
+    },
+    {
+      "page": 12,
+      "quote": "Salvi et al. [23] find that speed reductions during rainfall strongly depend on baseline driving speed but observe no substantial effect of rainfall amount when comparing four rainfall intensity classes.",
+      "word_count": 30,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        257.4340515136719,
+        698.5534057617188,
+        559.6605224609375,
+        708.6151123046875
+      ]
+    },
+    {
+      "page": 13,
+      "quote": "Such measurement error would be expected to attenuate estimated rainfall effects, suggesting that the reported speed reductions may represent conservative estimates.",
+      "word_count": 21,
+      "overlap_n": 3,
+      "recall": 0.214,
+      "search_verified": true,
+      "bbox": [
+        418.09124755859375,
+        673.525146484375,
+        559.280029296875,
+        683.5523071289062
+      ]
+    },
+    {
+      "page": 4,
+      "quote": "Road sections used for modeling the effect of rainfall on 5 min average driving speeds derived from GPS probe data.",
+      "word_count": 20,
+      "overlap_n": 2,
+      "recall": 0.143,
+      "search_verified": true,
+      "bbox": [
+        206.875,
+        409.6601867675781,
+        531.6762084960938,
+        418.7158203125
+      ]
+    }
+  ],
+  "per_claim_verdicts": [
+    {
+      "line_num": 68,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.158 (n=3) on p.1"
+    },
+    {
+      "line_num": 95,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "Precipitation, including different forms like rain, hail, sleet or snow, is one of the most influential weather phenomena affecting road traffic, consistently leading to reductions in driving speed.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 2,
+      "reason": "Keyword-overlap recall=0.267 (n=4) on p.2"
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.188 (n=3) on p.1"
+    },
+    {
+      "line_num": 202,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.188 (n=3) on p.1"
+    },
+    {
+      "line_num": 202,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "To make this approach suitable for operational applications such as real-time speed prediction, route planning, and traffic management, larger multi-event datasets and the consideration of effects like weekday structure and diurnal demand patterns are required to better constrain effects under heavy rainfall conditions.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.188 (n=3) on p.1"
+    },
+    {
+      "line_num": 238,
+      "claim_text": "Speed and volume are jointly determined through the speed--flow relationship .",
+      "source_quote": "Using linear regression models, we investigate the functional relationship between rainfall and driving speeds depending on road section characteristics like speed limit and number of lanes.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 1,
+      "reason": "Keyword-overlap recall=0.286 (n=2) on p.1"
+    },
+    {
+      "line_num": 501,
+      "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+      "source_quote": "Salvi et al. [23] find that speed reductions during rainfall strongly depend on baseline driving speed but observe no substantial effect of rainfall amount when comparing four rainfall intensity classes.",
+      "verdict": "NOT_FOUND",
+      "matched_page": 12,
+      "reason": "Keyword-overlap recall=0.214 (n=3) on p.12"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.462817+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }

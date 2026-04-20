@@ -14,9 +14,153 @@
       "claim_type": "unclassified"
     }
   ],
-  "close_read_complete": false,
-  "candidate_quotes": [],
-  "per_claim_verdicts": [],
-  "last_updated": null,
-  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+  "close_read_complete": true,
+  "candidate_quotes": [
+    {
+      "page": 2,
+      "quote": "Finally, a comprehensive road network resilience assessment requires the ability to incorporate climate projections that influence the extent and likelihood of hazard exposure of transportation assets (Rowan et al., 2014; Wang et al., 2019).",
+      "word_count": 34,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        244.34396362304688,
+        363.1637268066406,
+        507.5995788574219,
+        376.19482421875
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "Transportation Research Part D 133 (2024) 104229 3 of the proposed framework is demonstrated in a case study for the southern part of the Haiti road network to inform a $120 million regional climate resilience investment in the road network funded by the Resilient Connectivity and Urban Transport Accessibility Project of the World Bank. 2.",
+      "word_count": 55,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        365.3110046386719,
+        31.65277671813965,
+        506.6412353515625,
+        42.077537536621094
+      ]
+    },
+    {
+      "page": 3,
+      "quote": "The output of this framework is the return on investment of climate resilience improvement projects in the regional road networks in the studied area under different climate projection scenarios (See Section 3.5 for details).",
+      "word_count": 34,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        395.1462097167969,
+        375.0120849609375,
+        507.6091003417969,
+        388.0431823730469
+      ]
+    },
+    {
+      "page": 8,
+      "quote": "For a credible estimation of the cost, we make the assumption that the distribution of types of damaged roads is the same as the distribution of all roads within the entire road network.",
+      "word_count": 33,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        493.5079650878906,
+        359.1381530761719,
+        507.6070556640625,
+        372.16925048828125
+      ]
+    },
+    {
+      "page": 8,
+      "quote": "For example, for all minor damaged roads, the proportion of paved road length is consistent with the proportion of paved roads in the whole road network.",
+      "word_count": 26,
+      "overlap_n": 3,
+      "recall": 0.158,
+      "search_verified": true,
+      "bbox": [
+        189.1266632080078,
+        380.05804443359375,
+        468.4244689941406,
+        393.0891418457031
+      ]
+    },
+    {
+      "page": 1,
+      "quote": "The framework enables benefit-cost analysis as well as incorporating climate projection scenarios for resilience investment analysis.",
+      "word_count": 16,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        387.4937744140625,
+        346.4316101074219,
+        401.524169921875,
+        358.15948486328125
+      ]
+    },
+    {
+      "page": 2,
+      "quote": "Among vulnerability and risk assessment frameworks, probabilistic approaches enable a more comprehensive view for decision-makers and provide the ability to incorporate various uncertainties and assess their impact on the risk and resilience of the road network (Tang et al., 2013; Zhang and Yao, 2019; Espinet et al., 2018; Liu et al., 2024).",
+      "word_count": 52,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        189.23948669433594,
+        216.67010498046875,
+        487.6201171875,
+        229.7012176513672
+      ]
+    },
+    {
+      "page": 6,
+      "quote": "Under this context, the Government of Haiti and the World Bank are working on the Resilient Urban Transport and Acces­ sibility Project (RUTAP) (The World Bank, 2022) a $120 million program to increase climate resilience in transport infrastructure in the departments of Nippes, Sud, Sud-est, Grand'Anse and Nord.",
+      "word_count": 48,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        67.86044311523438,
+        227.15875244140625,
+        366.20440673828125,
+        240.1898651123047
+      ]
+    },
+    {
+      "page": 7,
+      "quote": "Transportation Research Part D 133 (2024) 104229 7 last step, the effect of climate resilience investments totaling $50 million was translated into improvements in physical conditions of 500 km of roads and their reduced vulnerability to flooding by adjusting fragility curves.",
+      "word_count": 41,
+      "overlap_n": 3,
+      "recall": 0.231,
+      "search_verified": true,
+      "bbox": [
+        365.3110046386719,
+        31.65277671813965,
+        506.6412353515625,
+        42.077537536621094
+      ]
+    }
+  ],
+  "per_claim_verdicts": [
+    {
+      "line_num": 70,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": "Finally, a comprehensive road network resilience assessment requires the ability to incorporate climate projections that influence the extent and likelihood of hazard exposure of transportation assets (Rowan et al., 2014; Wang et al., 2019).",
+      "verdict": "NOT_FOUND",
+      "matched_page": 2,
+      "reason": "Keyword-overlap recall=0.158 (n=3) on p.2"
+    },
+    {
+      "line_num": 104,
+      "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+      "source_quote": "Transportation Research Part D 133 (2024) 104229 3 of the proposed framework is demonstrated in a case study for the southern part of the Haiti road network to inform a $120 million regional climate resilience investment in the road network funded by the Resilient Connectivity and Urban Transport Accessibility Project of the World Bank. 2.",
+      "verdict": "PARTIAL",
+      "matched_page": 3,
+      "reason": "Keyword-overlap recall=0.308 (n=4) on p.3"
+    }
+  ],
+  "last_updated": "2026-04-20T22:46:00.465612+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
 }
