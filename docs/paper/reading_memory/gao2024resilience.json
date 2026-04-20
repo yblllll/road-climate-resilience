@@ -1,0 +1,27 @@
+{
+  "cite_key": "gao2024resilience",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
+  "pdf_status": "FOUND",
+  "claims_in_paper": [
+    {
+      "line_num": 97,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 505,
+      "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+      "claim_type": "empirical_result"
+    }
+  ],
+  "close_read_complete": false,
+  "candidate_quotes": [],
+  "per_claim_verdicts": [],
+  "last_updated": null,
+  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+}

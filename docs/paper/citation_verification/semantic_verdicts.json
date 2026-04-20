@@ -1,0 +1,506 @@
+[
+  {
+    "cite_key": "nh2024climate",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "sias2025roadways",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "orr2024annual",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "huang2022overview",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "he2026flood",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "claim_text": "This directly addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "wang2020climate",
+    "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "bergantino2024assessing",
+    "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "huang2022overview",
+    "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "he2026flood",
+    "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "zare2025risk",
+    "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "nh2024climate",
+    "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "orr2024annual",
+    "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "NOT_FOUND",
+    "reasoning": "Source not available \u2014 cannot verify.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "wan2024paradox",
+    "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "claim_text": "Speed and volume are jointly determined through the speed--flow relationship, and rainfall may reduce both demand and speeds .",
+    "selected_quote": null,
+    "verdict": "NOT_FOUND",
+    "reasoning": "Source not available \u2014 cannot verify.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "claim_text": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "claim_text": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "Aggregate estimates, such as the 8--14\\% speed-at-capacity reductions reported by , are insufficient for targeted adaptation at the local level.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "nh2024climate",
+    "claim_text": "The map translates per-millimetre coefficients into absolute scenario impacts that are directly interpretable by transport planners and drainage engineers.} Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "claim_text": "Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "claim_text": "A complementary extension is network vulnerability analysis: betweenness centrality under normal and extreme-weather scenarios would identify links whose rainfall degradation cascades into network-wide journey time losses, connecting these link-level estimates to system-level climate risk assessment .",
+    "selected_quote": null,
+    "verdict": "PENDING_LLM",
+    "reasoning": "LLM semantic_matcher agent has not been invoked in this CLI run.",
+    "confidence": "low"
+  }
+]

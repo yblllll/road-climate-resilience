@@ -1,0 +1,32 @@
+{
+  "cite_key": "bi2022weather",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
+  "pdf_status": "FOUND",
+  "claims_in_paper": [
+    {
+      "line_num": 68,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 95,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 97,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "claim_type": "unclassified"
+    }
+  ],
+  "close_read_complete": false,
+  "candidate_quotes": [],
+  "per_claim_verdicts": [],
+  "last_updated": null,
+  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+}

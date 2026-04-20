@@ -1,0 +1,722 @@
+[
+  {
+    "cite_key": "nh2024climate",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "sias2025roadways",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Nature Reviews Earth \\& Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "orr2024annual",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "huang2022overview",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "he2026flood",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "claim_type": "mechanism",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "wang2020climate",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Science Advances",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "bergantino2024assessing",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transport Reviews",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "huang2022overview",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "he2026flood",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "zare2025risk",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "mechanism",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "nh2024climate",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "claim_type": "mechanism",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "orr2024annual",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "mechanism",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "bi2022weather",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "wan2024paradox",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": false,
+    "violation": {
+      "severity": "major",
+      "message": "Source tier cannot be determined; manual review required."
+    },
+    "whitelisted": false,
+    "confidence": "low"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "claim_type": "unclassified",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "empirical_result",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "claim_type": "empirical_result",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "claim_type": "empirical_result",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "empirical_result",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "claim_type": "empirical_result",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "nh2024climate",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "claim_type": "empirical_result",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "dft2024rea",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "claim_type": "empirical_result",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Science Advances",
+    "doi_resolves": null,
+    "claim_type": "mechanism",
+    "tier_ok_for_claim_type": true,
+    "violation": null,
+    "whitelisted": false,
+    "confidence": "high"
+  }
+]

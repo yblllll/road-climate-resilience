@@ -1,0 +1,32 @@
+{
+  "cite_key": "dft2024rea",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
+  "pdf_status": "FOUND",
+  "claims_in_paper": [
+    {
+      "line_num": 66,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 81,
+      "claim_text": "This directly addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure .",
+      "claim_type": "mechanism"
+    },
+    {
+      "line_num": 106,
+      "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 528,
+      "claim_text": "Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a",
+      "claim_type": "empirical_result"
+    }
+  ],
+  "close_read_complete": false,
+  "candidate_quotes": [],
+  "per_claim_verdicts": [],
+  "last_updated": null,
+  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+}

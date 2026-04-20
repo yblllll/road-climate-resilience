@@ -1,0 +1,88 @@
+{
+  "nh2024climate": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf",
+    "status": "FOUND"
+  },
+  "dft2024rea": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
+    "status": "FOUND"
+  },
+  "sias2025roadways": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Sias_2025_Climate_Roadways_Review.pdf",
+    "status": "FOUND"
+  },
+  "orr2024annual": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/ORR_2024_NH_Annual_Performance.pdf",
+    "status": "FOUND"
+  },
+  "koetse2009impact": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
+    "status": "FOUND"
+  },
+  "hranac2006empirical": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
+    "status": "FOUND"
+  },
+  "pregnolato2017depth": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
+    "status": "FOUND"
+  },
+  "becker2026rainfall": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
+    "status": "FOUND"
+  },
+  "bi2022weather": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
+    "status": "FOUND"
+  },
+  "cai2016rainfall": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf",
+    "status": "FOUND"
+  },
+  "huang2022overview": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf",
+    "status": "FOUND"
+  },
+  "he2026flood": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf",
+    "status": "FOUND"
+  },
+  "farahmand2024integrating": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf",
+    "status": "FOUND"
+  },
+  "gao2024resilience": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
+    "status": "FOUND"
+  },
+  "wang2020climate": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wang_2020_Climate_Transport_Review.pdf",
+    "status": "FOUND"
+  },
+  "calvert2018methodology": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",
+    "status": "FOUND"
+  },
+  "ganin2017resilience": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf",
+    "status": "FOUND"
+  },
+  "bergantino2024assessing": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bergantino_2024_Transport_Network_Resilience.pdf",
+    "status": "FOUND"
+  },
+  "zare2025risk": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Zare_2025_Risk_Climate_Investment.pdf",
+    "status": "FOUND"
+  },
+  "mccullagh1989glm": {
+    "pdf_path": null,
+    "status": "SOURCE_NOT_AVAILABLE",
+    "author_searched": "McCullagh",
+    "year_searched": "1989"
+  },
+  "wan2024paradox": {
+    "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel.pdf",
+    "status": "FOUND"
+  }
+}

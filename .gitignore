@@ -47,3 +47,10 @@ docs/paper/Literature_Review/*.pdf
 *.tmp
 .claude/
 uploads/
+
+# Literature PDFs (285MB, too large for git — manifest committed instead)
+docs/paper/Literature_Review/*.pdf
+docs/paper/Literature_Review/.omc/
+
+# Downloads / staging
+*.crdownload

@@ -1,0 +1,27 @@
+{
+  "cite_key": "nh2024climate",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf",
+  "pdf_status": "FOUND",
+  "claims_in_paper": [
+    {
+      "line_num": 66,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 111,
+      "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+      "claim_type": "mechanism"
+    },
+    {
+      "line_num": 524,
+      "claim_text": "The map translates per-millimetre coefficients into absolute scenario impacts that are directly interpretable by transport planners and drainage engineers.} Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the",
+      "claim_type": "empirical_result"
+    }
+  ],
+  "close_read_complete": false,
+  "candidate_quotes": [],
+  "per_claim_verdicts": [],
+  "last_updated": null,
+  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+}

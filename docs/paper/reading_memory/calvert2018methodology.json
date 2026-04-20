@@ -1,0 +1,22 @@
+{
+  "cite_key": "calvert2018methodology",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",
+  "pdf_status": "FOUND",
+  "claims_in_paper": [
+    {
+      "line_num": 102,
+      "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "claim_type": "unclassified"
+    }
+  ],
+  "close_read_complete": false,
+  "candidate_quotes": [],
+  "per_claim_verdicts": [],
+  "last_updated": null,
+  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+}

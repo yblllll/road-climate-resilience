@@ -1,0 +1,22 @@
+{
+  "cite_key": "mccullagh1989glm",
+  "pdf_path": null,
+  "pdf_status": "SOURCE_NOT_AVAILABLE",
+  "claims_in_paper": [
+    {
+      "line_num": 204,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "claim_type": "unclassified"
+    },
+    {
+      "line_num": 206,
+      "claim_text": "Speed and volume are jointly determined through the speed--flow relationship, and rainfall may reduce both demand and speeds .",
+      "claim_type": "unclassified"
+    }
+  ],
+  "close_read_complete": false,
+  "candidate_quotes": [],
+  "per_claim_verdicts": [],
+  "last_updated": null,
+  "notes": "Seeded from pdf_locations + claims_extracted. LLM close-read pending."
+}

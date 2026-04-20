@@ -1,0 +1,1447 @@
+[
+  {
+    "cite_key": "nh2024climate",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "sias2025roadways",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Sias_2025_Climate_Roadways_Review.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Nature Reviews Earth \\& Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "orr2024annual",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/ORR_2024_NH_Annual_Performance.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 66,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source tier cannot be determined; manual review required.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "line_num_in_paper": 68,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "huang2022overview",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "he2026flood",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source tier cannot be determined; manual review required.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "line_num_in_paper": 70,
+    "claim_in_paper": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 81,
+    "claim_in_paper": "This directly addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure .",
+    "claim_type": "mechanism",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 93,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 93,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "line_num_in_paper": 95,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 95,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source tier cannot be determined; manual review required.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 95,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source tier cannot be determined; manual review required.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "line_num_in_paper": 97,
+    "claim_in_paper": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "wang2020climate",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wang_2020_Climate_Transport_Review.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Science Advances",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bergantino2024assessing",
+    "line_num_in_paper": 102,
+    "claim_in_paper": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bergantino_2024_Transport_Network_Resilience.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transport Reviews",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "huang2022overview",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "he2026flood",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source tier cannot be determined; manual review required.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "farahmand2024integrating",
+    "line_num_in_paper": 104,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 106,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "zare2025risk",
+    "line_num_in_paper": 106,
+    "claim_in_paper": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Zare_2025_Risk_Climate_Investment.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "pregnolato2017depth",
+    "line_num_in_paper": 111,
+    "claim_in_paper": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "claim_type": "mechanism",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "nh2024climate",
+    "line_num_in_paper": 111,
+    "claim_in_paper": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "claim_type": "mechanism",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "orr2024annual",
+    "line_num_in_paper": 111,
+    "claim_in_paper": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "claim_type": "mechanism",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/ORR_2024_NH_Annual_Performance.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "bi2022weather",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source tier cannot be determined; manual review required.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "calvert2018methodology",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 200,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "cai2016rainfall",
+    "line_num_in_paper": 202,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "line_num_in_paper": 204,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": null,
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "severity": "minor",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source PDF could not be located in the cache. Cannot verify claim-to-source match.",
+    "recommended_action": "Download the source PDF via academic-literature, then re-run verification."
+  },
+  {
+    "cite_key": "wan2024paradox",
+    "line_num_in_paper": 204,
+    "claim_in_paper": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "severity": "major",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source tier cannot be determined; manual review required.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+  },
+  {
+    "cite_key": "mccullagh1989glm",
+    "line_num_in_paper": 206,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship, and rainfall may reduce both demand and speeds .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": null,
+    "match_verdict": "NOT_FOUND",
+    "authority_tier": "X",
+    "tier_reason": "Insufficient metadata to classify tier",
+    "doi_resolves": null,
+    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "severity": "minor",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "medium",
+    "reasoning": "Source PDF could not be located in the cache. Cannot verify claim-to-source match.",
+    "recommended_action": "Download the source PDF via academic-literature, then re-run verification."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 238,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 238,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 238,
+    "claim_in_paper": "Speed and volume are jointly determined through the speed--flow relationship .",
+    "claim_type": "unclassified",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 492,
+    "claim_in_paper": "Aggregate estimates, such as the 8--14\\% speed-at-capacity reductions reported by , are insufficient for targeted adaptation at the local level.",
+    "claim_type": "empirical_result",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "hranac2006empirical",
+    "line_num_in_paper": 501,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official government or intergovernmental publication",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "becker2026rainfall",
+    "line_num_in_paper": 501,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Future Transportation",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "koetse2009impact",
+    "line_num_in_paper": 503,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "gao2024resilience",
+    "line_num_in_paper": 505,
+    "claim_in_paper": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "claim_type": "empirical_result",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "nh2024climate",
+    "line_num_in_paper": 524,
+    "claim_in_paper": "The map translates per-millimetre coefficients into absolute scenario impacts that are directly interpretable by transport planners and drainage engineers.} Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction .",
+    "claim_type": "empirical_result",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by NATIONAL HIGHWAYS",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "dft2024rea",
+    "line_num_in_paper": 528,
+    "claim_in_paper": "Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction .",
+    "claim_type": "empirical_result",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  },
+  {
+    "cite_key": "ganin2017resilience",
+    "line_num_in_paper": 624,
+    "claim_in_paper": "A complementary extension is network vulnerability analysis: betweenness centrality under normal and extreme-weather scenarios would identify links whose rainfall degradation cascades into network-wide journey time losses, connecting these link-level estimates to system-level climate risk assessment .",
+    "claim_type": "mechanism",
+    "source_quote": null,
+    "source_location": {
+      "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf"
+    },
+    "match_verdict": "PENDING_LLM",
+    "authority_tier": "A",
+    "tier_reason": "Peer-reviewed article in Science Advances",
+    "doi_resolves": null,
+    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "severity": "moderate",
+    "consensus": {
+      "all_agents_agree": true,
+      "disagreement_notes": []
+    },
+    "confidence": "low",
+    "reasoning": "LLM semantic_matcher agent has not been invoked. Re-run inside Claude Code with agent dispatch for full verification.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+  }
+]

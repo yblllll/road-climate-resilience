@@ -36,24 +36,25 @@
             country={United Kingdom}}
 
 \begin{abstract}
-Precipitation degrades road traffic performance, yet empirical evidence on how individual road segments respond to rainfall remains scarce. Existing studies typically report network-level averages, masking the heterogeneity across links that matters most for adaptation planning. This paper estimates link-specific precipitation sensitivity coefficients for 201 of 460 monitored segments on the Cambridgeshire and Peterborough Strategic Road Network using a Gamma generalised linear model fitted to approximately 5~million weekday hourly speed observations (2022--2024). An additional millimetre of hourly rainfall is associated with an expected speed reduction of approximately 1.1\% at the reference link---a marginal per-millimetre estimate not directly comparable to the aggregate speed-at-capacity reductions of 8--14\% reported for sustained rain events. The magnitude ranges by a factor of approximately 5 across corridor averages: A11 and A14 corridors show the smallest reductions (0.8--0.9\% per \si{mm/hr}), while Cambourne Road links show reductions approaching 4\%. When mapped, these coefficients cluster by corridor with clear spatial patterns. The entire analysis relies on publicly available traffic and weather data, executes on a standard laptop, and is deployed as an open-source interactive platform that any UK local authority can replicate for its own network.
+As climate projections indicate more intense rainfall, understanding the precipitation resilience of road infrastructure is critical. Yet existing precipitation--speed estimates are reported as network-level averages, masking the link-level hydrological vulnerability needed for targeted drainage investment. This paper develops a three-stage framework (Estimate, Characterise, Map) to quantify, explain, and visualise link-level precipitation sensitivity on the UK Strategic Road Network. A Gamma generalised linear model with link-specific precipitation interactions, fitted to 5,050,333 weekday hourly speed observations across 460 monitored links in Cambridgeshire and Peterborough (2022--2024), recovers 201 link-specific sensitivity coefficients. By controlling for traffic volume, the model isolates the supply-side speed penalty, capturing the compound effect of rainfall intensity and unobserved drainage capacity; an additional millimetre per hour reduces speed by approximately 1.1\% at the reference link. Corridor averages vary by a factor of five: high-standard dual carriageways (A11, A14) show minimal reductions (0.8--0.9\% per \si{mm/hr}), while single-carriageway connectors approach 4\%. A cross-sectional regression links these coefficients to observable road attributes; the number of lanes and road gradient emerge as the strongest correlates of resilience, consistent with crossfall design and gravitational runoff expectations. Crucially, the entire analysis relies solely on publicly available traffic and weather data and can be replicated by any stakeholder or researcher, circumventing the high costs and limited transferability of agent-based microsimulation. The coefficients are deployed via an open-source interactive platform that accepts user-specified rainfall intensities, enabling both current vulnerability diagnosis and forward-looking climate risk screening for adaptation prioritisation by any UK local authority with sensor coverage.
 \end{abstract}
 
 \begin{keyword}
-precipitation sensitivity \sep traffic speed \sep Gamma GLM \sep Strategic Road Network \sep climate resilience \sep link-level heterogeneity \sep open-source platform
+precipitation sensitivity \sep hydrological vulnerability \sep precipitation resilience \sep Gamma GLM \sep Strategic Road Network \sep drainage adaptation \sep open-source platform
 \end{keyword}
 
 \end{frontmatter}
+\enlargethispage{2\baselineskip}
 
 %% ============================================================
 %% HIGHLIGHTS (required by TRD)
 %% ============================================================
 % Highlights (for review, to be formatted per Elsevier submission system)
-% - Link-level rainfall sensitivity varies fivefold across 201 UK road segments
-% - Gamma GLM on 5M observations separates weather from congestion effects
-% - Most resilient corridors lose ~0.8%; most sensitive lose ~3.9% per mm/hr
-% - Framework uses only public data and runs on a standard laptop
-% - Open-source platform lets any local authority replicate the analysis
+% - Link-level hydrological vulnerability varies twentyfold across 201 UK road segments
+% - Three-stage framework: Estimate (Gamma GLM) → Characterise (road features) → Map
+% - Lane count and gradient—proxies for drainage design—are strongest resilience correlates
+% - Extreme rainfall amplifies vulnerability: sensitive segments lose >30% speed at 10 mm/hr
+% - Open-source platform on public data enables any local authority to prioritise drainage investment
 
 
 %% ============================================================
@@ -62,26 +63,22 @@ precipitation sensitivity \sep traffic speed \sep Gamma GLM \sep Strategic Road 
 \section{Introduction}
 \label{sec:intro}
 
-Only 7\% of the UK Strategic Road Network meets climate resilience standards established two decades ago \citep{nce2026srn}, yet this network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres \citep{nh2024climate}. Rainfall reduces traffic speeds, increases journey-time variability, and elevates crash risk \citep{koetse2009impact,hranac2006empirical}. Policy interest in these effects has intensified as climate projections indicate more frequent and more intense rainfall events across the United Kingdom \citep{dft2024rea,swarna2025roadways}. At March 2024, 36\% of the network had an observed significant susceptibility to flooding \citep{orr2024annual}.
+The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres \citep{nh2024climate}, yet its adaptive capacity to changing climate conditions is under strain. As climate projections indicate more frequent and intense rainfall events across the United Kingdom \citep{dft2024rea,sias2025roadways}, and 36\% of the network already exhibits significant susceptibility to flooding \citep{orr2024annual}, identifying which segments of this critical infrastructure are most vulnerable to rainfall stress has become an urgent infrastructure adaptation challenge. Rainfall reduces traffic speeds, increases journey-time variability, and elevates crash risk \citep{koetse2009impact,hranac2006empirical}. The mechanisms are both direct and indirect: surface water accumulation reduces tyre--road friction and generates spray that impairs visibility, while localised pluvial flooding can force lane closures or route diversions \citep{pregnolato2017depth}. The severity of these effects depends not only on rainfall intensity but also on the road's capacity to shed water, a function of crossfall gradient, drainage system design, and pavement surface condition.
 
 Despite this policy urgency, most existing estimates of precipitation effects on traffic speed are reported as network-wide or corridor-level averages. The FHWA study documented free-flow speed reductions of up to 9\% and speed-at-capacity reductions of 8--14\% during rain across three US metropolitan areas \citep{hranac2006empirical}. Subsequent work has refined these estimates using radar-based precipitation data \citep{becker2026rainfall}, floating car data from ride-hailing platforms \citep{bi2022weather}, and urban road-section analysis \citep{cai2016rainfall}. These aggregate benchmarks, however, mask what matters most for adaptation planning: individual road segments respond very differently to the same rainfall event. Knowing which segments are vulnerable, and by how much, is essential for targeting investment, yet link-level evidence is largely absent from the literature.
 
-Research on road climate resilience varies not only in spatial scale but also in analytical approach. Simulation-based methods, particularly agent-based microsimulation \citep{huang2022overview,he2026flood} and coupled flood-traffic models \citep{pregnolato2017depth,farahmand2024integrating}, can capture counterfactual scenarios and model traffic dynamics under different weather conditions. However, building such models requires origin--destination matrices, detailed behavioural calibration, and often high-performance computing infrastructure. The development cost is substantial, and once calibrated for a specific city or region, the models are difficult to transfer elsewhere. As a result, these tools remain largely confined to well-resourced research groups and are not routinely available to the local transport authorities who most need practical climate adaptation evidence.
+Research on road climate resilience varies not only in spatial scale but also in analytical approach. Simulation-based methods, particularly agent-based microsimulation \citep{huang2022overview,he2026flood} and coupled flood-traffic models \citep{pregnolato2017depth,farahmand2024integrating}, can capture counterfactual scenarios and model traffic dynamics under different weather conditions. However, building such models requires origin--destination matrices, detailed behavioural calibration, and often high-performance computing infrastructure. The development cost is substantial, and once calibrated for a specific city or region, the models are difficult to transfer elsewhere. As a result, these tools remain largely confined to well-resourced research groups and are not routinely available to the local transport authorities who most need practical climate adaptation evidence. Local authorities tasked with climate adaptation are thus caught in an evidence gap: aggregate traffic statistics are too coarse for targeted investment, while high-fidelity simulation tools are too resource-intensive for routine network-wide screening.
 
-Two questions guide the analysis:
+Three questions guide the analysis:
 \begin{enumerate}[label=(\arabic*)]
     \item How large is the variation in precipitation sensitivity across individual road segments within a single regional network, and what spatial patterns emerge at the corridor level?
+    \item Which observable road characteristics (design standard, geometry, traffic load) are associated with greater or lesser hydrological vulnerability, and what engineering mechanisms (e.g., drainage design capacity, gravitational runoff) might explain these associations?
     \item Can this evidence be produced at low cost using only publicly available data and standard computing resources, making it accessible to local transport authorities?
 \end{enumerate}
 
-The proposed framework operates in two stages:
+To address these questions, we propose a three-stage framework (Estimate, Characterise, Map). First, a Gamma GLM with link-specific precipitation interactions is fitted to a large hourly panel to recover marginal speed penalties for each segment, isolating supply-side effects by conditioning on traffic volume. Second, these coefficients are linked to observable road attributes to generate engineering hypotheses about the determinants of heterogeneous precipitation sensitivity. Third, the results are spatially mapped and deployed as an open-source platform that requires only public data and standard computing resources.
 
-\begin{enumerate}[label=(\roman*)]
-    \item \textbf{Estimate}: A Gamma generalised linear model (GLM) with a log-link function is fitted to approximately 5~million weekday hourly speed observations across 460 road links in Cambridgeshire and Peterborough (2022--2024). The model includes link-specific precipitation interaction terms, yielding 201 individual coefficients that quantify the estimated marginal speed reduction associated with an additional millimetre of rainfall on each segment, controlling for traffic volume, temporal patterns, calendar effects, and disruption events.
-    \item \textbf{Map}: The resulting coefficients are spatially mapped to reveal corridor-level patterns and deployed through an open-source interactive platform.
-\end{enumerate}
-
-The framework contributes in two ways. Empirically, it produces what is, to our knowledge, the first set of link-level precipitation sensitivity coefficients for the UK SRN, showing that the estimated speed reduction per millimetre of rainfall ranges from under 1\% on the most resilient corridors (A11, A14) to approximately 4\% on the most sensitive (Cambourne Road), with clear corridor-level spatial patterns. Methodologically, it shows that this evidence requires only publicly available data (National Highways WebTRIS and Met Office CEDA Archive) and standard statistical software on a laptop, with no microsimulation or high-performance computing. The analysis is packaged as an open-source Streamlit platform that any local authority can deploy for their own network. The result is a rapid screening tool that addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure and notes that cost-benefit analyses of adaptation measures remain limited \citep{dft2024rea}.
+The analysis yields what is, to our knowledge, the first set of link-level precipitation sensitivity coefficients for the UK SRN. The estimated speed reduction per millimetre of rainfall ranges from under 1\% on the most resilient corridors (A11, A14) to approximately 4\% on the most sensitive (Cambourne Road), with clear corridor-level spatial patterns (Question~1). The number of lanes and road gradient emerge as the strongest correlates, consistent with the expectation that drainage design standards and gravitational runoff capacity drive precipitation resilience (Question~2). The entire analysis uses only publicly available data (National Highways WebTRIS and Met Office CEDA Archive), requires no microsimulation or high-performance computing, and is packaged as an open-source platform that any local authority can deploy for their own network (Question~3). This directly addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure \citep{dft2024rea}.
 
 
 %% ============================================================
@@ -93,7 +90,7 @@ The framework contributes in two ways. Empirically, it produces what is, to our 
 \subsection{Precipitation Effects on Traffic Performance}
 \label{sec:lit:precip}
 
-Research on rainfall and traffic speed dates to the early 2000s. \citet{koetse2009impact} synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance. \citet{hranac2006empirical} quantified the relationship for US highways, reporting free-flow speed reductions of up to 9\% and speed-at-capacity reductions of 8--14\% during rainfall, estimates that remain the most widely cited benchmarks in the field.
+Research on rainfall and traffic performance has evolved along two distinct axes: the empirical estimation of speed penalties and the development of resilience assessment tools. \citet{koetse2009impact} synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance. \citet{hranac2006empirical} quantified the relationship for US highways, reporting free-flow speed reductions of up to 9\% and speed-at-capacity reductions of 8--14\% during rainfall, estimates that remain the most widely cited benchmarks in the field.
 
 Subsequent work extended these findings in scale and data quality. In Hong Kong, \citet{cai2016rainfall} showed that precipitation increases not only average delays but also journey-time unreliability, though their city-level analysis could not identify segment-specific effects. Across multiple Chinese cities, \citet{bi2022weather} found that weather-induced speed reductions vary by road type and time of day, but pooled estimation precluded recovery of individual link coefficients. In the largest-scale study to date, \citet{becker2026rainfall} combined radar precipitation with floating car data across 1.5~million German road sections and found that high-speed, multi-lane roads experienced proportionally larger speed reductions than lower-capacity roads. Even this study, however, reported segment-type averages rather than individual link estimates.
 
@@ -108,7 +105,14 @@ Agent-based microsimulation and coupled flood-traffic models offer detailed disr
 
 The resulting gap has practical consequences. The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging \citep{dft2024rea}. Investment frameworks such as the real options approach of \citet{zare2025risk} depend on spatially disaggregated vulnerability evidence that the current literature does not provide.
 
-Two gaps stand out: precipitation--speed relationships are reported almost exclusively as spatial averages, obscuring which segments are most vulnerable; and the tools that could produce link-level evidence are too resource-intensive for routine use. The present study addresses both by estimating a Gamma GLM with link-specific precipitation interactions on a large hourly panel, recovering individual sensitivity coefficients for 201 road segments using only public data and a standard laptop. An open-source platform extends the analysis to non-technical users in local transport authorities.
+\subsection{Road Drainage Design and Surface Water Management}
+\label{sec:lit:drainage}
+
+The traffic speed literature reviewed above treats road infrastructure as a homogeneous entity, estimating average precipitation effects without engaging with the physical processes that mediate them. In practice, the speed reduction observed during rainfall reflects a chain of hydrological and engineering interactions: precipitation falls on the road surface, accumulates as a water film whose depth depends on rainfall intensity, crossfall gradient, pavement porosity, and drainage system capacity, and this water film degrades tyre--road friction and generates spray that impairs visibility \citep{pregnolato2017depth}. The UK Design Manual for Roads and Bridges (DMRB) specifies drainage design standards that vary by road class: motorways and high-speed dual carriageways are designed with steeper crossfall (typically 2.5\%), wider carriageways that provide additional conveyance capacity, and drainage systems dimensioned for higher return-period storms than single-carriageway A-roads. A substantial share of the SRN's drainage assets pre-dates the most recent climate change allowances, meaning that parts of the network operate under design assumptions that no longer reflect current or projected rainfall intensities \citep{nh2024climate,orr2024annual}.
+
+This engineering context implies that the precipitation sensitivity of any given road segment is not solely a function of rainfall intensity; it reflects the \textit{compound interaction} between the meteorological input and the segment's physical capacity to manage surface water. Quantifying this compound effect at the link level requires the kind of spatially disaggregated evidence that the traffic speed literature has not yet produced.
+
+Two gaps therefore stand out: precipitation--speed relationships are reported almost exclusively as spatial averages, obscuring which segments are most hydrologically vulnerable; and the tools that could produce link-level evidence are too resource-intensive for routine use. The present study addresses both by estimating a Gamma GLM with link-specific precipitation interactions on a large hourly panel, recovering individual sensitivity coefficients for 201 road segments using only public data and a standard laptop. An open-source platform extends the analysis to non-technical users in local transport authorities.
 
 
 %% ============================================================
@@ -127,7 +131,7 @@ The study covers the Strategic Road Network within and around Cambridgeshire and
 
 The analysis integrates four data sources, all publicly available:
 
-\textit{Traffic data.} Hourly average speed (\si{mph}) and total traffic volume (vehicles per hour) for each of the 460 links are obtained from National Highways' Web-based Transport Information System (WebTRIS). The study period spans January 2022 to December 2024. Observations are restricted to weekdays (Monday--Friday) to focus on commuting and commercial traffic patterns, yielding approximately 5~million hourly records after quality filtering (removal of zero-speed observations and sensor malfunctions).
+\textit{Traffic data.} Hourly average speed (\si{mph}) and total traffic volume (vehicles per hour) for each of the 460 links are obtained from National Highways' Web-based Transport Information System (WebTRIS). The study period spans January 2022 to December 2024. Observations are restricted to weekdays (Monday--Friday) to focus on commuting and commercial traffic patterns, yielding 5,050,333 hourly records after quality filtering (removal of zero-speed observations and sensor malfunctions).
 
 \textit{Weather data.} Hourly temperature (\si{\degreeCelsius}) and precipitation (\si{mm}) are sourced from the Met Office CEDA Archive. Weather stations in the study area (Cambridge NIAB, Monks Wood, Wittering, Cambridge Botanic Garden) are matched to road links using nearest-station assignment. A binary indicator for sub-zero temperatures in the preceding 6 hours is constructed to capture frost and ice effects.
 
@@ -167,14 +171,28 @@ Roadworks (0/1) & 0.08 & --- & 0 & 1 \\
 \section{Methodology}
 \label{sec:method}
 
-Fig.~\ref{fig:framework} summarises the two-stage framework: estimation of link-specific precipitation coefficients via a Gamma GLM (Stage 1: Estimate) and spatial mapping with platform deployment (Stage 2: Map).
+Fig.~\ref{fig:framework} summarises the three-stage framework: estimation of link-specific precipitation coefficients via a Gamma GLM (Stage~1: Estimate), exploratory characterisation of which road attributes correlate with hydrological vulnerability (Stage~2: Characterise), and spatial mapping with platform deployment (Stage~3: Map).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_framework.png}
-\caption{Analytical framework. Stage~1 (Estimate): a Gamma GLM with link-specific precipitation interaction terms yields 201 sensitivity coefficients. Stage~2 (Map): coefficients are spatially mapped and deployed as an open-source platform.}
+\includegraphics[width=\textwidth]{figures/3Stages_Framework.png}
+\caption{Analytical framework. Stage~1 (Estimate): a Gamma GLM with link-specific precipitation interaction terms yields 201 sensitivity coefficients. Stage~2 (Characterise): coefficients are linked to observable road characteristics (lanes, gradient, speed limit, daily volume) to identify correlates of hydrological vulnerability. Stage~3 (Map): coefficients are spatially mapped and deployed as an open-source platform.}
 \label{fig:framework}
 \end{figure}
+
+\subsection{Conceptual Framework}
+\label{sec:method:concept}
+
+The analytical approach rests on a conceptual model of how precipitation translates into observed speed reductions (Fig.~\ref{fig:concept}). A rainfall event deposits water on the road surface; the resulting water film depth depends on rainfall intensity and on the segment's \textit{supply-side} drainage capacity (crossfall gradient, pavement porosity, drainage system design). The water film degrades tyre--road friction and generates spray that impairs visibility, triggering behavioural responses from drivers (speed reduction, increased headway) and, in extreme cases, lane or road closures. These effects are captured by the WebTRIS sensors as hourly average speed reductions. Simultaneously, rainfall may reduce \textit{demand-side} travel volumes as some drivers postpone or cancel trips. The Gamma GLM separates these channels by conditioning on observed traffic volume, isolating the supply-side speed effect, which is the parameter most relevant to infrastructure adaptation planning.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/Conceptual_Framework_Editable_v2.png}
+\caption{Conceptual framework linking rainfall to observed speed reductions. The precipitation coefficient estimated by the Gamma GLM captures the supply-side channel (solid arrows), conditional on observed traffic volume. The demand-side channel (dashed arrow) is absorbed by the volume control.}
+\label{fig:concept}
+\end{figure}
+
+Because micro-scale engineering data (drainage pipe capacity, pavement permeability, crossfall angle) are not publicly available at the link level, the estimated precipitation coefficient for each segment reflects both the meteorological input and the segment's unobserved drainage capacity. Observable road characteristics are therefore used as proxies in the Characterise stage (Section~\ref{sec:results:features}).
 
 \subsection{Model Selection Rationale}
 \label{sec:method:rationale}
@@ -183,7 +201,7 @@ Traffic performance under adverse weather has been measured by average speed \ci
 
 Speed and volume are jointly determined through the speed--flow relationship, and rainfall may reduce both demand and speeds \citep{hranac2006empirical,becker2026rainfall}. Omitting volume would conflate demand-side responses with the direct meteorological effect. Hourly volume is therefore included as a control (Section~\ref{sec:method:controls}), following \citet{becker2026rainfall} and \citet{cai2016rainfall}, so that the precipitation coefficient captures the speed effect of rainfall \textit{conditional on observed volume}.
 
-The distributional family and link function are chosen to address three properties of the speed data that violate standard OLS assumptions. First, hourly average speed is strictly positive by construction. Second, the distribution is right-skewed (Table~\ref{tab:desc}: mean 54.3~\si{mph}, s.d.\ 15.8). Third, variance increases with the conditional mean, as high-speed motorway segments exhibit greater absolute speed variation than low-speed local links. These features, heteroskedasticity in particular, make OLS inefficient and can bias standard errors \citep{mccullagh1989glm}. \citet{wan2024paradox} applied a Gamma GLM with a log link to model corridor-level journey time on the Cambridge road network, exploiting the same distributional properties. The present study extends this approach to the road link level, estimating segment-specific precipitation sensitivity coefficients rather than corridor averages.
+The distributional family and link function are chosen to address three properties of the speed data that violate standard OLS assumptions. First, hourly average speed is strictly positive by construction. Second, the distribution is right-skewed (Table~\ref{tab:desc}: mean 54.3~\si{mph}, s.d.\ 15.8). Third, variance increases with the conditional mean, as high-speed motorway segments exhibit greater absolute speed variation than low-speed local links, a pattern consistent with fundamental traffic flow theory, in which free-flowing high-speed segments (e.g., 60--70~\si{mph}) possess inherently greater absolute speed variation than congested urban links (e.g., 10--20~\si{mph}), making heteroskedasticity an expected physical property rather than merely a statistical nuisance. These features, heteroskedasticity in particular, make OLS inefficient and can bias standard errors \citep{mccullagh1989glm}. \citet{wan2024paradox} applied a Gamma GLM with a log link to model corridor-level journey time on the Cambridge road network, exploiting the same distributional properties. The present study extends this approach to the road link level, estimating segment-specific precipitation sensitivity coefficients rather than corridor averages.
 
 OLS on untransformed speed permits negative predictions and imposes a constant absolute rainfall effect regardless of baseline speed. Log-OLS avoids negative predictions but models the conditional geometric mean; retransformation introduces bias under heteroskedasticity \citep{mccullagh1989glm}.
 
@@ -231,21 +249,48 @@ Each control absorbs a source of speed variation that could confound the precipi
 
 The model is estimated in Stata 19.5 using the \texttt{glm} command with \texttt{family(gamma) link(log)} specification. Standard errors are clustered at the link level to account for within-link serial correlation in hourly observations.
 
-Inference therefore rests on 201 clusters rather than 5~million observations. With 201 clusters and 201 link-specific interaction terms, the cluster-to-parameter ratio is adequate for asymptotic reliability, though effective degrees of freedom for individual interaction terms are modest.
+Inference therefore rests on 201 clusters rather than 5,050,333 observations. With 201 clusters and 201 link-specific interaction terms, the cluster-to-parameter ratio is adequate for asymptotic reliability, though effective degrees of freedom for individual interaction terms are modest.
 
-The dataset contains 460 links monitored by WebTRIS, of which 213 have sufficient hourly observations (minimum 1{,}000 per link) and non-missing precipitation data to support stable estimation of link-specific interaction terms. After excluding links with collinear or near-zero-variance precipitation series, 201 link-specific interaction coefficients are estimated, with one link serving as the reference category. The remaining 259 links are retained in the model (absorbed by link fixed effects and contributing to the estimation of shared parameters) but do not receive individual precipitation interaction terms; they are predominantly short connector segments with low observation counts. Relaxing the threshold to 500 observations yields 218 coefficients with noisier tail estimates but similar corridor-level patterns.
+The dataset contains 460 links monitored by WebTRIS, of which 213 have sufficient hourly observations (minimum 1{,}000 per link) and non-missing precipitation data to support stable estimation of link-specific interaction terms. After excluding links with collinear or near-zero-variance precipitation series, 200 link-specific interaction coefficients ($\delta_i$) are estimated, with one link serving as the reference category ($\delta_{\text{ref}} = 0$). Together with the baseline precipitation effect $\beta_p$, these yield 201 composite sensitivity estimates ($\beta_p + \delta_i$). The remaining 259 links are retained in the model (absorbed by link fixed effects and contributing to the estimation of shared parameters) but do not receive individual precipitation interaction terms; they are predominantly short connector segments with low observation counts. Relaxing the threshold to 500 observations yields 218 coefficients with noisier tail estimates but similar corridor-level patterns.
 
 \subsection{Model Diagnostics}
 \label{sec:method:diagnostics}
 
-Model adequacy was assessed through three checks. First, deviance residuals plotted against fitted values show no systematic curvature, supporting the Gamma distributional assumption and log-link specification. Second, a Q--Q plot of deviance residuals shows approximate normality in the central quantiles, with modest departures in the tails attributable to extreme-weather observations. Third, the correlation between observed and model-predicted speeds is 0.85. These diagnostics are reported in \ref{app:diagnostics}. Together with the robustness checks in Section~\ref{sec:disc:limits}, support the chosen specification.
+Model adequacy was assessed through three checks (Appendix~\ref{app:diagnostics}). First, deviance residuals plotted against fitted values show no systematic curvature, supporting the Gamma distributional assumption and log-link specification. Second, a Q--Q plot of deviance residuals shows approximate normality in the central quantiles, with modest departures in the tails attributable to extreme-weather observations. Third, the correlation between observed and model-predicted speeds is 0.85. These diagnostics, together with the robustness checks in Section~\ref{sec:disc:robust}, support the chosen specification.
 
 \subsection{Interpretation of Coefficients}
 \label{sec:method:interpret}
 
-Under the log link, each coefficient represents an approximate proportional change in expected speed. The baseline precipitation coefficient $\beta_{\textit{precip}}$ is interpreted as the percentage speed reduction per additional millimetre of hourly rainfall at the reference link, holding all controls constant. The link-specific interaction $\delta_i$ captures the \textit{deviation} from this baseline for link $i$. Links with $\delta_i > 0$ (less negative total effect) are relatively more resilient to precipitation; links with $\delta_i < 0$ (more negative total effect) are relatively more sensitive.
+Under the log link, each coefficient represents an approximate proportional change in expected speed. The reference link (link~146, an A14 segment near the median of the sensitivity distribution) is defined by setting $\delta_{\text{ref}} = 0$; the choice of reference link does not affect the total sensitivity estimates $(\beta_p + \delta_i)$ for any link. The baseline precipitation coefficient $\beta_{\textit{precip}}$ is interpreted as the percentage speed reduction per additional millimetre of hourly rainfall at the reference link, holding all controls constant. The link-specific interaction $\delta_i$ captures the \textit{deviation} from this baseline for link $i$. Links with $\delta_i > 0$ (less negative total effect) are relatively more resilient to precipitation; links with $\delta_i < 0$ (more negative total effect) are relatively more sensitive.
 
+\subsection{Stage~2: Road Characteristic Regression}
+\label{sec:method:stage2}
 
+The second stage examines which observable road characteristics are associated with greater or lesser precipitation sensitivity. The 201 composite coefficients $\hat{\beta}_{p,i} = \beta_p + \delta_i$ estimated in Stage~1 serve as the dependent variable in a cross-sectional OLS regression:
+
+\begin{multline}
+\label{eq:stage2}
+\hat{\beta}_{p,i} = \alpha + \gamma_1 \, \textit{Lanes}_i + \gamma_2 \, \textit{SpeedLimit}_i + \gamma_3 \, \textit{DailyFlow}_i + \gamma_4 \, \textit{Length}_i \\
++ \gamma_5 \, \textit{Gradient}_i + \gamma_6 \, \textit{Elevation}_i + \gamma_7 \, \textit{Rural}_i + \varepsilon_i
+\end{multline}
+
+\noindent where $\hat{\beta}_{p,i}$ is the total precipitation sensitivity coefficient for link $i$ (more negative values indicate greater sensitivity); $\textit{Lanes}_i$ is the number of carriageway lanes; $\textit{SpeedLimit}_i$ is the posted speed limit (\si{mph}); $\textit{DailyFlow}_i$ is the average daily traffic volume (vehicles per day); $\textit{Length}_i$ is the segment length (metres); $\textit{Gradient}_i$ is the mean longitudinal gradient (\%); $\textit{Elevation}_i$ is the mean elevation above sea level (metres); and $\textit{Rural}_i$ is a binary indicator for rural road classification. Because more negative $\hat{\beta}_{p,i}$ values denote greater sensitivity, a positive $\gamma_k$ indicates that the corresponding characteristic is associated with \textit{less} sensitivity (greater precipitation resilience).
+
+Heteroskedasticity-consistent standard errors (robust) are used throughout, as the Stage~1 coefficients are estimated with varying precision across links. Variance inflation factors (VIF) are examined to assess multicollinearity: all VIFs fall below the conventional threshold of 5 (maximum VIF = 2.67 for daily flow; mean VIF = 1.59), indicating that multicollinearity does not compromise coefficient stability.
+
+Two methodological caveats apply. First, this is an exploratory cross-sectional analysis ($N = 201$) intended to identify correlates and generate engineering hypotheses rather than to establish causal relationships. Observable characteristics may proxy for unobserved design features (for example, lane count may capture the bundle of DMRB drainage standards that accompany higher road classifications), and the coefficients $\gamma_k$ should be interpreted as associations, not causal effects. Second, the dependent variable $\hat{\beta}_{p,i}$ is itself estimated from Stage~1, introducing a generated-regressors problem: the OLS standard errors in Equation~\ref{eq:stage2} do not account for the sampling uncertainty in $\hat{\beta}_{p,i}$. The HC1 estimator partially addresses heteroskedasticity arising from differential first-stage precision, but a fully efficient two-step variance correction would require incorporating the Stage~1 variance--covariance matrix. Given the large first-stage sample ($N > 5$~million observations) and the exploratory intent, this refinement is deferred to future work.
+
+\subsection{Stage~3: Spatial Mapping and Platform Deployment}
+\label{sec:method:stage3}
+
+The final stage maps the 201 estimated coefficients to their geographic coordinates and deploys the results through an open-source interactive platform. Each link's total precipitation sensitivity ($\hat{\beta}_{p,i}$) is colour-coded on a map of the study area, enabling visual identification of corridor-level vulnerability patterns. Scenario-specific speed losses can be computed as:
+
+\begin{equation}
+\label{eq:scenario}
+\textit{Predicted\_Loss}_i = 1 - e^{\,\hat{\beta}_{p,i} \cdot R}
+\end{equation}
+
+\noindent where $R$ is a scenario rainfall intensity (\si{mm/hr}). This formula translates per-millimetre marginal effects into absolute percentage speed reductions under specific rainfall scenarios, providing transport planners with directly interpretable metrics for drainage investment prioritisation. The platform, built in Streamlit with Folium map layers, allows users to explore individual link coefficients, view corridor-level summary statistics, and upload their own WebTRIS and weather data to replicate the analysis for any UK road network with sensor coverage.
 
 %% ============================================================
 %% 5. RESULTS (~1500 words)
@@ -256,7 +301,7 @@ Under the log link, each coefficient represents an approximate proportional chan
 \subsection{Gamma GLM Estimation}
 \label{sec:results:glm}
 
-With the full specification, the Gamma GLM converges on approximately 5~million weekday observations, 201 link fixed effects, and 201 link-specific precipitation interactions. Selected coefficients appear in Table~\ref{tab:glm}.
+With the full specification, the Gamma GLM converges on 5,050,333 weekday observations, 201 link fixed effects, and 201 link-specific precipitation interactions. Selected coefficients appear in Table~\ref{tab:glm}.
 
 \begin{table}[H]
 \centering
@@ -292,9 +337,9 @@ Deviance & \multicolumn{3}{l}{99{,}411} \\
 \end{tabular}
 \end{table}
 
-The baseline precipitation coefficient is $-$0.0111 ($p < 0.001$): each additional millimetre of hourly rainfall reduces expected speed by about 1.1\% at the reference link. This is a marginal per-millimetre effect and is not directly comparable to the aggregate speed-at-capacity reductions of 8--14\% reported for sustained rain events; see Section~\ref{sec:disc:lit} for a detailed comparison.
+The baseline precipitation coefficient is $-$0.0111 ($p < 0.001$): each additional millimetre of hourly rainfall reduces expected speed by about 1.1\% at the reference link. Because the model includes binary indicators for accidents and roadworks as control variables, this coefficient captures the residual speed penalty after removing disruption-induced congestion, isolating the direct supply-side effect of degraded driving conditions (reduced tyre--road friction and impaired visibility from surface water) rather than secondary incident-related queueing. This is a marginal per-millimetre effect and is not directly comparable to the aggregate speed-at-capacity reductions of 8--14\% reported for sustained rain events; see Section~\ref{sec:disc:lit} for a detailed comparison.
 
-All control variables are significant with expected signs (Table~\ref{tab:glm}). Model diagnostics (\ref{app:diagnostics}) confirm adequate specification: deviance residuals show no systematic pattern, and the correlation between observed and predicted speeds is 0.85.
+All control variables are significant with expected signs (Table~\ref{tab:glm}). Hour-of-day and month fixed effects are jointly significant, absorbing the expected diurnal and seasonal speed variation. Model diagnostics (Appendix~\ref{app:diagnostics}) confirm adequate specification: deviance residuals show no systematic pattern, and the correlation between observed and predicted speeds is 0.85.
 
 \subsection{Link-Level Heterogeneity}
 \label{sec:results:hetero}
@@ -304,11 +349,11 @@ The 201 link-specific coefficients vary widely. Fig.~\ref{fig:coef_dist} present
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/fig_coef_distribution_cdf.png}
-\caption{Distribution of link-level total precipitation sensitivity coefficients ($N = 201$). Navy bars: histogram; red curve: kernel density estimate; blue dashed curve: cumulative distribution function (right axis). The vertical dashed line marks the baseline coefficient ($-$0.0111); the shaded band indicates the interquartile range ($-$0.025 to $-$0.016).}
+\caption{Distribution of link-level total precipitation sensitivity coefficients ($N = 201$). Navy bars: histogram; red curve: kernel density estimate; blue dashed curve: cumulative distribution function (right axis). The vertical dashed line marks the baseline coefficient ($-$0.0111); the shaded band indicates the interquartile range ($-$0.012 to $-$0.005).}
 \label{fig:coef_dist}
 \end{figure}
 
-Coefficients range from $-$0.042 (most sensitive) to $+$0.019 (least sensitive). The majority (189 of 201) are negative, indicating that precipitation reduces speed on most links. Twelve links show small positive coefficients, consistent with reduced traffic demand during rain offsetting the speed penalty. The interquartile range ($-$0.015 to $-$0.006) corresponds to speed reductions of 0.6--1.5\% per millimetre.
+Coefficients range from $-$0.042 (most sensitive) to $+$0.019 (least sensitive). The majority (189 of 201) are negative, indicating that precipitation reduces speed on most links. Twelve links show small positive coefficients, which may reflect localised route diversion during wet conditions, where traffic displaced from highly sensitive parallel corridors shifts to these alternative links without exceeding their congestion thresholds, or statistical noise for coefficients near zero. The interquartile range ($-$0.012 to $-$0.005) corresponds to speed reductions of 0.5--1.2\% per millimetre.
 
 \subsection{Spatial Patterns}
 \label{sec:results:spatial}
@@ -326,6 +371,7 @@ Mapping the coefficients (Fig.~\ref{fig:map}) indicates clear corridor-level pat
     \item \textit{A11 and A14}: the least sensitive corridors, averaging $-$0.0075 and $-$0.0087 respectively, both well above the network mean. Within-corridor variation on the A14 (s.d.~=~0.0054) is moderate.
     \item \textit{A1(M) and M11}: near the network average, at $-$0.0095 and $-$0.0124 respectively.
     \item \textit{Cambourne Road}: the most sensitive corridor, with coefficients near $-$0.039 (3.9\% speed reduction per \si{mm/hr}). Both links serve a rapidly growing residential development.
+    \item \textit{A14(M)}: despite having the highest average gradient (0.7\%) among all corridors, A14(M) exhibits above-average sensitivity ($-$0.015). With only 8 links and 2.0 average lanes, the limited lane count and small sample size likely outweigh the gradient advantage; this illustrates that no single road attribute determines sensitivity in isolation.
     \item \textit{A1}: the largest within-corridor variation (s.d.~=~0.013), with individual links ranging from $-$0.042 to $+$0.019.
 \end{itemize}
 
@@ -333,24 +379,28 @@ Table~\ref{tab:corridor} summarises the corridor-level patterns.
 
 \begin{table}[H]
 \centering
-\caption{Mean precipitation sensitivity by highway corridor}
+\caption{Mean precipitation sensitivity and road characteristics by highway corridor}
 \label{tab:corridor}
-\begin{tabular}{lrrrl}
+\small
+\begin{tabular}{@{}lrrrrrrr@{}}
 \toprule
-Corridor & $N$ links & Mean coeff. & Std.\ Dev. & Interpretation \\
+Corridor & $N$ & Mean coeff. & Std.\ Dev. & Lanes & Speed limit & Gradient & Interpretation \\
+ & & & & (avg.) & (mph, avg.) & (\%, avg.) & \\
 \midrule
-A11 & 13 & $-$0.0075 & 0.0025 & Most resilient \\
-A14 & 72 & $-$0.0087 & 0.0054 & Resilient \\
-A1(M) & 28 & $-$0.0095 & 0.0062 & Resilient \\
-A428 & 13 & $-$0.0122 & 0.0060 & Near baseline \\
-A47 & 10 & $-$0.0123 & 0.0071 & Near baseline \\
-M11 & 29 & $-$0.0124 & 0.0064 & Near baseline \\
-A1 & 30 & $-$0.0137 & 0.0126 & Sensitive \\
-A14(M) & 8 & $-$0.0149 & 0.0111 & Sensitive \\
-Cambourne Rd & 2 & $-$0.0392 & 0.0004 & Most sensitive \\
+A11 & 13 & $-$0.0075 & 0.0025 & 2.0 & 70 & 0.3 & Most resilient \\
+A14 & 72 & $-$0.0087 & 0.0054 & 2.5 & 70 & 0.2 & Resilient \\
+A1(M) & 28 & $-$0.0095 & 0.0062 & 2.9 & 70 & 0.5 & Resilient \\
+A428 & 13 & $-$0.0122 & 0.0060 & 1.7 & 67 & 0.3 & Near baseline \\
+A47 & 10 & $-$0.0123 & 0.0071 & 1.6 & 64 & 0.1 & Near baseline \\
+M11 & 29 & $-$0.0124 & 0.0064 & 2.1 & 70 & 0.1 & Near baseline \\
+A1 & 30 & $-$0.0137 & 0.0126 & 2.2 & 67 & 0.3 & Sensitive \\
+A14(M) & 8 & $-$0.0149 & 0.0111 & 2.0 & 70 & 0.7 & Sensitive \\
+Cambourne Rd & 2 & $-$0.0392 & 0.0004 & 1.0$^{\dagger}$ & 40$^{\dagger}$ & ---$^{\dagger}$ & Most sensitive \\
 \midrule
-All links & 201 & $-$0.0111 & 0.0081 & --- \\
+All links & 201 & $-$0.0111 & 0.0081 & 2.3 & 69 & 0.3 & --- \\
 \bottomrule
+\multicolumn{8}{@{}l@{}}{\footnotesize $^{\dagger}$Cambourne Road is a local authority road not in the DfT database; lane count and speed limit} \\
+\multicolumn{8}{@{}l@{}}{\footnotesize are from field observation. Gradient data are unavailable for this corridor.} \\
 \end{tabular}
 \end{table}
 
@@ -365,16 +415,69 @@ Fig.~\ref{fig:boxplot} presents the within-corridor distributions as box plots, 
 \label{fig:boxplot}
 \end{figure}
 
-Hour-of-day and month fixed effects are jointly significant, absorbing the expected diurnal and seasonal speed variation.
-
-\subsection{Sources of Heterogeneity: Exploratory Analysis}
+\subsection{Correlates of Precipitation Sensitivity: Road Characteristic Analysis (Stage~2)}
 \label{sec:results:features}
 
-Beyond the corridor-level patterns documented above, an exploratory descriptive analysis examines which observable road characteristics are associated with greater or lesser precipitation sensitivity across the 201 links. This analysis is supplementary to the two-stage framework and is intended to generate hypotheses rather than establish causal relationships.
+The second stage of the framework regresses the estimated sensitivity coefficients on observable road characteristics (Equation~\ref{eq:stage2}), examining which physical and operational attributes are associated with greater or lesser hydrological vulnerability. Two of the 201 links (both Cambourne Road segments) are excluded due to missing gradient data, yielding $N = 199$ for this cross-sectional regression. As noted in Section~\ref{sec:method:stage2}, this analysis is exploratory, intended to generate hypotheses about the engineering mechanisms behind the observed heterogeneity rather than to establish causal relationships, but its findings have direct implications for adaptation planning.
 
-The number of lanes emerges as the strongest observable correlate of resilience: links with more lanes are systematically less sensitive to precipitation, consistent with the corridor-level finding that dual-carriageway and motorway segments outperform single-carriageway links. Speed limit is also positively associated with resilience, while higher daily traffic flow is associated with greater sensitivity, possibly reflecting that higher-flow links are more prone to congestion--weather compounding. Gradient shows a positive association with resilience, suggesting that steeper road segments may benefit from better natural drainage. Rural classification and elevation show no clear pattern.
+Seven road-level attributes are examined: number of lanes, speed limit, mean daily traffic volume, segment length, gradient, elevation, and rural/urban classification. Among these, four show significant associations with precipitation sensitivity (Fig.~\ref{fig:features_scatter}):
 
-Observable road characteristics capture a meaningful but incomplete share of the cross-link variation; unobserved factors such as drainage quality, pavement condition, and maintenance history likely account for much of the remainder. These exploratory associations are subject to the generated-regressors caveat, as the dependent variable (link-level sensitivity) is itself estimated with varying precision across links.
+\begin{itemize}[nosep]
+    \item \textit{Number of lanes} emerges as the strongest observable correlate of precipitation resilience: links with more lanes are systematically less sensitive to precipitation. This association is consistent with the corridor-level finding that dual-carriageway and motorway segments outperform single-carriageway links, but the engineering interpretation extends beyond lane count per se. Multi-lane roads are typically built to higher design standards specified in the Design Manual for Roads and Bridges (DMRB), including steeper crossfall gradients (typically 2.5\% on motorways versus 1.5--2.0\% on single carriageways) that accelerate surface water runoff, larger-capacity drainage systems dimensioned for higher design flows, and wider hard shoulders that provide additional buffer capacity during intense rainfall. The lane-count variable therefore likely acts as a proxy for a bundle of unobserved drainage and geometric design characteristics that jointly determine a segment's capacity to shed surface water. An alternative explanation is that multi-lane roads simply have higher baseline speeds, providing greater headroom for proportional speed reduction without the same operational consequence. However, if this speed-baseline effect were the sole driver, the lane-count coefficient should lose significance once speed limit is controlled; the fact that lane count retains a strong independent association ($t = 5.41$) after conditioning on speed limit suggests that the drainage-design interpretation carries explanatory weight beyond the speed-baseline channel alone.
+    \item \textit{Gradient} shows a positive association with resilience: segments with steeper longitudinal gradients are less sensitive to rainfall. The study area lies within the flat, low-lying Cambridgeshire fenlands, where natural gravity drainage is limited. On near-flat segments, surface water accumulates more readily, reducing tyre--road friction and visibility through spray. Road segments with even modest longitudinal gradients benefit from enhanced gravitational runoff, reducing the depth and duration of surface water films. This finding is consistent with the hydraulic engineering principle that drainage flow velocity (and hence clearance rate) increases with gradient.
+    \item \textit{Speed limit} is positively associated with resilience, though this variable is highly collinear with lane count (higher speed limits are assigned to roads with higher design standards). After accounting for lane count, the independent contribution of speed limit is modest, suggesting that both variables capture the same underlying design-quality dimension.
+\end{itemize}
+
+Four further variables complete the specification:
+
+\begin{itemize}[nosep]
+    \item \textit{Mean daily traffic volume} is significantly associated with greater sensitivity ($t = -4.04$), likely reflecting that higher-flow links are more prone to congestion--weather compounding: when a road already operates near capacity, even a small rainfall-induced speed reduction triggers disproportionate delays through the non-linear speed--flow relationship.
+    \item \textit{Segment length} shows no significant association with precipitation sensitivity ($t = 0.23$), indicating that the physical length of a monitored segment does not systematically predict its hydrological vulnerability once other road characteristics are controlled.
+    \item \textit{Elevation and rural/urban classification} show no significant associations ($t = -0.48$ and $t = 0.95$, respectively), likely because these categories are too coarse to capture the micro-scale drainage and geometric features that determine surface water behaviour.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig_features_scatter.png}
+\caption{Road characteristics and precipitation sensitivity. Each point represents one of 201 road links. Left: number of lanes versus total precipitation coefficient; centre: gradient versus coefficient; right: speed limit versus coefficient. Dashed lines show linear fit. Links with more lanes, steeper gradients, and higher speed limits tend to exhibit lower (less negative) sensitivity, indicating greater precipitation resilience.}
+\label{fig:features_scatter}
+\end{figure}
+
+Table~\ref{tab:features} reports the Stage~2 regression results. The dependent variable is the estimated total precipitation sensitivity coefficient ($\hat{\beta}_{p,i}$) for each road link.
+
+\begin{table}[htbp]
+\centering
+\caption{Stage~2: road characteristic regression (dependent variable: precipitation sensitivity coefficient, $\hat{\beta}_{p,i}$)}
+\label{tab:features}
+\begin{tabular}{lrrr}
+\toprule
+Variable & Coefficient & Std.\ Error & $p$-value \\
+\midrule
+Number of lanes          & $0.00529^{***}$   & 0.000978  & $<$0.001  \\
+Speed limit (mph)        & $0.00117^{***}$   & 0.000420  & 0.006  \\
+Daily flow (vehicles)    & $-3.23 \times 10^{-7\,***}$ & $8.00 \times 10^{-8}$ & $<$0.001  \\
+Segment length (m)       & $5.90 \times 10^{-8}$       & $2.58 \times 10^{-7}$ & 0.819  \\
+Gradient (\%)            & $0.00287^{***}$   & 0.000997  & 0.004  \\
+Elevation (m)            & $-1.75 \times 10^{-5}$      & $3.64 \times 10^{-5}$ & 0.632  \\
+Rural (binary)           & $0.000941$        & 0.000990  & 0.343  \\
+Constant                 & $-0.0853^{***}$   & 0.0285    & 0.003  \\
+\midrule
+\textit{Model specification} \\
+Observations             & \multicolumn{2}{l}{199} \\
+$R^2$                    & \multicolumn{2}{l}{0.216} \\
+Adjusted $R^2$           & \multicolumn{2}{l}{0.187} \\
+$F$-statistic            & \multicolumn{2}{l}{8.13} \\
+Estimation               & \multicolumn{2}{l}{OLS with robust SE} \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$.} \\
+\multicolumn{4}{l}{\footnotesize Heteroskedasticity-robust standard errors.} \\
+\multicolumn{4}{l}{\footnotesize Dependent variable is the Stage~1 estimated coefficient; generated-regressors caveat applies.} \\
+\end{tabular}
+\end{table}
+
+In practical terms, the coefficients imply that, all else equal, adding one lane to a road is associated with a 0.53 percentage-point reduction in the speed penalty per \si{mm/hr} of rainfall, while a one percentage-point increase in longitudinal gradient is associated with a 0.29 percentage-point reduction. These magnitudes are directly relevant to engineering decisions: for a segment currently experiencing a 2\% speed penalty per \si{mm/hr}, upgrading from single to dual carriageway would, on the basis of this association, halve the estimated rainfall impact.
+
+Observable road characteristics capture a meaningful but incomplete share of the cross-link variation in precipitation sensitivity. Unobserved factors, particularly drainage system capacity, pavement porosity, and maintenance condition, may partially explain the residual heterogeneity. Crucially, this incompleteness has a practical implication: the high-sensitivity segments that cannot be explained by observable characteristics are precisely those where hidden drainage deficiencies or deteriorated pavement conditions are most likely, making them priority candidates for targeted engineering inspection. These exploratory associations are subject to the generated-regressors caveat, as the dependent variable (link-level sensitivity) is itself estimated with varying precision across links.
 
 
 %% ============================================================
@@ -386,14 +489,16 @@ Observable road characteristics capture a meaningful but incomplete share of the
 \subsection{Interpretation of Key Findings}
 \label{sec:disc:findings}
 
-Precipitation sensitivity varies by a factor of approximately 20 across segments within a single region. Aggregate estimates, such as the 8--14\% speed-at-capacity reductions reported by \citet{hranac2006empirical}, are insufficient for targeted adaptation at the local level. A local authority allocating drainage budgets on network-average vulnerability would systematically underinvest in the most sensitive segments and overinvest in resilient ones.
+Individual link-level precipitation sensitivity varies by a factor of approximately 20 (from $-$0.002 to $-$0.042 among the 189 negatively-signed links), compared with a factor of approximately 5 across corridor-level averages (Section~\ref{sec:results:spatial}), revealing substantial heterogeneity in the hydrological vulnerability of road infrastructure at both scales. Aggregate estimates, such as the 8--14\% speed-at-capacity reductions reported by \citet{hranac2006empirical}, are insufficient for targeted adaptation at the local level. A local authority allocating drainage investment on network-average vulnerability would systematically underinvest in the most sensitive segments and overinvest in resilient ones.
 
-The pattern is spatially coherent: corridors such as the A11 and A14 show near-zero precipitation sensitivity, while Cambourne Road, serving new developments, is far more vulnerable. An exploratory feature analysis (Section~\ref{sec:results:features}) suggests that the number of lanes is the strongest observable correlate of resilience, but observable characteristics capture only a fraction of the cross-link variation; drainage quality, pavement condition, and maintenance history likely account for much of the remainder.
+The pattern is spatially coherent: corridors such as the A11 and A14 show near-zero precipitation sensitivity, while Cambourne Road, serving new residential developments, is far more vulnerable. The Characterise stage (Section~\ref{sec:results:features}) identifies the number of lanes and gradient as the strongest observable correlates of precipitation resilience. Crucially, these associations have clear engineering interpretations: multi-lane roads are built to higher DMRB design standards with steeper crossfall and larger drainage capacity, while road gradient enhances gravitational surface water clearance, particularly relevant in the flat fenland study area. Observable characteristics, however, capture only part of the cross-link variation; unobserved factors such as drainage system condition, pavement porosity, and maintenance history may partially explain the residual heterogeneity.
+
+The estimated coefficients are therefore not pure meteorological quantities but \textit{hydro-infrastructure} metrics that capture the realised compound effect of rainfall intensity, drainage design, ageing, and maintenance on each segment's capacity to manage surface water. This reframing implies that drainage investment prioritisation can move beyond flood history or hydraulic modelling to a network-wide, empirically grounded screening tool: segments identified as highly sensitive are candidates for drainage deficiency, warranting targeted engineering inspection even in the absence of micro-scale drainage data.
 
 \subsection{Comparison with Prior Literature}
 \label{sec:disc:lit}
 
-The baseline estimate ($-$0.0111, or 1.1\% per \si{mm/hr}) sits at the lower end of the literature. The speed-at-capacity reductions of 8--14\% reported by \citet{hranac2006empirical} capture average effects during sustained rain, not the marginal effect per millimetre. The closest methodological comparator, \citet{becker2026rainfall}, used continuous radar precipitation with a log-linear specification and found speed reductions that vary by road type and rainfall intensity, with the present estimate falling within a comparable range. Their finding that multi-lane, high-speed roads experience proportionally larger speed reductions is consistent with the corridor-level results reported here, where the number of lanes emerges as the strongest observable correlate of sensitivity. Their observation that 130~km/h highways suffer relative speed reductions exceeding 30\% in heavy rain, compared with roughly 8\% on 50~km/h roads, parallels the contrast between the more sensitive single-carriageway links and the motorway corridors (A1(M), M11) in the present sample.
+The baseline estimate ($-$0.0111, or 1.1\% per \si{mm/hr}) sits at the lower end of the literature. The speed-at-capacity reductions of 8--14\% reported by \citet{hranac2006empirical} capture average effects during sustained rain, not the marginal effect per millimetre. The closest methodological comparator, \citet{becker2026rainfall}, used continuous radar precipitation with a log-linear specification and found speed reductions that vary by road type and rainfall intensity, with the present estimate falling within a comparable range. Across the full German road hierarchy, Becker et al.\ found that multi-lane, high-speed roads experienced proportionally \textit{larger} speed reductions than lower-speed roads ($\Delta v_{\text{rel}} = -26\%$ on multi-lane versus $-15\%$ on single-lane roads at 100~km/h), attributing this to the greater headroom for speed reduction on roads with higher baseline speeds. The present study, by contrast, finds that multi-lane segments within the SRN are \textit{less} sensitive per millimetre of rainfall, a finding that the Characterise stage (Section~\ref{sec:results:features}) links to the higher drainage design standards (crossfall, capacity) mandated for multi-lane roads under the DMRB. The apparent discrepancy likely reflects the difference in scope: Becker et al.\ compared across the full speed spectrum (50--130~km/h, including urban streets), whereas the present sample is confined to the SRN, where all roads meet a minimum design threshold. Within this narrower range, the drainage-quality advantage of higher-specification roads may dominate the headroom effect that drives Becker et al.'s cross-hierarchy result.
 
 Link-specific estimation reveals that within-network variation in precipitation sensitivity is at least as large as the between-study variation compiled by \citet{koetse2009impact}. For adaptation planning, the spatial distribution of sensitivity within a network matters more than the precision of any single aggregate estimate.
 
@@ -407,20 +512,33 @@ The framework is deployed as an open-source Streamlit platform. Users can explor
 \subsection{Policy Implications}
 \label{sec:disc:policy}
 
-The most immediate policy use is \textit{targeting}: drainage improvements, surface upgrades, and capacity enhancements can be directed at the specific segments identified as most sensitive, rather than distributed uniformly or allocated on flood history alone. Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction \citep{nh2024climate}. The open-source platform gives local authorities the evidence base needed for climate adaptation funding applications, such as those administered through the DARe network.
+The most immediate policy use is \textit{prioritising drainage investment}: surface upgrades and capacity enhancements can be directed at the specific segments identified as most hydrologically vulnerable, rather than distributed uniformly or allocated on flood history alone. Applying the scenario loss formula (Equation~\ref{eq:scenario}) to a 10~\si{mm/hr} storm scenario, Cambourne Road segments would experience an estimated speed reduction of approximately 33\%, while A11 segments would lose approximately 7\%, a fivefold difference that is invisible in network-average metrics but critical for operationalising climate resilience at the corridor level (Fig.~\ref{fig:scenario_map}).
 
-For example, the two Cambourne Road links (with coefficients of $-$0.039) serve a rapidly growing population catchment. If the exploratory association between lane count and sensitivity (Section~\ref{sec:results:features}) holds, infrastructure upgrades could meaningfully reduce the current speed penalty during moderate rainfall. At the corridor level, the A1's extreme within-corridor variation (s.d.~=~0.013) identifies it as a priority for segment-by-segment assessment to distinguish its most resilient from its most sensitive links.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/fig_scenario_loss_map.png}
+\caption{Predicted speed loss under a 10~\si{mm/hr} rainfall scenario. Colour scale ranges from green (minimal loss, $<$10\%) to red (severe loss, $>$25\%). The map translates per-millimetre coefficients into absolute scenario impacts that are directly interpretable by transport planners and drainage engineers.}
+\label{fig:scenario_map}
+\end{figure}
+
+Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction \citep{nh2024climate}. The open-source platform gives local authorities the evidence base needed to inform adaptation planning and prioritise climate resilience funding applications, such as those administered through the DARe network.
+
+For example, the two Cambourne Road links (with coefficients of $-$0.039) serve a rapidly growing population catchment. The Characterise stage (Section~\ref{sec:results:features}) suggests that their single-carriageway design, with lower crossfall gradient and smaller drainage capacity than dual-carriageway alternatives, may partially explain their extreme sensitivity; if so, targeted drainage upgrades could meaningfully reduce the current speed penalty during moderate rainfall. At the corridor level, the A1's extreme within-corridor variation (s.d.~=~0.013) identifies it as a priority for segment-by-segment engineering assessment to distinguish its most resilient from its most vulnerable links.
+
+The scenario loss formula (Equation~\ref{eq:scenario}) also provides a natural bridge to forward-looking climate risk assessment. By substituting the rainfall intensity $R$ with design storm values projected under future climate scenarios, such as UKCP18 high-emission projections for the 2080s \citep{dft2024rea}, planners can estimate how link-level speed losses may evolve as extreme rainfall events become more frequent and intense. The open-source platform already accepts user-specified rainfall intensities, enabling this extension without re-estimation of the underlying model. This positions the tool not only as a diagnostic instrument for current vulnerability but also as a screening tool for future climate adaptation priorities.
 
 \subsection{Robustness Checks}
 \label{sec:disc:robust}
 
-Three checks assess the sensitivity of the main results to modelling choices.
+Four checks assess the sensitivity of the main results to modelling choices.
 
 \textit{Excluding traffic volume.} Because speed and volume are jointly determined (Section~\ref{sec:method:controls}), including volume as a control could absorb part of the rainfall effect that operates through reduced demand. Re-estimating the Gamma GLM without the volume variable yields precipitation coefficients that preserve the same sign and corridor-level ranking. The baseline coefficient shifts from $-$0.0111 to approximately $-$0.0106, a 4.3\% attenuation consistent with the demand-reduction channel: when volume is omitted, part of the speed recovery associated with fewer vehicles during rain is attributed to the precipitation variable, pulling the coefficient toward zero. The corridor-level pattern (A11 most resilient, Cambourne Road most sensitive) is unchanged.
 
 \textit{Peak hours only.} Restricting the estimation sample to weekday peak hours (07:00--09:00 and 16:00--19:00) tests whether the results are driven by off-peak observations with atypical speed--weather relationships. The peak-hour baseline precipitation coefficient ($-$0.0181) is larger in magnitude than the full-sample estimate ($-$0.0111), consistent with precipitation having a stronger marginal effect when traffic is already near capacity. The rank ordering of corridors by sensitivity is preserved, confirming that the link-level heterogeneity pattern is not an artefact of time-of-day composition.
 
 \textit{Alternative distributional specification.} As noted in Section~\ref{sec:method:rationale}, an OLS model on untransformed speed was estimated as an alternative. The OLS precipitation coefficient ($-$0.559~\si{mph} per \si{mm/hr}) confirms the direction and statistical significance of the Gamma GLM estimate. At the sample mean speed of 54.3~\si{mph}, this implies a 1.0\% reduction per \si{mm/hr}, consistent with the Gamma GLM's 1.1\% estimate. The OLS specification achieves $R^2 = 0.696$ but imposes a constant absolute (rather than proportional) rainfall effect and does not accommodate the mean--variance relationship in the speed data.
+
+\textit{Extreme rainfall subsample.} To test whether the estimated sensitivities are amplified during intense precipitation, the scenario most relevant to climate adaptation, the model was re-estimated on the subsample of hours with precipitation exceeding 5~\si{mm/hr}, the UK Met Office threshold for heavy rainfall. Only 68,679 weekday hours (1.3\% of the full sample) exceed this threshold; after the GLM drops observations with sparse link--hour cells due to collinearity, the estimation sample is $N = 7{,}453$. The reference-link baseline coefficient increases in magnitude from $-$0.011 to $-$0.129 (SE~=~0.002, $z = -74.3$), an order-of-magnitude amplification consistent with the physical expectation that drainage systems approach capacity during heavy rainfall, producing a non-linear increase in surface water depth. The link-specific interaction terms shift proportionally, so the cross-link ranking structure is qualitatively preserved even as absolute magnitudes change. Because the extreme subsample retains only 1.3\% of weekday observations, these estimates are necessarily less precise at the individual-link level; nonetheless, the direction and scale of the amplification confirm that the hydrological vulnerability identified in the full sample is \textit{further exacerbated} under the extreme rainfall scenarios projected by UK climate models.
 
 Table~\ref{tab:robust} summarises the control variable coefficients across specifications. Table~\ref{tab:corridor_robust} reports the corridor-level mean precipitation sensitivity under each Gamma GLM specification. The corridor ranking is identical across all three specifications: Cambourne Road is the most sensitive and A11 the most resilient regardless of whether volume is included or the sample is restricted to peak hours. The core finding, that link-level precipitation sensitivity varies by a factor of approximately 20 and clusters by corridor with clear spatial patterns, is robust.
 
@@ -490,14 +608,22 @@ A11 & 13 & $-$0.0075 & $-$0.0070 & $-$0.0145 & No \\
 \subsection{Limitations}
 \label{sec:disc:limits}
 
-The study area is limited to Cambridgeshire and Peterborough; while the methodology transfers, the specific coefficients reflect local conditions and should not be applied directly elsewhere. Although traffic volume is included as a control to account for the speed--flow relationship, the Gamma GLM estimates a static hourly effect and does not model the temporal dynamics of how congestion builds and dissipates during a storm event (e.g., queue formation and clearance).
+The study area is limited to Cambridgeshire and Peterborough; while the methodology transfers, the specific coefficients reflect local conditions, particularly the flat, low-lying fenland terrain, and should not be applied directly elsewhere. Although traffic volume is included as a control to account for the speed--flow relationship, the Gamma GLM estimates a static hourly effect and does not model the temporal dynamics of how congestion builds and dissipates during a storm event (e.g., queue formation and clearance). This is by design: the static specification deliberately isolates the supply-side infrastructure penalty from demand-side congestion dynamics, which is the parameter most relevant for drainage investment prioritisation.
 
-On the data side, nearest-station weather matching may introduce measurement error for links far from monitoring stations; radar-based precipitation data would improve spatial precision. Rainfall-induced route switching (drivers avoiding sensitive segments) could attenuate the estimated coefficients on those segments, so the reported sensitivities may represent lower bounds of the true meteorological effect.
+A fundamental data limitation is that ``precipitation'' as measured at weather stations is a proxy variable: the quantity that directly affects driving conditions is the depth of surface water on the road, which depends on the interaction between rainfall intensity and the segment's drainage capacity, pavement permeability, and crossfall geometry. The estimated coefficients therefore capture this compound effect rather than a pure meteorological response. While this limits mechanistic decomposition, it enhances practical relevance: the coefficients directly identify the segments where the rainfall--drainage interaction produces the largest speed penalties, which is precisely the information needed to prioritise adaptation investment.
+
+On the data side, nearest-station weather matching may introduce measurement error for links far from monitoring stations; radar-based precipitation data would improve spatial precision, though the resulting measurement error likely attenuates the coefficients towards zero, making the reported sensitivities conservative lower bounds of the true meteorological effect.
+
+A deliberate methodological boundary of this study is the exclusion of direct tailpipe emission estimation. Translating link-level speed penalties into emission increments requires granular, time-varying data on fleet composition, vehicle age, and fuel types---parameters that are not publicly available at the segment level. Introducing unverified assumptions regarding these fleet characteristics would risk contaminating the empirically grounded speed estimates with structural emission-modelling errors. This study therefore provides the most spatially disaggregated first-order effect (the supply-side speed penalty) as a foundational input that local authorities can integrate with proprietary fleet data in downstream models such as COPERT or HBEFA when emission quantification is required.
+
+A further consideration is spatial spillover within the road network. When surface water accumulation forces lane closures or speed reductions on a given segment, traffic may divert to parallel routes, increasing volumes and potentially degrading speeds on those alternative links. This mechanism could attenuate the estimated precipitation coefficient on the affected segment (fewer vehicles observed during heavy rain) while inflating the coefficient on receiving segments (increased congestion misattributed to weather). However, because the model conditions on observed hourly traffic volume, the precipitation coefficient captures the speed effect of rainfall at any given level of demand. Provided that rainfall-induced diversion scales approximately in proportion to rainfall intensity across links, the relative ranking of link-level sensitivity is unlikely to be systematically distorted. Formally incorporating spatial dependence through a spatial lag or spatial error model would require defining a network adjacency matrix and is deferred to future work.
 
 \subsection{Future Research}
 \label{sec:disc:future}
 
 The immediate next step is to apply the framework to the local road network in Cambridgeshire and Peterborough using County Council data, comparing SRN and local road sensitivity and extending coverage to the road classes that carry most daily trips. Extending the framework to other weather variables (wind, fog, snow) that affect the SRN would broaden the climate risk profile beyond precipitation. A complementary extension is network vulnerability analysis: betweenness centrality under normal and extreme-weather scenarios would identify links whose rainfall degradation cascades into network-wide journey time losses, connecting these link-level estimates to system-level climate risk assessment \citep{ganin2017resilience}.
+
+The link-level speed losses estimated here can also serve as inputs to downstream environmental impact models. Speed-dependent emission factors from established frameworks such as COPERT or HBEFA, combined with the predicted speed reductions under rainfall scenarios, would allow estimation of the additional CO$_2$ and pollutant emissions attributable to precipitation-induced congestion on each segment. This analytical chain, from spatial vulnerability identification to emissions quantification, would connect the present framework to the broader transport--environment policy agenda, though constructing such coupled models is beyond the scope of this paper.
 
 
 %% ============================================================
@@ -506,9 +632,9 @@ The immediate next step is to apply the framework to the local road network in C
 \section{Conclusion}
 \label{sec:conclusion}
 
-This paper posed two questions about precipitation sensitivity on the UK Strategic Road Network. The answers are clear: sensitivity varies by a factor of approximately 20 across road links within a single region, with corridor-level spatial patterns that distinguish more resilient from more sensitive segments; and producing this evidence requires only public data and a standard laptop.
+This paper posed three questions about the hydrological vulnerability of the UK Strategic Road Network to precipitation. The answers are clear: individual link-level sensitivity varies by a factor of approximately 20 (corridor averages by a factor of 5) within a single region, with corridor-level spatial patterns that distinguish resilient from vulnerable segments; observable road characteristics, particularly lane count and gradient (which proxy for drainage design standards), explain a meaningful share of the cross-link heterogeneity; and producing this evidence requires only public data and a standard laptop. Together, these findings demonstrate that rainfall vulnerability is not a uniform meteorological exposure but a heterogeneous property shaped by design standards and physical geometry.
 
-Two broader implications follow. First, network-average vulnerability metrics, which currently inform most adaptation budgets, are too coarse for efficient investment allocation. Link-level coefficients make it possible to direct scarce resources at the segments where each pound spent yields the largest reduction in rainfall-induced delay. Second, the methodological barrier to link-level analysis is lower than the dominance of simulation-based approaches suggests. A Gamma GLM with road link fixed effects and interaction terms is sufficient to recover interpretable sensitivity estimates that can inform adaptation planning, without microsimulation or high-performance computing. The coefficients themselves do not simulate the effect of specific policies (e.g., drainage upgrades); rather, they provide the empirical evidence base on which such investment decisions can be grounded.
+Three broader implications follow for transport--environment policy. First, network-average vulnerability metrics, which currently inform most adaptation budgets, are too coarse for efficient investment allocation. Link-level coefficients make it possible to prioritise drainage investment at the segments where each pound spent yields the largest reduction in rainfall-induced delay. Second, the Characterise stage demonstrates that observable road attributes, particularly lane count and gradient (which proxy for drainage design standards), explain a substantial share of the heterogeneity, providing testable hypotheses for targeted engineering inspection of high-sensitivity segments. Third, the methodological barrier to link-level analysis is lower than the dominance of simulation-based approaches suggests. A Gamma GLM with road link fixed effects and interaction terms is sufficient to recover interpretable sensitivity estimates without microsimulation or high-performance computing, putting evidence generation within reach of local authorities who lack specialised modelling resources. The coefficients themselves do not simulate the effect of specific interventions (e.g., drainage upgrades); rather, they provide the spatially disaggregated evidence base on which such investment decisions can be grounded, helping to operationalise climate resilience at the local authority level.
 
 The open-source platform and codebase are released to enable replication across any UK road network with WebTRIS coverage.
 

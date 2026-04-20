@@ -1,0 +1,596 @@
+{
+  "title": "Link-Level Precipitation Sensitivity of the UK Strategic Road Network: An Empirical Framework Using Open Data",
+  "source_tex": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper_v2/main.tex",
+  "source_bib": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper_v2/references.bib",
+  "block_count": 147,
+  "blocks": [
+    {
+      "type": "p",
+      "html": "{frontmatter}"
+    },
+    {
+      "type": "p",
+      "html": "{Link-Level Precipitation Sensitivity of the UK Strategic Road Network: An Empirical Framework Using Open Data}"
+    },
+    {
+      "type": "p",
+      "html": "[cam]{Yibin Li} [cam]{Li Wan{cor1}} [cor1]{Corresponding author} {lw432@cam.ac.uk}"
+    },
+    {
+      "type": "p",
+      "html": "[cam]{organization={Department of Land Economy, University of Cambridge}, city={Cambridge}, postcode={CB3 9EP}, country={United Kingdom}}"
+    },
+    {
+      "type": "h3",
+      "text": "Abstract"
+    },
+    {
+      "type": "p",
+      "html": "As climate projections indicate more intense rainfall, understanding the precipitation resilience of road infrastructure is critical. Yet existing precipitation\u2013speed estimates are reported as network-level averages, masking the link-level hydrological vulnerability needed for targeted drainage investment. This paper develops a three-stage framework (Estimate, Characterise, Map) to quantify, explain, and visualise link-level precipitation sensitivity on the UK Strategic Road Network. A Gamma generalised linear model with link-specific precipitation interactions, fitted to 5,050,333 weekday hourly speed observations across 460 monitored links in Cambridgeshire and Peterborough (2022\u20132024), recovers 201 link-specific sensitivity coefficients. By controlling for traffic volume, the model isolates the supply-side speed penalty, capturing the compound effect of rainfall intensity and unobserved drainage capacity; an additional millimetre per hour reduces speed by approximately 1.1% at the reference link. Corridor averages vary by a factor of five: high-standard dual carriageways (A11, A14) show minimal reductions (0.8\u20130.9% per {mm/hr}), while single-carriageway connectors approach 4%. A cross-sectional regression links these coefficients to observable road attributes; the number of lanes and road gradient emerge as the strongest correlates of resilience, consistent with crossfall design and gravitational runoff expectations. Crucially, the entire analysis relies solely on publicly available traffic and weather data and can be replicated by any stakeholder or researcher, circumventing the high costs and limited transferability of agent-based microsimulation. The coefficients are deployed via an open-source interactive platform that accepts user-specified rainfall intensities, enabling both current vulnerability diagnosis and forward-looking climate risk screening for adaptation prioritisation by any UK local authority with sensor coverage."
+    },
+    {
+      "type": "p",
+      "html": "{keyword} precipitation sensitivity hydrological vulnerability precipitation resilience Gamma GLM Strategic Road Network drainage adaptation open-source platform {keyword}"
+    },
+    {
+      "type": "p",
+      "html": "{frontmatter} {2}"
+    },
+    {
+      "type": "h2",
+      "text": "Introduction"
+    },
+    {
+      "type": "p",
+      "html": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres [<a class=\"cite-link\" data-key=\"nh2024climate\" onclick=\"onCitationClick('nh2024climate'); event.preventDefault(); return false;\">nh2024climate</a>], yet its adaptive capacity to changing climate conditions is under strain. As climate projections indicate more frequent and intense rainfall events across the United Kingdom [<a class=\"cite-link\" data-key=\"dft2024rea\" onclick=\"onCitationClick('dft2024rea'); event.preventDefault(); return false;\">dft2024rea</a>, <a class=\"cite-link\" data-key=\"sias2025roadways\" onclick=\"onCitationClick('sias2025roadways'); event.preventDefault(); return false;\">sias2025roadways</a>], and 36% of the network already exhibits significant susceptibility to flooding [<a class=\"cite-link\" data-key=\"orr2024annual\" onclick=\"onCitationClick('orr2024annual'); event.preventDefault(); return false;\">orr2024annual</a>], identifying which segments of this critical infrastructure are most vulnerable to rainfall stress has become an urgent infrastructure adaptation challenge. Rainfall reduces traffic speeds, increases journey-time variability, and elevates crash risk [<a class=\"cite-link\" data-key=\"koetse2009impact\" onclick=\"onCitationClick('koetse2009impact'); event.preventDefault(); return false;\">koetse2009impact</a>, <a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>]. The mechanisms are both direct and indirect: surface water accumulation reduces tyre\u2013road friction and generates spray that impairs visibility, while localised pluvial flooding can force lane closures or route diversions [<a class=\"cite-link\" data-key=\"pregnolato2017depth\" onclick=\"onCitationClick('pregnolato2017depth'); event.preventDefault(); return false;\">pregnolato2017depth</a>]. The severity of these effects depends not only on rainfall intensity but also on the road's capacity to shed water, a function of crossfall gradient, drainage system design, and pavement surface condition."
+    },
+    {
+      "type": "p",
+      "html": "Despite this policy urgency, most existing estimates of precipitation effects on traffic speed are reported as network-wide or corridor-level averages. The FHWA study documented free-flow speed reductions of up to 9% and speed-at-capacity reductions of 8\u201314% during rain across three US metropolitan areas [<a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>]. Subsequent work has refined these estimates using radar-based precipitation data [<a class=\"cite-link\" data-key=\"becker2026rainfall\" onclick=\"onCitationClick('becker2026rainfall'); event.preventDefault(); return false;\">becker2026rainfall</a>], floating car data from ride-hailing platforms [<a class=\"cite-link\" data-key=\"bi2022weather\" onclick=\"onCitationClick('bi2022weather'); event.preventDefault(); return false;\">bi2022weather</a>], and urban road-section analysis [<a class=\"cite-link\" data-key=\"cai2016rainfall\" onclick=\"onCitationClick('cai2016rainfall'); event.preventDefault(); return false;\">cai2016rainfall</a>]. These aggregate benchmarks, however, mask what matters most for adaptation planning: individual road segments respond very differently to the same rainfall event. Knowing which segments are vulnerable, and by how much, is essential for targeting investment, yet link-level evidence is largely absent from the literature."
+    },
+    {
+      "type": "p",
+      "html": "Research on road climate resilience varies not only in spatial scale but also in analytical approach. Simulation-based methods, particularly agent-based microsimulation [<a class=\"cite-link\" data-key=\"huang2022overview\" onclick=\"onCitationClick('huang2022overview'); event.preventDefault(); return false;\">huang2022overview</a>, <a class=\"cite-link\" data-key=\"he2026flood\" onclick=\"onCitationClick('he2026flood'); event.preventDefault(); return false;\">he2026flood</a>] and coupled flood-traffic models [<a class=\"cite-link\" data-key=\"pregnolato2017depth\" onclick=\"onCitationClick('pregnolato2017depth'); event.preventDefault(); return false;\">pregnolato2017depth</a>, <a class=\"cite-link\" data-key=\"farahmand2024integrating\" onclick=\"onCitationClick('farahmand2024integrating'); event.preventDefault(); return false;\">farahmand2024integrating</a>], can capture counterfactual scenarios and model traffic dynamics under different weather conditions. However, building such models requires origin\u2013destination matrices, detailed behavioural calibration, and often high-performance computing infrastructure. The development cost is substantial, and once calibrated for a specific city or region, the models are difficult to transfer elsewhere. As a result, these tools remain largely confined to well-resourced research groups and are not routinely available to the local transport authorities who most need practical climate adaptation evidence. Local authorities tasked with climate adaptation are thus caught in an evidence gap: aggregate traffic statistics are too coarse for targeted investment, while high-fidelity simulation tools are too resource-intensive for routine network-wide screening."
+    },
+    {
+      "type": "p",
+      "html": "Three questions guide the analysis:"
+    },
+    {
+      "type": "p",
+      "html": "To address these questions, we propose a three-stage framework (Estimate, Characterise, Map). First, a Gamma GLM with link-specific precipitation interactions is fitted to a large hourly panel to recover marginal speed penalties for each segment, isolating supply-side effects by conditioning on traffic volume. Second, these coefficients are linked to observable road attributes to generate engineering hypotheses about the determinants of heterogeneous precipitation sensitivity. Third, the results are spatially mapped and deployed as an open-source platform that requires only public data and standard computing resources."
+    },
+    {
+      "type": "p",
+      "html": "The analysis yields what is, to our knowledge, the first set of link-level precipitation sensitivity coefficients for the UK SRN. The estimated speed reduction per millimetre of rainfall ranges from under 1% on the most resilient corridors (A11, A14) to approximately 4% on the most sensitive (Cambourne Road), with clear corridor-level spatial patterns (Question 1). The number of lanes and road gradient emerge as the strongest correlates, consistent with the expectation that drainage design standards and gravitational runoff capacity drive precipitation resilience (Question 2). The entire analysis uses only publicly available data (National Highways WebTRIS and Met Office CEDA Archive), requires no microsimulation or high-performance computing, and is packaged as an open-source platform that any local authority can deploy for their own network (Question 3). This directly addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure [<a class=\"cite-link\" data-key=\"dft2024rea\" onclick=\"onCitationClick('dft2024rea'); event.preventDefault(); return false;\">dft2024rea</a>]."
+    },
+    {
+      "type": "h2",
+      "text": "Literature Review"
+    },
+    {
+      "type": "h3",
+      "text": "Precipitation Effects on Traffic Performance"
+    },
+    {
+      "type": "p",
+      "html": "Research on rainfall and traffic performance has evolved along two distinct axes: the empirical estimation of speed penalties and the development of resilience assessment tools. [<a class=\"cite-link\" data-key=\"koetse2009impact\" onclick=\"onCitationClick('koetse2009impact'); event.preventDefault(); return false;\">koetse2009impact</a>] synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance. [<a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>] quantified the relationship for US highways, reporting free-flow speed reductions of up to 9% and speed-at-capacity reductions of 8\u201314% during rainfall, estimates that remain the most widely cited benchmarks in the field."
+    },
+    {
+      "type": "p",
+      "html": "Subsequent work extended these findings in scale and data quality. In Hong Kong, [<a class=\"cite-link\" data-key=\"cai2016rainfall\" onclick=\"onCitationClick('cai2016rainfall'); event.preventDefault(); return false;\">cai2016rainfall</a>] showed that precipitation increases not only average delays but also journey-time unreliability, though their city-level analysis could not identify segment-specific effects. Across multiple Chinese cities, [<a class=\"cite-link\" data-key=\"bi2022weather\" onclick=\"onCitationClick('bi2022weather'); event.preventDefault(); return false;\">bi2022weather</a>] found that weather-induced speed reductions vary by road type and time of day, but pooled estimation precluded recovery of individual link coefficients. In the largest-scale study to date, [<a class=\"cite-link\" data-key=\"becker2026rainfall\" onclick=\"onCitationClick('becker2026rainfall'); event.preventDefault(); return false;\">becker2026rainfall</a>] combined radar precipitation with floating car data across 1.5 million German road sections and found that high-speed, multi-lane roads experienced proportionally larger speed reductions than lower-capacity roads. Even this study, however, reported segment-type averages rather than individual link estimates."
+    },
+    {
+      "type": "p",
+      "html": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) [<a class=\"cite-link\" data-key=\"koetse2009impact\" onclick=\"onCitationClick('koetse2009impact'); event.preventDefault(); return false;\">koetse2009impact</a>, <a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>, <a class=\"cite-link\" data-key=\"bi2022weather\" onclick=\"onCitationClick('bi2022weather'); event.preventDefault(); return false;\">bi2022weather</a>]. How individual segments respond to the same rainfall remains unquantified. The closest attempt at segment-level analysis is [<a class=\"cite-link\" data-key=\"gao2024resilience\" onclick=\"onCitationClick('gao2024resilience'); event.preventDefault(); return false;\">gao2024resilience</a>], who clustered Harbin road links by resilience patterns using environmental variables. Their approach, however, pursued a different objective: it classified links by resilience pattern rather than estimating individual marginal coefficients via regression. The reliance on a binary speed threshold, non-public data, and the absence of volume, temporal, and disruption controls limits direct comparison with the continuous regression estimates produced here."
+    },
+    {
+      "type": "h3",
+      "text": "Transport Climate Resilience: Methods and Gaps"
+    },
+    {
+      "type": "p",
+      "html": "Transport climate resilience research spans qualitative risk reviews [<a class=\"cite-link\" data-key=\"wang2020climate\" onclick=\"onCitationClick('wang2020climate'); event.preventDefault(); return false;\">wang2020climate</a>] and quantitative resilience methodologies [<a class=\"cite-link\" data-key=\"calvert2018methodology\" onclick=\"onCitationClick('calvert2018methodology'); event.preventDefault(); return false;\">calvert2018methodology</a>], as well as simulation-based approaches. [<a class=\"cite-link\" data-key=\"ganin2017resilience\" onclick=\"onCitationClick('ganin2017resilience'); event.preventDefault(); return false;\">ganin2017resilience</a>] used topological analysis to demonstrate resilience\u2013efficiency trade-offs in transport networks, while [<a class=\"cite-link\" data-key=\"bergantino2024assessing\" onclick=\"onCitationClick('bergantino2024assessing'); event.preventDefault(); return false;\">bergantino2024assessing</a>] identified data availability and methodological accessibility as persistent barriers to widespread adoption of empirical resilience assessment."
+    },
+    {
+      "type": "p",
+      "html": "Agent-based microsimulation and coupled flood-traffic models offer detailed disruption modelling but demand origin\u2013destination matrices, calibrated behavioural parameters, and computing infrastructure beyond most local authorities [<a class=\"cite-link\" data-key=\"huang2022overview\" onclick=\"onCitationClick('huang2022overview'); event.preventDefault(); return false;\">huang2022overview</a>, <a class=\"cite-link\" data-key=\"pregnolato2017depth\" onclick=\"onCitationClick('pregnolato2017depth'); event.preventDefault(); return false;\">pregnolato2017depth</a>]. Coupling flood inundation (e.g., CityCAT) with traffic assignment (e.g., MATSim) adds further complexity [<a class=\"cite-link\" data-key=\"pregnolato2017depth\" onclick=\"onCitationClick('pregnolato2017depth'); event.preventDefault(); return false;\">pregnolato2017depth</a>, <a class=\"cite-link\" data-key=\"he2026flood\" onclick=\"onCitationClick('he2026flood'); event.preventDefault(); return false;\">he2026flood</a>, <a class=\"cite-link\" data-key=\"farahmand2024integrating\" onclick=\"onCitationClick('farahmand2024integrating'); event.preventDefault(); return false;\">farahmand2024integrating</a>]. These tools suit scenario modelling in specific cities but are poorly suited to rapid screening across large networks."
+    },
+    {
+      "type": "p",
+      "html": "The resulting gap has practical consequences. The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging [<a class=\"cite-link\" data-key=\"dft2024rea\" onclick=\"onCitationClick('dft2024rea'); event.preventDefault(); return false;\">dft2024rea</a>]. Investment frameworks such as the real options approach of [<a class=\"cite-link\" data-key=\"zare2025risk\" onclick=\"onCitationClick('zare2025risk'); event.preventDefault(); return false;\">zare2025risk</a>] depend on spatially disaggregated vulnerability evidence that the current literature does not provide."
+    },
+    {
+      "type": "h3",
+      "text": "Road Drainage Design and Surface Water Management"
+    },
+    {
+      "type": "p",
+      "html": "The traffic speed literature reviewed above treats road infrastructure as a homogeneous entity, estimating average precipitation effects without engaging with the physical processes that mediate them. In practice, the speed reduction observed during rainfall reflects a chain of hydrological and engineering interactions: precipitation falls on the road surface, accumulates as a water film whose depth depends on rainfall intensity, crossfall gradient, pavement porosity, and drainage system capacity, and this water film degrades tyre\u2013road friction and generates spray that impairs visibility [<a class=\"cite-link\" data-key=\"pregnolato2017depth\" onclick=\"onCitationClick('pregnolato2017depth'); event.preventDefault(); return false;\">pregnolato2017depth</a>]. The UK Design Manual for Roads and Bridges (DMRB) specifies drainage design standards that vary by road class: motorways and high-speed dual carriageways are designed with steeper crossfall (typically 2.5%), wider carriageways that provide additional conveyance capacity, and drainage systems dimensioned for higher return-period storms than single-carriageway A-roads. A substantial share of the SRN's drainage assets pre-dates the most recent climate change allowances, meaning that parts of the network operate under design assumptions that no longer reflect current or projected rainfall intensities [<a class=\"cite-link\" data-key=\"nh2024climate\" onclick=\"onCitationClick('nh2024climate'); event.preventDefault(); return false;\">nh2024climate</a>, <a class=\"cite-link\" data-key=\"orr2024annual\" onclick=\"onCitationClick('orr2024annual'); event.preventDefault(); return false;\">orr2024annual</a>]."
+    },
+    {
+      "type": "p",
+      "html": "This engineering context implies that the precipitation sensitivity of any given road segment is not solely a function of rainfall intensity; it reflects the <em>compound interaction</em> between the meteorological input and the segment's physical capacity to manage surface water. Quantifying this compound effect at the link level requires the kind of spatially disaggregated evidence that the traffic speed literature has not yet produced."
+    },
+    {
+      "type": "p",
+      "html": "Two gaps therefore stand out: precipitation\u2013speed relationships are reported almost exclusively as spatial averages, obscuring which segments are most hydrologically vulnerable; and the tools that could produce link-level evidence are too resource-intensive for routine use. The present study addresses both by estimating a Gamma GLM with link-specific precipitation interactions on a large hourly panel, recovering individual sensitivity coefficients for 201 road segments using only public data and a standard laptop. An open-source platform extends the analysis to non-technical users in local transport authorities."
+    },
+    {
+      "type": "h2",
+      "text": "Data and Study Area"
+    },
+    {
+      "type": "h3",
+      "text": "Study Area"
+    },
+    {
+      "type": "p",
+      "html": "The study covers the Strategic Road Network within and around Cambridgeshire and Peterborough, United Kingdom (Fig. ): segments of the A1(M), A1, A11, A14, A14(M), A428, A47, M11, and Cambourne Road, totalling 460 links monitored by National Highways' WebTRIS system. Road types range from three-lane motorways (A1(M), M11) to single-carriageway connectors (Cambourne Road). This area was selected for the availability of collocated traffic, weather, and disruption data, and because the region's flat, low-lying terrain amplifies surface water accumulation, making rainfall sensitivity a direct concern for local transport planning."
+    },
+    {
+      "type": "h3",
+      "text": "Data Sources"
+    },
+    {
+      "type": "p",
+      "html": "The analysis integrates four data sources, all publicly available:"
+    },
+    {
+      "type": "p",
+      "html": "<em>Traffic data.</em> Hourly average speed ({mph}) and total traffic volume (vehicles per hour) for each of the 460 links are obtained from National Highways' Web-based Transport Information System (WebTRIS). The study period spans January 2022 to December 2024. Observations are restricted to weekdays (Monday\u2013Friday) to focus on commuting and commercial traffic patterns, yielding 5,050,333 hourly records after quality filtering (removal of zero-speed observations and sensor malfunctions)."
+    },
+    {
+      "type": "p",
+      "html": "<em>Weather data.</em> Hourly temperature ({}) and precipitation ({mm}) are sourced from the Met Office CEDA Archive. Weather stations in the study area (Cambridge NIAB, Monks Wood, Wittering, Cambridge Botanic Garden) are matched to road links using nearest-station assignment. A binary indicator for sub-zero temperatures in the preceding 6 hours is constructed to capture frost and ice effects."
+    },
+    {
+      "type": "p",
+      "html": "<em>Disruption data.</em> Hourly indicators for traffic accidents, roadworks, and special events are obtained from Alchera Technologies via the National Highways data portal. These indicators isolate the precipitation effect from incident-related speed variation."
+    },
+    {
+      "type": "p",
+      "html": "<em>Calendar variables.</em> Binary indicators for school term, university term, and bank holidays are constructed from official schedules published by Cambridgeshire County Council and the University of Cambridge."
+    },
+    {
+      "type": "h3",
+      "text": "Descriptive Statistics"
+    },
+    {
+      "type": "p",
+      "html": "Table presents summary statistics for the estimation sample. The mean speed across all links and hours is 54.3 {mph} (s.d. = 15.8), reflecting the mix of motorway and A-road segments. Hourly precipitation averages 0.12 {mm} but is heavily right-skewed (max = 28.4 {mm/hr}), consistent with the intermittent nature of rainfall. Approximately 12% of hours record non-zero precipitation."
+    },
+    {
+      "type": "h2",
+      "text": "Methodology"
+    },
+    {
+      "type": "p",
+      "html": "Fig. summarises the three-stage framework: estimation of link-specific precipitation coefficients via a Gamma GLM (Stage 1: Estimate), exploratory characterisation of which road attributes correlate with hydrological vulnerability (Stage 2: Characterise), and spatial mapping with platform deployment (Stage 3: Map)."
+    },
+    {
+      "type": "h3",
+      "text": "Conceptual Framework"
+    },
+    {
+      "type": "p",
+      "html": "The analytical approach rests on a conceptual model of how precipitation translates into observed speed reductions (Fig. ). A rainfall event deposits water on the road surface; the resulting water film depth depends on rainfall intensity and on the segment's <em>supply-side</em> drainage capacity (crossfall gradient, pavement porosity, drainage system design). The water film degrades tyre\u2013road friction and generates spray that impairs visibility, triggering behavioural responses from drivers (speed reduction, increased headway) and, in extreme cases, lane or road closures. These effects are captured by the WebTRIS sensors as hourly average speed reductions. Simultaneously, rainfall may reduce <em>demand-side</em> travel volumes as some drivers postpone or cancel trips. The Gamma GLM separates these channels by conditioning on observed traffic volume, isolating the supply-side speed effect, which is the parameter most relevant to infrastructure adaptation planning."
+    },
+    {
+      "type": "p",
+      "html": "Because micro-scale engineering data (drainage pipe capacity, pavement permeability, crossfall angle) are not publicly available at the link level, the estimated precipitation coefficient for each segment reflects both the meteorological input and the segment's unobserved drainage capacity. Observable road characteristics are therefore used as proxies in the Characterise stage (Section )."
+    },
+    {
+      "type": "h3",
+      "text": "Model Selection Rationale"
+    },
+    {
+      "type": "p",
+      "html": "Traffic performance under adverse weather has been measured by average speed [<a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>, <a class=\"cite-link\" data-key=\"becker2026rainfall\" onclick=\"onCitationClick('becker2026rainfall'); event.preventDefault(); return false;\">becker2026rainfall</a>], travel time index [<a class=\"cite-link\" data-key=\"bi2022weather\" onclick=\"onCitationClick('bi2022weather'); event.preventDefault(); return false;\">bi2022weather</a>], journey-time reliability [<a class=\"cite-link\" data-key=\"calvert2018methodology\" onclick=\"onCitationClick('calvert2018methodology'); event.preventDefault(); return false;\">calvert2018methodology</a>], and composite resilience scores [<a class=\"cite-link\" data-key=\"gao2024resilience\" onclick=\"onCitationClick('gao2024resilience'); event.preventDefault(); return false;\">gao2024resilience</a>]. Hourly average speed is used because it is the quantity directly observed by WebTRIS, requiring no free-flow benchmarks or disruption thresholds [<a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>]. A continuous speed variable also suits Gamma GLM estimation (threshold-based scores require dichotomisation that discards information; ), and log-speed coefficients have a transparent percentage interpretation that aids communication to policy audiences."
+    },
+    {
+      "type": "p",
+      "html": "Speed and volume are jointly determined through the speed\u2013flow relationship, and rainfall may reduce both demand and speeds [<a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>, <a class=\"cite-link\" data-key=\"becker2026rainfall\" onclick=\"onCitationClick('becker2026rainfall'); event.preventDefault(); return false;\">becker2026rainfall</a>]. Omitting volume would conflate demand-side responses with the direct meteorological effect. Hourly volume is therefore included as a control (Section ), following [<a class=\"cite-link\" data-key=\"becker2026rainfall\" onclick=\"onCitationClick('becker2026rainfall'); event.preventDefault(); return false;\">becker2026rainfall</a>] and [<a class=\"cite-link\" data-key=\"cai2016rainfall\" onclick=\"onCitationClick('cai2016rainfall'); event.preventDefault(); return false;\">cai2016rainfall</a>], so that the precipitation coefficient captures the speed effect of rainfall <em>conditional on observed volume</em>."
+    },
+    {
+      "type": "p",
+      "html": "The distributional family and link function are chosen to address three properties of the speed data that violate standard OLS assumptions. First, hourly average speed is strictly positive by construction. Second, the distribution is right-skewed (Table : mean 54.3 {mph}, s.d.\\ 15.8). Third, variance increases with the conditional mean, as high-speed motorway segments exhibit greater absolute speed variation than low-speed local links, a pattern consistent with fundamental traffic flow theory, in which free-flowing high-speed segments (e.g., 60\u201370 {mph}) possess inherently greater absolute speed variation than congested urban links (e.g., 10\u201320 {mph}), making heteroskedasticity an expected physical property rather than merely a statistical nuisance. These features, heteroskedasticity in particular, make OLS inefficient and can bias standard errors [<a class=\"cite-link\" data-key=\"mccullagh1989glm\" onclick=\"onCitationClick('mccullagh1989glm'); event.preventDefault(); return false;\">mccullagh1989glm</a>]. [<a class=\"cite-link\" data-key=\"wan2024paradox\" onclick=\"onCitationClick('wan2024paradox'); event.preventDefault(); return false;\">wan2024paradox</a>] applied a Gamma GLM with a log link to model corridor-level journey time on the Cambridge road network, exploiting the same distributional properties. The present study extends this approach to the road link level, estimating segment-specific precipitation sensitivity coefficients rather than corridor averages."
+    },
+    {
+      "type": "p",
+      "html": "OLS on untransformed speed permits negative predictions and imposes a constant absolute rainfall effect regardless of baseline speed. Log-OLS avoids negative predictions but models the conditional geometric mean; retransformation introduces bias under heteroskedasticity [<a class=\"cite-link\" data-key=\"mccullagh1989glm\" onclick=\"onCitationClick('mccullagh1989glm'); event.preventDefault(); return false;\">mccullagh1989glm</a>]."
+    },
+    {
+      "type": "p",
+      "html": "The Gamma GLM with a log link resolves all three problems simultaneously: the Gamma distribution is defined on the positive reals (addressing the positivity constraint), its variance function is proportional to the square of the mean (accommodating the mean-variance relationship), and the log link ensures that covariates operate multiplicatively, so that each millimetre of rain produces a proportional rather than absolute speed reduction."
+    },
+    {
+      "type": "p",
+      "html": "Two alternative specifications were also tested: an inverse Gaussian GLM (sharper mean-variance relationship; failed to converge with the full interaction specification) and a log-normal model (OLS on log-speed; similar precipitation coefficients but subject to the retransformation bias noted above). The Gamma specification yielded the lowest AIC and was retained. Deviance residual diagnostics are described in Section ."
+    },
+    {
+      "type": "h3",
+      "text": "Model Specification"
+    },
+    {
+      "type": "p",
+      "html": "The model is specified as:"
+    },
+    {
+      "type": "p",
+      "html": "where $i$ indexes road links ($i = 1, , 460$), $r$ indexes the road (highway) to which link $i$ belongs, and $t$ indexes hours. The terms are structured in three layers:"
+    },
+    {
+      "type": "p",
+      "html": "The remaining terms are: $_v$, the volume\u2013speed coefficient; $X_{kit}$, a vector of control variables (temporal fixed effects, calendar indicators, temperature, and disruption events); and $_p$, the baseline precipitation effect at the reference link. The 201 composite coefficients $(_p + _i)$ constitute the primary output of the estimation."
+    },
+    {
+      "type": "h3",
+      "text": "Control Variable Strategy"
+    },
+    {
+      "type": "p",
+      "html": "Each control absorbs a source of speed variation that could confound the precipitation estimate:"
+    },
+    {
+      "type": "p",
+      "html": "Highway corridor dummies ($_r$ in Equation ) absorb time-invariant corridor-level characteristics such as road design, speed limit, and surface quality. Link fixed effects ($_i$) absorb remaining link-specific time-invariant factors beyond what the corridor dummies capture."
+    },
+    {
+      "type": "h3",
+      "text": "Estimation and Inference"
+    },
+    {
+      "type": "p",
+      "html": "The model is estimated in Stata 19.5 using the <code>glm</code> command with <code>family(gamma) link(log)</code> specification. Standard errors are clustered at the link level to account for within-link serial correlation in hourly observations."
+    },
+    {
+      "type": "p",
+      "html": "Inference therefore rests on 201 clusters rather than 5,050,333 observations. With 201 clusters and 201 link-specific interaction terms, the cluster-to-parameter ratio is adequate for asymptotic reliability, though effective degrees of freedom for individual interaction terms are modest."
+    },
+    {
+      "type": "p",
+      "html": "The dataset contains 460 links monitored by WebTRIS, of which 213 have sufficient hourly observations (minimum 1{,}000 per link) and non-missing precipitation data to support stable estimation of link-specific interaction terms. After excluding links with collinear or near-zero-variance precipitation series, 200 link-specific interaction coefficients ($_i$) are estimated, with one link serving as the reference category ($_{{ref}} = 0$). Together with the baseline precipitation effect $_p$, these yield 201 composite sensitivity estimates ($_p + _i$). The remaining 259 links are retained in the model (absorbed by link fixed effects and contributing to the estimation of shared parameters) but do not receive individual precipitation interaction terms; they are predominantly short connector segments with low observation counts. Relaxing the threshold to 500 observations yields 218 coefficients with noisier tail estimates but similar corridor-level patterns."
+    },
+    {
+      "type": "h3",
+      "text": "Model Diagnostics"
+    },
+    {
+      "type": "p",
+      "html": "Model adequacy was assessed through three checks (Appendix ). First, deviance residuals plotted against fitted values show no systematic curvature, supporting the Gamma distributional assumption and log-link specification. Second, a Q\u2013Q plot of deviance residuals shows approximate normality in the central quantiles, with modest departures in the tails attributable to extreme-weather observations. Third, the correlation between observed and model-predicted speeds is 0.85. These diagnostics, together with the robustness checks in Section , support the chosen specification."
+    },
+    {
+      "type": "h3",
+      "text": "Interpretation of Coefficients"
+    },
+    {
+      "type": "p",
+      "html": "Under the log link, each coefficient represents an approximate proportional change in expected speed. The reference link (link 146, an A14 segment near the median of the sensitivity distribution) is defined by setting $_{{ref}} = 0$; the choice of reference link does not affect the total sensitivity estimates $(_p + _i)$ for any link. The baseline precipitation coefficient $_{<em>precip</em>}$ is interpreted as the percentage speed reduction per additional millimetre of hourly rainfall at the reference link, holding all controls constant. The link-specific interaction $_i$ captures the <em>deviation</em> from this baseline for link $i$. Links with $_i > 0$ (less negative total effect) are relatively more resilient to precipitation; links with $_i < 0$ (more negative total effect) are relatively more sensitive."
+    },
+    {
+      "type": "h3",
+      "text": "Stage 2: Road Characteristic Regression"
+    },
+    {
+      "type": "p",
+      "html": "The second stage examines which observable road characteristics are associated with greater or lesser precipitation sensitivity. The 201 composite coefficients ${}_{p,i} = _p + _i$ estimated in Stage 1 serve as the dependent variable in a cross-sectional OLS regression:"
+    },
+    {
+      "type": "p",
+      "html": "{multline} {}_{p,i} = + _1 \\, <em>Lanes</em>_i + _2 \\, <em>SpeedLimit</em>_i + _3 \\, <em>DailyFlow</em>_i + _4 \\, <em>Length</em>_i \\\\ + _5 \\, <em>Gradient</em>_i + _6 \\, <em>Elevation</em>_i + _7 \\, <em>Rural</em>_i + _i {multline}"
+    },
+    {
+      "type": "p",
+      "html": "where ${}_{p,i}$ is the total precipitation sensitivity coefficient for link $i$ (more negative values indicate greater sensitivity); $<em>Lanes</em>_i$ is the number of carriageway lanes; $<em>SpeedLimit</em>_i$ is the posted speed limit ({mph}); $<em>DailyFlow</em>_i$ is the average daily traffic volume (vehicles per day); $<em>Length</em>_i$ is the segment length (metres); $<em>Gradient</em>_i$ is the mean longitudinal gradient (%); $<em>Elevation</em>_i$ is the mean elevation above sea level (metres); and $<em>Rural</em>_i$ is a binary indicator for rural road classification. Because more negative ${}_{p,i}$ values denote greater sensitivity, a positive $_k$ indicates that the corresponding characteristic is associated with <em>less</em> sensitivity (greater precipitation resilience)."
+    },
+    {
+      "type": "p",
+      "html": "Heteroskedasticity-consistent standard errors (robust) are used throughout, as the Stage 1 coefficients are estimated with varying precision across links. Variance inflation factors (VIF) are examined to assess multicollinearity: all VIFs fall below the conventional threshold of 5 (maximum VIF = 2.67 for daily flow; mean VIF = 1.59), indicating that multicollinearity does not compromise coefficient stability."
+    },
+    {
+      "type": "p",
+      "html": "Two methodological caveats apply. First, this is an exploratory cross-sectional analysis ($N = 201$) intended to identify correlates and generate engineering hypotheses rather than to establish causal relationships. Observable characteristics may proxy for unobserved design features (for example, lane count may capture the bundle of DMRB drainage standards that accompany higher road classifications), and the coefficients $_k$ should be interpreted as associations, not causal effects. Second, the dependent variable ${}_{p,i}$ is itself estimated from Stage 1, introducing a generated-regressors problem: the OLS standard errors in Equation do not account for the sampling uncertainty in ${}_{p,i}$. The HC1 estimator partially addresses heteroskedasticity arising from differential first-stage precision, but a fully efficient two-step variance correction would require incorporating the Stage 1 variance\u2013covariance matrix. Given the large first-stage sample ($N > 5$ million observations) and the exploratory intent, this refinement is deferred to future work."
+    },
+    {
+      "type": "h3",
+      "text": "Stage 3: Spatial Mapping and Platform Deployment"
+    },
+    {
+      "type": "p",
+      "html": "The final stage maps the 201 estimated coefficients to their geographic coordinates and deploys the results through an open-source interactive platform. Each link's total precipitation sensitivity (${}_{p,i}$) is colour-coded on a map of the study area, enabling visual identification of corridor-level vulnerability patterns. Scenario-specific speed losses can be computed as:"
+    },
+    {
+      "type": "p",
+      "html": "where $R$ is a scenario rainfall intensity ({mm/hr}). This formula translates per-millimetre marginal effects into absolute percentage speed reductions under specific rainfall scenarios, providing transport planners with directly interpretable metrics for drainage investment prioritisation. The platform, built in Streamlit with Folium map layers, allows users to explore individual link coefficients, view corridor-level summary statistics, and upload their own WebTRIS and weather data to replicate the analysis for any UK road network with sensor coverage."
+    },
+    {
+      "type": "h2",
+      "text": "Results"
+    },
+    {
+      "type": "h3",
+      "text": "Gamma GLM Estimation"
+    },
+    {
+      "type": "p",
+      "html": "With the full specification, the Gamma GLM converges on 5,050,333 weekday observations, 201 link fixed effects, and 201 link-specific precipitation interactions. Selected coefficients appear in Table ."
+    },
+    {
+      "type": "p",
+      "html": "The baseline precipitation coefficient is $-$0.0111 ($p < 0.001$): each additional millimetre of hourly rainfall reduces expected speed by about 1.1% at the reference link. Because the model includes binary indicators for accidents and roadworks as control variables, this coefficient captures the residual speed penalty after removing disruption-induced congestion, isolating the direct supply-side effect of degraded driving conditions (reduced tyre\u2013road friction and impaired visibility from surface water) rather than secondary incident-related queueing. This is a marginal per-millimetre effect and is not directly comparable to the aggregate speed-at-capacity reductions of 8\u201314% reported for sustained rain events; see Section for a detailed comparison."
+    },
+    {
+      "type": "p",
+      "html": "All control variables are significant with expected signs (Table ). Hour-of-day and month fixed effects are jointly significant, absorbing the expected diurnal and seasonal speed variation. Model diagnostics (Appendix ) confirm adequate specification: deviance residuals show no systematic pattern, and the correlation between observed and predicted speeds is 0.85."
+    },
+    {
+      "type": "h3",
+      "text": "Link-Level Heterogeneity"
+    },
+    {
+      "type": "p",
+      "html": "The 201 link-specific coefficients vary widely. Fig. presents the distribution of total precipitation effects ($_{<em>precip</em>} + _i$)."
+    },
+    {
+      "type": "p",
+      "html": "Coefficients range from $-$0.042 (most sensitive) to $+$0.019 (least sensitive). The majority (189 of 201) are negative, indicating that precipitation reduces speed on most links. Twelve links show small positive coefficients, which may reflect localised route diversion during wet conditions, where traffic displaced from highly sensitive parallel corridors shifts to these alternative links without exceeding their congestion thresholds, or statistical noise for coefficients near zero. The interquartile range ($-$0.012 to $-$0.005) corresponds to speed reductions of 0.5\u20131.2% per millimetre."
+    },
+    {
+      "type": "h3",
+      "text": "Spatial Patterns"
+    },
+    {
+      "type": "p",
+      "html": "Mapping the coefficients (Fig. ) indicates clear corridor-level patterns:"
+    },
+    {
+      "type": "p",
+      "html": "Table summarises the corridor-level patterns."
+    },
+    {
+      "type": "p",
+      "html": "Corridor averages differ by a factor of approximately 5 (Cambourne Road at $-$0.039 versus A11 at $-$0.008). Within corridors the spread is wider still: the most sensitive single link ($-$0.042) is over five times the A11 corridor average."
+    },
+    {
+      "type": "p",
+      "html": "Fig. presents the within-corridor distributions as box plots, confirming that corridors differ not only in their central tendency but also in their internal dispersion. The A1 corridor exhibits the largest within-corridor variation (s.d. = 0.013). Cambourne Road, by contrast, has negligible internal variation (s.d. = 0.0004), consistent with its homogeneous design."
+    },
+    {
+      "type": "h3",
+      "text": "Correlates of Precipitation Sensitivity: Road Characteristic Analysis (Stage 2)"
+    },
+    {
+      "type": "p",
+      "html": "The second stage of the framework regresses the estimated sensitivity coefficients on observable road characteristics (Equation ), examining which physical and operational attributes are associated with greater or lesser hydrological vulnerability. Two of the 201 links (both Cambourne Road segments) are excluded due to missing gradient data, yielding $N = 199$ for this cross-sectional regression. As noted in Section , this analysis is exploratory, intended to generate hypotheses about the engineering mechanisms behind the observed heterogeneity rather than to establish causal relationships, but its findings have direct implications for adaptation planning."
+    },
+    {
+      "type": "p",
+      "html": "Seven road-level attributes are examined: number of lanes, speed limit, mean daily traffic volume, segment length, gradient, elevation, and rural/urban classification. Among these, four show significant associations with precipitation sensitivity (Fig. ):"
+    },
+    {
+      "type": "p",
+      "html": "Four further variables complete the specification:"
+    },
+    {
+      "type": "p",
+      "html": "Table reports the Stage 2 regression results. The dependent variable is the estimated total precipitation sensitivity coefficient (${}_{p,i}$) for each road link."
+    },
+    {
+      "type": "p",
+      "html": "In practical terms, the coefficients imply that, all else equal, adding one lane to a road is associated with a 0.53 percentage-point reduction in the speed penalty per {mm/hr} of rainfall, while a one percentage-point increase in longitudinal gradient is associated with a 0.29 percentage-point reduction. These magnitudes are directly relevant to engineering decisions: for a segment currently experiencing a 2% speed penalty per {mm/hr}, upgrading from single to dual carriageway would, on the basis of this association, halve the estimated rainfall impact."
+    },
+    {
+      "type": "p",
+      "html": "Observable road characteristics capture a meaningful but incomplete share of the cross-link variation in precipitation sensitivity. Unobserved factors, particularly drainage system capacity, pavement porosity, and maintenance condition, may partially explain the residual heterogeneity. Crucially, this incompleteness has a practical implication: the high-sensitivity segments that cannot be explained by observable characteristics are precisely those where hidden drainage deficiencies or deteriorated pavement conditions are most likely, making them priority candidates for targeted engineering inspection. These exploratory associations are subject to the generated-regressors caveat, as the dependent variable (link-level sensitivity) is itself estimated with varying precision across links."
+    },
+    {
+      "type": "h2",
+      "text": "Discussion"
+    },
+    {
+      "type": "h3",
+      "text": "Interpretation of Key Findings"
+    },
+    {
+      "type": "p",
+      "html": "Individual link-level precipitation sensitivity varies by a factor of approximately 20 (from $-$0.002 to $-$0.042 among the 189 negatively-signed links), compared with a factor of approximately 5 across corridor-level averages (Section ), revealing substantial heterogeneity in the hydrological vulnerability of road infrastructure at both scales. Aggregate estimates, such as the 8\u201314% speed-at-capacity reductions reported by [<a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>], are insufficient for targeted adaptation at the local level. A local authority allocating drainage investment on network-average vulnerability would systematically underinvest in the most sensitive segments and overinvest in resilient ones."
+    },
+    {
+      "type": "p",
+      "html": "The pattern is spatially coherent: corridors such as the A11 and A14 show near-zero precipitation sensitivity, while Cambourne Road, serving new residential developments, is far more vulnerable. The Characterise stage (Section ) identifies the number of lanes and gradient as the strongest observable correlates of precipitation resilience. Crucially, these associations have clear engineering interpretations: multi-lane roads are built to higher DMRB design standards with steeper crossfall and larger drainage capacity, while road gradient enhances gravitational surface water clearance, particularly relevant in the flat fenland study area. Observable characteristics, however, capture only part of the cross-link variation; unobserved factors such as drainage system condition, pavement porosity, and maintenance history may partially explain the residual heterogeneity."
+    },
+    {
+      "type": "p",
+      "html": "The estimated coefficients are therefore not pure meteorological quantities but <em>hydro-infrastructure</em> metrics that capture the realised compound effect of rainfall intensity, drainage design, ageing, and maintenance on each segment's capacity to manage surface water. This reframing implies that drainage investment prioritisation can move beyond flood history or hydraulic modelling to a network-wide, empirically grounded screening tool: segments identified as highly sensitive are candidates for drainage deficiency, warranting targeted engineering inspection even in the absence of micro-scale drainage data."
+    },
+    {
+      "type": "h3",
+      "text": "Comparison with Prior Literature"
+    },
+    {
+      "type": "p",
+      "html": "The baseline estimate ($-$0.0111, or 1.1% per {mm/hr}) sits at the lower end of the literature. The speed-at-capacity reductions of 8\u201314% reported by [<a class=\"cite-link\" data-key=\"hranac2006empirical\" onclick=\"onCitationClick('hranac2006empirical'); event.preventDefault(); return false;\">hranac2006empirical</a>] capture average effects during sustained rain, not the marginal effect per millimetre. The closest methodological comparator, [<a class=\"cite-link\" data-key=\"becker2026rainfall\" onclick=\"onCitationClick('becker2026rainfall'); event.preventDefault(); return false;\">becker2026rainfall</a>], used continuous radar precipitation with a log-linear specification and found speed reductions that vary by road type and rainfall intensity, with the present estimate falling within a comparable range. Across the full German road hierarchy, Becker et al.\\ found that multi-lane, high-speed roads experienced proportionally <em>larger</em> speed reductions than lower-speed roads ($ v_{{rel}} = -26%$ on multi-lane versus $-15%$ on single-lane roads at 100 km/h), attributing this to the greater headroom for speed reduction on roads with higher baseline speeds. The present study, by contrast, finds that multi-lane segments within the SRN are <em>less</em> sensitive per millimetre of rainfall, a finding that the Characterise stage (Section ) links to the higher drainage design standards (crossfall, capacity) mandated for multi-lane roads under the DMRB. The apparent discrepancy likely reflects the difference in scope: Becker et al.\\ compared across the full speed spectrum (50\u2013130 km/h, including urban streets), whereas the present sample is confined to the SRN, where all roads meet a minimum design threshold. Within this narrower range, the drainage-quality advantage of higher-specification roads may dominate the headroom effect that drives Becker et al.'s cross-hierarchy result."
+    },
+    {
+      "type": "p",
+      "html": "Link-specific estimation reveals that within-network variation in precipitation sensitivity is at least as large as the between-study variation compiled by [<a class=\"cite-link\" data-key=\"koetse2009impact\" onclick=\"onCitationClick('koetse2009impact'); event.preventDefault(); return false;\">koetse2009impact</a>]. For adaptation planning, the spatial distribution of sensitivity within a network matters more than the precision of any single aggregate estimate."
+    },
+    {
+      "type": "p",
+      "html": "[<a class=\"cite-link\" data-key=\"gao2024resilience\" onclick=\"onCitationClick('gao2024resilience'); event.preventDefault(); return false;\">gao2024resilience</a>] also found heterogeneity in rainfall response across Harbin road segments, confirming that the phenomenon is not country-specific. The regression framework presented here, however, isolates the marginal precipitation effect through volume, temporal, and disruption controls that a probabilistic reliability model cannot separate. Continuous coefficients (percentage speed reduction per millimetre) translate directly into infrastructure investment metrics; threshold-based resilience scores do not."
+    },
+    {
+      "type": "h3",
+      "text": "The Open-Source Platform"
+    },
+    {
+      "type": "p",
+      "html": "The framework is deployed as an open-source Streamlit platform. Users can explore an interactive map of link-level sensitivity coefficients with colour-coded overlays, view corridor-level summary statistics and box-plot distributions, and upload their own WebTRIS and weather data to replicate the analysis for any UK road network with sensor coverage. The platform runs entirely on the user's machine, requiring no cloud infrastructure and respecting local data governance constraints."
+    },
+    {
+      "type": "h3",
+      "text": "Policy Implications"
+    },
+    {
+      "type": "p",
+      "html": "The most immediate policy use is <em>prioritising drainage investment</em>: surface upgrades and capacity enhancements can be directed at the specific segments identified as most hydrologically vulnerable, rather than distributed uniformly or allocated on flood history alone. Applying the scenario loss formula (Equation ) to a 10 {mm/hr} storm scenario, Cambourne Road segments would experience an estimated speed reduction of approximately 33%, while A11 segments would lose approximately 7%, a fivefold difference that is invisible in network-average metrics but critical for operationalising climate resilience at the corridor level (Fig. )."
+    },
+    {
+      "type": "p",
+      "html": "Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction [<a class=\"cite-link\" data-key=\"nh2024climate\" onclick=\"onCitationClick('nh2024climate'); event.preventDefault(); return false;\">nh2024climate</a>]. The open-source platform gives local authorities the evidence base needed to inform adaptation planning and prioritise climate resilience funding applications, such as those administered through the DARe network."
+    },
+    {
+      "type": "p",
+      "html": "For example, the two Cambourne Road links (with coefficients of $-$0.039) serve a rapidly growing population catchment. The Characterise stage (Section ) suggests that their single-carriageway design, with lower crossfall gradient and smaller drainage capacity than dual-carriageway alternatives, may partially explain their extreme sensitivity; if so, targeted drainage upgrades could meaningfully reduce the current speed penalty during moderate rainfall. At the corridor level, the A1's extreme within-corridor variation (s.d. = 0.013) identifies it as a priority for segment-by-segment engineering assessment to distinguish its most resilient from its most vulnerable links."
+    },
+    {
+      "type": "p",
+      "html": "The scenario loss formula (Equation ) also provides a natural bridge to forward-looking climate risk assessment. By substituting the rainfall intensity $R$ with design storm values projected under future climate scenarios, such as UKCP18 high-emission projections for the 2080s [<a class=\"cite-link\" data-key=\"dft2024rea\" onclick=\"onCitationClick('dft2024rea'); event.preventDefault(); return false;\">dft2024rea</a>], planners can estimate how link-level speed losses may evolve as extreme rainfall events become more frequent and intense. The open-source platform already accepts user-specified rainfall intensities, enabling this extension without re-estimation of the underlying model. This positions the tool not only as a diagnostic instrument for current vulnerability but also as a screening tool for future climate adaptation priorities."
+    },
+    {
+      "type": "h3",
+      "text": "Robustness Checks"
+    },
+    {
+      "type": "p",
+      "html": "Four checks assess the sensitivity of the main results to modelling choices."
+    },
+    {
+      "type": "p",
+      "html": "<em>Excluding traffic volume.</em> Because speed and volume are jointly determined (Section ), including volume as a control could absorb part of the rainfall effect that operates through reduced demand. Re-estimating the Gamma GLM without the volume variable yields precipitation coefficients that preserve the same sign and corridor-level ranking. The baseline coefficient shifts from $-$0.0111 to approximately $-$0.0106, a 4.3% attenuation consistent with the demand-reduction channel: when volume is omitted, part of the speed recovery associated with fewer vehicles during rain is attributed to the precipitation variable, pulling the coefficient toward zero. The corridor-level pattern (A11 most resilient, Cambourne Road most sensitive) is unchanged."
+    },
+    {
+      "type": "p",
+      "html": "<em>Peak hours only.</em> Restricting the estimation sample to weekday peak hours (07:00\u201309:00 and 16:00\u201319:00) tests whether the results are driven by off-peak observations with atypical speed\u2013weather relationships. The peak-hour baseline precipitation coefficient ($-$0.0181) is larger in magnitude than the full-sample estimate ($-$0.0111), consistent with precipitation having a stronger marginal effect when traffic is already near capacity. The rank ordering of corridors by sensitivity is preserved, confirming that the link-level heterogeneity pattern is not an artefact of time-of-day composition."
+    },
+    {
+      "type": "p",
+      "html": "<em>Alternative distributional specification.</em> As noted in Section , an OLS model on untransformed speed was estimated as an alternative. The OLS precipitation coefficient ($-$0.559 {mph} per {mm/hr}) confirms the direction and statistical significance of the Gamma GLM estimate. At the sample mean speed of 54.3 {mph}, this implies a 1.0% reduction per {mm/hr}, consistent with the Gamma GLM's 1.1% estimate. The OLS specification achieves $R^2 = 0.696$ but imposes a constant absolute (rather than proportional) rainfall effect and does not accommodate the mean\u2013variance relationship in the speed data."
+    },
+    {
+      "type": "p",
+      "html": "<em>Extreme rainfall subsample.</em> To test whether the estimated sensitivities are amplified during intense precipitation, the scenario most relevant to climate adaptation, the model was re-estimated on the subsample of hours with precipitation exceeding 5 {mm/hr}, the UK Met Office threshold for heavy rainfall. Only 68,679 weekday hours (1.3% of the full sample) exceed this threshold; after the GLM drops observations with sparse link\u2013hour cells due to collinearity, the estimation sample is $N = 7{,}453$. The reference-link baseline coefficient increases in magnitude from $-$0.011 to $-$0.129 (SE = 0.002, $z = -74.3$), an order-of-magnitude amplification consistent with the physical expectation that drainage systems approach capacity during heavy rainfall, producing a non-linear increase in surface water depth. The link-specific interaction terms shift proportionally, so the cross-link ranking structure is qualitatively preserved even as absolute magnitudes change. Because the extreme subsample retains only 1.3% of weekday observations, these estimates are necessarily less precise at the individual-link level; nonetheless, the direction and scale of the amplification confirm that the hydrological vulnerability identified in the full sample is <em>further exacerbated</em> under the extreme rainfall scenarios projected by UK climate models."
+    },
+    {
+      "type": "p",
+      "html": "Table summarises the control variable coefficients across specifications. Table reports the corridor-level mean precipitation sensitivity under each Gamma GLM specification. The corridor ranking is identical across all three specifications: Cambourne Road is the most sensitive and A11 the most resilient regardless of whether volume is included or the sample is restricted to peak hours. The core finding, that link-level precipitation sensitivity varies by a factor of approximately 20 and clusters by corridor with clear spatial patterns, is robust."
+    },
+    {
+      "type": "h3",
+      "text": "Limitations"
+    },
+    {
+      "type": "p",
+      "html": "The study area is limited to Cambridgeshire and Peterborough; while the methodology transfers, the specific coefficients reflect local conditions, particularly the flat, low-lying fenland terrain, and should not be applied directly elsewhere. Although traffic volume is included as a control to account for the speed\u2013flow relationship, the Gamma GLM estimates a static hourly effect and does not model the temporal dynamics of how congestion builds and dissipates during a storm event (e.g., queue formation and clearance). This is by design: the static specification deliberately isolates the supply-side infrastructure penalty from demand-side congestion dynamics, which is the parameter most relevant for drainage investment prioritisation."
+    },
+    {
+      "type": "p",
+      "html": "A fundamental data limitation is that \u201cprecipitation\u201d as measured at weather stations is a proxy variable: the quantity that directly affects driving conditions is the depth of surface water on the road, which depends on the interaction between rainfall intensity and the segment's drainage capacity, pavement permeability, and crossfall geometry. The estimated coefficients therefore capture this compound effect rather than a pure meteorological response. While this limits mechanistic decomposition, it enhances practical relevance: the coefficients directly identify the segments where the rainfall\u2013drainage interaction produces the largest speed penalties, which is precisely the information needed to prioritise adaptation investment."
+    },
+    {
+      "type": "p",
+      "html": "On the data side, nearest-station weather matching may introduce measurement error for links far from monitoring stations; radar-based precipitation data would improve spatial precision, though the resulting measurement error likely attenuates the coefficients towards zero, making the reported sensitivities conservative lower bounds of the true meteorological effect."
+    },
+    {
+      "type": "p",
+      "html": "A deliberate methodological boundary of this study is the exclusion of direct tailpipe emission estimation. Translating link-level speed penalties into emission increments requires granular, time-varying data on fleet composition, vehicle age, and fuel types\u2014parameters that are not publicly available at the segment level. Introducing unverified assumptions regarding these fleet characteristics would risk contaminating the empirically grounded speed estimates with structural emission-modelling errors. This study therefore provides the most spatially disaggregated first-order effect (the supply-side speed penalty) as a foundational input that local authorities can integrate with proprietary fleet data in downstream models such as COPERT or HBEFA when emission quantification is required."
+    },
+    {
+      "type": "p",
+      "html": "A further consideration is spatial spillover within the road network. When surface water accumulation forces lane closures or speed reductions on a given segment, traffic may divert to parallel routes, increasing volumes and potentially degrading speeds on those alternative links. This mechanism could attenuate the estimated precipitation coefficient on the affected segment (fewer vehicles observed during heavy rain) while inflating the coefficient on receiving segments (increased congestion misattributed to weather). However, because the model conditions on observed hourly traffic volume, the precipitation coefficient captures the speed effect of rainfall at any given level of demand. Provided that rainfall-induced diversion scales approximately in proportion to rainfall intensity across links, the relative ranking of link-level sensitivity is unlikely to be systematically distorted. Formally incorporating spatial dependence through a spatial lag or spatial error model would require defining a network adjacency matrix and is deferred to future work."
+    },
+    {
+      "type": "h3",
+      "text": "Future Research"
+    },
+    {
+      "type": "p",
+      "html": "The immediate next step is to apply the framework to the local road network in Cambridgeshire and Peterborough using County Council data, comparing SRN and local road sensitivity and extending coverage to the road classes that carry most daily trips. Extending the framework to other weather variables (wind, fog, snow) that affect the SRN would broaden the climate risk profile beyond precipitation. A complementary extension is network vulnerability analysis: betweenness centrality under normal and extreme-weather scenarios would identify links whose rainfall degradation cascades into network-wide journey time losses, connecting these link-level estimates to system-level climate risk assessment [<a class=\"cite-link\" data-key=\"ganin2017resilience\" onclick=\"onCitationClick('ganin2017resilience'); event.preventDefault(); return false;\">ganin2017resilience</a>]."
+    },
+    {
+      "type": "p",
+      "html": "The link-level speed losses estimated here can also serve as inputs to downstream environmental impact models. Speed-dependent emission factors from established frameworks such as COPERT or HBEFA, combined with the predicted speed reductions under rainfall scenarios, would allow estimation of the additional CO$_2$ and pollutant emissions attributable to precipitation-induced congestion on each segment. This analytical chain, from spatial vulnerability identification to emissions quantification, would connect the present framework to the broader transport\u2013environment policy agenda, though constructing such coupled models is beyond the scope of this paper."
+    },
+    {
+      "type": "h2",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "html": "This paper posed three questions about the hydrological vulnerability of the UK Strategic Road Network to precipitation. The answers are clear: individual link-level sensitivity varies by a factor of approximately 20 (corridor averages by a factor of 5) within a single region, with corridor-level spatial patterns that distinguish resilient from vulnerable segments; observable road characteristics, particularly lane count and gradient (which proxy for drainage design standards), explain a meaningful share of the cross-link heterogeneity; and producing this evidence requires only public data and a standard laptop. Together, these findings demonstrate that rainfall vulnerability is not a uniform meteorological exposure but a heterogeneous property shaped by design standards and physical geometry."
+    },
+    {
+      "type": "p",
+      "html": "Three broader implications follow for transport\u2013environment policy. First, network-average vulnerability metrics, which currently inform most adaptation budgets, are too coarse for efficient investment allocation. Link-level coefficients make it possible to prioritise drainage investment at the segments where each pound spent yields the largest reduction in rainfall-induced delay. Second, the Characterise stage demonstrates that observable road attributes, particularly lane count and gradient (which proxy for drainage design standards), explain a substantial share of the heterogeneity, providing testable hypotheses for targeted engineering inspection of high-sensitivity segments. Third, the methodological barrier to link-level analysis is lower than the dominance of simulation-based approaches suggests. A Gamma GLM with road link fixed effects and interaction terms is sufficient to recover interpretable sensitivity estimates without microsimulation or high-performance computing, putting evidence generation within reach of local authorities who lack specialised modelling resources. The coefficients themselves do not simulate the effect of specific interventions (e.g., drainage upgrades); rather, they provide the spatially disaggregated evidence base on which such investment decisions can be grounded, helping to operationalise climate resilience at the local authority level."
+    },
+    {
+      "type": "p",
+      "html": "The open-source platform and codebase are released to enable replication across any UK road network with WebTRIS coverage."
+    },
+    {
+      "type": "h2",
+      "text": "Acknowledgements"
+    },
+    {
+      "type": "p",
+      "html": "This research was supported by the Digital Architecture for Resilience (DARe) National Hub, funded by the Engineering and Physical Sciences Research Council (EPSRC) and the UK Department for Transport. The authors acknowledge National Highways for WebTRIS data access and the Met Office for the CEDA Archive."
+    },
+    {
+      "type": "h2",
+      "text": "CRediT authorship contribution statement"
+    },
+    {
+      "type": "p",
+      "html": "<strong>Yibin Li</strong>: Conceptualization, Methodology, Software, Formal analysis, Data curation, Writing \u2013 Original Draft, Visualization. <strong>Li Wan</strong>: Conceptualization, Supervision, Writing \u2013 Review & Editing, Funding acquisition, Project administration."
+    },
+    {
+      "type": "h2",
+      "text": "Declaration of competing interest"
+    },
+    {
+      "type": "p",
+      "html": "The authors declare no competing financial interests or personal relationships that could have influenced this work."
+    },
+    {
+      "type": "h2",
+      "text": "Data availability"
+    },
+    {
+      "type": "p",
+      "html": "All data are publicly available. Traffic data: National Highways WebTRIS (). Weather data: Met Office CEDA Archive (). Code and platform: [GitHub URL upon publication]."
+    },
+    {
+      "type": "h2",
+      "text": "AI Disclosure"
+    },
+    {
+      "type": "p",
+      "html": "AI-assisted tools were used for literature search, coding assistance, and drafting support. All content was reviewed, verified, and approved by the authors, who accept full responsibility for the work."
+    },
+    {
+      "type": "p",
+      "html": "{elsarticle-harv} {references}"
+    },
+    {
+      "type": "h2",
+      "text": "Road Link Precipitation Sensitivity: Robustness Across Specifications"
+    },
+    {
+      "type": "p",
+      "html": "Table reports the total precipitation sensitivity coefficient ($_p + _i$) for all 201 road links under four model specifications. Links are sorted from most sensitive (most negative) to most resilient (least negative)."
+    },
+    {
+      "type": "p",
+      "html": "{longtable}{rrrrr} \\\\ Link & (1) Full GLM & (2) No volume & (3) Peak hours & (4) OLS \\\\ Link & (1) Full GLM & (2) No volume & (3) Peak hours & (4) OLS \\\\ {5}{r}{ Continued on next page} \\\\ {5}{l}{ $^{***}p < 0.01$, $^{**}p < 0.05$, $^{*}p < 0.10$. Total coefficient = baseline + link interaction.} \\\\ {5}{l}{ Sorted from most sensitive to most resilient. OLS coefficients in {mph} per {mm/hr}.} \\\\ 173 & $-0.0418$$^{***}$ & $-0.0421$$^{***}$ & $-0.0752$$^{***}$ & $-2.2538$$^{***}$ \\\\ 60 & $-0.0287$$^{***}$ & $-0.0284$$^{***}$ & $-0.0342$$^{***}$ & $-1.7414$$^{***}$ \\\\ 32 & $-0.0283$$^{***}$ & $-0.0277$$^{***}$ & $0.0109$$^{***}$ & $-1.1439$$^{***}$ \\\\ 66 & $-0.0220$$^{***}$ & $-0.0217$$^{***}$ & $-0.0205$$^{***}$ & $-1.4262$$^{***}$ \\\\ 62 & $-0.0201$$^{***}$ & $-0.0196$$^{***}$ & $-0.0162$$^{***}$ & $-1.2416$$^{***}$ \\\\ 145 & $-0.0199$$^{***}$ & $-0.0198$$^{***}$ & $-0.0145$$^{***}$ & $-1.1675$$^{***}$ \\\\ 136 & $-0.0198$$^{***}$ & $-0.0196$$^{***}$ & $-0.0291$$^{***}$ & $-1.2306$$^{***}$ \\\\ 124 & $-0.0183$$^{***}$ & $-0.0180$$^{***}$ & $-0.0222$$^{***}$ & $-1.1619$$^{***}$ \\\\ 206 & $-0.0176$$^{***}$ & $-0.0172$$^{***}$ & $-0.0162$$^{***}$ & $-0.8251$$^{***}$ \\\\ 121 & $-0.0172$$^{***}$ & $-0.0169$$^{***}$ & $-0.0103$$^{***}$ & $-0.8981$$^{***}$ \\\\ 30 & $-0.0172$$^{***}$ & $-0.0170$$^{***}$ & $-0.0117$$^{***}$ & $-0.7999$$^{***}$ \\\\ 192 & $-0.0164$$^{***}$ & $-0.0162$$^{***}$ & $-0.0119$$^{***}$ & $-0.9061$$^{***}$ \\\\ 198 & $-0.0164$$^{***}$ & $-0.0163$$^{***}$ & $-0.0134$$^{***}$ & $-0.8576$$^{***}$ \\\\ 213 & $-0.0161$$^{***}$ & $-0.0162$$^{***}$ & $-0.0166$$^{***}$ & $-0.9612$$^{***}$ \\\\ 199 & $-0.0156$$^{***}$ & $-0.0154$$^{***}$ & $-0.0122$$^{***}$ & $-0.5783$$^{***}$ \\\\ 147 & $-0.0154$$^{***}$ & $-0.0152$$^{***}$ & $-0.0093$$^{***}$ & $-0.8166$$^{***}$ \\\\ 29 & $-0.0153$$^{***}$ & $-0.0151$$^{***}$ & $-0.0156$$^{***}$ & $-0.7138$$^{***}$ \\\\ 154 & $-0.0152$$^{***}$ & $-0.0150$$^{***}$ & $-0.0242$$^{***}$ & $-0.8585$$^{***}$ \\\\ 174 & $-0.0150$$^{***}$ & $-0.0148$$^{***}$ & $-0.0058$$^{***}$ & $-0.6395$$^{***}$ \\\\ 104 & $-0.0150$$^{***}$ & $-0.0147$$^{***}$ & $-0.0082$$^{***}$ & $-0.7798$$^{***}$ \\\\ 191 & $-0.0149$$^{***}$ & $-0.0147$$^{***}$ & $-0.0105$$^{***}$ & $-0.7318$$^{***}$ \\\\ 204 & $-0.0148$$^{***}$ & $-0.0144$$^{***}$ & $-0.0090$$^{***}$ & $-0.7959$$^{***}$ \\\\ 182 & $-0.0145$$^{***}$ & $-0.0147$$^{***}$ & $-0.0143$$^{***}$ & $-0.8217$$^{***}$ \\\\ 78 & $-0.0144$$^{***}$ & $-0.0144$$^{***}$ & $-0.0095$$^{***}$ & $-0.7233$$^{***}$ \\\\ 77 & $-0.0143$$^{***}$ & $-0.0143$$^{***}$ & $-0.0104$$^{***}$ & $-0.7112$$^{***}$ \\\\ 155 & $-0.0143$$^{***}$ & $-0.0138$$^{***}$ & $-0.0129$$^{***}$ & $-0.7618$$^{***}$ \\\\ 150 & $-0.0141$$^{***}$ & $-0.0144$$^{***}$ & $-0.0163$$^{***}$ & $-0.4201$$^{***}$ \\\\ 88 & $-0.0141$$^{***}$ & $-0.0139$$^{***}$ & $-0.0082$$^{***}$ & $-0.6710$$^{***}$ \\\\ 164 & $-0.0141$$^{***}$ & $-0.0138$$^{***}$ & $-0.0097$$^{***}$ & $-0.8141$$^{***}$ \\\\ 123 & $-0.0139$$^{***}$ & $-0.0138$$^{***}$ & $-0.0132$$^{***}$ & $-0.7138$$^{***}$ \\\\ 3 & $-0.0139$$^{***}$ & $-0.0138$$^{***}$ & $-0.0162$$^{***}$ & $-0.9070$$^{***}$ \\\\ 208 & $-0.0139$$^{***}$ & $-0.0139$$^{***}$ & $-0.0112$$^{***}$ & $-0.8440$$^{***}$ \\\\ 116 & $-0.0138$$^{***}$ & $-0.0138$$^{***}$ & $-0.0097$$^{***}$ & $-0.7060$$^{***}$ \\\\ 26 & $-0.0137$$^{***}$ & $-0.0141$$^{***}$ & $-0.0110$$^{***}$ & $-0.7554$$^{***}$ \\\\ 4 & $-0.0136$$^{***}$ & $-0.0136$$^{***}$ & $-0.0104$$^{***}$ & $-0.6703$$^{***}$ \\\\ 138 & $-0.0136$$^{***}$ & $-0.0135$$^{***}$ & $-0.0126$$^{***}$ & $-0.7618$$^{***}$ \\\\ 14 & $-0.0136$$^{***}$ & $-0.0135$$^{***}$ & $-0.0105$$^{***}$ & $-0.6185$$^{***}$ \\\\ 61 & $-0.0132$$^{***}$ & $-0.0132$$^{***}$ & $-0.0112$$^{***}$ & $-0.6451$$^{***}$ \\\\ 163 & $-0.0130$$^{***}$ & $-0.0126$$^{***}$ & $-0.0229$$^{***}$ & $-0.7450$$^{***}$ \\\\ 144 & $-0.0129$$^{***}$ & $-0.0130$$^{***}$ & $-0.0113$$^{***}$ & $-0.6746$$^{***}$ \\\\ 193 & $-0.0129$$^{***}$ & $-0.0127$$^{***}$ & $-0.0076$$^{***}$ & $-0.6265$$^{***}$ \\\\ 129 & $-0.0129$$^{***}$ & $-0.0127$$^{***}$ & $-0.0087$$^{***}$ & $-0.6627$$^{***}$ \\\\ 89 & $-0.0129$$^{***}$ & $-0.0127$$^{***}$ & $-0.0126$$^{***}$ & $-0.6998$$^{***}$ \\\\ 91 & $-0.0126$$^{***}$ & $-0.0122$$^{***}$ & $-0.0080$$^{***}$ & $-0.6945$$^{***}$ \\\\ 93 & $-0.0125$$^{***}$ & $-0.0123$$^{***}$ & $-0.0086$$^{***}$ & $-0.6370$$^{***}$ \\\\ 196 & $-0.0125$$^{***}$ & $-0.0124$$^{***}$ & $-0.0134$$^{***}$ & $-0.4337$$^{***}$ \\\\ 51 & $-0.0123$$^{***}$ & $-0.0121$$^{***}$ & $-0.0070$$^{***}$ & $-0.5847$$^{***}$ \\\\ 118 & $-0.0122$$^{***}$ & $-0.0120$$^{***}$ & $-0.0084$$^{***}$ & $-0.7589$$^{***}$ \\\\ 1 & $-0.0122$$^{***}$ & $-0.0120$$^{***}$ & $-0.0113$$^{***}$ & $-0.5515$$^{***}$ \\\\ 133 & $-0.0121$$^{***}$ & $-0.0120$$^{***}$ & $-0.0178$$^{***}$ & $-0.8409$$^{***}$ \\\\ 63 & $-0.0118$$^{***}$ & $-0.0116$$^{***}$ & $-0.0073$$^{***}$ & $-0.5248$$^{***}$ \\\\ 20 & $-0.0118$$^{***}$ & $-0.0116$$^{***}$ & $-0.0078$$^{***}$ & $-0.5651$$^{***}$ \\\\ 112 & $-0.0115$$^{***}$ & $-0.0114$$^{***}$ & $-0.0098$$^{***}$ & $-0.7011$$^{***}$ \\\\ 119 & $-0.0111$$^{***}$ & $-0.0110$$^{***}$ & $-0.0070$$^{***}$ & $-0.6609$$^{***}$ \\\\ 146 & $-0.0111$ & $-0.0106$ & $-0.0181$ & $-0.5586$ \\\\ 120 & $-0.0110$$^{***}$ & $-0.0106$$^{***}$ & $-0.0120$$^{***}$ & $-0.7200$$^{***}$ \\\\ 212 & $-0.0110$$^{***}$ & $-0.0118$$^{***}$ & $-0.0118$$^{***}$ & $-0.2250$$^{***}$ \\\\ 194 & $-0.0108$$^{***}$ & $-0.0106$$^{***}$ & $-0.0097$$^{***}$ & $-0.6973$$^{***}$ \\\\ 211 & $-0.0106$$^{***}$ & $-0.0114$$^{***}$ & $-0.0158$$^{***}$ & $-0.1977$$^{***}$ \\\\ 64 & $-0.0106$$^{***}$ & $-0.0106$$^{***}$ & $-0.0098$$^{***}$ & $-0.6589$$^{***}$ \\\\ 137 & $-0.0105$$^{***}$ & $-0.0102$$^{***}$ & $-0.0180$$^{***}$ & $-0.6956$$^{***}$ \\\\ 187 & $-0.0105$$^{***}$ & $-0.0104$$^{***}$ & $-0.0084$$^{***}$ & $-0.6773$$^{***}$ \\\\ 68 & $-0.0104$$^{***}$ & $-0.0101$$^{***}$ & $-0.0088$$^{***}$ & $-0.6504$$^{***}$ \\\\ 165 & $-0.0104$$^{***}$ & $-0.0102$$^{***}$ & $-0.0112$$^{***}$ & $-0.6614$$^{***}$ \\\\ 122 & $-0.0104$$^{***}$ & $-0.0101$$^{***}$ & $-0.0171$$^{***}$ & $-0.6151$$^{***}$ \\\\ 131 & $-0.0102$$^{***}$ & $-0.0101$$^{***}$ & $-0.0089$$^{***}$ & $-0.5614$$^{***}$ \\\\ 178 & $-0.0102$$^{***}$ & $-0.0099$$^{***}$ & $-0.0058$$^{***}$ & $-0.5995$$^{***}$ \\\\ 189 & $-0.0102$$^{***}$ & $-0.0101$$^{***}$ & $-0.0067$$^{***}$ & $-0.4913$$^{***}$ \\\\ 169 & $-0.0101$$^{***}$ & $-0.0100$$^{***}$ & $-0.0068$$^{***}$ & $-0.6468$$^{***}$ \\\\ 101 & $-0.0100$$^{***}$ & $-0.0095$$^{***}$ & $-0.0056$$^{***}$ & $-0.6241$$^{***}$ \\\\ 49 & $-0.0099$$^{***}$ & $-0.0095$$^{***}$ & $-0.0075$$^{***}$ & $-0.6137$$^{***}$ \\\\ 156 & $-0.0098$$^{***}$ & $-0.0095$$^{***}$ & $-0.0071$$^{***}$ & $-0.5875$$^{***}$ \\\\ 108 & $-0.0097$$^{***}$ & $-0.0097$$^{***}$ & $-0.0064$$^{***}$ & $-0.5817$$^{***}$ \\\\ 142 & $-0.0095$$^{***}$ & $-0.0096$$^{***}$ & $-0.0079$$^{***}$ & $-0.6029$$^{***}$ \\\\ 113 & $-0.0094$$^{***}$ & $-0.0093$$^{***}$ & $-0.0074$$^{***}$ & $-0.3895$$^{***}$ \\\\ 36 & $-0.0094$$^{***}$ & $-0.0092$$^{***}$ & $-0.0073$$^{***}$ & $-0.5987$$^{***}$ \\\\ 210 & $-0.0092$$^{***}$ & $-0.0092$$^{***}$ & $-0.0048$$^{***}$ & $-0.4465$$^{***}$ \\\\ 33 & $-0.0091$$^{***}$ & $-0.0091$$^{***}$ & $-0.0073$$^{***}$ & $-0.4622$$^{***}$ \\\\ 50 & $-0.0091$$^{***}$ & $-0.0091$$^{***}$ & $-0.0118$$^{***}$ & $-0.5039$$^{***}$ \\\\ 97 & $-0.0091$$^{***}$ & $-0.0089$$^{***}$ & $-0.0068$$^{***}$ & $-0.4408$$^{***}$ \\\\ 100 & $-0.0090$$^{***}$ & $-0.0086$$^{***}$ & $-0.0059$$^{***}$ & $-0.5059$$^{***}$ \\\\ 25 & $-0.0089$$^{***}$ & $-0.0088$$^{***}$ & $-0.0060$$^{***}$ & $-0.5040$$^{***}$ \\\\ 31 & $-0.0089$$^{***}$ & $-0.0087$$^{***}$ & $-0.0037$$^{***}$ & $-0.2714$$^{***}$ \\\\ 22 & $-0.0089$$^{***}$ & $-0.0086$$^{***}$ & $-0.0071$$^{***}$ & $-0.5752$$^{***}$ \\\\ 158 & $-0.0089$$^{***}$ & $-0.0087$$^{***}$ & $-0.0142$$^{***}$ & $-0.4100$$^{***}$ \\\\ 15 & $-0.0088$$^{***}$ & $-0.0087$$^{***}$ & $-0.0075$$^{***}$ & $-0.4265$$^{***}$ \\\\ 67 & $-0.0088$$^{***}$ & $-0.0085$$^{***}$ & $-0.0057$$^{***}$ & $-0.5413$$^{***}$ \\\\ 195 & $-0.0086$$^{***}$ & $-0.0084$$^{***}$ & $-0.0022$$^{***}$ & $-0.3644$$^{***}$ \\\\ 172 & $-0.0086$$^{***}$ & $-0.0086$$^{***}$ & $-0.0034$$^{***}$ & $-0.5624$$^{***}$ \\\\ 152 & $-0.0086$$^{***}$ & $-0.0084$$^{***}$ & $-0.0127$$^{***}$ & $-0.4597$$^{***}$ \\\\ 53 & $-0.0086$$^{***}$ & $-0.0083$$^{***}$ & $-0.0102$$^{***}$ & $-0.5295$$^{***}$ \\\\ 55 & $-0.0085$$^{***}$ & $-0.0083$$^{***}$ & $-0.0115$$^{***}$ & $-0.5262$$^{***}$ \\\\ 83 & $-0.0085$$^{***}$ & $-0.0082$$^{***}$ & $-0.0066$$^{***}$ & $-0.5303$$^{***}$ \\\\ 84 & $-0.0084$$^{***}$ & $-0.0083$$^{***}$ & $-0.0059$$^{***}$ & $-0.5230$$^{***}$ \\\\ 37 & $-0.0083$$^{***}$ & $-0.0078$$^{***}$ & $-0.0064$$^{***}$ & $-0.5239$$^{***}$ \\\\ 190 & $-0.0083$$^{***}$ & $-0.0081$$^{***}$ & $-0.0036$$^{***}$ & $-0.3399$$^{***}$ \\\\ 181 & $-0.0082$$^{***}$ & $-0.0079$$^{***}$ & $-0.0078$$^{***}$ & $-0.4972$$^{***}$ \\\\ 188 & $-0.0081$$^{***}$ & $-0.0080$$^{***}$ & $-0.0073$$^{***}$ & $-0.5392$$^{***}$ \\\\ 44 & $-0.0081$$^{***}$ & $-0.0078$$^{***}$ & $-0.0053$$^{***}$ & $-0.4030$$^{***}$ \\\\ 16 & $-0.0080$$^{***}$ & $-0.0077$$^{***}$ & $-0.0073$$^{***}$ & $-0.5061$$^{***}$ \\\\ 23 & $-0.0079$$^{***}$ & $-0.0076$$^{***}$ & $-0.0125$$^{***}$ & $-0.4674$$^{***}$ \\\\ 11 & $-0.0079$$^{***}$ & $-0.0076$$^{***}$ & $-0.0070$$^{***}$ & $-0.4952$$^{***}$ \\\\ 52 & $-0.0078$$^{***}$ & $-0.0076$$^{***}$ & $-0.0099$$^{***}$ & $-0.4771$$^{***}$ \\\\ 166 & $-0.0077$$^{***}$ & $-0.0066$$^{***}$ & $-0.0188$$^{***}$ & $-0.4875$$^{***}$ \\\\ 175 & $-0.0077$$^{***}$ & $-0.0075$$^{***}$ & $-0.0042$$^{***}$ & $-0.3596$$^{***}$ \\\\ 73 & $-0.0077$$^{***}$ & $-0.0077$$^{***}$ & $-0.0082$$^{***}$ & $-0.3388$$^{***}$ \\\\ 59 & $-0.0077$$^{***}$ & $-0.0077$$^{***}$ & $-0.0096$$^{***}$ & $-0.2768$$^{***}$ \\\\ 179 & $-0.0076$$^{***}$ & $-0.0073$$^{***}$ & $-0.0063$$^{***}$ & $-0.4382$$^{***}$ \\\\ 197 & $-0.0076$$^{***}$ & $-0.0074$$^{***}$ & $-0.0078$$^{***}$ & $-0.4936$$^{***}$ \\\\ 9 & $-0.0076$$^{***}$ & $-0.0075$$^{***}$ & $-0.0091$$^{***}$ & $-0.4548$$^{***}$ \\\\ 186 & $-0.0075$$^{***}$ & $-0.0074$$^{***}$ & $-0.0063$$^{***}$ & $-0.4841$$^{***}$ \\\\ 200 & $-0.0075$$^{***}$ & $-0.0073$$^{***}$ & $0.0105$$^{***}$ & $-0.2994$$^{***}$ \\\\ 115 & $-0.0075$$^{***}$ & $-0.0073$$^{***}$ & $-0.0059$$^{***}$ & $-0.4655$$^{***}$ \\\\ 209 & $-0.0074$$^{***}$ & $-0.0071$$^{***}$ & $-0.0069$$^{***}$ & $-0.4651$$^{***}$ \\\\ 167 & $-0.0074$$^{***}$ & $-0.0070$$^{***}$ & $-0.0038$$^{***}$ & $-0.4804$$^{***}$ \\\\ 56 & $-0.0074$$^{***}$ & $-0.0071$$^{***}$ & $-0.0105$$^{***}$ & $-0.4447$$^{***}$ \\\\ 42 & $-0.0073$$^{***}$ & $-0.0071$$^{***}$ & $-0.0066$$^{***}$ & $-0.4663$$^{***}$ \\\\ 54 & $-0.0072$$^{***}$ & $-0.0069$$^{***}$ & $-0.0051$$^{***}$ & $-0.3294$$^{***}$ \\\\ 132 & $-0.0071$$^{***}$ & $-0.0069$$^{***}$ & $-0.0056$$^{***}$ & $-0.3017$$^{***}$ \\\\ 157 & $-0.0070$$^{***}$ & $-0.0067$$^{***}$ & $-0.0064$$^{***}$ & $-0.3727$$^{***}$ \\\\ 35 & $-0.0068$$^{***}$ & $-0.0064$$^{***}$ & $-0.0048$$^{***}$ & $-0.2911$$^{***}$ \\\\ 8 & $-0.0068$$^{***}$ & $-0.0065$$^{***}$ & $-0.0086$$^{***}$ & $-0.4015$$^{***}$ \\\\ 12 & $-0.0067$$^{***}$ & $-0.0065$$^{***}$ & $-0.0073$$^{***}$ & $-0.3776$$^{***}$ \\\\ 184 & $-0.0067$$^{***}$ & $-0.0067$$^{***}$ & $-0.0046$$^{***}$ & $-0.4192$$^{***}$ \\\\ 7 & $-0.0067$$^{***}$ & $-0.0066$$^{***}$ & $-0.0078$$^{***}$ & $-0.4037$$^{***}$ \\\\ 143 & $-0.0066$$^{***}$ & $-0.0065$$^{***}$ & $-0.0056$$^{***}$ & $-0.2707$$^{***}$ \\\\ 18 & $-0.0064$$^{***}$ & $-0.0063$$^{***}$ & $-0.0050$$^{***}$ & $-0.2731$$^{***}$ \\\\ 82 & $-0.0064$$^{***}$ & $-0.0061$$^{***}$ & $-0.0048$$^{***}$ & $-0.3822$$^{***}$ \\\\ 87 & $-0.0064$$^{***}$ & $-0.0062$$^{***}$ & $-0.0040$$^{***}$ & $-0.2717$$^{***}$ \\\\ 135 & $-0.0064$$^{***}$ & $-0.0060$$^{***}$ & $-0.0052$$^{***}$ & $-0.3825$$^{***}$ \\\\ 148 & $-0.0061$$^{***}$ & $-0.0060$$^{***}$ & $-0.0035$$^{***}$ & $-0.3905$$^{***}$ \\\\ 168 & $-0.0061$$^{***}$ & $-0.0057$$^{***}$ & $-0.0063$$^{***}$ & $-0.3890$$^{***}$ \\\\ 75 & $-0.0060$$^{***}$ & $-0.0059$$^{***}$ & $-0.0045$$^{***}$ & $-0.2223$$^{***}$ \\\\ 65 & $-0.0059$$^{***}$ & $-0.0030$$^{***}$ & $-0.0007$ & $-0.1223$$^{***}$ \\\\ 203 & $-0.0059$$^{***}$ & $-0.0057$$^{***}$ & $-0.0011$$^{***}$ & $-0.2487$$^{***}$ \\\\ 117 & $-0.0059$$^{***}$ & $-0.0058$$^{***}$ & $-0.0036$$^{***}$ & $-0.1524$$^{***}$ \\\\ 183 & $-0.0058$$^{***}$ & $-0.0057$$^{***}$ & $-0.0042$$^{***}$ & $-0.3464$$^{***}$ \\\\ 2 & $-0.0058$$^{***}$ & $-0.0055$$^{***}$ & $-0.0117$$^{***}$ & $-0.3581$$^{***}$ \\\\ 28 & $-0.0057$$^{***}$ & $-0.0058$$^{***}$ & $-0.0120$$^{***}$ & $-0.1812$$^{***}$ \\\\ 39 & $-0.0056$$^{***}$ & $-0.0054$$^{***}$ & $-0.0047$$^{***}$ & $-0.3435$$^{***}$ \\\\ 103 & $-0.0056$$^{***}$ & $-0.0051$$^{***}$ & $-0.0034$$^{***}$ & $-0.3275$$^{***}$ \\\\ 153 & $-0.0055$$^{***}$ & $-0.0054$$^{***}$ & $-0.0173$$^{***}$ & $-0.3348$$^{***}$ \\\\ 69 & $-0.0055$$^{***}$ & $-0.0052$$^{***}$ & $-0.0055$$^{***}$ & $-0.3332$$^{***}$ \\\\ 95 & $-0.0055$$^{***}$ & $-0.0054$$^{***}$ & $-0.0044$$^{***}$ & $-0.2818$$^{***}$ \\\\ 149 & $-0.0054$$^{***}$ & $-0.0052$$^{***}$ & $-0.0061$$^{***}$ & $-0.1684$$^{***}$ \\\\ 71 & $-0.0053$$^{***}$ & $-0.0051$$^{***}$ & $-0.0074$$^{***}$ & $-0.3002$$^{***}$ \\\\ 47 & $-0.0053$$^{***}$ & $-0.0049$$^{***}$ & $-0.0050$$^{***}$ & $-0.3193$$^{***}$ \\\\ 45 & $-0.0051$$^{***}$ & $-0.0048$$^{***}$ & $-0.0069$$^{***}$ & $-0.3072$$^{***}$ \\\\ 72 & $-0.0051$$^{***}$ & $-0.0051$$^{***}$ & $-0.0036$$^{***}$ & $-0.3809$$^{***}$ \\\\ 96 & $-0.0051$$^{***}$ & $-0.0049$$^{***}$ & $-0.0040$$^{***}$ & $-0.2040$$^{***}$ \\\\ 10 & $-0.0050$$^{***}$ & $-0.0044$$^{***}$ & $-0.0055$$^{***}$ & $-0.2824$$^{***}$ \\\\ 110 & $-0.0050$$^{***}$ & $-0.0048$$^{***}$ & $-0.0033$$^{***}$ & $-0.2274$$^{***}$ \\\\ 127 & $-0.0049$$^{***}$ & $-0.0046$$^{***}$ & $-0.0064$$^{***}$ & $-0.3273$$^{***}$ \\\\ 24 & $-0.0049$$^{***}$ & $-0.0047$$^{***}$ & $-0.0050$$^{***}$ & $-0.2924$$^{***}$ \\\\ 99 & $-0.0049$$^{***}$ & $-0.0044$$^{***}$ & $-0.0039$$^{***}$ & $-0.2885$$^{***}$ \\\\ 76 & $-0.0047$$^{***}$ & $-0.0048$$^{***}$ & $-0.0057$$^{***}$ & $-0.3248$$^{***}$ \\\\ 48 & $-0.0047$$^{***}$ & $-0.0048$$^{***}$ & $-0.0050$$^{***}$ & $-0.3017$$^{***}$ \\\\ 92 & $-0.0046$$^{***}$ & $-0.0045$$^{***}$ & $-0.0041$$^{***}$ & $-0.2985$$^{***}$ \\\\ 177 & $-0.0045$$^{***}$ & $-0.0053$$^{***}$ & $-0.0027$$^{***}$ & $-0.2644$$^{***}$ \\\\ 41 & $-0.0044$$^{***}$ & $-0.0039$$^{***}$ & $-0.0056$$^{***}$ & $-0.2658$$^{***}$ \\\\ 105 & $-0.0041$$^{***}$ & $-0.0038$$^{***}$ & $-0.0017$$^{***}$ & $-0.2413$$^{***}$ \\\\ 5 & $-0.0041$$^{***}$ & $-0.0036$$^{***}$ & $-0.0055$$^{***}$ & $-0.2430$$^{***}$ \\\\ 46 & $-0.0037$$^{***}$ & $-0.0037$$^{***}$ & $-0.0036$$^{***}$ & $-0.1889$$^{***}$ \\\\ 134 & $-0.0036$$^{***}$ & $-0.0036$$^{***}$ & $-0.0074$$^{***}$ & $-0.2345$$^{***}$ \\\\ 98 & $-0.0036$$^{***}$ & $-0.0031$$^{***}$ & $-0.0080$$^{***}$ & $-0.2113$$^{***}$ \\\\ 126 & $-0.0034$$^{***}$ & $-0.0032$$^{***}$ & $-0.0040$$^{***}$ & $-0.2096$$^{***}$ \\\\ 202 & $-0.0033$$^{***}$ & $-0.0032$$^{***}$ & $-0.0028$$^{***}$ & $-0.2040$$^{***}$ \\\\ 80 & $-0.0031$$^{***}$ & $-0.0027$$^{***}$ & $-0.0040$$^{***}$ & $-0.1791$$^{***}$ \\\\ 40 & $-0.0030$$^{***}$ & $-0.0029$$^{***}$ & $-0.0028$$^{***}$ & $-0.1022$$^{***}$ \\\\ 74 & $-0.0030$$^{***}$ & $-0.0027$$^{***}$ & $-0.0046$$^{***}$ & $-0.1975$$^{***}$ \\\\ 106 & $-0.0027$$^{***}$ & $-0.0023$$^{***}$ & $-0.0046$$^{***}$ & $-0.1554$$^{***}$ \\\\ 34 & $-0.0025$$^{***}$ & $-0.0022$$^{***}$ & $-0.0025$$^{***}$ & $-0.0770$$^{***}$ \\\\ 58 & $-0.0024$$^{***}$ & $-0.0020$$^{***}$ & $-0.0042$$^{***}$ & $-0.1457$$^{***}$ \\\\ 38 & $-0.0023$$^{***}$ & $-0.0022$$^{***}$ & $-0.0031$$^{***}$ & $-0.0927$$^{***}$ \\\\ 17 & $-0.0022$$^{***}$ & $-0.0018$$^{***}$ & $-0.0031$$^{***}$ & $-0.1221$$^{***}$ \\\\ 107 & $-0.0021$$^{***}$ & $-0.0019$$^{***}$ & $-0.0031$$^{***}$ & $-0.1285$$^{***}$ \\\\ 27 & $-0.0018$$^{***}$ & $-0.0016$$^{***}$ & $-0.0116$$^{***}$ & $-0.1189$$^{***}$ \\\\ 57 & $-0.0017$$^{***}$ & $-0.0016$$^{***}$ & $-0.0051$$^{***}$ & $-0.0767$$^{***}$ \\\\ 128 & $-0.0016$$^{***}$ & $-0.0012$$^{***}$ & $-0.0024$$^{***}$ & $-0.0300$$^{***}$ \\\\ 6 & $-0.0014$$^{***}$ & $-0.0011$$^{***}$ & $-0.0036$$^{***}$ & $-0.0791$$^{***}$ \\\\ 125 & $-0.0013$$^{***}$ & $-0.0009$$^{***}$ & $-0.0036$$^{***}$ & $-0.0771$$^{***}$ \\\\ 102 & $-0.0012$$^{***}$ & $-0.0010$$^{***}$ & $-0.0010$$^{***}$ & $-0.0666$$^{***}$ \\\\ 162 & $-0.0006$$^{**}$ & $-0.0004$ & $-0.0243$$^{***}$ & $-0.0649$$^{***}$ \\\\ 114 & $-0.0006$$^{***}$ & $-0.0007$$^{***}$ & $-0.0035$$^{***}$ & $-0.0322$$^{***}$ \\\\ 140 & $-0.0006$$^{***}$ & $-0.0005$$^{***}$ & $-0.0029$$^{***}$ & $-0.0331$$^{***}$ \\\\ 109 & $-0.0004$$^{***}$ & $-0.0002$$^{*}$ & $-0.0004$$^{**}$ & $-0.0141$$^{**}$ \\\\ 19 & $-0.0003$$^{**}$ & $0.0002$ & $-0.0029$$^{***}$ & $-0.0027$ \\\\ 13 & $-0.0003$$^{**}$ & $-0.0000$ & $-0.0015$$^{***}$ & $-0.0144$$^{**}$ \\\\ 86 & $-0.0002$ & $0.0000$ & $-0.0017$$^{***}$ & $0.0001$ \\\\ 159 & $0.0004$ & $0.0017$$^{***}$ & $-0.0078$$^{***}$ & $0.0622$$^{**}$ \\\\ 79 & $0.0012$$^{***}$ & $0.0014$$^{***}$ & $-0.0007$$^{***}$ & $0.0785$$^{***}$ \\\\ 21 & $0.0015$$^{***}$ & $0.0016$$^{***}$ & $-0.0057$$^{***}$ & $0.0886$$^{***}$ \\\\ 90 & $0.0020$$^{***}$ & $0.0023$$^{***}$ & $-0.0003$$^{**}$ & $0.1361$$^{***}$ \\\\ 81 & $0.0030$$^{***}$ & $0.0031$$^{***}$ & $0.0001$ & $0.1975$$^{***}$ \\\\ 161 & $0.0042$$^{***}$ & $0.0042$$^{***}$ & $-0.0048$$^{***}$ & $0.0235$$^{***}$ \\\\ 207 & $0.0070$$^{***}$ & $0.0072$$^{***}$ & $0.0197$$^{***}$ & $0.3363$$^{***}$ \\\\ 111 & $0.0078$$^{***}$ & $0.0084$$^{***}$ & $0.0065$$^{***}$ & $0.4942$$^{***}$ \\\\ 94 & $0.0086$$^{***}$ & $0.0088$$^{***}$ & $0.0039$$^{***}$ & $0.5675$$^{***}$ \\\\ 139 & $0.0152$$^{***}$ & $0.0154$$^{***}$ & $0.0117$$^{***}$ & $0.8995$$^{***}$ \\\\ 160 & $0.0165$$^{***}$ & $0.0160$$^{***}$ & $-0.0005$ & $0.4628$$^{***}$ \\\\ 151 & $0.0188$$^{***}$ & $0.0188$$^{***}$ & $-0.0056$$^{***}$ & $0.3830$$^{***}$ \\\\ {longtable}"
+    },
+    {
+      "type": "h2",
+      "text": "Model Diagnostics"
+    },
+    {
+      "type": "p",
+      "html": "Fig. presents three diagnostic checks for the Gamma GLM. Panel (a) plots deviance residuals against fitted values; the binned mean (orange line) is flat near zero across the full range of predicted speeds, indicating no systematic misspecification. Panel (b) shows a Q\u2013Q plot of deviance residuals against a normal distribution; the central quantiles align closely with the 45-degree reference, with modest departures in the tails reflecting extreme-weather observations. Panel (c) plots observed against predicted speed; the correlation is 0.85."
+    }
+  ]
+}
