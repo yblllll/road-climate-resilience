@@ -1,0 +1,36 @@
+{
+  "cite_key": "cai2016rainfall",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf",
+  "total_pages": 9,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 68,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Cai et al. 2016 is a Hong Kong urban road study focused entirely on Gloucester Road, Kowloon. It contains no mention of the UK Strategic Road Network, no road traffic share statistics, no freight tonne-kilometre figures, and no discussion of adaptive capacity to climate change. The paper's geographic scope is a single five-lane urban road in Hong Kong with data from 2009-2010. These UK-specific statistics are wholly absent."
+    },
+    {
+      "line_num": 95,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Cai et al. 2016 does not synthesise evidence across transport modes — it is a single-mode (road) empirical study on one urban road section. The paper states 'Rain has significant detrimental effects on road traffic' (p.1) and finds rainfall increases speed dispersion at low densities while decreasing it at high densities, but it does not frame precipitation as 'the most consistent negative effect' compared to other weather variables, nor does it review cross-modal evidence. The cited framing of a multi-modal synthesis is entirely absent."
+    },
+    {
+      "line_num": 202,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Cai et al. 2016 measures traffic performance exclusively through the coefficient of variation of speed (CVS) and space mean speed. The paper mentions JTIS (Journey Time Indication System) only as a data collection platform, not as a performance measure. Neither 'travel time index', 'journey-time reliability', nor 'composite resilience scores' appear anywhere in the paper. The claim attributes a set of performance metrics to this source that it does not discuss or advocate."
+    }
+  ]
+}

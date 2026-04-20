@@ -312,11 +312,11 @@
       "reason": "Keyword-overlap recall=0.286 (n=4) on p.10"
     }
   ],
-  "last_updated": "2026-04-20T22:52:14.607533+00:00",
+  "last_updated": "2026-04-20T23:07:18.018663+00:00",
   "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
   "per_run": {
     "llm_close_reader_v1": {
-      "generated_at": "2026-04-20T22:52:14.607531+00:00",
+      "generated_at": "2026-04-20T23:07:18.018661+00:00",
       "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
       "per_claim": [
         {

@@ -188,6 +188,41 @@
       "reason": "Keyword-overlap recall=0.043 (n=2) on p.1"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.468685+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.019046+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.019044+00:00",
+      "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+      "per_claim": [
+        {
+          "line_num": 66,
+          "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+          "source_quote": "We must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major A-roads we manage including bridges, tunnels, drains and earthworks.",
+          "quote_page": 1,
+          "search_verified": true,
+          "verdict": "PARTIAL",
+          "reasoning": "The PDF confirms the SRN exists and faces climate pressure, but contains no traffic-share figures (one-third) or freight tonne-kilometre statistics — those quantitative claims are not supported by this document."
+        },
+        {
+          "line_num": 111,
+          "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": false,
+          "verdict": "NOT_FOUND",
+          "reasoning": "The PDF makes no reference to the Department for Transport, a Rapid Evidence Assessment, cost-benefit analysis, or any methodological discussion; the source is a short National Highways web page covering their own adaptation strategy, not a DfT review."
+        },
+        {
+          "line_num": 524,
+          "claim_text": "The map translates per-millimetre coefficients into absolute scenario impacts that are directly interpretable by transport planners and drainage engineers.} Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction .",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": false,
+          "verdict": "NOT_FOUND",
+          "reasoning": "This claim contains bespoke empirical findings (per-mm coefficients, A11/A1(M) corridor sensitivity, DMRB drainage standards) that are entirely absent from this four-page web document; the claim appears to be original analysis from the citing paper itself, not content attributable to this source."
+        }
+      ]
+    }
+  }
 }

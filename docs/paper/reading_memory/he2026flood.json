@@ -175,6 +175,32 @@
       "reason": "Keyword-overlap recall=0.231 (n=3) on p.19"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.466811+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.017636+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.017634+00:00",
+      "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+      "per_claim": [
+        {
+          "line_num": 70,
+          "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": false,
+          "verdict": "NOT_FOUND",
+          "reasoning": "He et al. 2026 is a Bristol ABM flood simulation study with no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity framing. The actual text at line 70 concerns cascading congestion and accessibility gaps motivating the agent-based framework. This statistic originates from a UK policy source (e.g. National Highways/DfT) entirely unrelated to He et al."
+        },
+        {
+          "line_num": 104,
+          "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+          "source_quote": "High-frequency GPS probe (\"floating-car\") data from on-board devices or smartphones can directly capture per-vehicle paths and speeds with sufficient fidelity for network modelling and diagnostics, as demonstrated by field experiments and large-scale analyses.",
+          "quote_page": 2,
+          "search_verified": true,
+          "verdict": "MISMATCH",
+          "reasoning": "The brief's claim text does not appear in He et al. The actual line 104 discusses GPS/floating-car data for MATSim calibration, not a typology of transport climate resilience research methods. The paper's literature review (Section 2) covers agent-based simulation platforms (MATSim, SUMO, VISSIM) and trajectory data, not qualitative risk reviews vs. quantitative resilience methodologies. The claimed framing of spanning qualitative/quantitative/simulation approaches is a generic characterisation of the field, unsupported by He et al.'s actual scope."
+        }
+      ]
+    }
+  }
 }

@@ -1,0 +1,42 @@
+{
+  "cite_key": "gao2024resilience",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
+  "total_pages": 20,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 97,
+      "claim_text": "synthesised evidence across transport modes and identified precipitation as the weather variable with the most consistent negative effect on road performance.",
+      "source_quote": "rainfall events significantly reduce speeds on more than 80 % of urban road sections, making it the primary factor affecting the daily operational efficiency of urban road traffic systems",
+      "quote_page": 1,
+      "search_verified": true,
+      "search_for_string": "rainfall events significantly reduce speeds on more than 80",
+      "bbox": [79.43, 490.78, 283.37, 503.81],
+      "verdict": "MISMATCH",
+      "reasoning": "The citing claim attributes to Gao 2024 a synthesis across 'transport modes' that identifies 'precipitation' as the most consistently negative weather variable. Neither 'transport modes', 'precipitation', 'synthesised', 'weather variable', nor 'negative effect' appear anywhere in the paper. Gao 2024 is narrowly scoped to road traffic systems only, in a single Chinese city (Harbin). The passage on p.1 that comes closest says rainfall reduces speeds on >80% of urban road sections — citing Zhu et al. 2020, not as Gao's own finding. Gao 2024 does not synthesise multi-modal or multi-study evidence, and frames rainfall as a factor in road resilience rather than performing a comparative analysis of weather variables. The claiming sentence misrepresents the scope and framing of this paper entirely."
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "researchers employed metrics such as redundancy, robustness loss, recovery time, and response rate to measure and assess system resilience",
+      "quote_page": 1,
+      "search_verified": true,
+      "search_for_string": "robustness loss, recovery time, and response rate",
+      "bbox": [64.18, 553.54, 234.04, 566.57],
+      "verdict": "PARTIAL",
+      "reasoning": "The paper does discuss resilience metrics for road traffic under rainfall (recovery time, redundancy, robustness loss, response rate — p.1; network efficiency ratio, travel time ratio — p.2; average speed — p.5). However, 'travel time index' and 'journey-time reliability' do not appear anywhere in the paper; search_for finds zero hits for both terms. 'Composite resilience scores' is also not a term used. The citing claim partially captures the spirit of the paper's metric discussion but overstates and misnames the specific indicators. The paper's actual metric list is: redundancy, robustness loss, recovery time, response rate, network efficiency ratio, travel time ratio, and its own link-reliability-based resilience score."
+    },
+    {
+      "line_num": 505,
+      "claim_text": "The speed-at-capacity reductions of 8--14\\% reported by capture average effects during sustained rain, not the marginal effect per millimetre.",
+      "source_quote": "Our research indicates that system resilience decreases by approximately 6.7 % for every increase of 10mm in rainfall intensity when the rainfall intensity is below 50mm.",
+      "quote_page": 12,
+      "search_verified": true,
+      "search_for_string": "system resilience decreases by approximately 6.7",
+      "bbox": [326.66, 508.53, 496.72, 521.56],
+      "verdict": "MISMATCH",
+      "reasoning": "Gao 2024 reports 6.7% resilience decrease per 10 mm rainfall increase (below 50 mm threshold) — this is a resilience metric, not a speed-at-capacity figure. The paper never reports 8–14% speed reductions, never uses the term 'speed-at-capacity', and never discusses 'sustained rain' as a distinct category versus marginal effects per millimetre. The paper does use average speed as its underlying data source but converts it to a link-reliability resilience score; it never reports speed reductions in percentage terms. The 6.7% figure is explicitly a marginal resilience effect per 10 mm increment — the opposite of what the citing claim asserts (that the reported figure captures average not marginal effects). The 8–14% range is entirely absent from this paper."
+    }
+  ]
+}

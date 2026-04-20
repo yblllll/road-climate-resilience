@@ -1,59 +1,62 @@
 {
   "total": 63,
   "agreement_buckets": {
-    "LLM_NOT_RUN": 32,
-    "AGREE_NOT_FOUND": 7,
-    "AGREE_PARTIAL": 2,
-    "AGREE_PARTIAL_QUOTE_VERIFIED": 14,
-    "LLM_FLAG_QUOTE_REAL": 2,
+    "AGREE_PARTIAL_QUOTE_VERIFIED": 18,
+    "LLM_FLAG_QUOTE_REAL": 7,
+    "LLM_NOT_FOUND_LOCAL_MATCH": 3,
+    "AGREE_NOT_FOUND": 21,
+    "AGREE_PARTIAL": 3,
+    "LLM_NOT_FOUND_LOCAL_PARTIAL": 1,
+    "LLM_FLAG_QUOTE_FUZZY": 2,
     "LLM_PARTIAL_WITHOUT_QUOTE": 3,
-    "AGREE_MATCH": 2,
-    "LLM_FLAG_QUOTE_FUZZY": 1
+    "AGREE_PARTIAL_PAGE_OFF": 1,
+    "LLM_NOT_RUN": 2,
+    "AGREE_MATCH": 2
   },
   "diffs": [
     {
       "cite_key": "nh2024climate",
       "line_num": 66,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "PARTIAL",
+      "llm_reasoning": "The PDF confirms the SRN exists and faces climate pressure, but contains no traffic-share figures (one-third) or freight tonne-kilometre statistics — those quantitative claims are not supported by thi",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 1,
+      "local_snippet": "the challenge we must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major a-roads we manage including bridges, tunnels, drains and earthwo",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "dft2024rea",
       "line_num": 66,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "MISMATCH",
+      "llm_reasoning": "The document describes the SRN as comprising 4,300 miles of motorways used by ~4 million vehicles/day and valued at £109 billion. It does NOT contain the specific fractions 'one-third of all road traf",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 10,
+      "local_snippet": "twork (srn) and the local road network. the srn comprises more than 4,300 miles of motorways and major a-class roads and is used by around 4 million vehicles each day (wang, 2019). it is a significant",
+      "agreement": "LLM_FLAG_QUOTE_REAL"
     },
     {
       "cite_key": "sias2025roadways",
       "line_num": 66,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "None of the claim's key phrases appear anywhere in the paper: 'Strategic Road Network', 'one-third of all road traffic', 'two-thirds of freight', 'adaptive capacity to changing climate', 'under strain",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 13,
+      "local_snippet": "- ated costs will continue to increase. distances travelled by vehicles are likely to increase nationally and globally, with global tonne-kilometres of freight movement expected to approximately doubl",
+      "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
       "cite_key": "orr2024annual",
       "line_num": 66,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "No text in PDF contains 'one-third', 'two-thirds', 'tonne-kilometre', or 'adaptive capacity'. The ORR 2024 report covers NH performance KPIs, not SRN traffic share statistics.",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "koetse2009impact",
@@ -124,35 +127,35 @@
     {
       "cite_key": "cai2016rainfall",
       "line_num": 68,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "Cai et al. 2016 is a Hong Kong urban road study focused entirely on Gloucester Road, Kowloon. It contains no mention of the UK Strategic Road Network, no road traffic share statistics, no freight tonn",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "huang2022overview",
       "line_num": 70,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "The paper is a review of ABM for transport simulation. It contains no mention of the UK Strategic Road Network, one-third road traffic share, two-thirds freight tonne-kilometres, or adaptive capacity ",
+      "local_verdict": "NOT_FOUND",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "he2026flood",
       "line_num": 70,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "He et al. 2026 is a Bristol ABM flood simulation study with no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity framing. The actual text at line 70 concerns cas",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "pregnolato2017depth",
@@ -168,24 +171,24 @@
     {
       "cite_key": "farahmand2024integrating",
       "line_num": 70,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "The paper focuses entirely on the Haiti road network and the Global South. No mention of the UK Strategic Road Network, UK traffic statistics, or freight tonne-kilometre figures appears anywhere in th",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "dft2024rea",
       "line_num": 81,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "PARTIAL",
+      "llm_reasoning": "The document is indeed a DfT-commissioned Rapid Evidence Assessment (NatCen, 2022) that identifies evidence gaps. Page 30 explicitly lists 'understanding in detail the effects of climate change on tra",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 30,
+      "local_snippet": " weather events at smaller geographies; understanding in detail the effects of climate change on transport infrastructure, and in particular how inter-modal and inter-sectoral connections will be affe",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "koetse2009impact",
@@ -212,13 +215,13 @@
     {
       "cite_key": "cai2016rainfall",
       "line_num": 95,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "Cai et al. 2016 does not synthesise evidence across transport modes — it is a single-mode (road) empirical study on one urban road section. The paper states 'Rain has significant detrimental effects o",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "bi2022weather",
@@ -278,68 +281,68 @@
     {
       "cite_key": "gao2024resilience",
       "line_num": 97,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "MISMATCH",
+      "llm_reasoning": "The citing claim attributes to Gao 2024 a synthesis across 'transport modes' that identifies 'precipitation' as the most consistently negative weather variable. Neither 'transport modes', 'precipitati",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 1,
+      "local_snippet": " snelder, 2018). a study has shown that rainfall events significantly reduce speeds on more than 80 % of urban road sections, making it the primary factor affecting the daily operational efficiency of",
+      "agreement": "LLM_FLAG_QUOTE_REAL"
     },
     {
       "cite_key": "wang2020climate",
       "line_num": 102,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "Wang 2020 discusses spatial scale in terms of general research coverage — studies conducted at 'national and multi-regional scale' — and separately lists precipitation as a climate parameter causing f",
+      "local_verdict": "MATCH_PARTIAL",
+      "local_layer": 3,
+      "local_page": 12,
+      "local_snippet": "implications and future research agenda research surveying the impacts of climate change on the transport sectors has been conducted at a national and multi-regional scale in se",
+      "agreement": "LLM_NOT_FOUND_LOCAL_PARTIAL"
     },
     {
       "cite_key": "calvert2018methodology",
       "line_num": 102,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "The paper confirms precipitation (rain, snow, wind, temperature, mist) affects road capacity and speed at a network level, but never characterises the cited literature as operating at 'aggregate spati",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 2,
+      "local_snippet": "et al. 2006; snelder and calvert 2015). precipitation such as rain and snow, wind, temperature and mist have all been considered (agarwal, maze, and souleyrette 2005; calvert and snelder 2016; cools, ",
+      "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
       "cite_key": "ganin2017resilience",
       "line_num": 102,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "Ganin 2017 operates at city-level / network-wide scale, which loosely matches 'aggregate spatial scales', but the paper never discusses precipitation effects at any spatial scale. The disruption model",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 1,
+      "local_snippet": "nts between the intersections to links. we built road networks for 40 of the urban areas defined by the u.s. census bureau. we developed and calibrated a model to evaluate traffic delays using link lo",
+      "agreement": "LLM_NOT_FOUND_LOCAL_MATCH"
     },
     {
       "cite_key": "bergantino2024assessing",
       "line_num": 102,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "Bergantino 2024 reviews transport network resilience broadly across 53 real-data studies and identifies spatial patterns (central/urban vs peripheral, high vs low accessibility, distance decay, hazard",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "huang2022overview",
       "line_num": 104,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "The paper discusses ABM simulation-based approaches for transport generally, but does not frame transport climate resilience research as spanning qualitative risk reviews and quantitative resilience m",
+      "local_verdict": "NOT_FOUND",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "pregnolato2017depth",
@@ -366,46 +369,46 @@
     {
       "cite_key": "he2026flood",
       "line_num": 104,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "MISMATCH",
+      "llm_reasoning": "The brief's claim text does not appear in He et al. The actual line 104 discusses GPS/floating-car data for MATSim calibration, not a typology of transport climate resilience research methods. The pap",
+      "local_verdict": "MATCH_PARTIAL",
+      "local_layer": 3,
+      "local_page": 2,
+      "local_snippet": "i­ brating, and validating agent plans. high-frequency gps probe (\"floating-car\") data from on-board devices or smartphones can directly capture per-vehicle paths and speeds with sufficient fidelity f",
+      "agreement": "LLM_FLAG_QUOTE_FUZZY"
     },
     {
       "cite_key": "farahmand2024integrating",
       "line_num": 104,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "PARTIAL",
+      "llm_reasoning": "The paper does describe a landscape of quantitative and simulation-based methods in the literature, but does not explicitly characterise the field as spanning 'qualitative risk reviews'. The paper fra",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 2,
+      "local_page": 2,
+      "local_snippet": "hani et al., 2014; dong et al., 2020a). the literature documents methods for road network disruption quantification that focus mainly on network-level metrics (chalkiadakis et al., 2022; gauthier et a",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "dft2024rea",
       "line_num": 106,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "PARTIAL",
+      "llm_reasoning": "The document does acknowledge a mix of evidence types: qualitative expert assessments and quantitative cost-benefit studies are both discussed. 'Simulation and modelling evidence may also be included'",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 38,
+      "local_snippet": ", but other evidence may be evaluative. simulation and modelling evidence may also be included. search strings the search strings and ",
+      "agreement": "AGREE_PARTIAL_QUOTE_VERIFIED"
     },
     {
       "cite_key": "zare2025risk",
       "line_num": 106,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "Zare & Miller-Hooks 2025 is a real options analysis (ROA) investment-timing framework paper for roadway flood protection. Its Section 2 literature review (Table 1) categorises prior work as determinis",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "pregnolato2017depth",
@@ -421,24 +424,24 @@
     {
       "cite_key": "nh2024climate",
       "line_num": 111,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "The PDF makes no reference to the Department for Transport, a Rapid Evidence Assessment, cost-benefit analysis, or any methodological discussion; the source is a short National Highways web page cover",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "orr2024annual",
       "line_num": 111,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "No text in PDF references a 'Rapid Evidence Assessment', 'cost-benefit analyses of adaptation', or 'methodologically challenging'. This claim belongs to DfT REA source, not this ORR annual report.",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "hranac2006empirical",
@@ -476,24 +479,24 @@
     {
       "cite_key": "calvert2018methodology",
       "line_num": 200,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "PARTIAL",
+      "llm_reasoning": "The paper validates using speed-based total delay time (free-flow speed minus observed speed) and time to recovery, and proposes the LPIR composite score. However, 'travel time index' and 'journey-tim",
+      "local_verdict": "MATCH_WRONG_PAGE",
+      "local_layer": 2,
+      "local_page": 15,
+      "local_snippet": " validation of the methodology. this is achieved by comparison with two simple measures for both robustness and resilience, namely the time to recovery and the total delay time. the time to recovery, ",
+      "agreement": "AGREE_PARTIAL_PAGE_OFF"
     },
     {
       "cite_key": "gao2024resilience",
       "line_num": 200,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "PARTIAL",
+      "llm_reasoning": "The paper does discuss resilience metrics for road traffic under rainfall (recovery time, redundancy, robustness loss, response rate — p.1; network efficiency ratio, travel time ratio — p.2; average s",
+      "local_verdict": "MATCH_PARTIAL",
+      "local_layer": 3,
+      "local_page": 1,
+      "local_snippet": "oad traffic systems to rainfall events, researchers employed metrics such as redun­ dancy, robustness loss, recovery time",
+      "agreement": "AGREE_PARTIAL"
     },
     {
       "cite_key": "hranac2006empirical",
@@ -542,13 +545,13 @@
     {
       "cite_key": "cai2016rainfall",
       "line_num": 202,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "Cai et al. 2016 measures traffic performance exclusively through the coefficient of variation of speed (CVS) and space mean speed. The paper mentions JTIS (Journey Time Indication System) only as a da",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "mccullagh1989glm",
@@ -564,13 +567,13 @@
     {
       "cite_key": "wan2024paradox",
       "line_num": 204,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "MISMATCH",
+      "llm_reasoning": "The paper uses ONLY 'average car journey time' (median journey time across five Cambridge corridors) and traffic counts. It never mentions 'average speed', 'travel time index', 'journey-time reliabili",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 19,
+      "local_snippet": "n. 5.3. recent trends: car journey time models (5), (5a) and (5b) investigate recent road congestion in cambridge, measured by the average car journey time across five transport corridors in and ",
+      "agreement": "LLM_FLAG_QUOTE_REAL"
     },
     {
       "cite_key": "mccullagh1989glm",
@@ -663,46 +666,46 @@
     {
       "cite_key": "gao2024resilience",
       "line_num": 505,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "MISMATCH",
+      "llm_reasoning": "Gao 2024 reports 6.7% resilience decrease per 10 mm rainfall increase (below 50 mm threshold) — this is a resilience metric, not a speed-at-capacity figure. The paper never reports 8–14% speed reducti",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 12,
+      "local_snippet": "ack dashed lines in fig. 6 (b) and (c). our research indicates that system resilience decreases by approximately 6.7 % for every increase of 10mm in rainfall intensity when the rainfall intensity is b",
+      "agreement": "LLM_FLAG_QUOTE_REAL"
     },
     {
       "cite_key": "nh2024climate",
       "line_num": 524,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "This claim contains bespoke empirical findings (per-mm coefficients, A11/A1(M) corridor sensitivity, DMRB drainage standards) that are entirely absent from this four-page web document; the claim appea",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "dft2024rea",
       "line_num": 528,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
+      "llm_verdict": "NOT_FOUND",
+      "llm_reasoning": "The specific roads A11 and A1(M), the term DMRB, 'near-zero sensitivity', 'resilient corridors', and 'high-speed dual carriageways' in the context of climate resilience design standards are entirely a",
       "local_verdict": "NO_QUOTE",
       "local_layer": null,
       "local_page": null,
       "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "agreement": "AGREE_NOT_FOUND"
     },
     {
       "cite_key": "ganin2017resilience",
       "line_num": 624,
-      "llm_verdict": "PENDING_LLM",
-      "llm_reasoning": "No LLM close_read produced for this cite_key.",
-      "local_verdict": "NO_QUOTE",
-      "local_layer": null,
-      "local_page": null,
-      "local_snippet": "",
-      "agreement": "LLM_NOT_RUN"
+      "llm_verdict": "MISMATCH",
+      "llm_reasoning": "Ganin 2017 explicitly uses commuter link loads (L_ij, Eq. 4) as its centrality measure, described as 'traffic-based centrality measures'. Betweenness centrality is never mentioned anywhere in the pape",
+      "local_verdict": "MATCH_EXACT",
+      "local_layer": 1,
+      "local_page": 1,
+      "local_snippet": "aluate traffic delays using link loads. the loads may be regarded as traffic-based centrality measures, estimating the number of individuals using corresponding road segments. efficiency was estimated",
+      "agreement": "LLM_FLAG_QUOTE_REAL"
     }
   ]
 }

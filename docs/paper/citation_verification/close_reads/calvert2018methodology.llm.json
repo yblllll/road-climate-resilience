@@ -1,0 +1,27 @@
+{
+  "cite_key": "calvert2018methodology",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",
+  "total_pages": 26,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 102,
+      "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+      "source_quote": "Precipitation such as rain and snow, wind, temperature and mist have all been considered (Agarwal, Maze, and Souleyrette 2005; Calvert and Snelder 2016; Cools, Moons, and Wets 2010; Maze, Agarwai, and Burchett 2006).",
+      "quote_page": 2,
+      "search_verified": true,
+      "verdict": "NOT_FOUND",
+      "reasoning": "The paper confirms precipitation (rain, snow, wind, temperature, mist) affects road capacity and speed at a network level, but never characterises the cited literature as operating at 'aggregate spatial scales (network-wide, city-level, or at most corridor-level)'. That spatial-scale framing is absent; the paper's own contribution targets individual road sections via the LPIR."
+    },
+    {
+      "line_num": 200,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed , travel time index , journey-time reliability , and composite resilience scores .",
+      "source_quote": "achieved by comparison with two simple measures for both robustness and resilience, namely the time to recovery and the total delay time.",
+      "quote_page": 23,
+      "search_verified": true,
+      "verdict": "PARTIAL",
+      "reasoning": "The paper validates using speed-based total delay time (free-flow speed minus observed speed) and time to recovery, and proposes the LPIR composite score. However, 'travel time index' and 'journey-time reliability' do not appear anywhere in the text; these terms are imported from other literature and not measures applied in this paper."
+    }
+  ]
+}

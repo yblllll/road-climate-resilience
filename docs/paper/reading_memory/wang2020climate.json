@@ -36,6 +36,23 @@
       "reason": "Keyword-overlap recall=0.167 (n=2) on p.3"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.470661+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.020462+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.020457+00:00",
+      "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+      "per_claim": [
+        {
+          "line_num": 102,
+          "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+          "source_quote": "Research surveying the impacts of climate change on the transport sectors has been conducted at a national and multi-regional scale in several developed countries.",
+          "quote_page": 12,
+          "search_verified": true,
+          "verdict": "NOT_FOUND",
+          "reasoning": "Wang 2020 discusses spatial scale in terms of general research coverage — studies conducted at 'national and multi-regional scale' — and separately lists precipitation as a climate parameter causing flooding, delays, and road closures (Table 3). The paper never states that precipitation effects are estimated specifically at 'aggregate spatial scales (network-wide, city-level, or at most corridor-level).' Those three scale labels do not appear together or in that framing anywhere in the paper. The citing paper has attributed a characterisation of precipitation-effect estimation granularity that Wang 2020 does not make."
+        }
+      ]
+    }
+  }
 }

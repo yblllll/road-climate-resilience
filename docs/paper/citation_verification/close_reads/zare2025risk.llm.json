@@ -1,0 +1,18 @@
+{
+  "cite_key": "zare2025risk",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Zare_2025_Risk_Climate_Investment.pdf",
+  "total_pages": 21,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 106,
+      "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Zare & Miller-Hooks 2025 is a real options analysis (ROA) investment-timing framework paper for roadway flood protection. Its Section 2 literature review (Table 1) categorises prior work as deterministic or stochastic capital investment planning studies, not as 'qualitative risk reviews', 'quantitative resilience methodologies', or 'simulation-based approaches'. Those three category labels appear nowhere in the 21-page paper. The paper explicitly defines its contribution as filling gaps in 'risk implications of deferral' and network-level interdependencies within the ROA tradition. The claim language is a generic field characterisation that Zare & Miller-Hooks 2025 neither uses nor supports."
+    }
+  ]
+}

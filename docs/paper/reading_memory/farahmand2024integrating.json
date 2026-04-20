@@ -161,6 +161,32 @@
       "reason": "Keyword-overlap recall=0.308 (n=4) on p.3"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.465612+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.016676+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.016674+00:00",
+      "generated_by": null,
+      "per_claim": [
+        {
+          "line_num": 70,
+          "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": null,
+          "verdict": "NOT_FOUND",
+          "reasoning": "The paper focuses entirely on the Haiti road network and the Global South. No mention of the UK Strategic Road Network, UK traffic statistics, or freight tonne-kilometre figures appears anywhere in the 17-page document. This statistic belongs to a different source (likely a UK-specific transport report such as the DfT SRN statistics)."
+        },
+        {
+          "line_num": 104,
+          "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+          "source_quote": "The literature documents methods for road network disruption quantification that focus mainly on network-level metrics (Chalkiadakis et al., 2022; Gauthier et al., 2018; Sun et al., 2018) and simulation-based techniques such as percolation analysis (Li et al., 2012; Wang et al., 2019a).",
+          "quote_page": null,
+          "search_verified": null,
+          "verdict": "PARTIAL",
+          "reasoning": "The paper does describe a landscape of quantitative and simulation-based methods in the literature, but does not explicitly characterise the field as spanning 'qualitative risk reviews'. The paper frames the gap as absence of an integrated quantitative probabilistic framework, not as a qualitative-to-quantitative spectrum. The broad framing in the claim is a reasonable paraphrase of the introduction's literature survey but overstates the qualitative dimension."
+        }
+      ]
+    }
+  }
 }

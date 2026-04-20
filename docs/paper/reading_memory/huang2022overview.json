@@ -147,6 +147,32 @@
       "reason": "Keyword-overlap recall=0.154 (n=2) on p.3"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.467885+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.018412+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.018410+00:00",
+      "generated_by": null,
+      "per_claim": [
+        {
+          "line_num": 70,
+          "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+          "source_quote": "This article presents an overview of the agent-based modeling and simulation approach and its recent developments in transport fields, with the purpose of discovering the advantages and gaps and encouraging more valuable investigations and applications of agent-based models.",
+          "quote_page": null,
+          "search_verified": null,
+          "verdict": "NOT_FOUND",
+          "reasoning": "The paper is a review of ABM for transport simulation. It contains no mention of the UK Strategic Road Network, one-third road traffic share, two-thirds freight tonne-kilometres, or adaptive capacity to climate conditions. These statistics are entirely absent from the source."
+        },
+        {
+          "line_num": 104,
+          "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches.",
+          "source_quote": "The applications of agent-based models in transport systems are reviewed in three time scale models followed by an additional discussion of hybrid modeling approaches. The extensive modeling of the beliefs, desires, learning, and adaptability of individuals and the optimization problems using agent-based models are explored.",
+          "quote_page": null,
+          "search_verified": null,
+          "verdict": "NOT_FOUND",
+          "reasoning": "The paper discusses ABM simulation-based approaches for transport generally, but does not frame transport climate resilience research as spanning qualitative risk reviews and quantitative resilience methodologies. The word 'resilience' appears once in a reference title, not as a thematic claim about climate resilience research scope."
+        }
+      ]
+    }
+  }
 }

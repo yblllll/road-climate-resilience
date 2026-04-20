@@ -1,0 +1,18 @@
+{
+  "cite_key": "sias2025roadways",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Sias_2025_Climate_Roadways_Review.pdf",
+  "total_pages": 19,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T23:02:24Z",
+  "per_claim": [
+    {
+      "line_num": 66,
+      "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres , yet its adaptive capacity to changing climate conditions is under strain.",
+      "source_quote": "Distances travelled by vehicles are likely to increase nationally and globally, with global tonne-kilometres of freight movement expected to approximately double between 2020 and 2050",
+      "quote_page": 13,
+      "search_verified": true,
+      "verdict": "NOT_FOUND",
+      "reasoning": "None of the claim's key phrases appear anywhere in the paper: 'Strategic Road Network', 'one-third of all road traffic', 'two-thirds of freight', 'adaptive capacity to changing climate', 'under strain' all return zero hits across all 19 pages. The closest semantic passage (page 13) discusses global freight tonne-kilometres doubling by 2050 — a global statistic unrelated to the UK SRN and making no statement about adaptive capacity. The claim appears to originate from a UK-specific source (e.g. Highways England/National Highways reports) not cited in this paper."
+    }
+  ]
+}

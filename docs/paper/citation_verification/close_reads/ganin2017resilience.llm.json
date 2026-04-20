@@ -1,0 +1,27 @@
+{
+  "cite_key": "ganin2017resilience",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf",
+  "total_pages": 8,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 102,
+      "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level) .",
+      "source_quote": "We built road networks for 40 of the urban areas defined by the U.S. Census Bureau. We developed and calibrated a model to evaluate traffic delays using link loads.",
+      "quote_page": 1,
+      "search_verified": true,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Ganin 2017 operates at city-level / network-wide scale, which loosely matches 'aggregate spatial scales', but the paper never discusses precipitation effects at any spatial scale. The disruption modelled is random link removal (percolation-inspired), with examples including crashes, construction, snow and ice storms — not rainfall or precipitation specifically. The terms 'precipitation', 'rainfall', 'corridor-level', and 'aggregate spatial scale' do not appear anywhere in the paper. The citing claim attributes to Ganin 2017 a characterisation of the precipitation literature that the paper does not contain."
+    },
+    {
+      "line_num": 624,
+      "claim_text": "A complementary extension is network vulnerability analysis: betweenness centrality under normal and extreme-weather scenarios would identify links whose rainfall degradation cascades into network-wide journey time losses, connecting these link-level estimates to system-level climate risk assessment .",
+      "source_quote": "The loads may be regarded as traffic-based centrality measures, estimating the number of individuals using corresponding road segments.",
+      "quote_page": 1,
+      "search_verified": true,
+      "verdict": "MISMATCH",
+      "reasoning": "Ganin 2017 explicitly uses commuter link loads (L_ij, Eq. 4) as its centrality measure, described as 'traffic-based centrality measures'. Betweenness centrality is never mentioned anywhere in the paper. Rainfall and precipitation are entirely absent; disruptions are modelled as random removal of a fraction r of links (percolation). While the paper does compute network-wide journey time increases under stress (its 'resilience' metric), this is not linked to rainfall degradation or betweenness centrality. The citing sentence projects a methodological extension onto Ganin 2017 that the paper does not support or suggest — the paper's own discussion recommends considering resilience jointly with efficiency in investment decisions, with no mention of betweenness centrality or rainfall scenarios."
+    }
+  ]
+}

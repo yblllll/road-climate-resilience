@@ -175,6 +175,32 @@
       "reason": "Keyword-overlap recall=0.182 (n=4) on p.47"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.469096+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.019303+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.019302+00:00",
+      "generated_by": "executor-agent-llm-close-reader",
+      "per_claim": [
+        {
+          "line_num": 66,
+          "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres, yet its adaptive capacity to changing climate conditions is under strain.",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": false,
+          "verdict": "NOT_FOUND",
+          "reasoning": "No text in PDF contains 'one-third', 'two-thirds', 'tonne-kilometre', or 'adaptive capacity'. The ORR 2024 report covers NH performance KPIs, not SRN traffic share statistics."
+        },
+        {
+          "line_num": 111,
+          "claim_text": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging.",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": false,
+          "verdict": "NOT_FOUND",
+          "reasoning": "No text in PDF references a 'Rapid Evidence Assessment', 'cost-benefit analyses of adaptation', or 'methodologically challenging'. This claim belongs to DfT REA source, not this ORR annual report."
+        }
+      ]
+    }
+  }
 }

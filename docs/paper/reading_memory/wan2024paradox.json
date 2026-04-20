@@ -92,6 +92,23 @@
       "reason": "Keyword-overlap recall=0.25 (n=4) on p.3"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.470262+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.020196+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.020194+00:00",
+      "generated_by": null,
+      "per_claim": [
+        {
+          "line_num": 204,
+          "claim_text": "Traffic performance under adverse weather has been measured by average speed, travel time index, journey-time reliability, and composite resilience scores.",
+          "source_quote": "Models (5), (5A) and (5B) investigate recent road congestion in Cambridge, measured by the average car journey time",
+          "quote_page": 19,
+          "search_verified": true,
+          "verdict": "MISMATCH",
+          "reasoning": "The paper uses ONLY 'average car journey time' (median journey time across five Cambridge corridors) and traffic counts. It never mentions 'average speed', 'travel time index', 'journey-time reliability', or 'composite resilience scores'. All four metrics named in the claim are absent from the source."
+        }
+      ]
+    }
+  }
 }

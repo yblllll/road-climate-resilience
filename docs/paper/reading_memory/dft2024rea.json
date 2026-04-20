@@ -313,6 +313,50 @@
       "reason": "Keyword-overlap recall=0.088 (n=3) on p.10"
     }
   ],
-  "last_updated": "2026-04-20T22:46:00.465219+00:00",
-  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM)."
+  "last_updated": "2026-04-20T23:07:18.016328+00:00",
+  "notes": "Auto-populated by close_read_pymupdf.py (deterministic, no LLM).",
+  "per_run": {
+    "llm_close_reader_v1": {
+      "generated_at": "2026-04-20T23:07:18.016326+00:00",
+      "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+      "per_claim": [
+        {
+          "line_num": 66,
+          "claim_text": "The UK Strategic Road Network carries approximately one-third of all road traffic and two-thirds of freight tonne-kilometres, yet its adaptive capacity to changing climate conditions is under strain.",
+          "source_quote": "The SRN comprises more than 4,300 miles of motorways and major A-class roads and is used by around 4 million vehicles each day",
+          "quote_page": 10,
+          "search_verified": true,
+          "verdict": "MISMATCH",
+          "reasoning": "The document describes the SRN as comprising 4,300 miles of motorways used by ~4 million vehicles/day and valued at £109 billion. It does NOT contain the specific fractions 'one-third of all road traffic' or 'two-thirds of freight tonne-kilometres', nor the phrase 'adaptive capacity under strain'. These statistics likely originate from a different DfT or National Highways source. The quote provided is the closest matching SRN description in the document but does not support the claimed figures."
+        },
+        {
+          "line_num": 81,
+          "claim_text": "This directly addresses the evidence gap identified by the UK Department for Transport's Rapid Evidence Assessment, which highlights the need for better understanding of climate change impacts on transport infrastructure.",
+          "source_quote": "understanding in detail the effects of climate change on transport infrastructure, and in particular how inter-modal and inter-sectoral connections will be affected",
+          "quote_page": 30,
+          "search_verified": true,
+          "verdict": "PARTIAL",
+          "reasoning": "The document is indeed a DfT-commissioned Rapid Evidence Assessment (NatCen, 2022) that identifies evidence gaps. Page 30 explicitly lists 'understanding in detail the effects of climate change on transport infrastructure' as a key gap category. The claim's framing is directionally accurate. However, the exact phrase 'need for better understanding' does not appear verbatim; the document uses more nuanced language about uncertainty in projections and inter-modal connections. Verdict is PARTIAL rather than MATCH."
+        },
+        {
+          "line_num": 106,
+          "claim_text": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies, as well as simulation-based approaches.",
+          "source_quote": "Simulation and modelling evidence may also be included",
+          "quote_page": 38,
+          "search_verified": true,
+          "verdict": "PARTIAL",
+          "reasoning": "The document does acknowledge a mix of evidence types: qualitative expert assessments and quantitative cost-benefit studies are both discussed. 'Simulation and modelling evidence may also be included' appears in the methodology section. However, the specific framing 'quantitative resilience methodologies' and 'simulation-based approaches' as a tri-partite categorisation is the paper's own synthesis, not a direct claim in the DfT REA. The REA does not self-describe its reviewed literature in these three categories. The citation is supportable only in a loose sense."
+        },
+        {
+          "line_num": 528,
+          "claim_text": "Beyond targeting, the near-zero sensitivity of the most resilient corridors (A11, A1(M)) implies that higher design standards, particularly the drainage capacity specified in the DMRB for motorways and high-speed dual carriageways, may themselves constitute an effective form of climate resilience, a finding relevant to debates about investment standards for new construction.",
+          "source_quote": null,
+          "quote_page": null,
+          "search_verified": false,
+          "verdict": "NOT_FOUND",
+          "reasoning": "The specific roads A11 and A1(M), the term DMRB, 'near-zero sensitivity', 'resilient corridors', and 'high-speed dual carriageways' in the context of climate resilience design standards are entirely absent from this document. The DfT REA does mention the general importance of drainage capacity (p.11) but contains no analysis of specific road corridors or DMRB standards. This claim appears to be the paper's own empirical result from GIS/network modelling that is being contextualised by reference to the REA; the DfT REA does not support the specific empirical finding being cited."
+        }
+      ]
+    }
+  }
 }

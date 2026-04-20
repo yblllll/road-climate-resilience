@@ -2,43 +2,45 @@
   "generated_from": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/citation_verification/citation_map.llm.json",
   "total_entries": 63,
   "verdict_counts": {
-    "NO_QUOTE": 42,
-    "MATCH_PARTIAL": 3,
-    "MATCH_EXACT": 18
+    "MATCH_EXACT": 30,
+    "NO_QUOTE": 24,
+    "NOT_FOUND": 2,
+    "MATCH_PARTIAL": 6,
+    "MATCH_WRONG_PAGE": 1
   },
   "results": [
     {
       "cite_key": "nh2024climate",
       "claim_line": 66,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 190,
+      "claimed_page": 1,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 1,
+      "matched_snippet": "the challenge we must consider how the changing climate will affect our strategic road network - the 4,500 miles of motorways and major a-roads we manage including bridges, tunnels, drains and earthworks. the latest climate projections for the ",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "dft2024rea",
       "claim_line": 66,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 126,
+      "claimed_page": 10,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 10,
+      "matched_snippet": "twork (srn) and the local road network. the srn comprises more than 4,300 miles of motorways and major a-class roads and is used by around 4 million vehicles each day (wang, 2019). it is a significant natio",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "sias2025roadways",
       "claim_line": 66,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 183,
+      "claimed_page": 13,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 13,
+      "matched_snippet": "- ated costs will continue to increase. distances travelled by vehicles are likely to increase nationally and globally, with global tonne-kilometres of freight movement expected to approximately double between 2020 and 2050 (according to statista). ageing infrast",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "orr2024annual",
@@ -131,13 +133,13 @@
     {
       "cite_key": "huang2022overview",
       "claim_line": 70,
-      "quote_char_count": 0,
+      "quote_char_count": 275,
       "claimed_page": null,
-      "verdict": "NO_QUOTE",
+      "verdict": "NOT_FOUND",
       "matched_layer": null,
       "matched_page": null,
       "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "reason": "Quote not found in any form across all pages"
     },
     {
       "cite_key": "he2026flood",
@@ -175,13 +177,13 @@
     {
       "cite_key": "dft2024rea",
       "claim_line": 81,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 164,
+      "claimed_page": 30,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 30,
+      "matched_snippet": " weather events at smaller geographies; understanding in detail the effects of climate change on transport infrastructure, and in particular how inter-modal and inter-sectoral connections will be affected; and lastly, understanding the wider ec",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "koetse2009impact",
@@ -274,46 +276,46 @@
     {
       "cite_key": "gao2024resilience",
       "claim_line": 97,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 187,
+      "claimed_page": 1,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 1,
+      "matched_snippet": " snelder, 2018). a study has shown that rainfall events significantly reduce speeds on more than 80 % of urban road sections, making it the primary factor affecting the daily operational efficiency of urban road traffic systems (zhu et al., 2020). however, limited re",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "wang2020climate",
       "claim_line": 102,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 163,
+      "claimed_page": 12,
+      "verdict": "MATCH_PARTIAL",
+      "matched_layer": 3,
+      "matched_page": 12,
+      "matched_snippet": "implications and future research agenda research surveying the impacts of climate change on the transport sectors has been conducted at a national and multi-regional scale in se",
+      "reason": "Partial match (60% prefix) on p.12 — possibly a PDF-encoding artefact or paraphrase"
     },
     {
       "cite_key": "calvert2018methodology",
       "claim_line": 102,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 216,
+      "claimed_page": 2,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 2,
+      "matched_snippet": "et al. 2006; snelder and calvert 2015). precipitation such as rain and snow, wind, temperature and mist have all been considered (agarwal, maze, and souleyrette 2005; calvert and snelder 2016; cools, moons, and wets 2010; maze, agarwai, and burchett 2006). also the influence of the local infrast",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "ganin2017resilience",
       "claim_line": 102,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 164,
+      "claimed_page": 1,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 1,
+      "matched_snippet": "nts between the intersections to links. we built road networks for 40 of the urban areas defined by the u.s. census bureau. we developed and calibrated a model to evaluate traffic delays using link loads. the loads may be regarded as traffic-ba",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "bergantino2024assessing",
@@ -329,13 +331,13 @@
     {
       "cite_key": "huang2022overview",
       "claim_line": 104,
-      "quote_char_count": 0,
+      "quote_char_count": 326,
       "claimed_page": null,
-      "verdict": "NO_QUOTE",
+      "verdict": "NOT_FOUND",
       "matched_layer": null,
       "matched_page": null,
       "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "reason": "Quote not found in any form across all pages"
     },
     {
       "cite_key": "pregnolato2017depth",
@@ -362,35 +364,35 @@
     {
       "cite_key": "he2026flood",
       "claim_line": 104,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 260,
+      "claimed_page": 2,
+      "verdict": "MATCH_PARTIAL",
+      "matched_layer": 3,
+      "matched_page": 2,
+      "matched_snippet": "i­ brating, and validating agent plans. high-frequency gps probe (\"floating-car\") data from on-board devices or smartphones can directly capture per-vehicle paths and speeds with sufficient fidelity for network modelling and diagnostics",
+      "reason": "Partial match (60% prefix) on p.2 — possibly a PDF-encoding artefact or paraphrase"
     },
     {
       "cite_key": "farahmand2024integrating",
       "claim_line": 104,
-      "quote_char_count": 0,
+      "quote_char_count": 287,
       "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 2,
+      "matched_page": 2,
+      "matched_snippet": "hani et al., 2014; dong et al., 2020a). the literature documents methods for road network disruption quantification that focus mainly on network-level metrics (chalkiadakis et al., 2022; gauthier et al., 2018; sun et al., 2018) and simulation-based techniques such as percolation analysis (li et al., 2012; wang et al., 2019a). moreover, recent studies emphasize the ",
+      "reason": "Exact phrase found on p.2"
     },
     {
       "cite_key": "dft2024rea",
       "claim_line": 106,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 54,
+      "claimed_page": 38,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 38,
+      "matched_snippet": ", but other evidence may be evaluative. simulation and modelling evidence may also be included. search strings the search strings and ",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "zare2025risk",
@@ -472,24 +474,24 @@
     {
       "cite_key": "calvert2018methodology",
       "claim_line": 200,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 137,
+      "claimed_page": 23,
+      "verdict": "MATCH_WRONG_PAGE",
+      "matched_layer": 2,
+      "matched_page": 15,
+      "matched_snippet": " validation of the methodology. this is achieved by comparison with two simple measures for both robustness and resilience, namely the time to recovery and the total delay time. the time to recovery, tr, per road sect",
+      "reason": "Phrase found on p.15, not claimed p.23"
     },
     {
       "cite_key": "gao2024resilience",
       "claim_line": 200,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 138,
+      "claimed_page": 1,
+      "verdict": "MATCH_PARTIAL",
+      "matched_layer": 3,
+      "matched_page": 1,
+      "matched_snippet": "oad traffic systems to rainfall events, researchers employed metrics such as redun­ dancy, robustness loss, recovery time",
+      "reason": "Partial match (30% prefix) on p.1 — possibly a PDF-encoding artefact or paraphrase"
     },
     {
       "cite_key": "hranac2006empirical",
@@ -560,13 +562,13 @@
     {
       "cite_key": "wan2024paradox",
       "claim_line": 204,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 115,
+      "claimed_page": 19,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 19,
+      "matched_snippet": "n. 5.3. recent trends: car journey time models (5), (5a) and (5b) investigate recent road congestion in cambridge, measured by the average car journey time across five transport corridors in and ",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "mccullagh1989glm",
@@ -659,13 +661,13 @@
     {
       "cite_key": "gao2024resilience",
       "claim_line": 505,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 170,
+      "claimed_page": 12,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 12,
+      "matched_snippet": "ack dashed lines in fig. 6 (b) and (c). our research indicates that system resilience decreases by approximately 6.7 % for every increase of 10mm in rainfall intensity when the rainfall intensity is below 50mm. taken fig. 6 (a), (b), and (c), both sy",
+      "reason": "Exact phrase found on claimed page"
     },
     {
       "cite_key": "nh2024climate",
@@ -692,13 +694,13 @@
     {
       "cite_key": "ganin2017resilience",
       "claim_line": 624,
-      "quote_char_count": 0,
-      "claimed_page": null,
-      "verdict": "NO_QUOTE",
-      "matched_layer": null,
-      "matched_page": null,
-      "matched_snippet": null,
-      "reason": "No source_quote in citation_map entry (likely PENDING_LLM)"
+      "quote_char_count": 135,
+      "claimed_page": 1,
+      "verdict": "MATCH_EXACT",
+      "matched_layer": 1,
+      "matched_page": 1,
+      "matched_snippet": "aluate traffic delays using link loads. the loads may be regarded as traffic-based centrality measures, estimating the number of individuals using corresponding road segments. efficiency was estimated as the average",
+      "reason": "Exact phrase found on claimed page"
     }
   ]
 }

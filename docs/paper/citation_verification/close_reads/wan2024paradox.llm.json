@@ -1,0 +1,89 @@
+{
+  "cite_key": "wan2024paradox",
+  "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel.pdf",
+  "verified_at": "2026-04-20T00:00:00Z",
+  "claims": [
+    {
+      "line_num": 204,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed, travel time index, journey-time reliability, and composite resilience scores.",
+      "claim_type": "methodology",
+      "candidate_quotes": [
+        {
+          "quote": "Models (5), (5A) and (5B) investigate recent road congestion in Cambridge, measured by the average car journey time",
+          "page": 19,
+          "paragraph": 1,
+          "section": "Results — Section 5.3",
+          "bbox": [
+            [
+              72.0,
+              476.8919677734375,
+              523.4632568359375,
+              491.5439758300781
+            ],
+            [
+              72.0,
+              498.7319641113281,
+              217.04478454589844,
+              513.3839721679688
+            ]
+          ],
+          "word_count": 18,
+          "search_for_match_count": 1,
+          "search_for_verified": true
+        },
+        {
+          "quote": "travel congestion, measured by average delay time per vehicle per mile",
+          "page": 3,
+          "paragraph": 2,
+          "section": "Introduction",
+          "bbox": [
+            [
+              413.5955810546875,
+              145.9319610595703,
+              507.8128967285156,
+              160.58396911621094
+            ],
+            [
+              72.0,
+              168.011962890625,
+              340.67132568359375,
+              182.66397094726562
+            ]
+          ],
+          "word_count": 11,
+          "search_for_match_count": 1,
+          "search_for_verified": true,
+          "note": "Below 15-word minimum; included as corroborating evidence only"
+        }
+      ],
+      "match_verdict": "MISMATCH",
+      "mismatch_detail": "The paper uses ONLY 'average car journey time' (median journey time across five Cambridge corridors) and traffic counts. It never mentions 'average speed', 'travel time index', 'journey-time reliability', or 'composite resilience scores'. All four metrics named in the claim are absent from the source.",
+      "authority_tier": "B",
+      "tier_reason": "Preprint on SSRN (ssrn.com/abstract=4970168); not yet peer-reviewed at time of extraction. DARe/EPSRC-funded, University of Cambridge — credible but not Tier A until published in a peer-reviewed journal.",
+      "doi_resolves": null,
+      "doi_note": "No DOI assigned; available at https://ssrn.com/abstract=4970168",
+      "hallucination_flag": "MISATTRIBUTION",
+      "hallucination_detail": "Source is real and locatable. The quote is verified via search_for. However, the four metrics attributed to it (average speed, travel time index, journey-time reliability, composite resilience scores) do not appear anywhere in the paper. This is a misattribution: the claim projects a metric framework onto a source that uses a different, simpler measure.",
+      "agent_verdicts": {
+        "close_reader": "verified — primary quote found on page 19 via search_for, 18 words, bbox recorded",
+        "semantic_matcher": "MISMATCH — claim lists four performance metrics; source uses only average journey time",
+        "authority_gate": "B — preprint, not peer-reviewed",
+        "hallucination_detector": "MISATTRIBUTION — paper exists, quote verified, but attributed metrics absent from source",
+        "consensus": true
+      },
+      "confidence": "high",
+      "recommended_action": "Replace this citation or revise the claim. Wan & Huang (2024) support the use of journey time as a congestion proxy, not the broader metric suite listed. Cite dedicated methodological sources for travel time index, speed-based measures, and resilience scores."
+    }
+  ],
+  "per_claim": [
+    {
+      "line_num": 204,
+      "claim_text": "Traffic performance under adverse weather has been measured by average speed, travel time index, journey-time reliability, and composite resilience scores.",
+      "source_quote": "Models (5), (5A) and (5B) investigate recent road congestion in Cambridge, measured by the average car journey time",
+      "quote_page": 19,
+      "search_verified": true,
+      "verdict": "MISMATCH",
+      "reasoning": "The paper uses ONLY 'average car journey time' (median journey time across five Cambridge corridors) and traffic counts. It never mentions 'average speed', 'travel time index', 'journey-time reliability', or 'composite resilience scores'. All four metrics named in the claim are absent from the source."
+    }
+  ]
+}

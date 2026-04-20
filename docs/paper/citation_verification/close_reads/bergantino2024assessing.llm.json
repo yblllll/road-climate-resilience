@@ -1,0 +1,18 @@
+{
+  "cite_key": "bergantino2024assessing",
+  "pdf_path": "docs/paper/Literature_Review/Bergantino_2024_Transport_Network_Resilience.pdf",
+  "total_pages": 24,
+  "generated_by": "LLM close_reader + semantic_matcher (Agent executor)",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "per_claim": [
+    {
+      "line_num": 102,
+      "claim_text": "Across this literature, precipitation effects are estimated at aggregate spatial scales (network-wide, city-level, or at most corridor-level).",
+      "source_quote": null,
+      "quote_page": null,
+      "search_verified": false,
+      "verdict": "NOT_FOUND",
+      "reasoning": "Bergantino 2024 reviews transport network resilience broadly across 53 real-data studies and identifies spatial patterns (central/urban vs peripheral, high vs low accessibility, distance decay, hazard location) and influencing factors (redundancy, real-time information, institutional management, climate change intensity, infrastructure strengthening, congestion, socio-economic indicators). The paper never characterises the spatial scale at which precipitation effects are estimated, never uses terms such as 'aggregate spatial scales', 'network-wide', or 'corridor-level' in the context of precipitation-effect measurement. Weather and climate disruptions appear under 'climate change and intensity of disruptions' (Section 4.2, item 4, p.844) solely to note that stronger disruptions reduce performance more, with no discussion of spatial resolution of estimation. The cited claim about precipitation being measured only at aggregate spatial scales has no supporting passage anywhere in this source."
+    }
+  ]
+}
