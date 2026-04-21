@@ -209,6 +209,44 @@ tr:hover { background: #f0f4ff; }
 .agreement-strip.warn { background:#fff3e0; color:#e65100; border-left:3px solid #ff9800; }
 .agreement-strip.bad  { background:#ffebee; color:#b71c1c; border-left:3px solid #e53935; }
 .agreement-strip.info { background:#e1f5fe; color:#0277bd; border-left:3px solid #039be5; }
+
+/* --- Editable paper blocks (My Paper tab) --- */
+.paper-block { transition: outline-color 0.15s; border-radius:4px; }
+.paper-block[contenteditable="true"]:hover  { outline: 1px dashed #ffb74d; background:#fffaf0; }
+.paper-block[contenteditable="true"]:focus  { outline: 2px solid #ff9800; background:#fff8e1; box-shadow:0 2px 10px rgba(255,152,0,0.18); }
+.paper-block[contenteditable="true"]        { cursor:text; }
+
+/* --- Needs Review tab cards --- */
+.review-card { background:white; border-radius:8px; padding:14px 18px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #bbb; }
+.review-card.review-sev-bad   { border-left-color:#e53935; }
+.review-card.review-sev-warn  { border-left-color:#ff9800; }
+.review-card.review-sev-info  { border-left-color:#039be5; }
+.review-card.review-sev-good  { border-left-color:#4CAF50; }
+.review-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px; flex-wrap:wrap; }
+.review-bucket-chip { display:inline-block; padding:2px 8px; border-radius:4px; font-size:0.72em; font-weight:700; margin-left:8px; letter-spacing:0.3px; text-transform:uppercase; }
+.review-chip-bad   { background:#ffebee; color:#b71c1c; }
+.review-chip-warn  { background:#fff3e0; color:#e65100; }
+.review-chip-info  { background:#e1f5fe; color:#0277bd; }
+.review-chip-good  { background:#e8f5e9; color:#1b5e20; }
+.review-explanation { padding:6px 10px; border-radius:6px; font-size:0.82em; margin-bottom:10px; line-height:1.4; }
+.review-explanation.bad   { background:#ffebee; color:#b71c1c; }
+.review-explanation.warn  { background:#fff3e0; color:#e65100; }
+.review-explanation.info  { background:#e1f5fe; color:#0277bd; }
+.review-explanation.good  { background:#e8f5e9; color:#1b5e20; }
+.review-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px; }
+.review-col { min-width:0; }
+.review-label { font-size:0.72em; font-weight:700; color:#555; text-transform:uppercase; letter-spacing:0.4px; margin-bottom:4px; }
+.review-label-inline { font-size:0.8em; color:#555; font-weight:600; }
+.review-claim { background:#f5f7fa; padding:8px 10px; border-radius:4px; font-size:0.88em; line-height:1.45; color:#222; white-space:pre-wrap; }
+.review-reason { background:#fafafa; padding:8px 10px; border-radius:4px; font-size:0.82em; line-height:1.45; color:#444; font-style:italic; white-space:pre-wrap; }
+.review-quote { background:#fff8e1; padding:8px 10px; border-radius:4px; font-size:0.85em; line-height:1.45; color:#333; font-family: Georgia, serif; white-space:pre-wrap; }
+.review-actions { margin-top:10px; padding-top:10px; border-top:1px solid var(--border); }
+.review-verdict-row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.review-select { padding:4px 8px; border-radius:4px; border:1px solid var(--border); background:white; font-size:0.85em; }
+.review-note { flex:1; min-width:200px; padding:6px 10px; border-radius:4px; border:1px solid var(--border); font-size:0.85em; }
+.review-btn  { padding:4px 10px; background:white; border:1px solid var(--border); border-radius:4px; cursor:pointer; font-size:0.8em; }
+.review-btn:hover { background:#f5f7fa; }
+@media (max-width:900px) { .review-row { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -226,6 +264,8 @@ tr:hover { background: #f0f4ff; }
   <div class="tab" onclick="showPanel('cards',this)">Paper Cards</div>
   <div class="tab" onclick="showPanel('gaps',this)">Knowledge Gaps</div>
   <div class="tab" onclick="showPanel('paper',this)" style="background:#fff3e0;font-weight:600;">My Paper</div>
+  <div class="tab" onclick="showPanel('manuscript',this)" style="background:#fff3e0;font-weight:600;">Manuscript PDF</div>
+  <div class="tab" onclick="showPanel('review',this)" style="background:#ffebee;font-weight:600;">Needs Review <span id="reviewBadge" style="background:#e53935;color:white;padding:1px 6px;border-radius:10px;font-size:0.75em;margin-left:4px;">·</span></div>
   <div class="tab" onclick="showPanel('reader',this)" style="background:#e8f5e9;font-weight:600;">PDF Reader</div>
 </div>
 <div class="content">
@@ -344,6 +384,52 @@ tr:hover { background: #f0f4ff; }
     <div id="citationTooltip" class="citation-tooltip" style="display:none;"></div>
   </div>
 
+  <!-- Manuscript PDF tab: renders the compiled docs/paper_v2/main.pdf -->
+  <div class="panel" id="manuscript" style="padding:0;max-width:100%;">
+    <div style="display:flex;flex-direction:column;height:calc(100vh - 120px);min-height:600px;background:#d0d0d0;">
+      <div style="padding:8px 16px;background:#37474f;color:white;display:flex;align-items:center;gap:12px;font-size:0.85em;">
+        <strong>Manuscript PDF</strong>
+        <span style="opacity:0.8;">docs/paper_v2/main.pdf</span>
+        <span id="manuscriptMtime" style="opacity:0.7;font-size:0.85em;"></span>
+        <div style="flex:1"></div>
+        <button onclick="manuscriptRefresh()" style="padding:4px 12px;background:#4CAF50;color:white;border:none;border-radius:4px;cursor:pointer;">🔄 Refresh</button>
+        <label style="font-size:0.8em;opacity:0.85;display:flex;align-items:center;gap:4px;">
+          <input type="checkbox" id="manuscriptAutoRefresh" checked> Auto-refresh (5s)
+        </label>
+        <button onclick="manuscriptZoomOut()" style="padding:4px 10px;background:#555;color:white;border:none;border-radius:4px;cursor:pointer;">−</button>
+        <span id="manuscriptZoomInfo" style="min-width:38px;text-align:center;">120%</span>
+        <button onclick="manuscriptZoomIn()" style="padding:4px 10px;background:#555;color:white;border:none;border-radius:4px;cursor:pointer;">+</button>
+      </div>
+      <div id="manuscriptWrap" style="flex:1;overflow:auto;padding:16px;">
+        <div style="padding:40px;text-align:center;color:#666;">Loading manuscript PDF…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Needs Review tab: manual queue of all non-MATCH citations -->
+  <div class="panel" id="review">
+    <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+      <h2 style="color:var(--navy);margin-bottom:8px;">Citations Needing Manual Review</h2>
+      <p style="color:#555;font-size:0.9em;line-height:1.5;">
+        Every citation where LLM ≠ MATCH, local ≠ MATCH_EXACT, or the verifiers disagree. Your manual
+        override + checkbox persist in <code>localStorage</code>. Click <strong>Export</strong> to download a
+        JSON you (or a script) can apply back to the verification files.
+      </p>
+      <div id="reviewFilters" style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center;">
+        <label style="font-size:0.85em;"><input type="checkbox" id="filterBadOnly" onchange="renderReviewQueue()"> Show only misattributions / OPPOSITE</label>
+        <label style="font-size:0.85em;"><input type="checkbox" id="filterHideReviewed" onchange="renderReviewQueue()"> Hide reviewed</label>
+        <select id="filterBucket" onchange="renderReviewQueue()" style="padding:4px 8px;border-radius:4px;border:1px solid var(--border);font-size:0.85em;">
+          <option value="">All agreement buckets</option>
+        </select>
+        <div style="flex:1"></div>
+        <span id="reviewStats" style="font-size:0.85em;color:#555;"></span>
+        <button onclick="exportReviewDecisions()" style="padding:6px 14px;background:var(--navy);color:white;border:none;border-radius:5px;cursor:pointer;font-size:0.85em;">📤 Export decisions JSON</button>
+        <button onclick="importReviewDecisions()" style="padding:6px 14px;background:#f5f7fa;color:var(--navy);border:1px solid var(--border);border-radius:5px;cursor:pointer;font-size:0.85em;">📥 Import JSON</button>
+      </div>
+    </div>
+    <div id="reviewList" style="display:flex;flex-direction:column;gap:10px;"></div>
+  </div>
+
   <div class="panel" id="reader" style="padding:0;max-width:100%;">
     <div class="reader-layout">
       <div class="reader-filelist" id="readerFileList"></div>
@@ -371,7 +457,9 @@ tr:hover { background: #f0f4ff; }
           <button class="draw-btn" id="drawBtnEraser" onclick="setDrawMode('eraser')" title="Eraser" style="background:#fff;color:#333;border-color:#ccc">&#9003;</button>
           <button class="draw-btn" id="drawBtnOff" onclick="setDrawMode(null)" title="Disable drawing" style="background:#333;color:#fff;border-color:#222;">Off</button>
           <button onclick="saveUserDrawings()" title="Save drawings to JSON (download)" style="background:#4CAF50;color:white;border-color:#388e3c;">&#128190;</button>
+          <button onclick="clearAllDrawingsConfirm()" title="Delete ALL drawings for this PDF" style="background:#f44336;color:white;border-color:#c62828;">&#128465;</button>
           <span id="drawModeLabel" style="font-size:0.78em;opacity:0.85;"></span>
+          <span id="drawStrokeCount" style="font-size:0.75em;opacity:0.75;color:#ffb;"></span>
         </div>
         <div class="reader-canvas-wrap" id="readerCanvasWrap">
           <div class="reader-empty" id="readerEmpty">Select a paper from the left to begin reading</div>
@@ -689,20 +777,46 @@ function renderPaperTab() {
     `<span style="color:#c00">${problems} flagged</span> &middot; ` +
     `<span style="color:#0277bd">${pending} pending</span>`;
 
-  // Render blocks
+  // Restore any previously-saved edits from localStorage
+  const edits = loadPaperEdits();
+
+  // Render blocks (each editable; per-block index used as stable id)
   const body = document.getElementById('paperBody');
   body.innerHTML = '';
-  for (const b of PAPER_CONTENT.blocks) {
+  // Inject editor toolbar once
+  if (!document.getElementById('paperEditToolbar')) {
+    const tb = document.createElement('div');
+    tb.id = 'paperEditToolbar';
+    tb.style.cssText = 'position:sticky;top:58px;background:#fff3e0;border:1px solid #ffcc80;border-radius:6px;padding:8px 12px;margin-bottom:14px;display:flex;gap:10px;align-items:center;z-index:50;flex-wrap:wrap;';
+    tb.innerHTML = `
+      <strong style="color:#e65100;">✏️ Edit Mode</strong>
+      <label style="font-size:0.82em;"><input type="checkbox" id="paperEditToggle" onchange="setPaperEditable(this.checked)"> Allow editing</label>
+      <span id="paperEditCount" style="font-size:0.8em;color:#666;"></span>
+      <div style="flex:1"></div>
+      <button onclick="savePaperEdits()" style="padding:4px 10px;background:#4CAF50;color:white;border:none;border-radius:4px;cursor:pointer;font-size:0.82em;">💾 Save edits locally</button>
+      <button onclick="exportPaperEdits()" style="padding:4px 10px;background:var(--navy);color:white;border:none;border-radius:4px;cursor:pointer;font-size:0.82em;">📤 Export JSON → rebuild PDF</button>
+      <button onclick="resetPaperEdits()" style="padding:4px 10px;background:#f5f7fa;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.82em;">↺ Reset</button>
+    `;
+    body.parentElement.insertBefore(tb, body);
+  }
+  PAPER_CONTENT.blocks.forEach((b, idx) => {
     let el;
     if (b.type === 'h2' || b.type === 'h3' || b.type === 'h4') {
       el = document.createElement(b.type);
-      el.textContent = b.text;
+      el.textContent = edits[idx] && edits[idx].text != null ? edits[idx].text : b.text;
     } else if (b.type === 'p') {
       el = document.createElement('p');
-      el.innerHTML = b.html;
+      el.innerHTML = edits[idx] && edits[idx].html != null ? edits[idx].html : b.html;
     }
-    if (el) body.appendChild(el);
-  }
+    if (!el) return;
+    el.dataset.blockIdx = idx;
+    el.dataset.blockType = b.type;
+    el.classList.add('paper-block');
+    el.addEventListener('input', onPaperBlockInput);
+    el.addEventListener('blur', () => persistPaperEdit(idx));
+    body.appendChild(el);
+  });
+  updatePaperEditCount();
 
   // Apply verdict styles + hover tooltip to every rendered .cite-link
   body.querySelectorAll('.cite-link').forEach(a => {
@@ -716,6 +830,86 @@ function renderPaperTab() {
     a.addEventListener('mouseenter', e => showTooltip(e, key));
     a.addEventListener('mouseleave', hideTooltip);
   });
+}
+
+// ─── Paper editing (inline contenteditable, persisted to localStorage) ──────
+function loadPaperEdits() {
+  try { return JSON.parse(localStorage.getItem('paperEdits') || '{}'); }
+  catch (_) { return {}; }
+}
+function savePaperEdits() {
+  // Collect all edited blocks
+  const edits = {};
+  document.querySelectorAll('#paperBody .paper-block').forEach(el => {
+    const idx = Number(el.dataset.blockIdx);
+    const type = el.dataset.blockType;
+    const orig = PAPER_CONTENT.blocks[idx];
+    if (type === 'p') {
+      if (el.innerHTML !== orig.html) edits[idx] = {type, html: el.innerHTML, origHtml: orig.html};
+    } else {
+      if (el.textContent !== orig.text) edits[idx] = {type, text: el.textContent, origText: orig.text};
+    }
+  });
+  localStorage.setItem('paperEdits', JSON.stringify(edits));
+  updatePaperEditCount();
+  const n = Object.keys(edits).length;
+  alert(`Saved ${n} edited block${n === 1 ? '' : 's'} to localStorage.`);
+}
+function persistPaperEdit(idx) {
+  // Debounced lightweight persist on blur
+  const edits = loadPaperEdits();
+  const el = document.querySelector(`#paperBody .paper-block[data-block-idx="${idx}"]`);
+  if (!el) return;
+  const type = el.dataset.blockType;
+  const orig = PAPER_CONTENT.blocks[idx];
+  if (type === 'p') {
+    if (el.innerHTML !== orig.html) edits[idx] = {type, html: el.innerHTML, origHtml: orig.html};
+    else delete edits[idx];
+  } else {
+    if (el.textContent !== orig.text) edits[idx] = {type, text: el.textContent, origText: orig.text};
+    else delete edits[idx];
+  }
+  localStorage.setItem('paperEdits', JSON.stringify(edits));
+  updatePaperEditCount();
+}
+function onPaperBlockInput(ev) {
+  updatePaperEditCount();
+}
+function updatePaperEditCount() {
+  const edits = loadPaperEdits();
+  const n = Object.keys(edits).length;
+  const lbl = document.getElementById('paperEditCount');
+  if (lbl) lbl.textContent = n ? `${n} unsaved/saved edit${n === 1 ? '' : 's'}` : 'no edits';
+}
+function setPaperEditable(on) {
+  document.querySelectorAll('#paperBody .paper-block').forEach(el => {
+    el.contentEditable = on ? 'true' : 'false';
+    el.style.outline = on ? '1px dashed #ffa726' : '';
+    el.style.padding = on ? '4px 8px' : '';
+    el.style.borderRadius = on ? '4px' : '';
+  });
+}
+function resetPaperEdits() {
+  if (!confirm('Discard all your edits for this paper?')) return;
+  localStorage.removeItem('paperEdits');
+  renderPaperTab();
+}
+function exportPaperEdits() {
+  const edits = loadPaperEdits();
+  const payload = {
+    exported_at: new Date().toISOString(),
+    source_tex: PAPER_CONTENT.source_tex || 'docs/paper_v2/main.tex',
+    edit_count: Object.keys(edits).length,
+    edits: edits,   // keyed by block index
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'paper_edits.json';
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+  alert('Downloaded paper_edits.json. Drop it into docs/paper/paper_edits.json and run\n\n  uv run python docs/paper/rebuild_paper_pdf.py\n\n…to regenerate main.pdf and refresh the Manuscript tab.');
 }
 
 // Map agreement bucket → (severity class, plain-english description)
@@ -1425,6 +1619,412 @@ function saveUserDrawings() {
   a.click();
   setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
 }
+
+// ============================================================
+// DRAWINGS: clear-all + stroke counter wiring
+// ============================================================
+function clearAllDrawingsConfirm() {
+  const file = rFile;
+  if (!file) { alert('Open a PDF first.'); return; }
+  const pages = USER_DRAWINGS[file] || {};
+  const total = Object.values(pages).reduce((a, v) => a + (v ? v.length : 0), 0);
+  if (total === 0) { alert('No drawings to clear for this PDF.'); return; }
+  if (!confirm(`Delete ALL ${total} strokes on "${file}"?\n\nThis cannot be undone from the UI (you would have to re-import a saved JSON).`)) return;
+  USER_DRAWINGS[file] = {};
+  persistDrawings();
+  // Force a redraw on every currently rendered page
+  rPageContainers.forEach(pc => redrawPage(pc));
+  updateDrawStrokeCount();
+}
+
+function updateDrawStrokeCount() {
+  const el = document.getElementById('drawStrokeCount');
+  if (!el) return;
+  const file = rFile;
+  if (!file) { el.textContent = ''; return; }
+  const pages = USER_DRAWINGS[file] || {};
+  const total = Object.values(pages).reduce((a, v) => a + (v ? v.length : 0), 0);
+  const nPages = Object.keys(pages).filter(p => (pages[p] || []).length > 0).length;
+  el.textContent = total ? `(${total} stroke${total===1?'':'s'} / ${nPages} page${nPages===1?'':'s'})` : '';
+}
+
+// Hook persistDrawings so the counter always stays in sync (wraps original)
+(function wrapPersist() {
+  const orig = persistDrawings;
+  window.persistDrawings = function() { orig(); updateDrawStrokeCount(); };
+})();
+
+// ============================================================
+// MANUSCRIPT PDF TAB — render docs/paper_v2/main.pdf with auto-refresh
+// ============================================================
+let manuscriptDoc = null;
+let manuscriptScale = 1.20;
+let manuscriptLastMtime = null;
+let manuscriptAutoTimer = null;
+
+async function loadManuscriptPDF(force) {
+  const wrap = document.getElementById('manuscriptWrap');
+  if (!wrap) return;
+  // Bust the browser cache so new tectonic rebuilds actually show
+  const bust = force ? ('?t=' + Date.now()) : ('?v=' + (manuscriptLastMtime || 'x'));
+  const url = '../paper_v2/main.pdf' + bust;
+  try {
+    // HEAD request to detect whether the file changed since last render.
+    // If the server doesn't support HEAD, fall through to loading.
+    let newMtime = null;
+    try {
+      const head = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+      newMtime = head.headers.get('last-modified') || head.headers.get('etag') || null;
+    } catch (_) { /* ignore */ }
+    if (!force && manuscriptDoc && newMtime && newMtime === manuscriptLastMtime) {
+      return;   // no change — skip reload
+    }
+    manuscriptLastMtime = newMtime;
+    wrap.innerHTML = '<div style="padding:40px;text-align:center;color:#666;">Loading manuscript PDF…</div>';
+    manuscriptDoc = await pdfjsLib.getDocument({ url: url, disableCache: true }).promise;
+    document.getElementById('manuscriptMtime').textContent =
+      (newMtime ? 'Updated ' + newMtime : 'Loaded ' + new Date().toLocaleTimeString());
+    wrap.innerHTML = '';
+    for (let i = 1; i <= manuscriptDoc.numPages; i++) {
+      const pageDiv = document.createElement('div');
+      pageDiv.style.cssText = 'margin:0 auto 14px;background:white;box-shadow:0 4px 14px rgba(0,0,0,0.2);';
+      wrap.appendChild(pageDiv);
+      const page = await manuscriptDoc.getPage(i);
+      const vp = page.getViewport({ scale: manuscriptScale });
+      const canvas = document.createElement('canvas');
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = vp.width * dpr;
+      canvas.height = vp.height * dpr;
+      canvas.style.width = vp.width + 'px';
+      canvas.style.height = vp.height + 'px';
+      pageDiv.style.width = vp.width + 'px';
+      pageDiv.style.height = vp.height + 'px';
+      pageDiv.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      await page.render({ canvasContext: ctx, viewport: vp }).promise;
+    }
+    document.getElementById('manuscriptZoomInfo').textContent = Math.round(manuscriptScale * 100) + '%';
+  } catch (e) {
+    wrap.innerHTML =
+      `<div style="padding:40px;text-align:center;color:#c00;">
+         Could not load <code>docs/paper_v2/main.pdf</code>.<br>
+         <span style="font-size:0.85em;color:#888;">
+           Make sure the file exists and you ran
+           <code>uv run python docs/paper/rebuild_paper_pdf.py</code>
+           (or that <code>tectonic</code> has compiled <code>main.tex</code>).<br>
+           Error: ${e.message}
+         </span>
+       </div>`;
+  }
+}
+
+function manuscriptRefresh() { loadManuscriptPDF(true); }
+function manuscriptZoomIn()  { manuscriptScale = Math.min(manuscriptScale + 0.15, 2.5); loadManuscriptPDF(true); }
+function manuscriptZoomOut() { manuscriptScale = Math.max(manuscriptScale - 0.15, 0.5); loadManuscriptPDF(true); }
+
+function manuscriptStartAutoRefresh() {
+  if (manuscriptAutoTimer) return;
+  manuscriptAutoTimer = setInterval(async () => {
+    const cb = document.getElementById('manuscriptAutoRefresh');
+    if (!cb || !cb.checked) return;
+    // Only poll if the manuscript panel is visible
+    const pnl = document.getElementById('manuscript');
+    if (!pnl || !pnl.classList.contains('active')) return;
+    try {
+      const head = await fetch('../paper_v2/main.pdf?head=' + Date.now(), { method: 'HEAD', cache: 'no-store' });
+      const m = head.headers.get('last-modified') || head.headers.get('etag');
+      if (m && m !== manuscriptLastMtime) {
+        loadManuscriptPDF(true);
+      }
+    } catch (_) {/* ignore */ }
+  }, 5000);
+}
+
+// ============================================================
+// NEEDS REVIEW TAB — every non-MATCH citation, manual override+checkbox
+// ============================================================
+function loadReviewDecisions() {
+  try { return JSON.parse(localStorage.getItem('reviewDecisions') || '{}'); }
+  catch (_) { return {}; }
+}
+function saveReviewDecisions(decs) {
+  localStorage.setItem('reviewDecisions', JSON.stringify(decs));
+}
+function reviewItemKey(cite_key, line) { return cite_key + '::' + (line || ''); }
+
+// Build the list of entries needing review. An entry qualifies if:
+//   - LLM verdict ≠ MATCH                         (i.e. anything except AGREE_MATCH)
+//   - Local verdict ≠ MATCH_EXACT                 (not a clean verbatim match)
+//   - Agreement bucket is flagged 'bad'/'warn'
+// Fully AGREE_MATCH entries are excluded.
+function buildReviewQueue() {
+  const queue = [];
+  const seen = new Set();
+  // Prefer the diff file as the source of truth — it has agreement buckets.
+  for (const d of Object.values(DIFF_BY_KEY_LINE)) {
+    const llmV = d.llm_verdict;
+    const locV = d.local_verdict;
+    const bucket = d.agreement || 'UNKNOWN';
+    const severity = bucketExplain(bucket).cls;   // good|warn|bad|info
+    // Skip fully-agreed MATCH
+    if (bucket === 'AGREE_MATCH') continue;
+    const k = reviewItemKey(d.cite_key, d.line_num);
+    seen.add(k);
+    const llmEntry = LLM_BY_KEY_LINE[k] || {};
+    const locEntry = LOCAL_BY_KEY_LINE[k] || {};
+    queue.push({
+      key: k,
+      cite_key: d.cite_key,
+      line: d.line_num,
+      bucket,
+      severity,
+      llm_verdict: llmV,
+      local_verdict: locV,
+      claim_text: llmEntry.claim_text || (llmEntry.per_claim && llmEntry.per_claim[0] && llmEntry.per_claim[0].claim_text) || '',
+      quote: llmEntry.source_quote || (llmEntry.per_claim && llmEntry.per_claim[0] && llmEntry.per_claim[0].source_quote) || '',
+      quote_page: llmEntry.source_location ? llmEntry.source_location.page : (locEntry.matched_page || null),
+      reasoning: llmEntry.reasoning || d.llm_reasoning || '',
+      local_snippet: locEntry.matched_snippet || d.local_snippet || '',
+      local_page: locEntry.matched_page || d.local_page || null,
+    });
+  }
+  // Any LLM entry with no MATCH that wasn't in diff (edge case)
+  for (const [k, e] of Object.entries(LLM_BY_KEY_LINE)) {
+    if (seen.has(k)) continue;
+    if ((e.match_verdict || 'PENDING_LLM') === 'MATCH') continue;
+    queue.push({
+      key: k,
+      cite_key: e.cite_key,
+      line: e.line_num_in_paper,
+      bucket: 'LLM_ONLY',
+      severity: 'warn',
+      llm_verdict: e.match_verdict || 'PENDING_LLM',
+      local_verdict: 'NOT_RUN',
+      claim_text: e.claim_text || '',
+      quote: e.source_quote || '',
+      quote_page: e.source_location ? e.source_location.page : null,
+      reasoning: e.reasoning || '',
+      local_snippet: '',
+      local_page: null,
+    });
+  }
+  // Sort: bad first, then warn, then info; within each, by line number
+  const sevOrder = {bad:0, warn:1, info:2, good:3};
+  queue.sort((a,b) => (sevOrder[a.severity]-sevOrder[b.severity]) || (a.line||0)-(b.line||0));
+  return queue;
+}
+
+function populateReviewBucketFilter(queue) {
+  const sel = document.getElementById('filterBucket');
+  if (!sel) return;
+  const seen = new Set();
+  const firstOpt = sel.options[0];
+  sel.innerHTML = '';
+  sel.appendChild(firstOpt);
+  queue.forEach(q => { if (!seen.has(q.bucket)) { seen.add(q.bucket); const o = document.createElement('option'); o.value = q.bucket; o.textContent = q.bucket; sel.appendChild(o); } });
+}
+
+function renderReviewQueue() {
+  const list = document.getElementById('reviewList');
+  if (!list) return;
+  const queue = buildReviewQueue();
+  populateReviewBucketFilter(queue);
+  const decs = loadReviewDecisions();
+  const badOnly = document.getElementById('filterBadOnly').checked;
+  const hideReviewed = document.getElementById('filterHideReviewed').checked;
+  const bucketSel = document.getElementById('filterBucket').value;
+
+  const filtered = queue.filter(q => {
+    if (badOnly && q.severity !== 'bad') return false;
+    if (bucketSel && q.bucket !== bucketSel) return false;
+    const d = decs[q.key] || {};
+    if (hideReviewed && d.reviewed) return false;
+    return true;
+  });
+
+  const reviewedCount = queue.filter(q => (decs[q.key] || {}).reviewed).length;
+  document.getElementById('reviewStats').innerHTML =
+    `${filtered.length} / ${queue.length} shown &middot; ` +
+    `<strong style="color:#2e7d32;">${reviewedCount}</strong> reviewed &middot; ` +
+    `<strong style="color:#c62828;">${queue.length - reviewedCount}</strong> pending`;
+  updateReviewBadge(queue.length - reviewedCount);
+
+  list.innerHTML = '';
+  if (filtered.length === 0) {
+    list.innerHTML = '<div style="background:white;padding:40px;text-align:center;border-radius:8px;color:#666;">No entries match the current filters.</div>';
+    return;
+  }
+  filtered.forEach(q => {
+    const d = decs[q.key] || {};
+    const paper = papers.find(p => p.key === q.cite_key);
+    const pdfFile = paper ? paper.pdfFile : null;
+    const expl = bucketExplain(q.bucket);
+    const card = document.createElement('div');
+    card.className = 'review-card review-sev-' + q.severity;
+    card.innerHTML = `
+      <div class="review-head">
+        <div>
+          <label style="font-weight:600;"><input type="checkbox" ${d.reviewed?'checked':''} onchange="onReviewCheck('${q.key}', this.checked)"> Manually reviewed</label>
+          <span class="review-bucket-chip review-chip-${q.severity}">${q.bucket}</span>
+          <code style="font-size:0.85em;color:#333;">${q.cite_key}</code>
+          <span style="color:#888;font-size:0.85em;">@ L${q.line || '?'}</span>
+        </div>
+        <div style="display:flex;gap:6px;">
+          ${pdfFile ? `<button class="review-btn" onclick="reviewOpenInReader('${q.cite_key}', ${q.line || 'null'})">📖 Open in PDF reader</button>` : ''}
+          <button class="review-btn" onclick="reviewCopyCiteKey('${q.cite_key}')">📋 Copy key</button>
+        </div>
+      </div>
+      <div class="review-explanation ${q.severity}">${escapeHtml(expl.text)}</div>
+      <div class="review-row">
+        <div class="review-col">
+          <div class="review-label">Claim (line ${q.line})</div>
+          <div class="review-claim">${escapeHtml(q.claim_text || '(no claim text captured)')}</div>
+          <div class="review-label" style="margin-top:10px;">LLM reasoning</div>
+          <div class="review-reason">${escapeHtml(q.reasoning || '(none)').substring(0,500)}</div>
+        </div>
+        <div class="review-col">
+          <div class="review-label">LLM-extracted quote ${q.quote_page ? `<span style="color:#888;">(p.${q.quote_page})</span>` : ''}</div>
+          <div class="review-quote">${q.quote ? '&ldquo;' + escapeHtml(q.quote) + '&rdquo;' : '<em style="color:#999;">no quote</em>'}</div>
+          ${q.local_snippet ? `
+          <div class="review-label" style="margin-top:10px;">Local verifier found ${q.local_page ? `<span style="color:#888;">(p.${q.local_page})</span>` : ''}</div>
+          <div class="review-quote" style="background:#f1f8e9;">${escapeHtml(q.local_snippet).substring(0,400)}</div>` : ''}
+        </div>
+      </div>
+      <div class="review-actions">
+        <div class="review-verdict-row">
+          <label class="review-label-inline">My verdict:</label>
+          <select onchange="onReviewOverride('${q.key}', this.value)" class="review-select">
+            <option value="" ${!d.override?'selected':''}>— no override —</option>
+            <option value="ACCEPT"     ${d.override==='ACCEPT'?'selected':''}>✅ Accept (citation is correct)</option>
+            <option value="REPLACE"    ${d.override==='REPLACE'?'selected':''}>🔄 Replace citation</option>
+            <option value="REWRITE"    ${d.override==='REWRITE'?'selected':''}>✏️ Rewrite claim</option>
+            <option value="DROP"       ${d.override==='DROP'?'selected':''}>🗑️ Drop from paper</option>
+            <option value="NEEDS_PDF"  ${d.override==='NEEDS_PDF'?'selected':''}>📄 Need PDF</option>
+          </select>
+          <input type="text" placeholder="Note to self (e.g. replacement cite_key, rewrite text)…" value="${escapeHtml(d.note||'')}" oninput="onReviewNote('${q.key}', this.value)" class="review-note">
+        </div>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+function onReviewCheck(k, v)    { const d = loadReviewDecisions(); d[k] = d[k] || {}; d[k].reviewed = v; d[k].reviewed_at = new Date().toISOString(); saveReviewDecisions(d); renderReviewQueue(); }
+function onReviewOverride(k, v) { const d = loadReviewDecisions(); d[k] = d[k] || {}; d[k].override = v; saveReviewDecisions(d); updateReviewBadge(null); }
+function onReviewNote(k, v)     { const d = loadReviewDecisions(); d[k] = d[k] || {}; d[k].note = v; saveReviewDecisions(d); }
+
+function updateReviewBadge(pending) {
+  const badge = document.getElementById('reviewBadge');
+  if (!badge) return;
+  if (pending === null) {
+    // Recalculate
+    const q = buildReviewQueue();
+    const decs = loadReviewDecisions();
+    pending = q.filter(x => !(decs[x.key] || {}).reviewed).length;
+  }
+  badge.textContent = pending;
+  badge.style.background = pending > 0 ? '#c62828' : '#4CAF50';
+}
+
+function reviewCopyCiteKey(k) {
+  navigator.clipboard.writeText(k).then(() => {
+    console.log('[review] copied', k);
+  });
+}
+
+function reviewOpenInReader(cite_key, line) {
+  // Switch to PDF reader tab and open the PDF + jump to the quote
+  const tabs = document.querySelectorAll('.tab');
+  let readerTab = null;
+  tabs.forEach(t => { if (t.textContent.trim() === 'PDF Reader') readerTab = t; });
+  if (readerTab) showPanel('reader', readerTab);
+  const fname = citeKeyToPdfFilename(cite_key);
+  if (!fname) { alert('No PDF available for ' + cite_key); return; }
+  const entries = (LLM_BY_KEY_LINE[reviewItemKey(cite_key, line)] ? [LLM_BY_KEY_LINE[reviewItemKey(cite_key, line)]] : (CITATION_BY_KEY[cite_key] || []));
+  const e = entries[0];
+  if (e) {
+    PENDING_QUOTE = { page: e.source_location ? e.source_location.page : 1, quote: e.source_quote || '' };
+    if (e.source_location && e.source_location.bbox) PENDING_HIGHLIGHT = { page: e.source_location.page, bbox: e.source_location.bbox };
+  }
+  // rOpen has signature (filename, annoFile=null) from the existing reader code
+  if (typeof rOpen === 'function') rOpen(fname);
+  else if (typeof rOpenPaper === 'function') rOpenPaper(fname);
+}
+
+function exportReviewDecisions() {
+  const decs = loadReviewDecisions();
+  const queue = buildReviewQueue();
+  const payload = {
+    exported_at: new Date().toISOString(),
+    total_entries: queue.length,
+    reviewed_count: queue.filter(q => (decs[q.key]||{}).reviewed).length,
+    decisions: decs,            // keyed by `${cite_key}::${line_num}`
+    queue_snapshot: queue.map(q => ({
+      key: q.key, cite_key: q.cite_key, line: q.line, bucket: q.bucket,
+      llm: q.llm_verdict, local: q.local_verdict,
+    })),
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'review_decisions.json';
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+}
+
+function importReviewDecisions() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json';
+  input.onchange = () => {
+    const f = input.files[0]; if (!f) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const obj = JSON.parse(reader.result);
+        const decs = obj.decisions || obj;
+        saveReviewDecisions(decs);
+        renderReviewQueue();
+        alert(`Imported ${Object.keys(decs).length} review decision(s).`);
+      } catch (e) { alert('Import failed: ' + e.message); }
+    };
+    reader.readAsText(f);
+  };
+  input.click();
+}
+
+// ============================================================
+// showPanel hook — trigger render when new tabs are opened
+// ============================================================
+(function wrapShowPanel() {
+  const orig = showPanel;
+  window.showPanel = function(id, el) {
+    orig(id, el);
+    if (id === 'manuscript') { loadManuscriptPDF(false); manuscriptStartAutoRefresh(); }
+    if (id === 'review')     { renderReviewQueue(); }
+  };
+})();
+
+// Keep the Needs Review badge accurate on load
+function refreshReviewBadgeOnLoad() {
+  // Wait for verification data to exist
+  const tryIt = () => {
+    if (Object.keys(DIFF_BY_KEY_LINE).length || Object.keys(LLM_BY_KEY_LINE).length) {
+      updateReviewBadge(null);
+    } else {
+      setTimeout(tryIt, 500);
+    }
+  };
+  tryIt();
+}
+refreshReviewBadgeOnLoad();
+
+// Keep the stroke counter fresh when reloading a PDF in the reader
+(function wrapRender() {
+  const origRedraw = redrawPage;
+  window.redrawPage = function(pc) { origRedraw(pc); updateDrawStrokeCount(); };
+})();
 
 // Kick off loading
 loadPaperViewData();
