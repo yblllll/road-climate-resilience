@@ -8,11 +8,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official publication by NATIONAL HIGHWAYS",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -31,11 +31,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "NOT_FOUND",
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -54,11 +54,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Sias_2025_Climate_Roadways_Review.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "NOT_FOUND",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Nature Reviews Earth \\& Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -77,11 +77,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/ORR_2024_NH_Annual_Performance.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "NOT_FOUND",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -100,11 +100,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -123,11 +123,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -146,11 +146,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -169,11 +169,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -192,11 +192,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -215,11 +215,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -238,11 +238,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -261,11 +261,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -284,11 +284,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -307,11 +307,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -330,11 +330,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -353,11 +353,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -376,11 +376,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -399,11 +399,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -422,11 +422,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -445,11 +445,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -468,11 +468,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -491,11 +491,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -514,11 +514,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -537,11 +537,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -560,11 +560,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -583,11 +583,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wang_2020_Climate_Transport_Review.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -606,11 +606,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -629,11 +629,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Science Advances",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -652,11 +652,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bergantino_2024_Transport_Network_Resilience.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transport Reviews",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -675,11 +675,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -698,11 +698,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -721,11 +721,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -744,11 +744,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -767,11 +767,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -790,11 +790,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -813,11 +813,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Zare_2025_Risk_Climate_Investment.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -836,11 +836,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -859,11 +859,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official publication by NATIONAL HIGHWAYS",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -882,11 +882,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/ORR_2024_NH_Annual_Performance.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "NOT_FOUND",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -905,11 +905,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -928,11 +928,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -951,11 +951,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "PARTIAL",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -974,11 +974,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -997,11 +997,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1020,11 +1020,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1043,11 +1043,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1066,11 +1066,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1089,11 +1089,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1112,11 +1112,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1133,11 +1133,11 @@
     "claim_type": "unclassified",
     "source_quote": null,
     "source_location": null,
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "hallucination_flag": "PARTIAL",
     "severity": "minor",
     "consensus": {
       "all_agents_agree": true,
@@ -1156,11 +1156,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -1177,11 +1177,11 @@
     "claim_type": "unclassified",
     "source_quote": null,
     "source_location": null,
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "hallucination_flag": "PARTIAL",
     "severity": "minor",
     "consensus": {
       "all_agents_agree": true,
@@ -1200,11 +1200,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1223,11 +1223,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1246,11 +1246,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1269,11 +1269,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1292,11 +1292,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1315,11 +1315,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1338,11 +1338,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1361,11 +1361,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1384,11 +1384,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "NOT_FOUND",
     "authority_tier": "A",
     "tier_reason": "Official publication by NATIONAL HIGHWAYS",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1407,11 +1407,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1430,11 +1430,11 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf"
     },
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "MISMATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Science Advances",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "MISMATCH",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,

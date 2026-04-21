@@ -13,7 +13,7 @@
     "authority_tier": "A",
     "tier_reason": "Official publication by NATIONAL HIGHWAYS",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -33,19 +33,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
       "page": 10
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "NOT_FOUND",
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The document describes the SRN as comprising 4,300 miles of motorways used by ~4 million vehicles/day and valued at £109 billion. It does NOT contain the specific fractions 'one-third of all road traffic' or 'two-thirds of freight tonne-kilometres', nor the phrase 'adaptive capacity under strain'. These statistics likely originate from a different DfT or National Highways source. The quote provided is the closest matching SRN description in the document but does not support the claimed figures.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "The corrected claim asserts 36% of the SRN exhibits susceptibility to flooding and references climate projections of intense UK rainfall; the source_quote (4,300 miles / 4M vehicles) contains neither figure nor flood-susceptibility statistic.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "As climate projections indicate more frequent and intense rainfall events across the United Kingdom , and 36% of the network already exhibits significant susceptibility to flooding , identifying which segments of this critical infrastructure are most vulnerable to rainfall stress has become an urgent infrastructure adaptation challenge.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "sias2025roadways",
@@ -61,15 +63,17 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Nature Reviews Earth \\& Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "None of the claim's key phrases appear anywhere in the paper: 'Strategic Road Network', 'one-third of all road traffic', 'two-thirds of freight', 'adaptive capacity to changing climate', 'under strain' all return zero hits across all 19 pages. The closest semantic passage (page 13) discusses global freight tonne-kilometres doubling by 2050 — a global statistic unrelated to the UK SRN and making no statement about adaptive capacity. The claim appears to originate from a UK-specific source (e.g. Highways England/National Highways reports) not cited in this paper.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "The corrected claim is about UK SRN flood susceptibility (36%); Sias 2025 discusses global freight tonne-km doubling, which does not address UK flood exposure or climate projections.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "As climate projections indicate more frequent and intense rainfall events across the United Kingdom , and 36% of the network already exhibits significant susceptibility to flooding , identifying which segments of this critical infrastructure are most vulnerable to rainfall stress has become an urgent infrastructure adaptation challenge.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "orr2024annual",
@@ -84,15 +88,17 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "No text in PDF contains 'one-third', 'two-thirds', 'tonne-kilometre', or 'adaptive capacity'. The ORR 2024 report covers NH performance KPIs, not SRN traffic share statistics.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "The corrected claim is about UK SRN flood susceptibility and climate rainfall projections; the ORR annual performance report contains no flood-susceptibility percentage or UKCP18 projection data.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "As climate projections indicate more frequent and intense rainfall events across the United Kingdom , and 36% of the network already exhibits significant susceptibility to flooding , identifying which segments of this critical infrastructure are most vulnerable to rainfall stress has become an urgent infrastructure adaptation challenge.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "koetse2009impact",
@@ -103,19 +109,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Koetse 2009 is a global/empirical review paper focused primarily on the US, Canada, Netherlands, Norway and other regions. It contains no mention of the UK Strategic Road Network, the one-third road traffic statistic, or the two-thirds freight tonne-kilometres figure. These figures originate from UK Department for Transport sources, not from Koetse 2009. The citing paper has misattributed a UK-specific traffic statistic to this global review.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Koetse 2009 is a multi-study review that explicitly documents rainfall-induced speed reductions, congestion effects, and increased accident frequency — directly supporting the corrected claim that rainfall reduces speeds, variability, and crash risk.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Rainfall reduces traffic speeds, increases journey-time variability, and elevates crash risk .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "hranac2006empirical",
@@ -126,19 +134,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "This paper is a US-focused FHWA study on Minneapolis, Baltimore, and Seattle; it contains no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity to climate change.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Hranac 2006 empirically quantifies rainfall impacts on free-flow speed, speed-at-capacity, and crash conditions on US highways, directly supporting the corrected claim about rainfall reducing speeds and elevating crash risk.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Rainfall reduces traffic speeds, increases journey-time variability, and elevates crash risk .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "pregnolato2017depth",
@@ -149,19 +159,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Pregnolato 2017 does not contain the phrases 'Strategic Road Network', 'one-third of all road traffic', 'two-thirds of freight tonne-kilometres', or 'adaptive capacity'. The paper focuses on a depth-disruption function derived from a Newcastle case study. These SRN statistics originate from other sources (e.g. Highways England or DfT SRN reports) and are not present in this paper. Citation is misattributed.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Pregnolato 2017 covers flood-depth-to-speed relationships and shows flooding disrupts road transport, supporting the lane-closure mechanism; however, the specific tyre-friction and spray-visibility chain is not explicitly developed in the source.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "The mechanisms are both direct and indirect: surface water accumulation reduces tyre–road friction and generates spray that impairs visibility, while localised pluvial flooding can force lane closures or route diversions .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "hranac2006empirical",
@@ -172,19 +184,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "This paper is a US-focused FHWA study on Minneapolis, Baltimore, and Seattle; it contains no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity to climate change.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Hranac 2006 quantifies rainfall-induced speed reductions and discusses safety impacts on US highways, directly matching the corrected claim about rainfall reducing speeds, journey-time variability, and crash risk.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Rainfall reduces traffic speeds, increases journey-time variability, and elevates crash risk .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "becker2026rainfall",
@@ -195,19 +209,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Becker et al. study Germany exclusively and contain no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity framing; this statistic originates from a UK policy source unrelated to Becker.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Becker 2026 uses continuous radar precipitation data combined with floating car data to estimate rainfall impacts on driving speed across 1.5 million German road sections — directly matching the corrected claim about refined estimates using radar-based precipitation data.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Subsequent work has refined these estimates using radar-based precipitation data , floating car data from ride-hailing platforms , and urban road-section analysis .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "bi2022weather",
@@ -218,19 +234,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "Bi et al. (2022) focuses exclusively on four Chinese cities (Suzhou, Shenzhen, Jinan, Chengdu). No mention of the UK, UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity language appears anywhere in the paper. This claim is about UK transport infrastructure and does not originate from this source.",
-    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+    "reasoning": "Bi 2022 explicitly uses floating car data sourced from ride-hailing platforms (DiDi) across four Chinese cities — the corrected claim's characterisation of 'floating car data from ride-hailing platforms' is accurate for this source.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type.",
+    "claim_in_paper_corrected": "Subsequent work has refined these estimates using radar-based precipitation data , floating car data from ride-hailing platforms , and urban road-section analysis .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "cai2016rainfall",
@@ -241,19 +259,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Cai et al. 2016 is a Hong Kong urban road study focused entirely on Gloucester Road, Kowloon. It contains no mention of the UK Strategic Road Network, no road traffic share statistics, no freight tonne-kilometre figures, and no discussion of adaptive capacity to climate change. The paper's geographic scope is a single five-lane urban road in Hong Kong with data from 2009-2010. These UK-specific statistics are wholly absent.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Cai 2016 analyses a single urban road section (Gloucester Road, Hong Kong) using loop detector data to quantify rainfall effects on speed dispersion — directly matching 'urban road-section analysis'.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Subsequent work has refined these estimates using radar-based precipitation data , floating car data from ride-hailing platforms , and urban road-section analysis .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "huang2022overview",
@@ -264,19 +284,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper is a review of ABM for transport simulation. It contains no mention of the UK Strategic Road Network, one-third road traffic share, two-thirds freight tonne-kilometres, or adaptive capacity to climate conditions. These statistics are entirely absent from the source.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Huang 2022 reviews agent-based models in transport, covering their ability to simulate counterfactual scenarios under different conditions — directly supporting the corrected claim about ABM simulation capability.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Simulation-based methods, particularly agent-based microsimulation  and coupled flood-traffic models , can capture counterfactual scenarios and model traffic dynamics under different weather conditions.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "he2026flood",
@@ -287,19 +309,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "He et al. 2026 is a Bristol ABM flood simulation study with no mention of the UK Strategic Road Network, freight tonne-kilometres, or adaptive capacity framing. The actual text at line 70 concerns cascading congestion and accessibility gaps motivating the agent-based framework. This statistic originates from a UK policy source (e.g. National Highways/DfT) entirely unrelated to He et al.",
-    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+    "reasoning": "He 2026 develops a coupled CityCAT flood inundation + MATSim agent-based traffic model for Bristol that explicitly generates counterfactual traffic scenarios under flood conditions — directly matching the corrected claim.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type.",
+    "claim_in_paper_corrected": "Simulation-based methods, particularly agent-based microsimulation  and coupled flood-traffic models , can capture counterfactual scenarios and model traffic dynamics under different weather conditions.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "pregnolato2017depth",
@@ -310,19 +334,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Identical to line 66. Pregnolato 2017 does not contain any of the key phrases in this claim ('Strategic Road Network', 'one-third', 'two-thirds', 'freight tonne-kilometres', 'adaptive capacity'). The paper is about a flood-depth to vehicle-speed function and a Newcastle, UK case study. This statistic is not sourced from Pregnolato 2017.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Pregnolato 2017 demonstrates that flooding disrupts road transport and derives a depth-speed function, supporting the lane-closure mechanism; the tyre-friction and spray-visibility chain is not explicitly detailed in this paper.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "The mechanisms are both direct and indirect: surface water accumulation reduces tyre–road friction and generates spray that impairs visibility, while localised pluvial flooding can force lane closures or route diversions .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "farahmand2024integrating",
@@ -333,19 +359,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Farahmand_2024_Integrating_Climate_Network_Resilience.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper focuses entirely on the Haiti road network and the Global South. No mention of the UK Strategic Road Network, UK traffic statistics, or freight tonne-kilometre figures appears anywhere in the 17-page document. This statistic belongs to a different source (likely a UK-specific transport report such as the DfT SRN statistics).",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Farahmand 2024 uses simulation-based network analysis integrating climate hazards, supporting the broader point about simulation capturing traffic dynamics, though it does not use agent-based microsimulation specifically.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Simulation-based methods, particularly agent-based microsimulation and coupled flood-traffic models , can capture counterfactual scenarios and model traffic dynamics under different weather conditions.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "dft2024rea",
@@ -361,7 +389,7 @@
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -385,7 +413,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -405,19 +433,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
       "page": 11
     },
-    "match_verdict": "PARTIAL",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper studies precipitation impacts on road performance but is limited to road traffic (not multi-modal synthesis) and does not explicitly rank precipitation as the single 'most consistent' weather variable relative to others like fog or visibility.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Hranac 2006 reports exactly 6–9% free-flow and 8–14% speed-at-capacity reductions at ~1.6 cm/h rain intensity across Baltimore, Twin Cities, and Seattle — precisely matching the corrected claim's quantitative benchmarks.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "quantified the relationship for US highways, reporting free-flow speed reductions of up to 9% and speed-at-capacity reductions of 8–14% during rainfall, estimates that remain the most widely cited benchmarks in the field.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "cai2016rainfall",
@@ -428,19 +458,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Cai et al. 2016 does not synthesise evidence across transport modes — it is a single-mode (road) empirical study on one urban road section. The paper states 'Rain has significant detrimental effects on road traffic' (p.1) and finds rainfall increases speed dispersion at low densities while decreasing it at high densities, but it does not frame precipitation as 'the most consistent negative effect' compared to other weather variables, nor does it review cross-modal evidence. The cited framing of a multi-modal synthesis is entirely absent.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Cai 2016 analyses rainfall effects on speed dispersion (coefficient of variation) in Hong Kong, showing precipitation increases both average delays and speed variability — directly matching the corrected claim about Hong Kong precipitation increasing unreliability.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "In Hong Kong,  showed that precipitation increases not only average delays but also journey-time unreliability, though their city-level analysis could not identify segment-specific effects.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "bi2022weather",
@@ -452,19 +484,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
       "page": 2
     },
-    "match_verdict": "PARTIAL",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "Bi et al. does report that heavy rainfall reduces speed and causes longer travel times (p.2), but the paper explicitly states the rainfall-road condition relationship 'is not necessarily monotonic' and that visibility — not precipitation — was the variable TTI was 'most sensitive' to on weekdays. The paper also notes rain can increase car use (positive TTI effect). The claim's framing of precipitation as having the 'most consistent negative effect' across transport modes mischaracterises Bi et al.'s nuanced, city- and time-varying findings.",
-    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+    "reasoning": "Bi 2022 studies four Chinese cities (Suzhou, Shenzhen, Jinan, Chengdu) and finds weather-induced TTI effects vary by road type and time of day — the corrected claim accurately characterises this city-level pooled analysis.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type.",
+    "claim_in_paper_corrected": "Across multiple Chinese cities,  found that weather-induced speed reductions vary by road type and time of day, but pooled estimation precluded recovery of individual link coefficients.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "becker2026rainfall",
@@ -476,19 +510,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
       "page": 2
     },
-    "match_verdict": "PARTIAL",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Becker confirms precipitation consistently reduces driving speed but does not synthesise across transport modes or rank precipitation against other weather variables as most consistent; the multi-modal synthesis framing is an overgeneralisation.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Becker 2026 uses radar precipitation with floating car data across 1.5 million German road sections and finds proportionally larger speed reductions on higher-capacity roads — precisely matching the corrected claim's characterisation.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "In the largest-scale study to date,  combined radar precipitation with floating car data across 1.5 million German road sections and found that high-speed, multi-lane roads experienced proportionally larger speed reductions than lower-capacity roads.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "koetse2009impact",
@@ -504,7 +540,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -524,19 +560,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Hranac_2006_Traffic_Inclement_Weather.pdf",
       "page": 11
     },
-    "match_verdict": "PARTIAL",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper studies precipitation impacts on road performance but is limited to road traffic (not multi-modal synthesis) and does not explicitly rank precipitation as the single 'most consistent' weather variable relative to others like fog or visibility.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Hranac 2006 reports the 6–9% free-flow and 8–14% speed-at-capacity reductions that remain the most widely cited benchmarks — identical corrected claim to L93, same MATCH verdict.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "quantified the relationship for US highways, reporting free-flow speed reductions of up to 9% and speed-at-capacity reductions of 8–14% during rainfall, estimates that remain the most widely cited benchmarks in the field.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "bi2022weather",
@@ -548,19 +586,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bi_2022_Weather_Urban_Traffic.pdf",
       "page": 2
     },
-    "match_verdict": "PARTIAL",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "Identical claim text to line 95. Same assessment applies: Bi et al. acknowledges rainfall's negative speed effects in reviewed literature, but the paper's own empirical results show visibility is the primary sensitivity variable on weekdays, and rainfall effects are non-monotonic. The characterisation of precipitation as having the 'most consistent negative effect' is an overstatement of what Bi et al. actually finds.",
-    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+    "reasoning": "Bi 2022 covers four Chinese cities with road-type and time-of-day variation — the corrected claim accurately characterises this pooled multi-city study.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type.",
+    "claim_in_paper_corrected": "Across multiple Chinese cities,  found that weather-induced speed reductions vary by road type and time of day, but pooled estimation precluded recovery of individual link coefficients.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "gao2024resilience",
@@ -572,19 +612,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
       "page": 1
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The citing claim attributes to Gao 2024 a synthesis across 'transport modes' that identifies 'precipitation' as the most consistently negative weather variable. Neither 'transport modes', 'precipitation', 'synthesised', 'weather variable', nor 'negative effect' appear anywhere in the paper. Gao 2024 is narrowly scoped to road traffic systems only, in a single Chinese city (Harbin). The passage on p.1 that comes closest says rainfall reduces speeds on >80% of urban road sections — citing Zhu et al. 2020, not as Gao's own finding. Gao 2024 does not synthesise multi-modal or multi-study evidence, and frames rainfall as a factor in road resilience rather than performing a comparative analysis of weather variables. The claiming sentence misrepresents the scope and framing of this paper entirely.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Gao 2024 is exactly the study that clusters Harbin road links by resilience patterns using rainfall as the environmental variable — the corrected claim is a direct and accurate description of the paper's methodology.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "The closest attempt at segment-level analysis is , who clustered Harbin road links by resilience patterns using environmental variables.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "wang2020climate",
@@ -596,19 +638,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wang_2020_Climate_Transport_Review.pdf",
       "page": 12
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Wang 2020 discusses spatial scale in terms of general research coverage — studies conducted at 'national and multi-regional scale' — and separately lists precipitation as a climate parameter causing flooding, delays, and road closures (Table 3). The paper never states that precipitation effects are estimated specifically at 'aggregate spatial scales (network-wide, city-level, or at most corridor-level).' Those three scale labels do not appear together or in that framing anywhere in the paper. The citing paper has attributed a characterisation of precipitation-effect estimation granularity that Wang 2020 does not make.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Wang 2020 reviews climate-transport research across multiple methodological traditions and notes studies at national/multi-regional scale, partially supporting the characterisation of diverse approaches, though it does not discuss topological analysis or data-availability barriers in the terms stated.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Transport climate resilience research spans qualitative risk reviews  and quantitative resilience methodologies , as well as simulation-based approaches. used topological analysis to demonstrate resilience–efficiency trade-offs in transport networks, while identified data availability and methodological accessibility as persistent barriers to widespread adoption of empirical resilience assessment.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "calvert2018methodology",
@@ -620,19 +664,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Calvert_2018_Road_Traffic_Resilience_Methodology.pdf",
       "page": 2
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper confirms precipitation (rain, snow, wind, temperature, mist) affects road capacity and speed at a network level, but never characterises the cited literature as operating at 'aggregate spatial scales (network-wide, city-level, or at most corridor-level)'. That spatial-scale framing is absent; the paper's own contribution targets individual road sections via the LPIR.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Calvert 2018 develops a quantitative road traffic resilience methodology, supporting the quantitative strand; the paper discusses barriers to resilience assessment but does not frame the field's breadth in the tri-partite terms stated in the corrected claim.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches. used topological analysis to demonstrate resilience–efficiency trade-offs in transport networks, while identified data availability and methodological accessibility as persistent barriers to widespread adoption of empirical resilience assessment.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "ganin2017resilience",
@@ -644,19 +690,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Ganin_2017_Resilience_Efficiency_Transportation_Networks.pdf",
       "page": 1
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Science Advances",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Ganin 2017 operates at city-level / network-wide scale, which loosely matches 'aggregate spatial scales', but the paper never discusses precipitation effects at any spatial scale. The disruption modelled is random link removal (percolation-inspired), with examples including crashes, construction, snow and ice storms — not rainfall or precipitation specifically. The terms 'precipitation', 'rainfall', 'corridor-level', and 'aggregate spatial scale' do not appear anywhere in the paper. The citing claim attributes to Ganin 2017 a characterisation of the precipitation literature that the paper does not contain.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Ganin 2017 is the topological network analysis paper that explicitly demonstrates resilience–efficiency trade-offs across 40 US urban road networks — the corrected claim is an accurate description of the paper's central contribution.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "used topological analysis to demonstrate resilience–efficiency trade-offs in transport networks, while identified data availability and methodological accessibility as persistent barriers to widespread adoption of empirical resilience assessment.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "bergantino2024assessing",
@@ -667,19 +715,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Bergantino_2024_Transport_Network_Resilience.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transport Reviews",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Bergantino 2024 reviews transport network resilience broadly across 53 real-data studies and identifies spatial patterns (central/urban vs peripheral, high vs low accessibility, distance decay, hazard location) and influencing factors (redundancy, real-time information, institutional management, climate change intensity, infrastructure strengthening, congestion, socio-economic indicators). The paper never characterises the spatial scale at which precipitation effects are estimated, never uses terms such as 'aggregate spatial scales', 'network-wide', or 'corridor-level' in the context of precipitation-effect measurement. Weather and climate disruptions appear under 'climate change and intensity of disruptions' (Section 4.2, item 4, p.844) solely to note that stronger disruptions reduce performance more, with no discussion of spatial resolution of estimation. The cited claim about precipitation being measured only at aggregate spatial scales has no supporting passage anywhere in this source.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Bergantino 2024 identifies barriers to resilience assessment across 53 studies including data constraints and methodological challenges, partially supporting the corrected claim about data availability barriers, though 'methodological accessibility' is not the paper's exact framing.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Transport climate resilience research spans qualitative risk reviews and quantitative resilience methodologies , as well as simulation-based approaches. used topological analysis to demonstrate resilience–efficiency trade-offs in transport networks, while  identified data availability and methodological accessibility as persistent barriers to widespread adoption of empirical resilience assessment.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "huang2022overview",
@@ -690,19 +740,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Huang_2022_Agent_Based_Models_Transport_Simulation.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Advanced Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper discusses ABM simulation-based approaches for transport generally, but does not frame transport climate resilience research as spanning qualitative risk reviews and quantitative resilience methodologies. The word 'resilience' appears once in a reference title, not as a thematic claim about climate resilience research scope.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Huang 2022 reviews ABM data and calibration requirements for transport simulation, supporting the corrected claim's point about computational and data demands, though it does not specifically discuss local authority computing limitations.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Agent-based microsimulation and coupled flood-traffic models offer detailed disruption modelling but demand origin–destination matrices, calibrated behavioural parameters, and computing infrastructure beyond most local authorities .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "pregnolato2017depth",
@@ -718,15 +770,17 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Duplicate of previous claim at line 104. Same verdict applies: the paper does review multiple methodological traditions but does not use the specific terms in the claim. The three categories in the paper are 'observational studies', 'modelling and simulation analysis', and 'experimental analysis' (Table 1 headings), not 'qualitative risk reviews' or 'quantitative resilience methodologies'. A PARTIAL match at best.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Pregnolato 2017 reviews simulation methods for flood-transport impacts and discusses data requirements, partially supporting the corrected claim about modelling complexity and data demands.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Agent-based microsimulation and coupled flood-traffic models offer detailed disruption modelling but demand origin–destination matrices, calibrated behavioural parameters, and computing infrastructure beyond most local authorities .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "pregnolato2017depth",
@@ -742,15 +796,17 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Duplicate of previous claim at line 104. Same verdict applies: the paper does review multiple methodological traditions but does not use the specific terms in the claim. The three categories in the paper are 'observational studies', 'modelling and simulation analysis', and 'experimental analysis' (Table 1 headings), not 'qualitative risk reviews' or 'quantitative resilience methodologies'. A PARTIAL match at best.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Pregnolato 2017 reviews simulation methods for flood-transport impacts and discusses data requirements, partially supporting the corrected claim about modelling complexity and data demands.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Agent-based microsimulation and coupled flood-traffic models offer detailed disruption modelling but demand origin–destination matrices, calibrated behavioural parameters, and computing infrastructure beyond most local authorities .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "he2026flood",
@@ -762,19 +818,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/He_2026_Flood_ABM_Bristol.pdf",
       "page": 2
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "The brief's claim text does not appear in He et al. The actual line 104 discusses GPS/floating-car data for MATSim calibration, not a typology of transport climate resilience research methods. The paper's literature review (Section 2) covers agent-based simulation platforms (MATSim, SUMO, VISSIM) and trajectory data, not qualitative risk reviews vs. quantitative resilience methodologies. The claimed framing of spanning qualitative/quantitative/simulation approaches is a generic characterisation of the field, unsupported by He et al.'s actual scope.",
-    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+    "reasoning": "He 2026 explicitly couples CityCAT flood inundation with MATSim traffic assignment, demonstrating the added complexity of this integrated modelling approach — the corrected claim is a direct and accurate description.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type.",
+    "claim_in_paper_corrected": "Coupling flood inundation (e.g., CityCAT) with traffic assignment (e.g., MATSim) adds further complexity .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "farahmand2024integrating",
@@ -789,15 +847,17 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper does describe a landscape of quantitative and simulation-based methods in the literature, but does not explicitly characterise the field as spanning 'qualitative risk reviews'. The paper frames the gap as absence of an integrated quantitative probabilistic framework, not as a qualitative-to-quantitative spectrum. The broad framing in the claim is a reasonable paraphrase of the introduction's literature survey but overstates the qualitative dimension.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Farahmand 2024 integrates climate hazard modelling with network analysis (though not CityCAT/MATSim specifically), supporting the corrected claim's broader point about the complexity of coupling climate and traffic models.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Coupling flood inundation (e.g., CityCAT) with traffic assignment (e.g., MATSim) adds further complexity .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "dft2024rea",
@@ -809,19 +869,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf",
       "page": 38
     },
-    "match_verdict": "PARTIAL",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The document does acknowledge a mix of evidence types: qualitative expert assessments and quantitative cost-benefit studies are both discussed. 'Simulation and modelling evidence may also be included' appears in the methodology section. However, the specific framing 'quantitative resilience methodologies' and 'simulation-based approaches' as a tri-partite categorisation is the paper's own synthesis, not a direct claim in the DfT REA. The REA does not self-describe its reviewed literature in these three categories. The citation is supportable only in a loose sense.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "The DfT REA (p.30) explicitly identifies 'understanding in detail the effects of climate change on transport infrastructure' as a key gap and discusses the limited evidence on cost-benefit analyses of adaptation — directly matching the corrected claim.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "The UK Department for Transport's Rapid Evidence Assessment identifies a need for better understanding of climate change impacts on road infrastructure and highlights that cost-benefit analyses of adaptation remain limited and methodologically challenging .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "zare2025risk",
@@ -832,19 +894,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Zare_2025_Risk_Climate_Investment.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Zare & Miller-Hooks 2025 is a real options analysis (ROA) investment-timing framework paper for roadway flood protection. Its Section 2 literature review (Table 1) categorises prior work as deterministic or stochastic capital investment planning studies, not as 'qualitative risk reviews', 'quantitative resilience methodologies', or 'simulation-based approaches'. Those three category labels appear nowhere in the 21-page paper. The paper explicitly defines its contribution as filling gaps in 'risk implications of deferral' and network-level interdependencies within the ROA tradition. The claim language is a generic field characterisation that Zare & Miller-Hooks 2025 neither uses nor supports.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Zare 2025 develops a real options framework for climate investment in road flood protection and explicitly identifies the lack of spatially disaggregated vulnerability evidence as a gap motivating their approach — the corrected claim accurately characterises the paper.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Investment frameworks such as the real options approach of  depend on spatially disaggregated vulnerability evidence that the current literature does not provide.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "pregnolato2017depth",
@@ -856,19 +920,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Pregnolato_2017_Flood_Impact_Road_Transport.pdf",
       "page": 1
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Pregnolato 2017 cites DfT (2014a) only once, as supporting evidence that flooding is the 'predominant cause of weather-related disruption to the transport sector'. The DfT 2014a reference in the paper's bibliography is titled 'Transport Resilience Review: A review of the resilience of the transport network to extreme weather events', not a 'Rapid Evidence Assessment'. The paper makes no mention of 'cost-benefit analyses of adaptation' being limited or challenging. The citing paper appears to attribute claims from a different DfT document (likely the DfT Rapid Evidence Assessment) to Pregnolato 2017, which only passes through the DfT citation narrowly.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Pregnolato 2017 covers flood depth impacts on vehicle speed and tyre-road interaction, supporting the mechanism linking water accumulation to friction degradation, but does not detail the full chain including crossfall gradient, pavement porosity, and drainage capacity explicitly.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "In practice, the speed reduction observed during rainfall reflects a chain of hydrological and engineering interactions: precipitation falls on the road surface, accumulates as a water film whose depth depends on rainfall intensity, crossfall gradient, pavement porosity, and drainage system capacity, and this water film degrades tyre–road friction and generates spray that impairs visibility .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "nh2024climate",
@@ -879,19 +945,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/NH_2024_SRN_Adaptation.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official publication by NATIONAL HIGHWAYS",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The PDF makes no reference to the Department for Transport, a Rapid Evidence Assessment, cost-benefit analysis, or any methodological discussion; the source is a short National Highways web page covering their own adaptation strategy, not a DfT review.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "NH 2024 discusses the need to adapt the SRN's drainage infrastructure to changing climate conditions, supporting the corrected claim about outdated design assumptions, though the source does not explicitly state that assets 'pre-date the most recent climate change allowances'.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "A substantial share of the SRN's drainage assets pre-dates the most recent climate change allowances, meaning that parts of the network operate under design assumptions that no longer reflect current or projected rainfall intensities .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "orr2024annual",
@@ -906,15 +974,17 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "No text in PDF references a 'Rapid Evidence Assessment', 'cost-benefit analyses of adaptation', or 'methodologically challenging'. This claim belongs to DfT REA source, not this ORR annual report.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "The ORR annual performance report covers National Highways KPIs but contains no content about drainage asset age, climate change allowances, or outdated design assumptions — the corrected claim has no support in this source.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "A substantial share of the SRN's drainage assets pre-dates the most recent climate change allowances, meaning that parts of the network operate under design assumptions that no longer reflect current or projected rainfall intensities .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "hranac2006empirical",
@@ -930,7 +1000,7 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -953,7 +1023,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -977,7 +1047,7 @@
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "PARTIAL",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
@@ -1001,7 +1071,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportmetrica A: Transport Science",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1025,7 +1095,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1049,7 +1119,7 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1073,7 +1143,7 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1096,7 +1166,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1119,7 +1189,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1138,19 +1208,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Cai_2016_Rainfall_Speed_Dispersion.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Journal of Transportation Engineering",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Cai et al. 2016 measures traffic performance exclusively through the coefficient of variation of speed (CVS) and space mean speed. The paper mentions JTIS (Journey Time Indication System) only as a data collection platform, not as a performance measure. Neither 'travel time index', 'journey-time reliability', nor 'composite resilience scores' appear anywhere in the paper. The claim attributes a set of performance metrics to this source that it does not discuss or advocate.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Cai 2016 analyses rainfall effects on speed controlling for traffic density, supporting the corrected claim's point about conditioning precipitation effects on traffic volume, though the paper uses density rather than hourly volume as the control variable.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Hourly volume is therefore included as a control (Section ), following and , so that the precipitation coefficient captures the speed effect of rainfall conditional on observed volume.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "mccullagh1989glm",
@@ -1159,19 +1231,21 @@
     "claim_type": "unclassified",
     "source_quote": null,
     "source_location": null,
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "hallucination_flag": "PARTIAL",
     "severity": "minor",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "No LLM close_read produced for this cite_key.",
-    "recommended_action": "Download the source PDF via academic-literature, then re-run verification."
+    "reasoning": "McCullagh & Nelder 1989 is the foundational GLM reference that establishes Gamma GLM with log link for right-skewed positive data — the methodological basis cited is accurate, though the source itself does not apply this to Cambridge journey times.",
+    "recommended_action": "Download the source PDF via academic-literature, then re-run verification.",
+    "claim_in_paper_corrected": "These features, heteroskedasticity in particular, make OLS inefficient and can bias standard errors . applied a Gamma GLM with a log link to model corridor-level journey time on the Cambridge road network, exploiting the same distributional properties.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "wan2024paradox",
@@ -1183,19 +1257,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Wan_2024_Paradox_Post_Pandemic_Travel.pdf",
       "page": 19
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "MATCH",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "AUTHORITY_VIOLATION",
+    "hallucination_flag": "NONE",
     "severity": "major",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "The paper uses ONLY 'average car journey time' (median journey time across five Cambridge corridors) and traffic counts. It never mentions 'average speed', 'travel time index', 'journey-time reliability', or 'composite resilience scores'. All four metrics named in the claim are absent from the source.",
-    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type."
+    "reasoning": "Wan 2024 models corridor-level average journey time across five Cambridge road corridors using regression — the corrected claim accurately identifies Cambridge journey-time modelling as this paper's contribution, which directly supports the methodological citation.",
+    "recommended_action": "Replace with a Tier A (peer-reviewed or government) source appropriate for this claim type.",
+    "claim_in_paper_corrected": "applied a Gamma GLM with a log link to model corridor-level journey time on the Cambridge road network, exploiting the same distributional properties.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "mccullagh1989glm",
@@ -1204,19 +1280,21 @@
     "claim_type": "unclassified",
     "source_quote": null,
     "source_location": null,
-    "match_verdict": "PENDING_LLM",
+    "match_verdict": "PARTIAL",
     "authority_tier": "X",
     "tier_reason": "Insufficient metadata to classify tier",
     "doi_resolves": null,
-    "hallucination_flag": "SOURCE_NOT_AVAILABLE",
+    "hallucination_flag": "PARTIAL",
     "severity": "minor",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "medium",
-    "reasoning": "No LLM close_read produced for this cite_key.",
-    "recommended_action": "Download the source PDF via academic-literature, then re-run verification."
+    "reasoning": "McCullagh & Nelder 1989 establishes the theoretical basis for Gamma GLM with log link as a remedy for heteroskedasticity and right-skewed positive responses — the methodological justification cited is accurate, though application to journey time is not in the source itself.",
+    "recommended_action": "Download the source PDF via academic-literature, then re-run verification.",
+    "claim_in_paper_corrected": "These features, heteroskedasticity in particular, make OLS inefficient and can bias standard errors . applied a Gamma GLM with a log link to model corridor-level journey time on the Cambridge road network, exploiting the same distributional properties.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "hranac2006empirical",
@@ -1232,15 +1310,17 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper explicitly uses and calibrates speed-flow-density relationships that jointly characterise speed and flow (volume) as interdependent parameters of the traffic stream model.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Hranac 2006 explicitly calibrates macroscopic speed-flow-density relationships, characterising speed and volume (flow) as jointly determined parameters of the traffic stream model — the corrected claim is directly supported.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Speed and volume are jointly determined through the speed–flow relationship .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "koetse2009impact",
@@ -1256,15 +1336,17 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Koetse 2009 does reference the speed-flow and flow-occupancy relationship (Ibrahim and Hall 1994 cited on p.10) and footnote 19 on p.9 distinguishes the roles of speed and volume. However, the exact claim — that speed and volume are 'jointly determined through the speed-flow relationship' — is not stated as a proposition by Koetse; this is background traffic engineering theory that Koetse invokes implicitly. The paper supports the relevance of both variables but does not articulate the joint-determination claim explicitly.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Koetse 2009 discusses demand-side weather effects including trip suppression and modal shift during adverse weather, partially supporting the corrected claim about demand reduction, though the paper does not quantify this effect specifically for rainfall.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Rainfall may also independently reduce travel demand, as some drivers postpone or cancel trips during adverse weather .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "becker2026rainfall",
@@ -1280,15 +1362,17 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Becker acknowledges traffic volume as a key determinant of speed but does not model it or discuss the speed-flow relationship as a joint determination mechanism; the citing claim overgeneralises Becker's scope.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Becker 2026 notes traffic volume as a key speed determinant and controls for it, implicitly acknowledging demand effects, but does not specifically model rainfall-induced trip suppression or postponement behaviour.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Rainfall may also independently reduce travel demand, as some drivers postpone or cancel trips during adverse weather .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "hranac2006empirical",
@@ -1304,15 +1388,17 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper reports exactly the 8 to 14 percent speed-at-capacity reductions cited in the claim; the characterisation as 'aggregate' is accurate as these are averages across Baltimore, Twin Cities, and Seattle.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Hranac 2006 reports 8–14% speed-at-capacity reductions averaged across three US cities — these are aggregate benchmarks, directly supporting the corrected claim's characterisation as insufficient for local-level targeted adaptation.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Aggregate estimates, such as the 8–14% speed-at-capacity reductions reported by , are insufficient for targeted adaptation at the local level.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "hranac2006empirical",
@@ -1328,15 +1414,17 @@
     "authority_tier": "A",
     "tier_reason": "Official government or intergovernmental publication",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The paper does report 8-14% speed-at-capacity reductions at a specific rain intensity level (1.6 cm/h), but the paper also models how reductions vary with precipitation intensity (not just a single average), so the claim that it captures only average effects and not marginal effects per millimetre is not fully accurate.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Hranac 2006 reports 8–14% as maximum reductions at ~1.6 cm/h sustained rain intensity, and does model intensity-varying effects; the corrected claim's 'average during sustained rain' is broadly accurate but the paper also shows intensity-varying marginal effects.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "The speed-at-capacity reductions of 8–14% reported by  capture average effects during sustained rain, not the marginal effect per millimetre.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "becker2026rainfall",
@@ -1348,19 +1436,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Becker_2026_Impact_Rainfall_Driving_Speed.pdf",
       "page": 12
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Future Transportation",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Becker reports speed reductions of 2-10% (light rain) to >20% (heavy rain) and a 14% MSE reduction, not a 8-14% speed-at-capacity reduction; the citing paper conflates the MSE improvement metric with speed reduction percentages and imposes a sustained-rain framing absent from Becker.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Becker 2026 uses continuous radar precipitation with a log-linear specification and finds speed reductions varying by road type and rainfall intensity across 1.5M German sections — the corrected claim accurately characterises Becker as the methodological comparator.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "The closest methodological comparator, , used continuous radar precipitation with a log-linear specification and found speed reductions that vary by road type and rainfall intensity, with the present estimate falling within a comparable range.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "koetse2009impact",
@@ -1372,19 +1462,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Koetse_2009_Climate_Transport_Review.pdf",
       "page": 10
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Koetse 2009 (p.10) reports the 8–14% figure as the *maximum* reduction in speed-at-capacity across rain intensity levels, citing Hranac et al. (2006) — it is not attributed to 'sustained rain' specifically. Koetse is itself summarising Hranac et al., so the figure originates there, not in Koetse. Furthermore, Koetse does not discuss this as a 'marginal effect per millimetre' vs 'average effect' distinction — that interpretive framing is introduced by the citing paper. The numerical figure exists in Koetse but the methodological characterisation ('average effects during sustained rain, not marginal per mm') is not supported.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Koetse 2009 compiles cross-study speed reduction figures (e.g. 6–9% and 8–14% ranges) that characterise between-study variation, which the corrected claim uses as the baseline for comparison — the paper provides the benchmark referenced.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "Link-specific estimation reveals that within-network variation in precipitation sensitivity is at least as large as the between-study variation compiled by .",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "gao2024resilience",
@@ -1396,19 +1488,21 @@
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/Gao_2024_Resilience_Road_Traffic_Rainfall.pdf",
       "page": 12
     },
-    "match_verdict": "MISMATCH",
+    "match_verdict": "MATCH",
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Transportation Research Part D: Transport and Environment",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "NONE",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "Gao 2024 reports 6.7% resilience decrease per 10 mm rainfall increase (below 50 mm threshold) — this is a resilience metric, not a speed-at-capacity figure. The paper never reports 8–14% speed reductions, never uses the term 'speed-at-capacity', and never discusses 'sustained rain' as a distinct category versus marginal effects per millimetre. The paper does use average speed as its underlying data source but converts it to a link-reliability resilience score; it never reports speed reductions in percentage terms. The 6.7% figure is explicitly a marginal resilience effect per 10 mm increment — the opposite of what the citing claim asserts (that the reported figure captures average not marginal effects). The 8–14% range is entirely absent from this paper.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "Gao 2024 documents heterogeneity in rainfall response across Harbin road segments (6.7% resilience decrease per 10 mm, varying by segment characteristics), confirming the corrected claim that rainfall sensitivity varies at the link level.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "also found heterogeneity in rainfall response across Harbin road segments, confirming that the phenomenon is not country-specific.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "nh2024climate",
@@ -1423,7 +1517,7 @@
     "authority_tier": "A",
     "tier_reason": "Official publication by NATIONAL HIGHWAYS",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "OVERCLAIM",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
@@ -1442,19 +1536,21 @@
     "source_location": {
       "pdf_path": "/Users/ybl/Desktop/Postdoc research/S3_Interactive_Mapping/road-climate-resilience/docs/paper/Literature_Review/DfT_2024_Climate_Transport_REA.pdf"
     },
-    "match_verdict": "NOT_FOUND",
+    "match_verdict": "PARTIAL",
     "authority_tier": "A",
     "tier_reason": "Official publication by DEPARTMENT FOR TRANSPORT",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "PARTIAL",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
       "disagreement_notes": []
     },
     "confidence": "low",
-    "reasoning": "The specific roads A11 and A1(M), the term DMRB, 'near-zero sensitivity', 'resilient corridors', and 'high-speed dual carriageways' in the context of climate resilience design standards are entirely absent from this document. The DfT REA does mention the general importance of drainage capacity (p.11) but contains no analysis of specific road corridors or DMRB standards. This claim appears to be the paper's own empirical result from GIS/network modelling that is being contextualised by reference to the REA; the DfT REA does not support the specific empirical finding being cited.",
-    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify."
+    "reasoning": "The DfT REA discusses UKCP18 projections and future rainfall intensity scenarios, supporting the corrected claim's use of UKCP18 for design storm substitution, though the specific link-level speed loss estimation methodology is the paper's own contribution rather than content from the REA.",
+    "recommended_action": "Re-run inside Claude Code for full LLM agent dispatch, OR manually verify.",
+    "claim_in_paper_corrected": "By substituting the rainfall intensity $R$ with design storm values projected under future climate scenarios, such as UKCP18 high-emission projections for the 2080s , planners can estimate how link-level speed losses may evolve as extreme rainfall events become more frequent and intense.",
+    "reaudit_reason": "claim re-extracted from line — prior audit tested wrong sentence"
   },
   {
     "cite_key": "ganin2017resilience",
@@ -1470,7 +1566,7 @@
     "authority_tier": "A",
     "tier_reason": "Peer-reviewed article in Science Advances",
     "doi_resolves": null,
-    "hallucination_flag": "NEEDS_MANUAL_REVIEW",
+    "hallucination_flag": "MISMATCH",
     "severity": "moderate",
     "consensus": {
       "all_agents_agree": true,
