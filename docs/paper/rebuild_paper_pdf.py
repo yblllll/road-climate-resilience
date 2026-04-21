@@ -378,11 +378,19 @@ def main() -> int:
         shutil.copy2(backup, tex_path)
         return rc
     pdf = tex_path.with_suffix('.pdf')
-    if pdf.exists():
-        print(f'[rebuild] OK → {pdf}')
-    else:
+    if not pdf.exists():
         print('[rebuild] tectonic returned 0 but PDF not found at expected path.')
         return 3
+    print(f'[rebuild] OK → {pdf}')
+
+    # Drop a sibling copy next to literature_viewer.html so the in-browser
+    # Manuscript tab (served from docs/paper/) can load it at "main.pdf".
+    viewer_copy = Path(args.edits).parent / 'main.pdf'
+    try:
+        shutil.copy2(pdf, viewer_copy)
+        print(f'[rebuild] viewer copy → {viewer_copy}')
+    except Exception as e:
+        print(f'[rebuild] warning: failed to copy to {viewer_copy}: {e}')
     return 0
 
 

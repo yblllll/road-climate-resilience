@@ -389,7 +389,7 @@ tr:hover { background: #f0f4ff; }
     <div style="display:flex;flex-direction:column;height:calc(100vh - 120px);min-height:600px;background:#d0d0d0;">
       <div style="padding:8px 16px;background:#37474f;color:white;display:flex;align-items:center;gap:12px;font-size:0.85em;">
         <strong>Manuscript PDF</strong>
-        <span style="opacity:0.8;">docs/paper_v2/main.pdf</span>
+        <span style="opacity:0.8;">docs/paper/main.pdf ← docs/paper_v2/main.pdf</span>
         <span id="manuscriptMtime" style="opacity:0.7;font-size:0.85em;"></span>
         <div style="flex:1"></div>
         <button onclick="manuscriptRefresh()" style="padding:4px 12px;background:#4CAF50;color:white;border:none;border-radius:4px;cursor:pointer;">🔄 Refresh</button>
@@ -1667,7 +1667,9 @@ async function loadManuscriptPDF(force) {
   if (!wrap) return;
   // Bust the browser cache so new tectonic rebuilds actually show
   const bust = force ? ('?t=' + Date.now()) : ('?v=' + (manuscriptLastMtime || 'x'));
-  const url = '../paper_v2/main.pdf' + bust;
+  // The dev-server at docs/paper/ can't reach ../paper_v2/, so rebuild_paper_pdf.py
+  // drops a copy of the compiled PDF next to literature_viewer.html.
+  const url = 'main.pdf' + bust;
   try {
     // HEAD request to detect whether the file changed since last render.
     // If the server doesn't support HEAD, fall through to loading.
@@ -1732,7 +1734,7 @@ function manuscriptStartAutoRefresh() {
     const pnl = document.getElementById('manuscript');
     if (!pnl || !pnl.classList.contains('active')) return;
     try {
-      const head = await fetch('../paper_v2/main.pdf?head=' + Date.now(), { method: 'HEAD', cache: 'no-store' });
+      const head = await fetch('main.pdf?head=' + Date.now(), { method: 'HEAD', cache: 'no-store' });
       const m = head.headers.get('last-modified') || head.headers.get('etag');
       if (m && m !== manuscriptLastMtime) {
         loadManuscriptPDF(true);
